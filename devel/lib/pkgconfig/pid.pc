@@ -1,0 +1,8 @@
+prefix=/home/amvui/AUVSI/devel
+
+Name: pid
+Description: Description of pid
+Version: 0.0.7
+Cflags: -I/home/amvui/AUVSI/devel/include
+Libs: -L/home/amvui/AUVSI/devel/lib 
+Requires: roscpp std_msgs message_runtime

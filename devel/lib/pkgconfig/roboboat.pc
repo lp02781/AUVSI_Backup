@@ -1,0 +1,8 @@
+prefix=/home/amvui/AUVSI/devel
+
+Name: roboboat
+Description: Description of roboboat
+Version: 0.0.0
+Cflags: -I/home/amvui/AUVSI/devel/include
+Libs: -L/home/amvui/AUVSI/devel/lib 
+Requires: message_runtime

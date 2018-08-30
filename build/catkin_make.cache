@@ -1,0 +1,2 @@
+pid:roboboat
+-DCATKIN_DEVEL_PREFIX=/home/amvui/AUVSI/devel -DCMAKE_INSTALL_PREFIX=/home/amvui/AUVSI/install -G Unix Makefiles
