@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 void pidConstReceiver(const pid::pid_const_msg& pid_const);
 
-string pid_const_topic = "auvsi/pid/const";
+string pid_const_topic = "/auvsi/pid/constX";
 
 int main(int argc, char **argv)
 {

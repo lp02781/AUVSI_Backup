@@ -436,21 +436,6 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-pid/CMakeFiles/controller_adaptive.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/controller_adaptive.dir/rule
-.PHONY : pid/CMakeFiles/controller_adaptive.dir/rule
-
-# Convenience name for target.
-controller_adaptive: pid/CMakeFiles/controller_adaptive.dir/rule
-
-.PHONY : controller_adaptive
-
-# fast build rule for target.
-controller_adaptive/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive.dir/build.make pid/CMakeFiles/controller_adaptive.dir/build
-.PHONY : controller_adaptive/fast
-
-# Convenience name for target.
 pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule
@@ -571,6 +556,21 @@ _pid_generate_messages_check_deps_pid_const_msg/fast:
 .PHONY : _pid_generate_messages_check_deps_pid_const_msg/fast
 
 # Convenience name for target.
+pid/CMakeFiles/controller_adaptive_x.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/controller_adaptive_x.dir/rule
+.PHONY : pid/CMakeFiles/controller_adaptive_x.dir/rule
+
+# Convenience name for target.
+controller_adaptive_x: pid/CMakeFiles/controller_adaptive_x.dir/rule
+
+.PHONY : controller_adaptive_x
+
+# fast build rule for target.
+controller_adaptive_x/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_x.dir/build.make pid/CMakeFiles/controller_adaptive_x.dir/build
+.PHONY : controller_adaptive_x/fast
+
+# Convenience name for target.
 pid/CMakeFiles/pid_generate_messages_cpp.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/pid_generate_messages_cpp.dir/rule
 .PHONY : pid/CMakeFiles/pid_generate_messages_cpp.dir/rule
@@ -584,6 +584,21 @@ pid_generate_messages_cpp: pid/CMakeFiles/pid_generate_messages_cpp.dir/rule
 pid_generate_messages_cpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/pid_generate_messages_cpp.dir/build.make pid/CMakeFiles/pid_generate_messages_cpp.dir/build
 .PHONY : pid_generate_messages_cpp/fast
+
+# Convenience name for target.
+pid/CMakeFiles/controller_adaptive_y.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/controller_adaptive_y.dir/rule
+.PHONY : pid/CMakeFiles/controller_adaptive_y.dir/rule
+
+# Convenience name for target.
+controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/rule
+
+.PHONY : controller_adaptive_y
+
+# fast build rule for target.
+controller_adaptive_y/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_y.dir/build.make pid/CMakeFiles/controller_adaptive_y.dir/build
+.PHONY : controller_adaptive_y/fast
 
 # Convenience name for target.
 pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
@@ -615,32 +630,59 @@ pid_gencpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/pid_gencpp.dir/build.make pid/CMakeFiles/pid_gencpp.dir/build
 .PHONY : pid_gencpp/fast
 
-src/controller_adaptive.o: src/controller_adaptive.cpp.o
+src/controller_adaptive_x.o: src/controller_adaptive_x.cpp.o
 
-.PHONY : src/controller_adaptive.o
+.PHONY : src/controller_adaptive_x.o
 
 # target to build an object file
-src/controller_adaptive.cpp.o:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive.dir/build.make pid/CMakeFiles/controller_adaptive.dir/src/controller_adaptive.cpp.o
-.PHONY : src/controller_adaptive.cpp.o
+src/controller_adaptive_x.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_x.dir/build.make pid/CMakeFiles/controller_adaptive_x.dir/src/controller_adaptive_x.cpp.o
+.PHONY : src/controller_adaptive_x.cpp.o
 
-src/controller_adaptive.i: src/controller_adaptive.cpp.i
+src/controller_adaptive_x.i: src/controller_adaptive_x.cpp.i
 
-.PHONY : src/controller_adaptive.i
+.PHONY : src/controller_adaptive_x.i
 
 # target to preprocess a source file
-src/controller_adaptive.cpp.i:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive.dir/build.make pid/CMakeFiles/controller_adaptive.dir/src/controller_adaptive.cpp.i
-.PHONY : src/controller_adaptive.cpp.i
+src/controller_adaptive_x.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_x.dir/build.make pid/CMakeFiles/controller_adaptive_x.dir/src/controller_adaptive_x.cpp.i
+.PHONY : src/controller_adaptive_x.cpp.i
 
-src/controller_adaptive.s: src/controller_adaptive.cpp.s
+src/controller_adaptive_x.s: src/controller_adaptive_x.cpp.s
 
-.PHONY : src/controller_adaptive.s
+.PHONY : src/controller_adaptive_x.s
 
 # target to generate assembly for a file
-src/controller_adaptive.cpp.s:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive.dir/build.make pid/CMakeFiles/controller_adaptive.dir/src/controller_adaptive.cpp.s
-.PHONY : src/controller_adaptive.cpp.s
+src/controller_adaptive_x.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_x.dir/build.make pid/CMakeFiles/controller_adaptive_x.dir/src/controller_adaptive_x.cpp.s
+.PHONY : src/controller_adaptive_x.cpp.s
+
+src/controller_adaptive_y.o: src/controller_adaptive_y.cpp.o
+
+.PHONY : src/controller_adaptive_y.o
+
+# target to build an object file
+src/controller_adaptive_y.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_y.dir/build.make pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o
+.PHONY : src/controller_adaptive_y.cpp.o
+
+src/controller_adaptive_y.i: src/controller_adaptive_y.cpp.i
+
+.PHONY : src/controller_adaptive_y.i
+
+# target to preprocess a source file
+src/controller_adaptive_y.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_y.dir/build.make pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.i
+.PHONY : src/controller_adaptive_y.cpp.i
+
+src/controller_adaptive_y.s: src/controller_adaptive_y.cpp.s
+
+.PHONY : src/controller_adaptive_y.s
+
+# target to generate assembly for a file
+src/controller_adaptive_y.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f pid/CMakeFiles/controller_adaptive_y.dir/build.make pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.s
+.PHONY : src/controller_adaptive_y.cpp.s
 
 # Help Target
 help:
@@ -672,7 +714,6 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... controller_adaptive"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... pid_generate_messages"
 	@echo "... _pid_generate_messages_check_deps_plant_msg"
@@ -682,12 +723,17 @@ help:
 	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... _pid_generate_messages_check_deps_pid_const_msg"
+	@echo "... controller_adaptive_x"
 	@echo "... pid_generate_messages_cpp"
+	@echo "... controller_adaptive_y"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
-	@echo "... src/controller_adaptive.o"
-	@echo "... src/controller_adaptive.i"
-	@echo "... src/controller_adaptive.s"
+	@echo "... src/controller_adaptive_x.o"
+	@echo "... src/controller_adaptive_x.i"
+	@echo "... src/controller_adaptive_x.s"
+	@echo "... src/controller_adaptive_y.o"
+	@echo "... src/controller_adaptive_y.i"
+	@echo "... src/controller_adaptive_y.s"
 .PHONY : help
 
 

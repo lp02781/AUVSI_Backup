@@ -517,19 +517,6 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named controller_adaptive
-
-# Build rule for target.
-controller_adaptive: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_adaptive
-.PHONY : controller_adaptive
-
-# fast build rule for target.
-controller_adaptive/fast:
-	$(MAKE) -f pid/CMakeFiles/controller_adaptive.dir/build.make pid/CMakeFiles/controller_adaptive.dir/build
-.PHONY : controller_adaptive/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -634,6 +621,19 @@ _pid_generate_messages_check_deps_pid_const_msg/fast:
 .PHONY : _pid_generate_messages_check_deps_pid_const_msg/fast
 
 #=============================================================================
+# Target rules for targets named controller_adaptive_x
+
+# Build rule for target.
+controller_adaptive_x: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_adaptive_x
+.PHONY : controller_adaptive_x
+
+# fast build rule for target.
+controller_adaptive_x/fast:
+	$(MAKE) -f pid/CMakeFiles/controller_adaptive_x.dir/build.make pid/CMakeFiles/controller_adaptive_x.dir/build
+.PHONY : controller_adaptive_x/fast
+
+#=============================================================================
 # Target rules for targets named pid_generate_messages_cpp
 
 # Build rule for target.
@@ -645,6 +645,19 @@ pid_generate_messages_cpp: cmake_check_build_system
 pid_generate_messages_cpp/fast:
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_cpp.dir/build.make pid/CMakeFiles/pid_generate_messages_cpp.dir/build
 .PHONY : pid_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named controller_adaptive_y
+
+# Build rule for target.
+controller_adaptive_y: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_adaptive_y
+.PHONY : controller_adaptive_y
+
+# fast build rule for target.
+controller_adaptive_y/fast:
+	$(MAKE) -f pid/CMakeFiles/controller_adaptive_y.dir/build.make pid/CMakeFiles/controller_adaptive_y.dir/build
+.PHONY : controller_adaptive_y/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
@@ -1310,7 +1323,6 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... controller_adaptive"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... pid_generate_messages"
 	@echo "... _pid_generate_messages_check_deps_plant_msg"
@@ -1319,7 +1331,9 @@ help:
 	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... _pid_generate_messages_check_deps_pid_const_msg"
+	@echo "... controller_adaptive_x"
 	@echo "... pid_generate_messages_cpp"
+	@echo "... controller_adaptive_y"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
 	@echo "... mavros_msgs_generate_messages_py"
