@@ -1,0 +1,7 @@
+bool override_status
+bool image_front_status
+bool image_back_status
+bool green_hough_status
+bool red_hough_status
+bool blue_hough_status
+

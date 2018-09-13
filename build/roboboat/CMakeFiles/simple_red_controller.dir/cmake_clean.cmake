@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/roboboat/simple_red_controller.pdb"
-  "/home/amvui/AUVSI/devel/lib/roboboat/simple_red_controller"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/simple_red_controller.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/simple_red_controller"
 )
 
 # Per-language clean rules from dependency scanning.

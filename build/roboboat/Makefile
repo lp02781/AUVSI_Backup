@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,6 +78,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -100,28 +111,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -133,16 +122,27 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles /home/amvui/AUVSI/build/roboboat/CMakeFiles/progress.marks
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles 0
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles /home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/progress.marks
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/clean
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,67 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/preinstall
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/preinstall
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-roboboat/CMakeFiles/green_hough.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/green_hough.dir/rule
-.PHONY : roboboat/CMakeFiles/green_hough.dir/rule
-
-# Convenience name for target.
-green_hough: roboboat/CMakeFiles/green_hough.dir/rule
-
-.PHONY : green_hough
-
-# fast build rule for target.
-green_hough/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/build
-.PHONY : green_hough/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/image_front.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/image_front.dir/rule
-.PHONY : roboboat/CMakeFiles/image_front.dir/rule
-
-# Convenience name for target.
-image_front: roboboat/CMakeFiles/image_front.dir/rule
-
-.PHONY : image_front
-
-# fast build rule for target.
-image_front/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/build
-.PHONY : image_front/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/simple_red_controller.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/simple_red_controller.dir/rule
-.PHONY : roboboat/CMakeFiles/simple_red_controller.dir/rule
-
-# Convenience name for target.
-simple_red_controller: roboboat/CMakeFiles/simple_red_controller.dir/rule
-
-.PHONY : simple_red_controller
-
-# fast build rule for target.
-simple_red_controller/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/simple_red_controller.dir/build.make roboboat/CMakeFiles/simple_red_controller.dir/build
-.PHONY : simple_red_controller/fast
-
-# Convenience name for target.
 roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -222,567 +177,12 @@ mavros_msgs_generate_messages_py: roboboat/CMakeFiles/mavros_msgs_generate_messa
 
 # fast build rule for target.
 mavros_msgs_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
 .PHONY : mavros_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_eus: roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/node_controller.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/node_controller.dir/rule
-.PHONY : roboboat/CMakeFiles/node_controller.dir/rule
-
-# Convenience name for target.
-node_controller: roboboat/CMakeFiles/node_controller.dir/rule
-
-.PHONY : node_controller
-
-# fast build rule for target.
-node_controller/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/node_controller.dir/build.make roboboat/CMakeFiles/node_controller.dir/build
-.PHONY : node_controller/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/avoid_controller.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/avoid_controller.dir/rule
-.PHONY : roboboat/CMakeFiles/avoid_controller.dir/rule
-
-# Convenience name for target.
-avoid_controller: roboboat/CMakeFiles/avoid_controller.dir/rule
-
-.PHONY : avoid_controller
-
-# fast build rule for target.
-avoid_controller/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/avoid_controller.dir/build.make roboboat/CMakeFiles/avoid_controller.dir/build
-.PHONY : avoid_controller/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_eus: roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_eus
-
-# fast build rule for target.
-geographic_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
-.PHONY : geographic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_cpp: roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_cpp
-
-# fast build rule for target.
-mavros_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
-.PHONY : mavros_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_nodejs: roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geographic_msgs_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
-.PHONY : geographic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/rule
-
-# Convenience name for target.
-_roboboat_generate_messages_check_deps_flight_mode: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/rule
-
-.PHONY : _roboboat_generate_messages_check_deps_flight_mode
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_flight_mode/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_flight_mode/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_lisp: roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_lisp
-
-# fast build rule for target.
-mavros_msgs_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
-.PHONY : mavros_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/rule
-
-# Convenience name for target.
-_roboboat_generate_messages_check_deps_setpoint: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/rule
-
-.PHONY : _roboboat_generate_messages_check_deps_setpoint
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_setpoint/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_setpoint/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/motor_controller.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/motor_controller.dir/rule
-.PHONY : roboboat/CMakeFiles/motor_controller.dir/rule
-
-# Convenience name for target.
-motor_controller: roboboat/CMakeFiles/motor_controller.dir/rule
-
-.PHONY : motor_controller
-
-# fast build rule for target.
-motor_controller/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/build
-.PHONY : motor_controller/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_cpp: roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
-.PHONY : geographic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_py: roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_py
-
-# fast build rule for target.
-geographic_msgs_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
-.PHONY : geographic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_lisp: roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
-.PHONY : geographic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_nodejs: roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-mavros_msgs_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
-.PHONY : mavros_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/remote_monitor.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/remote_monitor.dir/rule
-.PHONY : roboboat/CMakeFiles/remote_monitor.dir/rule
-
-# Convenience name for target.
-remote_monitor: roboboat/CMakeFiles/remote_monitor.dir/rule
-
-.PHONY : remote_monitor
-
-# fast build rule for target.
-remote_monitor/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/remote_monitor.dir/build.make roboboat/CMakeFiles/remote_monitor.dir/build
-.PHONY : remote_monitor/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/debug_makara.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/debug_makara.dir/rule
-.PHONY : roboboat/CMakeFiles/debug_makara.dir/rule
-
-# Convenience name for target.
-debug_makara: roboboat/CMakeFiles/debug_makara.dir/rule
-
-.PHONY : debug_makara
-
-# fast build rule for target.
-debug_makara/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/debug_makara.dir/build.make roboboat/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_cpp: roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_cpp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
-.PHONY : uuid_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/roboboat_genpy.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_genpy.dir/rule
-.PHONY : roboboat/CMakeFiles/roboboat_genpy.dir/rule
-
-# Convenience name for target.
-roboboat_genpy: roboboat/CMakeFiles/roboboat_genpy.dir/rule
-
-.PHONY : roboboat_genpy
-
-# fast build rule for target.
-roboboat_genpy/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_genpy.dir/build.make roboboat/CMakeFiles/roboboat_genpy.dir/build
-.PHONY : roboboat_genpy/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_nodejs: roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-uuid_msgs_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
-.PHONY : uuid_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/roboboat_genlisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_genlisp.dir/rule
-.PHONY : roboboat/CMakeFiles/roboboat_genlisp.dir/rule
-
-# Convenience name for target.
-roboboat_genlisp: roboboat/CMakeFiles/roboboat_genlisp.dir/rule
-
-.PHONY : roboboat_genlisp
-
-# fast build rule for target.
-roboboat_genlisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_genlisp.dir/build.make roboboat/CMakeFiles/roboboat_genlisp.dir/build
-.PHONY : roboboat_genlisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/red_hough.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/red_hough.dir/rule
-.PHONY : roboboat/CMakeFiles/red_hough.dir/rule
-
-# Convenience name for target.
-red_hough: roboboat/CMakeFiles/red_hough.dir/rule
-
-.PHONY : red_hough
-
-# fast build rule for target.
-red_hough/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/build
-.PHONY : red_hough/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_lisp: roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_lisp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
-.PHONY : uuid_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_py: roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_py
-
-# fast build rule for target.
-uuid_msgs_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
-.PHONY : uuid_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/roboboat_generate_messages.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
-.PHONY : roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
-
-# Convenience name for target.
-roboboat_generate_messages: roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
-
-.PHONY : roboboat_generate_messages
-
-# fast build rule for target.
-roboboat_generate_messages/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages.dir/build
-.PHONY : roboboat_generate_messages/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/rule
-
-# Convenience name for target.
-_roboboat_generate_messages_check_deps_rc_number: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/rule
-
-.PHONY : _roboboat_generate_messages_check_deps_rc_number
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_rc_number/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_rc_number/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
-
-# Convenience name for target.
-_roboboat_generate_messages_check_deps_override_motor: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
-
-.PHONY : _roboboat_generate_messages_check_deps_override_motor
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_override_motor/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_override_motor/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
-
-# Convenience name for target.
-_roboboat_generate_messages_check_deps_image_process: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
-
-.PHONY : _roboboat_generate_messages_check_deps_image_process
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_image_process/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_image_process/fast
-
-# Convenience name for target.
 roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
 .PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -792,27 +192,522 @@ mavros_msgs_generate_messages_eus: roboboat/CMakeFiles/mavros_msgs_generate_mess
 
 # fast build rule for target.
 mavros_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/rule
-.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/rule
+roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-_roboboat_generate_messages_check_deps_node_master: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/rule
+uuid_msgs_generate_messages_eus: roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 
-.PHONY : _roboboat_generate_messages_check_deps_node_master
+.PHONY : uuid_msgs_generate_messages_eus
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_node_master/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_node_master/fast
+uuid_msgs_generate_messages_eus/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+.PHONY : uuid_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
+.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_eus: roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_eus
+
+# fast build rule for target.
+geographic_msgs_generate_messages_eus/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
+.PHONY : geographic_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
+.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+mavros_msgs_generate_messages_cpp: roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : mavros_msgs_generate_messages_cpp
+
+# fast build rule for target.
+mavros_msgs_generate_messages_cpp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
+.PHONY : mavros_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_nodejs: roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geographic_msgs_generate_messages_nodejs/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
+.PHONY : geographic_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
+.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+mavros_msgs_generate_messages_lisp: roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : mavros_msgs_generate_messages_lisp
+
+# fast build rule for target.
+mavros_msgs_generate_messages_lisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
+.PHONY : mavros_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/motor_controller.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/motor_controller.dir/rule
+.PHONY : roboboat/CMakeFiles/motor_controller.dir/rule
+
+# Convenience name for target.
+motor_controller: roboboat/CMakeFiles/motor_controller.dir/rule
+
+.PHONY : motor_controller
+
+# fast build rule for target.
+motor_controller/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/build
+.PHONY : motor_controller/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
+.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_cpp: roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geographic_msgs_generate_messages_cpp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
+.PHONY : geographic_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
+.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_py: roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_py
+
+# fast build rule for target.
+geographic_msgs_generate_messages_py/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
+.PHONY : geographic_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
+.PHONY : roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_lisp: roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geographic_msgs_generate_messages_lisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
+.PHONY : geographic_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
+.PHONY : roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+mavros_msgs_generate_messages_nodejs: roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : mavros_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+mavros_msgs_generate_messages_nodejs/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
+.PHONY : mavros_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/blue_hough.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/blue_hough.dir/rule
+.PHONY : roboboat/CMakeFiles/blue_hough.dir/rule
+
+# Convenience name for target.
+blue_hough: roboboat/CMakeFiles/blue_hough.dir/rule
+
+.PHONY : blue_hough
+
+# fast build rule for target.
+blue_hough/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/build
+.PHONY : blue_hough/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_cpp: roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_cpp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_cpp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
+.PHONY : uuid_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/image_back.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/image_back.dir/rule
+.PHONY : roboboat/CMakeFiles/image_back.dir/rule
+
+# Convenience name for target.
+image_back: roboboat/CMakeFiles/image_back.dir/rule
+
+.PHONY : image_back
+
+# fast build rule for target.
+image_back/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/build
+.PHONY : image_back/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/roboboat_genpy.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_genpy.dir/rule
+.PHONY : roboboat/CMakeFiles/roboboat_genpy.dir/rule
+
+# Convenience name for target.
+roboboat_genpy: roboboat/CMakeFiles/roboboat_genpy.dir/rule
+
+.PHONY : roboboat_genpy
+
+# fast build rule for target.
+roboboat_genpy/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_genpy.dir/build.make roboboat/CMakeFiles/roboboat_genpy.dir/build
+.PHONY : roboboat_genpy/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
+.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_nodejs: roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+uuid_msgs_generate_messages_nodejs/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
+.PHONY : uuid_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/roboboat_genlisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_genlisp.dir/rule
+.PHONY : roboboat/CMakeFiles/roboboat_genlisp.dir/rule
+
+# Convenience name for target.
+roboboat_genlisp: roboboat/CMakeFiles/roboboat_genlisp.dir/rule
+
+.PHONY : roboboat_genlisp
+
+# fast build rule for target.
+roboboat_genlisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_genlisp.dir/build.make roboboat/CMakeFiles/roboboat_genlisp.dir/build
+.PHONY : roboboat_genlisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/red_hough.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/red_hough.dir/rule
+.PHONY : roboboat/CMakeFiles/red_hough.dir/rule
+
+# Convenience name for target.
+red_hough: roboboat/CMakeFiles/red_hough.dir/rule
+
+.PHONY : red_hough
+
+# fast build rule for target.
+red_hough/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/build
+.PHONY : red_hough/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_lisp: roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_lisp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_lisp/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
+.PHONY : uuid_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
+.PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_py: roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_py
+
+# fast build rule for target.
+uuid_msgs_generate_messages_py/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
+.PHONY : uuid_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/roboboat_generate_messages.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
+.PHONY : roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
+
+# Convenience name for target.
+roboboat_generate_messages: roboboat/CMakeFiles/roboboat_generate_messages.dir/rule
+
+.PHONY : roboboat_generate_messages
+
+# fast build rule for target.
+roboboat_generate_messages/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages.dir/build
+.PHONY : roboboat_generate_messages/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/override_monitor.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/override_monitor.dir/rule
+.PHONY : roboboat/CMakeFiles/override_monitor.dir/rule
+
+# Convenience name for target.
+override_monitor: roboboat/CMakeFiles/override_monitor.dir/rule
+
+.PHONY : override_monitor
+
+# fast build rule for target.
+override_monitor/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/build
+.PHONY : override_monitor/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
+.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
+
+# Convenience name for target.
+_roboboat_generate_messages_check_deps_image_process: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/rule
+
+.PHONY : _roboboat_generate_messages_check_deps_image_process
+
+# fast build rule for target.
+_roboboat_generate_messages_check_deps_image_process/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build
+.PHONY : _roboboat_generate_messages_check_deps_image_process/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
+.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
+
+# Convenience name for target.
+_roboboat_generate_messages_check_deps_override_motor: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/rule
+
+.PHONY : _roboboat_generate_messages_check_deps_override_motor
+
+# fast build rule for target.
+_roboboat_generate_messages_check_deps_override_motor/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build
+.PHONY : _roboboat_generate_messages_check_deps_override_motor/fast
+
+# Convenience name for target.
+roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/rule
+.PHONY : roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/rule
+
+# Convenience name for target.
+_roboboat_generate_messages_check_deps_node_status: roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/rule
+
+.PHONY : _roboboat_generate_messages_check_deps_node_status
+
+# fast build rule for target.
+_roboboat_generate_messages_check_deps_node_status/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build
+.PHONY : _roboboat_generate_messages_check_deps_node_status/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -822,12 +717,12 @@ roboboat_generate_messages_cpp: roboboat/CMakeFiles/roboboat_generate_messages_c
 
 # fast build rule for target.
 roboboat_generate_messages_cpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build
 .PHONY : roboboat_generate_messages_cpp/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_gencpp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_gencpp.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_gencpp.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_gencpp.dir/rule
 
 # Convenience name for target.
@@ -837,12 +732,27 @@ roboboat_gencpp: roboboat/CMakeFiles/roboboat_gencpp.dir/rule
 
 # fast build rule for target.
 roboboat_gencpp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_gencpp.dir/build.make roboboat/CMakeFiles/roboboat_gencpp.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_gencpp.dir/build.make roboboat/CMakeFiles/roboboat_gencpp.dir/build
 .PHONY : roboboat_gencpp/fast
 
 # Convenience name for target.
+roboboat/CMakeFiles/image_front.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/image_front.dir/rule
+.PHONY : roboboat/CMakeFiles/image_front.dir/rule
+
+# Convenience name for target.
+image_front: roboboat/CMakeFiles/image_front.dir/rule
+
+.PHONY : image_front
+
+# fast build rule for target.
+image_front/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/build
+.PHONY : image_front/fast
+
+# Convenience name for target.
 roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -852,12 +762,12 @@ roboboat_generate_messages_eus: roboboat/CMakeFiles/roboboat_generate_messages_e
 
 # fast build rule for target.
 roboboat_generate_messages_eus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build
 .PHONY : roboboat_generate_messages_eus/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_geneus.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_geneus.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_geneus.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_geneus.dir/rule
 
 # Convenience name for target.
@@ -867,12 +777,12 @@ roboboat_geneus: roboboat/CMakeFiles/roboboat_geneus.dir/rule
 
 # fast build rule for target.
 roboboat_geneus/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_geneus.dir/build.make roboboat/CMakeFiles/roboboat_geneus.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_geneus.dir/build.make roboboat/CMakeFiles/roboboat_geneus.dir/build
 .PHONY : roboboat_geneus/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -882,12 +792,12 @@ roboboat_generate_messages_lisp: roboboat/CMakeFiles/roboboat_generate_messages_
 
 # fast build rule for target.
 roboboat_generate_messages_lisp/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build
 .PHONY : roboboat_generate_messages_lisp/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -897,12 +807,12 @@ roboboat_generate_messages_nodejs: roboboat/CMakeFiles/roboboat_generate_message
 
 # fast build rule for target.
 roboboat_generate_messages_nodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build
 .PHONY : roboboat_generate_messages_nodejs/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_gennodejs.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_gennodejs.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_gennodejs.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -912,12 +822,12 @@ roboboat_gennodejs: roboboat/CMakeFiles/roboboat_gennodejs.dir/rule
 
 # fast build rule for target.
 roboboat_gennodejs/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_gennodejs.dir/build.make roboboat/CMakeFiles/roboboat_gennodejs.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_gennodejs.dir/build.make roboboat/CMakeFiles/roboboat_gennodejs.dir/build
 .PHONY : roboboat_gennodejs/fast
 
 # Convenience name for target.
 roboboat/CMakeFiles/roboboat_generate_messages_py.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_py.dir/rule
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/roboboat_generate_messages_py.dir/rule
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -927,62 +837,50 @@ roboboat_generate_messages_py: roboboat/CMakeFiles/roboboat_generate_messages_py
 
 # fast build rule for target.
 roboboat_generate_messages_py/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build
 .PHONY : roboboat_generate_messages_py/fast
 
-src/controller/avoid_controller.o: src/controller/avoid_controller.cpp.o
+# Convenience name for target.
+roboboat/CMakeFiles/green_hough.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 roboboat/CMakeFiles/green_hough.dir/rule
+.PHONY : roboboat/CMakeFiles/green_hough.dir/rule
 
-.PHONY : src/controller/avoid_controller.o
+# Convenience name for target.
+green_hough: roboboat/CMakeFiles/green_hough.dir/rule
 
-# target to build an object file
-src/controller/avoid_controller.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/avoid_controller.dir/build.make roboboat/CMakeFiles/avoid_controller.dir/src/controller/avoid_controller.cpp.o
-.PHONY : src/controller/avoid_controller.cpp.o
+.PHONY : green_hough
 
-src/controller/avoid_controller.i: src/controller/avoid_controller.cpp.i
+# fast build rule for target.
+green_hough/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/build
+.PHONY : green_hough/fast
 
-.PHONY : src/controller/avoid_controller.i
+src/image/blue_hough.o: src/image/blue_hough.cpp.o
 
-# target to preprocess a source file
-src/controller/avoid_controller.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/avoid_controller.dir/build.make roboboat/CMakeFiles/avoid_controller.dir/src/controller/avoid_controller.cpp.i
-.PHONY : src/controller/avoid_controller.cpp.i
-
-src/controller/avoid_controller.s: src/controller/avoid_controller.cpp.s
-
-.PHONY : src/controller/avoid_controller.s
-
-# target to generate assembly for a file
-src/controller/avoid_controller.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/avoid_controller.dir/build.make roboboat/CMakeFiles/avoid_controller.dir/src/controller/avoid_controller.cpp.s
-.PHONY : src/controller/avoid_controller.cpp.s
-
-src/controller/simple_red_controller.o: src/controller/simple_red_controller.cpp.o
-
-.PHONY : src/controller/simple_red_controller.o
+.PHONY : src/image/blue_hough.o
 
 # target to build an object file
-src/controller/simple_red_controller.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/simple_red_controller.dir/build.make roboboat/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o
-.PHONY : src/controller/simple_red_controller.cpp.o
+src/image/blue_hough.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/src/image/blue_hough.cpp.o
+.PHONY : src/image/blue_hough.cpp.o
 
-src/controller/simple_red_controller.i: src/controller/simple_red_controller.cpp.i
+src/image/blue_hough.i: src/image/blue_hough.cpp.i
 
-.PHONY : src/controller/simple_red_controller.i
+.PHONY : src/image/blue_hough.i
 
 # target to preprocess a source file
-src/controller/simple_red_controller.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/simple_red_controller.dir/build.make roboboat/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.i
-.PHONY : src/controller/simple_red_controller.cpp.i
+src/image/blue_hough.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/src/image/blue_hough.cpp.i
+.PHONY : src/image/blue_hough.cpp.i
 
-src/controller/simple_red_controller.s: src/controller/simple_red_controller.cpp.s
+src/image/blue_hough.s: src/image/blue_hough.cpp.s
 
-.PHONY : src/controller/simple_red_controller.s
+.PHONY : src/image/blue_hough.s
 
 # target to generate assembly for a file
-src/controller/simple_red_controller.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/simple_red_controller.dir/build.make roboboat/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.s
-.PHONY : src/controller/simple_red_controller.cpp.s
+src/image/blue_hough.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/src/image/blue_hough.cpp.s
+.PHONY : src/image/blue_hough.cpp.s
 
 src/image/green_hough.o: src/image/green_hough.cpp.o
 
@@ -990,7 +888,7 @@ src/image/green_hough.o: src/image/green_hough.cpp.o
 
 # target to build an object file
 src/image/green_hough.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.o
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.o
 .PHONY : src/image/green_hough.cpp.o
 
 src/image/green_hough.i: src/image/green_hough.cpp.i
@@ -999,7 +897,7 @@ src/image/green_hough.i: src/image/green_hough.cpp.i
 
 # target to preprocess a source file
 src/image/green_hough.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.i
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.i
 .PHONY : src/image/green_hough.cpp.i
 
 src/image/green_hough.s: src/image/green_hough.cpp.s
@@ -1008,8 +906,35 @@ src/image/green_hough.s: src/image/green_hough.cpp.s
 
 # target to generate assembly for a file
 src/image/green_hough.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.s
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.s
 .PHONY : src/image/green_hough.cpp.s
+
+src/image/image_back.o: src/image/image_back.cpp.o
+
+.PHONY : src/image/image_back.o
+
+# target to build an object file
+src/image/image_back.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/src/image/image_back.cpp.o
+.PHONY : src/image/image_back.cpp.o
+
+src/image/image_back.i: src/image/image_back.cpp.i
+
+.PHONY : src/image/image_back.i
+
+# target to preprocess a source file
+src/image/image_back.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/src/image/image_back.cpp.i
+.PHONY : src/image/image_back.cpp.i
+
+src/image/image_back.s: src/image/image_back.cpp.s
+
+.PHONY : src/image/image_back.s
+
+# target to generate assembly for a file
+src/image/image_back.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/src/image/image_back.cpp.s
+.PHONY : src/image/image_back.cpp.s
 
 src/image/image_front.o: src/image/image_front.cpp.o
 
@@ -1017,7 +942,7 @@ src/image/image_front.o: src/image/image_front.cpp.o
 
 # target to build an object file
 src/image/image_front.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.o
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.o
 .PHONY : src/image/image_front.cpp.o
 
 src/image/image_front.i: src/image/image_front.cpp.i
@@ -1026,7 +951,7 @@ src/image/image_front.i: src/image/image_front.cpp.i
 
 # target to preprocess a source file
 src/image/image_front.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.i
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.i
 .PHONY : src/image/image_front.cpp.i
 
 src/image/image_front.s: src/image/image_front.cpp.s
@@ -1035,7 +960,7 @@ src/image/image_front.s: src/image/image_front.cpp.s
 
 # target to generate assembly for a file
 src/image/image_front.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.s
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/src/image/image_front.cpp.s
 .PHONY : src/image/image_front.cpp.s
 
 src/image/red_hough.o: src/image/red_hough.cpp.o
@@ -1044,7 +969,7 @@ src/image/red_hough.o: src/image/red_hough.cpp.o
 
 # target to build an object file
 src/image/red_hough.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.o
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.o
 .PHONY : src/image/red_hough.cpp.o
 
 src/image/red_hough.i: src/image/red_hough.cpp.i
@@ -1053,7 +978,7 @@ src/image/red_hough.i: src/image/red_hough.cpp.i
 
 # target to preprocess a source file
 src/image/red_hough.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.i
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.i
 .PHONY : src/image/red_hough.cpp.i
 
 src/image/red_hough.s: src/image/red_hough.cpp.s
@@ -1062,35 +987,8 @@ src/image/red_hough.s: src/image/red_hough.cpp.s
 
 # target to generate assembly for a file
 src/image/red_hough.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.s
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.s
 .PHONY : src/image/red_hough.cpp.s
-
-src/main/debug_makara.o: src/main/debug_makara.cpp.o
-
-.PHONY : src/main/debug_makara.o
-
-# target to build an object file
-src/main/debug_makara.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/debug_makara.dir/build.make roboboat/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o
-.PHONY : src/main/debug_makara.cpp.o
-
-src/main/debug_makara.i: src/main/debug_makara.cpp.i
-
-.PHONY : src/main/debug_makara.i
-
-# target to preprocess a source file
-src/main/debug_makara.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/debug_makara.dir/build.make roboboat/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.i
-.PHONY : src/main/debug_makara.cpp.i
-
-src/main/debug_makara.s: src/main/debug_makara.cpp.s
-
-.PHONY : src/main/debug_makara.s
-
-# target to generate assembly for a file
-src/main/debug_makara.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/debug_makara.dir/build.make roboboat/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.s
-.PHONY : src/main/debug_makara.cpp.s
 
 src/main/motor_controller.o: src/main/motor_controller.cpp.o
 
@@ -1098,7 +996,7 @@ src/main/motor_controller.o: src/main/motor_controller.cpp.o
 
 # target to build an object file
 src/main/motor_controller.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.o
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.o
 .PHONY : src/main/motor_controller.cpp.o
 
 src/main/motor_controller.i: src/main/motor_controller.cpp.i
@@ -1107,7 +1005,7 @@ src/main/motor_controller.i: src/main/motor_controller.cpp.i
 
 # target to preprocess a source file
 src/main/motor_controller.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.i
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.i
 .PHONY : src/main/motor_controller.cpp.i
 
 src/main/motor_controller.s: src/main/motor_controller.cpp.s
@@ -1116,62 +1014,35 @@ src/main/motor_controller.s: src/main/motor_controller.cpp.s
 
 # target to generate assembly for a file
 src/main/motor_controller.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.s
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.s
 .PHONY : src/main/motor_controller.cpp.s
 
-src/main/node_controller.o: src/main/node_controller.cpp.o
+src/main/override_monitor.o: src/main/override_monitor.cpp.o
 
-.PHONY : src/main/node_controller.o
-
-# target to build an object file
-src/main/node_controller.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/node_controller.dir/build.make roboboat/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o
-.PHONY : src/main/node_controller.cpp.o
-
-src/main/node_controller.i: src/main/node_controller.cpp.i
-
-.PHONY : src/main/node_controller.i
-
-# target to preprocess a source file
-src/main/node_controller.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/node_controller.dir/build.make roboboat/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i
-.PHONY : src/main/node_controller.cpp.i
-
-src/main/node_controller.s: src/main/node_controller.cpp.s
-
-.PHONY : src/main/node_controller.s
-
-# target to generate assembly for a file
-src/main/node_controller.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/node_controller.dir/build.make roboboat/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
-.PHONY : src/main/node_controller.cpp.s
-
-src/main/remote_monitor.o: src/main/remote_monitor.cpp.o
-
-.PHONY : src/main/remote_monitor.o
+.PHONY : src/main/override_monitor.o
 
 # target to build an object file
-src/main/remote_monitor.cpp.o:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/remote_monitor.dir/build.make roboboat/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o
-.PHONY : src/main/remote_monitor.cpp.o
+src/main/override_monitor.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/src/main/override_monitor.cpp.o
+.PHONY : src/main/override_monitor.cpp.o
 
-src/main/remote_monitor.i: src/main/remote_monitor.cpp.i
+src/main/override_monitor.i: src/main/override_monitor.cpp.i
 
-.PHONY : src/main/remote_monitor.i
+.PHONY : src/main/override_monitor.i
 
 # target to preprocess a source file
-src/main/remote_monitor.cpp.i:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/remote_monitor.dir/build.make roboboat/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.i
-.PHONY : src/main/remote_monitor.cpp.i
+src/main/override_monitor.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/src/main/override_monitor.cpp.i
+.PHONY : src/main/override_monitor.cpp.i
 
-src/main/remote_monitor.s: src/main/remote_monitor.cpp.s
+src/main/override_monitor.s: src/main/override_monitor.cpp.s
 
-.PHONY : src/main/remote_monitor.s
+.PHONY : src/main/override_monitor.s
 
 # target to generate assembly for a file
-src/main/remote_monitor.cpp.s:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/remote_monitor.dir/build.make roboboat/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
-.PHONY : src/main/remote_monitor.cpp.s
+src/main/override_monitor.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/src/main/override_monitor.cpp.s
+.PHONY : src/main/override_monitor.cpp.s
 
 # Help Target
 help:
@@ -1181,17 +1052,12 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
-	@echo "... green_hough"
-	@echo "... install/strip"
-	@echo "... image_front"
-	@echo "... rebuild_cache"
-	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"
+	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... node_controller"
-	@echo "... avoid_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -1199,10 +1065,8 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_nodejs"
-	@echo "... _roboboat_generate_messages_check_deps_flight_mode"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
-	@echo "... _roboboat_generate_messages_check_deps_setpoint"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... motor_controller"
 	@echo "... geographic_msgs_generate_messages_cpp"
@@ -1210,11 +1074,11 @@ help:
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
-	@echo "... remote_monitor"
-	@echo "... debug_makara"
+	@echo "... blue_hough"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... image_back"
 	@echo "... roboboat_genpy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
@@ -1223,47 +1087,43 @@ help:
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... roboboat_generate_messages"
-	@echo "... _roboboat_generate_messages_check_deps_rc_number"
-	@echo "... _roboboat_generate_messages_check_deps_override_motor"
+	@echo "... override_monitor"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... _roboboat_generate_messages_check_deps_image_process"
-	@echo "... mavros_msgs_generate_messages_eus"
-	@echo "... _roboboat_generate_messages_check_deps_node_master"
+	@echo "... _roboboat_generate_messages_check_deps_override_motor"
+	@echo "... _roboboat_generate_messages_check_deps_node_status"
 	@echo "... roboboat_generate_messages_cpp"
 	@echo "... roboboat_gencpp"
+	@echo "... install/strip"
+	@echo "... image_front"
 	@echo "... roboboat_generate_messages_eus"
 	@echo "... roboboat_geneus"
 	@echo "... roboboat_generate_messages_lisp"
 	@echo "... roboboat_generate_messages_nodejs"
 	@echo "... roboboat_gennodejs"
 	@echo "... roboboat_generate_messages_py"
-	@echo "... src/controller/avoid_controller.o"
-	@echo "... src/controller/avoid_controller.i"
-	@echo "... src/controller/avoid_controller.s"
-	@echo "... src/controller/simple_red_controller.o"
-	@echo "... src/controller/simple_red_controller.i"
-	@echo "... src/controller/simple_red_controller.s"
+	@echo "... green_hough"
+	@echo "... src/image/blue_hough.o"
+	@echo "... src/image/blue_hough.i"
+	@echo "... src/image/blue_hough.s"
 	@echo "... src/image/green_hough.o"
 	@echo "... src/image/green_hough.i"
 	@echo "... src/image/green_hough.s"
+	@echo "... src/image/image_back.o"
+	@echo "... src/image/image_back.i"
+	@echo "... src/image/image_back.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"
 	@echo "... src/image/red_hough.o"
 	@echo "... src/image/red_hough.i"
 	@echo "... src/image/red_hough.s"
-	@echo "... src/main/debug_makara.o"
-	@echo "... src/main/debug_makara.i"
-	@echo "... src/main/debug_makara.s"
 	@echo "... src/main/motor_controller.o"
 	@echo "... src/main/motor_controller.i"
 	@echo "... src/main/motor_controller.s"
-	@echo "... src/main/node_controller.o"
-	@echo "... src/main/node_controller.i"
-	@echo "... src/main/node_controller.s"
-	@echo "... src/main/remote_monitor.o"
-	@echo "... src/main/remote_monitor.i"
-	@echo "... src/main/remote_monitor.s"
+	@echo "... src/main/override_monitor.o"
+	@echo "... src/main/override_monitor.i"
+	@echo "... src/main/override_monitor.s"
 .PHONY : help
 
 
@@ -1275,6 +1135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

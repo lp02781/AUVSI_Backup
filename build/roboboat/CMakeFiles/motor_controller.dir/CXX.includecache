@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/amvui/AUVSI/devel/include/roboboat/node_master.h
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AUVSI/devel/include/roboboat/override_motor.h
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h
 string
 -
 vector
@@ -38,19 +38,39 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AUVSI/src/roboboat/include/roboboat/haha.hpp
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
-/home/amvui/AUVSI/src/roboboat/src/main/motor_controller.cpp
-../../include/roboboat/haha.hpp
-/home/amvui/AUVSI/src/roboboat/include/roboboat/haha.hpp
-ros/ros.h
-/home/amvui/AUVSI/src/roboboat/src/main/ros/ros.h
-mavros_msgs/OverrideRCIn.h
-/home/amvui/AUVSI/src/roboboat/src/main/mavros_msgs/OverrideRCIn.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/haha.hpp
+roboboat/image_process.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/image_process.h
+roboboat/node_status.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/node_status.h
 roboboat/override_motor.h
-/home/amvui/AUVSI/src/roboboat/src/main/roboboat/override_motor.h
-roboboat/node_master.h
-/home/amvui/AUVSI/src/roboboat/src/main/roboboat/node_master.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/override_motor.h
+roboboat/node_status.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/node_status.h
+
+/home/mfikih15/Documents/AUVSI/src/roboboat/src/main/motor_controller.cpp
+../../include/roboboat/haha.hpp
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/haha.hpp
+ros/ros.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/src/main/ros/ros.h
+mavros_msgs/OverrideRCIn.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/src/main/mavros_msgs/OverrideRCIn.h
 iostream
 -
 

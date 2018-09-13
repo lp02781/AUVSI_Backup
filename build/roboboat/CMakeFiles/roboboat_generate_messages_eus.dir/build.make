@@ -43,67 +43,46 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for roboboat_generate_messages_eus.
 
 # Include the progress variables for this target.
 include roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/progress.make
 
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/rc_number.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/flight_mode.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/node_master.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/setpoint.l
-roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/manifest.l
+roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/node_status.l
+roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l
+roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l
+roboboat/CMakeFiles/roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/manifest.l
 
 
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/rc_number.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/rc_number.l: /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from roboboat/rc_number.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/node_status.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/node_status.l: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from roboboat/node_status.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg
 
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l: /home/amvui/AUVSI/src/roboboat/msg/image_process.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from roboboat/image_process.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from roboboat/override_motor.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg
 
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/flight_mode.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/flight_mode.l: /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from roboboat/flight_mode.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from roboboat/image_process.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg
 
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/node_master.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/node_master.l: /home/amvui/AUVSI/src/roboboat/msg/node_master.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from roboboat/node_master.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/node_master.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
-
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l: /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from roboboat/override_motor.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
-
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/setpoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/setpoint.l: /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from roboboat/setpoint.msg"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg
-
-/home/amvui/AUVSI/devel/share/roseus/ros/roboboat/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp manifest code for roboboat"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/amvui/AUVSI/devel/share/roseus/ros/roboboat roboboat mavros_msgs std_msgs sensor_msgs
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for roboboat"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat roboboat mavros_msgs std_msgs sensor_msgs
 
 roboboat_generate_messages_eus: roboboat/CMakeFiles/roboboat_generate_messages_eus
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/rc_number.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/flight_mode.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/node_master.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/msg/setpoint.l
-roboboat_generate_messages_eus: /home/amvui/AUVSI/devel/share/roseus/ros/roboboat/manifest.l
+roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/node_status.l
+roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/override_motor.l
+roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/msg/image_process.l
+roboboat_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/roboboat/manifest.l
 roboboat_generate_messages_eus: roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build.make
 
 .PHONY : roboboat_generate_messages_eus
@@ -114,10 +93,10 @@ roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build: roboboat_generate_
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build
 
 roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/clean:
-	cd /home/amvui/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/clean
 
 roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/roboboat /home/amvui/AUVSI/build /home/amvui/AUVSI/build/roboboat /home/amvui/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/roboboat /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/roboboat /home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/depend
 

@@ -43,67 +43,43 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for roboboat_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/progress.make
 
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/rc_number.h
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/image_process.h
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/flight_mode.h
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/node_master.h
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/override_motor.h
-roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/setpoint.h
+roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h
+roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h
+roboboat/CMakeFiles/roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h
 
 
-/home/amvui/AUVSI/devel/include/roboboat/rc_number.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/rc_number.h: /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg
-/home/amvui/AUVSI/devel/include/roboboat/rc_number.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from roboboat/rc_number.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from roboboat/node_status.msg"
+	cd /home/mfikih15/Documents/AUVSI/src/roboboat && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/amvui/AUVSI/devel/include/roboboat/image_process.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/image_process.h: /home/amvui/AUVSI/src/roboboat/msg/image_process.msg
-/home/amvui/AUVSI/devel/include/roboboat/image_process.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from roboboat/image_process.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from roboboat/override_motor.msg"
+	cd /home/mfikih15/Documents/AUVSI/src/roboboat && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/amvui/AUVSI/devel/include/roboboat/flight_mode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/flight_mode.h: /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg
-/home/amvui/AUVSI/devel/include/roboboat/flight_mode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from roboboat/flight_mode.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/amvui/AUVSI/devel/include/roboboat/node_master.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/node_master.h: /home/amvui/AUVSI/src/roboboat/msg/node_master.msg
-/home/amvui/AUVSI/devel/include/roboboat/node_master.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from roboboat/node_master.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/node_master.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/amvui/AUVSI/devel/include/roboboat/override_motor.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/override_motor.h: /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg
-/home/amvui/AUVSI/devel/include/roboboat/override_motor.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from roboboat/override_motor.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/amvui/AUVSI/devel/include/roboboat/setpoint.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/amvui/AUVSI/devel/include/roboboat/setpoint.h: /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg
-/home/amvui/AUVSI/devel/include/roboboat/setpoint.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from roboboat/setpoint.msg"
-	cd /home/amvui/AUVSI/src/roboboat && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from roboboat/image_process.msg"
+	cd /home/mfikih15/Documents/AUVSI/src/roboboat && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/include/roboboat -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 roboboat_generate_messages_cpp: roboboat/CMakeFiles/roboboat_generate_messages_cpp
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/rc_number.h
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/image_process.h
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/flight_mode.h
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/node_master.h
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/override_motor.h
-roboboat_generate_messages_cpp: /home/amvui/AUVSI/devel/include/roboboat/setpoint.h
+roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h
+roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h
+roboboat_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h
 roboboat_generate_messages_cpp: roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build.make
 
 .PHONY : roboboat_generate_messages_cpp
@@ -114,10 +90,10 @@ roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build: roboboat_generate_
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build
 
 roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/clean:
-	cd /home/amvui/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/clean
 
 roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/roboboat /home/amvui/AUVSI/build /home/amvui/AUVSI/build/roboboat /home/amvui/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/roboboat /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/roboboat /home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/depend
 

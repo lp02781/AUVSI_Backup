@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/image_front.dir/src/image/image_front.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/roboboat/image_front.pdb"
-  "/home/amvui/AUVSI/devel/lib/roboboat/image_front"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/image_front.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/image_front"
 )
 
 # Per-language clean rules from dependency scanning.

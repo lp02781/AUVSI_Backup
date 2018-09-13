@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/amvui/AUVSI/devel/include/roboboat/image_process.h
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h
 string
 -
 vector
@@ -22,9 +22,49 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AUVSI/src/roboboat/include/roboboat/haha.hpp
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
-/home/amvui/AUVSI/src/roboboat/src/image/green_hough.cpp
+/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/haha.hpp
+roboboat/image_process.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/image_process.h
+roboboat/node_status.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/node_status.h
+roboboat/override_motor.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/override_motor.h
+roboboat/node_status.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/roboboat/node_status.h
+
+/home/mfikih15/Documents/AUVSI/src/roboboat/src/image/green_hough.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -32,7 +72,7 @@ image_transport/image_transport.h
 opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
-/home/amvui/AUVSI/src/roboboat/src/image/opencv2/imgproc/imgproc.hpp
+/home/mfikih15/Documents/AUVSI/src/roboboat/src/image/opencv2/imgproc/imgproc.hpp
 cv_bridge/cv_bridge.h
 -
 iostream
@@ -40,9 +80,7 @@ iostream
 stdio.h
 -
 ../../include/roboboat/haha.hpp
-/home/amvui/AUVSI/src/roboboat/include/roboboat/haha.hpp
-roboboat/image_process.h
-/home/amvui/AUVSI/src/roboboat/src/image/roboboat/image_process.h
+/home/mfikih15/Documents/AUVSI/src/roboboat/include/roboboat/haha.hpp
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

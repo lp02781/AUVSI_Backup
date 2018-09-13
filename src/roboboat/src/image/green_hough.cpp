@@ -6,7 +6,6 @@
 #include <iostream>
 #include <stdio.h>
 #include "../../include/roboboat/haha.hpp"
-#include "roboboat/image_process.h"
 
 using namespace std;
 using namespace cv;
@@ -26,19 +25,22 @@ int sum_x;
 int sum_y;
 int count_circle;
 int state;
+bool green_hough_status = false;
 
 void imageProcessing();
 
 roboboat::image_process image;
 ros::Publisher pub_state_camera;
-
+void node_status_cb(const roboboat::node_status& msg);
 void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
   try
   {
     Original = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
     waitKey(10);
-    imageProcessing();
+    if(green_hough_status == true){
+		imageProcessing();
+	}
   }
   catch (cv_bridge::Exception& e)
   {
@@ -53,9 +55,10 @@ int main(int argc, char **argv){
 	
 	image_transport::ImageTransport it(nh);
 	
-	pub_state_camera 	= nh.advertise<roboboat::image_process>("/auvsi/image/process", 1);
+	pub_state_camera 	= nh.advertise<roboboat::image_process>("/roboboat/image/process", 1);
 	ros::Subscriber sub = nh.subscribe("camera/image/compressed", 1, imageCallback);
-
+	ros::Subscriber sub_node_status = nh.subscribe("/auvsi/node/status", 1, node_status_cb);
+	ROS_WARN("NC : green_hough.cpp active");
 	namedWindow("panel_green", CV_WINDOW_AUTOSIZE);
 	
 	createTrackbar("LowH", "panel_green", &LowH_green, 255);
@@ -118,10 +121,12 @@ void imageProcessing(){
 	else{
 		state = 0;
 	}
-	image.state_green = state;
-	image.count_green = count_circle;
+	image.buoy_green = state;
 	pub_state_camera.publish(image);
 	
 	imshow("Threshold_Green", imgThresholded);
 	imshow("Original_Green", Original); 
+}
+void node_status_cb(const roboboat::node_status& msg){
+	green_hough_status=msg.green_hough_status;
 }

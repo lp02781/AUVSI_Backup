@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/avoid_controller.dir/src/controller/avoid_controller.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/roboboat/avoid_controller.pdb"
-  "/home/amvui/AUVSI/devel/lib/roboboat/avoid_controller"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/avoid_controller.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/avoid_controller"
 )
 
 # Per-language clean rules from dependency scanning.

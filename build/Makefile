@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,9 +135,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles /home/amvui/AUVSI/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles /home/mfikih15/Documents/AUVSI/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -595,6 +595,19 @@ pid_generate_messages_eus/fast:
 .PHONY : pid_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _pid_generate_messages_check_deps_controller_msg
+
+# Build rule for target.
+_pid_generate_messages_check_deps_controller_msg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _pid_generate_messages_check_deps_controller_msg
+.PHONY : _pid_generate_messages_check_deps_controller_msg
+
+# fast build rule for target.
+_pid_generate_messages_check_deps_controller_msg/fast:
+	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build
+.PHONY : _pid_generate_messages_check_deps_controller_msg/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -619,19 +632,6 @@ _pid_generate_messages_check_deps_pid_const_msg: cmake_check_build_system
 _pid_generate_messages_check_deps_pid_const_msg/fast:
 	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/build
 .PHONY : _pid_generate_messages_check_deps_pid_const_msg/fast
-
-#=============================================================================
-# Target rules for targets named _pid_generate_messages_check_deps_controller_msg
-
-# Build rule for target.
-_pid_generate_messages_check_deps_controller_msg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _pid_generate_messages_check_deps_controller_msg
-.PHONY : _pid_generate_messages_check_deps_controller_msg
-
-# fast build rule for target.
-_pid_generate_messages_check_deps_controller_msg/fast:
-	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build
-.PHONY : _pid_generate_messages_check_deps_controller_msg/fast
 
 #=============================================================================
 # Target rules for targets named pid_generate_messages_cpp
@@ -673,45 +673,6 @@ pid_gencpp/fast:
 .PHONY : pid_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named green_hough
-
-# Build rule for target.
-green_hough: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 green_hough
-.PHONY : green_hough
-
-# fast build rule for target.
-green_hough/fast:
-	$(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/build
-.PHONY : green_hough/fast
-
-#=============================================================================
-# Target rules for targets named image_front
-
-# Build rule for target.
-image_front: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_front
-.PHONY : image_front
-
-# fast build rule for target.
-image_front/fast:
-	$(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/build
-.PHONY : image_front/fast
-
-#=============================================================================
-# Target rules for targets named simple_red_controller
-
-# Build rule for target.
-simple_red_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple_red_controller
-.PHONY : simple_red_controller
-
-# fast build rule for target.
-simple_red_controller/fast:
-	$(MAKE) -f roboboat/CMakeFiles/simple_red_controller.dir/build.make roboboat/CMakeFiles/simple_red_controller.dir/build
-.PHONY : simple_red_controller/fast
-
-#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -725,6 +686,19 @@ mavros_msgs_generate_messages_py/fast:
 .PHONY : mavros_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_eus
+
+# Build rule for target.
+mavros_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_eus
+.PHONY : mavros_msgs_generate_messages_eus
+
+# fast build rule for target.
+mavros_msgs_generate_messages_eus/fast:
+	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
+.PHONY : mavros_msgs_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -736,32 +710,6 @@ uuid_msgs_generate_messages_eus: cmake_check_build_system
 uuid_msgs_generate_messages_eus/fast:
 	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
 .PHONY : uuid_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named node_controller
-
-# Build rule for target.
-node_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 node_controller
-.PHONY : node_controller
-
-# fast build rule for target.
-node_controller/fast:
-	$(MAKE) -f roboboat/CMakeFiles/node_controller.dir/build.make roboboat/CMakeFiles/node_controller.dir/build
-.PHONY : node_controller/fast
-
-#=============================================================================
-# Target rules for targets named avoid_controller
-
-# Build rule for target.
-avoid_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 avoid_controller
-.PHONY : avoid_controller
-
-# fast build rule for target.
-avoid_controller/fast:
-	$(MAKE) -f roboboat/CMakeFiles/avoid_controller.dir/build.make roboboat/CMakeFiles/avoid_controller.dir/build
-.PHONY : avoid_controller/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
@@ -842,19 +790,6 @@ geographic_msgs_generate_messages_nodejs/fast:
 .PHONY : geographic_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_flight_mode
-
-# Build rule for target.
-_roboboat_generate_messages_check_deps_flight_mode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_flight_mode
-.PHONY : _roboboat_generate_messages_check_deps_flight_mode
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_flight_mode/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_flight_mode.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_flight_mode/fast
-
-#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -879,19 +814,6 @@ mavros_msgs_generate_messages_lisp: cmake_check_build_system
 mavros_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
 .PHONY : mavros_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_setpoint
-
-# Build rule for target.
-_roboboat_generate_messages_check_deps_setpoint: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_setpoint
-.PHONY : _roboboat_generate_messages_check_deps_setpoint
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_setpoint/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_setpoint.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_setpoint/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
@@ -985,30 +907,17 @@ mavros_msgs_generate_messages_nodejs/fast:
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named remote_monitor
+# Target rules for targets named blue_hough
 
 # Build rule for target.
-remote_monitor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 remote_monitor
-.PHONY : remote_monitor
+blue_hough: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blue_hough
+.PHONY : blue_hough
 
 # fast build rule for target.
-remote_monitor/fast:
-	$(MAKE) -f roboboat/CMakeFiles/remote_monitor.dir/build.make roboboat/CMakeFiles/remote_monitor.dir/build
-.PHONY : remote_monitor/fast
-
-#=============================================================================
-# Target rules for targets named debug_makara
-
-# Build rule for target.
-debug_makara: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
-.PHONY : debug_makara
-
-# fast build rule for target.
-debug_makara/fast:
-	$(MAKE) -f roboboat/CMakeFiles/debug_makara.dir/build.make roboboat/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
+blue_hough/fast:
+	$(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/build
+.PHONY : blue_hough/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
@@ -1048,6 +957,19 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 geometry_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named image_back
+
+# Build rule for target.
+image_back: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_back
+.PHONY : image_back
+
+# fast build rule for target.
+image_back/fast:
+	$(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/build
+.PHONY : image_back/fast
 
 #=============================================================================
 # Target rules for targets named roboboat_genpy
@@ -1154,30 +1076,17 @@ roboboat_generate_messages/fast:
 .PHONY : roboboat_generate_messages/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_rc_number
+# Target rules for targets named override_monitor
 
 # Build rule for target.
-_roboboat_generate_messages_check_deps_rc_number: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_rc_number
-.PHONY : _roboboat_generate_messages_check_deps_rc_number
+override_monitor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 override_monitor
+.PHONY : override_monitor
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_rc_number/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_rc_number.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_rc_number/fast
-
-#=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_override_motor
-
-# Build rule for target.
-_roboboat_generate_messages_check_deps_override_motor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_override_motor
-.PHONY : _roboboat_generate_messages_check_deps_override_motor
-
-# fast build rule for target.
-_roboboat_generate_messages_check_deps_override_motor/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_override_motor/fast
+override_monitor/fast:
+	$(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/build
+.PHONY : override_monitor/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
@@ -1206,30 +1115,30 @@ _roboboat_generate_messages_check_deps_image_process/fast:
 .PHONY : _roboboat_generate_messages_check_deps_image_process/fast
 
 #=============================================================================
-# Target rules for targets named mavros_msgs_generate_messages_eus
+# Target rules for targets named _roboboat_generate_messages_check_deps_override_motor
 
 # Build rule for target.
-mavros_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_eus
-.PHONY : mavros_msgs_generate_messages_eus
+_roboboat_generate_messages_check_deps_override_motor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_override_motor
+.PHONY : _roboboat_generate_messages_check_deps_override_motor
 
 # fast build rule for target.
-mavros_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
-.PHONY : mavros_msgs_generate_messages_eus/fast
+_roboboat_generate_messages_check_deps_override_motor/fast:
+	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build
+.PHONY : _roboboat_generate_messages_check_deps_override_motor/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_node_master
+# Target rules for targets named _roboboat_generate_messages_check_deps_node_status
 
 # Build rule for target.
-_roboboat_generate_messages_check_deps_node_master: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_node_master
-.PHONY : _roboboat_generate_messages_check_deps_node_master
+_roboboat_generate_messages_check_deps_node_status: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_node_status
+.PHONY : _roboboat_generate_messages_check_deps_node_status
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_node_master/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_master.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_node_master/fast
+_roboboat_generate_messages_check_deps_node_status/fast:
+	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build
+.PHONY : _roboboat_generate_messages_check_deps_node_status/fast
 
 #=============================================================================
 # Target rules for targets named roboboat_generate_messages_cpp
@@ -1256,6 +1165,19 @@ roboboat_gencpp: cmake_check_build_system
 roboboat_gencpp/fast:
 	$(MAKE) -f roboboat/CMakeFiles/roboboat_gencpp.dir/build.make roboboat/CMakeFiles/roboboat_gencpp.dir/build
 .PHONY : roboboat_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named image_front
+
+# Build rule for target.
+image_front: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_front
+.PHONY : image_front
+
+# fast build rule for target.
+image_front/fast:
+	$(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/build
+.PHONY : image_front/fast
 
 #=============================================================================
 # Target rules for targets named roboboat_generate_messages_eus
@@ -1335,6 +1257,19 @@ roboboat_generate_messages_py/fast:
 	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build
 .PHONY : roboboat_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named green_hough
+
+# Build rule for target.
+green_hough: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 green_hough
+.PHONY : green_hough
+
+# fast build rule for target.
+green_hough/fast:
+	$(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/build
+.PHONY : green_hough/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1381,29 +1316,23 @@ help:
 	@echo "... _pid_generate_messages_check_deps_plant_msg"
 	@echo "... pid_genpy"
 	@echo "... pid_generate_messages_eus"
+	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... _pid_generate_messages_check_deps_pid_const_msg"
-	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... pid_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
-	@echo "... green_hough"
-	@echo "... image_front"
-	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"
+	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... node_controller"
-	@echo "... avoid_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_nodejs"
-	@echo "... _roboboat_generate_messages_check_deps_flight_mode"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
-	@echo "... _roboboat_generate_messages_check_deps_setpoint"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... motor_controller"
 	@echo "... geographic_msgs_generate_messages_cpp"
@@ -1411,11 +1340,11 @@ help:
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
-	@echo "... remote_monitor"
-	@echo "... debug_makara"
+	@echo "... blue_hough"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... image_back"
 	@echo "... roboboat_genpy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
@@ -1424,20 +1353,21 @@ help:
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... roboboat_generate_messages"
-	@echo "... _roboboat_generate_messages_check_deps_rc_number"
-	@echo "... _roboboat_generate_messages_check_deps_override_motor"
+	@echo "... override_monitor"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... _roboboat_generate_messages_check_deps_image_process"
-	@echo "... mavros_msgs_generate_messages_eus"
-	@echo "... _roboboat_generate_messages_check_deps_node_master"
+	@echo "... _roboboat_generate_messages_check_deps_override_motor"
+	@echo "... _roboboat_generate_messages_check_deps_node_status"
 	@echo "... roboboat_generate_messages_cpp"
 	@echo "... roboboat_gencpp"
+	@echo "... image_front"
 	@echo "... roboboat_generate_messages_eus"
 	@echo "... roboboat_geneus"
 	@echo "... roboboat_generate_messages_lisp"
 	@echo "... roboboat_generate_messages_nodejs"
 	@echo "... roboboat_gennodejs"
 	@echo "... roboboat_generate_messages_py"
+	@echo "... green_hough"
 .PHONY : help
 
 

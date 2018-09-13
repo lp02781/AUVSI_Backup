@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for uuid_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build: uuid_msgs_generate
 .PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
 
 roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/clean:
-	cd /home/amvui/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/uuid_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/uuid_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/clean
 
 roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/roboboat /home/amvui/AUVSI/build /home/amvui/AUVSI/build/roboboat /home/amvui/AUVSI/build/roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/roboboat /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/roboboat /home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/depend
 

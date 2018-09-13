@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/amvui/AUVSI/src/roboboat/src/main/remote_monitor.cpp" "/home/amvui/AUVSI/build/roboboat/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o"
+  "/home/mfikih15/Documents/AUVSI/src/roboboat/src/main/remote_monitor.cpp" "/home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/amvui/AUVSI/devel/include"
+  "/home/mfikih15/Documents/AUVSI/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"

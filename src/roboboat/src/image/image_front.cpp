@@ -4,12 +4,10 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <iostream>
-#include "roboboat/setpoint.h"
 
 using namespace cv;
-
-ros::Publisher pub_camera_setpoint;
-
+bool image_front_status = false;
+void node_status_cb(const roboboat::node_status& msg);
 Mat image;
 
 int main(int argc, char** argv)
@@ -18,20 +16,23 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("/camera/image", 1, true);
-	
+	ros::Subscriber sub_node_status = nh.subscribe("/auvsi/node/status", 1, node_status_cb);
 	ROS_WARN("NC : image_front.cpp active");
 	
-	VideoCapture cap(number_camera); 
+	VideoCapture cap(front_camera); 
 	if(!cap.isOpened()){
 		ROS_ERROR ("Error opening camera.");	  
 		return 1;
 	}
 	while (nh.ok()) {
 		cap.read(image);		
-		if(!image.empty()){	
+		if(!image.empty() && image_front_status == true){	
 			sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 			pub.publish(msg);
 		}
 		ros::spinOnce();
 	}
+}
+void node_status_cb(const roboboat::node_status& msg){
+	image_front_status=msg.image_front_status;
 }

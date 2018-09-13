@@ -1,0 +1,14 @@
+(cl:in-package roboboat-msg)
+(cl:export '(OVERRIDE_STATUS-VAL
+          OVERRIDE_STATUS
+          IMAGE_FRONT_STATUS-VAL
+          IMAGE_FRONT_STATUS
+          IMAGE_BACK_STATUS-VAL
+          IMAGE_BACK_STATUS
+          GREEN_HOUGH_STATUS-VAL
+          GREEN_HOUGH_STATUS
+          RED_HOUGH_STATUS-VAL
+          RED_HOUGH_STATUS
+          BLUE_HOUGH_STATUS-VAL
+          BLUE_HOUGH_STATUS
+))

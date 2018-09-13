@@ -1,9 +1,11 @@
+#include "roboboat/image_process.h"
+#include "roboboat/node_status.h"
+#include "roboboat/override_motor.h"
+#include "roboboat/node_status.h"
+
 #define STEERING 0
 #define THROTTLE 2
-
-#define SIMPLE_PIN 3
-//#define RECORD_PIN 4
-//#define PATH_PIN   5
+#define OVERRIDE 3
 
 #define PWM_UP 	1700
 #define PWM_LOW 1300
@@ -11,15 +13,14 @@
 #define MAX_PWM 1920
 #define MIN_PWM 1120
 
-#define MIDDLE_PWM 		1520
+#define MIDDLE_PWM 	1520
 
-#define CHANGE_STEER 	200
-#define CHANGE_THROTTLE 200
-
-int red_setpoint = 213; //camera 640/3
+int left_setpoint 	= 213; //camera 640/3
 int center_setpoint = 320;
+int right_setpoint 	= 426;
 
-int number_camera = 0;
+int front_camera = 0;
+int back_camera = 1;
 
 int noise_state = 5;
 
@@ -29,14 +30,6 @@ float kd = 0;
 
 float delta_t = 0.01;
 float initial_time = 0; 
-
-int zero_flag 		= 0;
-int simple_manuver 	= 1;
-int simple_speed 	= 2;
-int record_manuver 	= 3;
-int record_speed 	= 4;
-int path_manuver 	= 5;
-int path_speed 		= 6;
 
 int left_header 	= 1;
 int right_header 	= 2;
@@ -62,3 +55,12 @@ int max_radius_green = 1000;
 int min_radius_green = 1;
 int Noise_green = 5;
 
+int LowH_blue	= 14;
+int HighH_blue = 81;
+int LowS_blue 	= 121; 
+int HighS_blue = 210;
+int LowV_blue 	= 105;
+int HighV_blue = 164;
+int max_radius_blue = 1000;
+int min_radius_blue = 1;
+int Noise_blue = 5;

@@ -1,11 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/roboboat_generate_messages_cpp"
-  "/home/amvui/AUVSI/devel/include/roboboat/rc_number.h"
-  "/home/amvui/AUVSI/devel/include/roboboat/image_process.h"
-  "/home/amvui/AUVSI/devel/include/roboboat/flight_mode.h"
-  "/home/amvui/AUVSI/devel/include/roboboat/node_master.h"
-  "/home/amvui/AUVSI/devel/include/roboboat/override_motor.h"
-  "/home/amvui/AUVSI/devel/include/roboboat/setpoint.h"
+  "/home/mfikih15/Documents/AUVSI/devel/include/roboboat/node_status.h"
+  "/home/mfikih15/Documents/AUVSI/devel/include/roboboat/override_motor.h"
+  "/home/mfikih15/Documents/AUVSI/devel/include/roboboat/image_process.h"
 )
 
 # Per-language clean rules from dependency scanning.

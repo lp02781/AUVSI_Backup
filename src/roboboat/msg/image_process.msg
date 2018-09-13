@@ -1,4 +1,10 @@
-int16 state_red
-int16 state_green
-int16 count_red
-int16 count_green
+int16 buoy_red
+int16 buoy_green
+int16 buoy_blue
+int16 gate_red
+int16 gate_green
+int16 x_flag
+int16 y_flag
+int16 dock_one
+int16 dock_two
+int16 dock_three

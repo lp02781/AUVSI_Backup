@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/amvui/AUVSI/build"
-export PYTHONPATH="/home/amvui/AUVSI/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export PWD="/home/mfikih15/Documents/AUVSI/build"

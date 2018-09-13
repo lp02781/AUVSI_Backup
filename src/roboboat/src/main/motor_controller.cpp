@@ -1,19 +1,16 @@
 #include "../../include/roboboat/haha.hpp"
 #include "ros/ros.h"
 #include "mavros_msgs/OverrideRCIn.h"
-#include "roboboat/override_motor.h"
-#include "roboboat/node_master.h"
 #include <iostream>
 
 bool override_status = false;
-bool last_override_status = true;
 
 ros::Publisher pub_override_rc;
 
 mavros_msgs::OverrideRCIn override_out;
 
 void override_input_cb(const roboboat::override_motor& override_recv);
-void override_status_cb(const roboboat::node_master& override_status_recv);
+void override_status_cb(const roboboat::node_status& override_status_recv);
 
 int main(int argc, char **argv)
 {
@@ -22,8 +19,8 @@ int main(int argc, char **argv)
 
   pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
   
-  ros::Subscriber sub_override_motor = n.subscribe("/auvsi/override/motor", 1, override_input_cb);
-  ros::Subscriber sub_override_status = n.subscribe("/auvsi/node/master", 1, override_status_cb);
+  ros::Subscriber sub_override_motor = n.subscribe("/roboboat/override/motor", 1, override_input_cb);
+  ros::Subscriber sub_override_status = n.subscribe("/roboboat/node/status", 1, override_status_cb);
   
   ROS_WARN("NC : motor_controller.cpp active");
   
@@ -33,7 +30,7 @@ int main(int argc, char **argv)
 	}
 }
 
-void override_status_cb(const roboboat::node_master& override_status_recv){
+void override_status_cb(const roboboat::node_status& override_status_recv){
 	override_status = override_status_recv.override_status;
 }
 

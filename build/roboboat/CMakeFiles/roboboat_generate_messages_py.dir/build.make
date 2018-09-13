@@ -43,73 +43,49 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for roboboat_generate_messages_py.
 
 # Include the progress variables for this target.
 include roboboat/CMakeFiles/roboboat_generate_messages_py.dir/progress.make
 
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_rc_number.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_flight_mode.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_master.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_setpoint.py
-roboboat/CMakeFiles/roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py
+roboboat/CMakeFiles/roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_status.py
+roboboat/CMakeFiles/roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
+roboboat/CMakeFiles/roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
+roboboat/CMakeFiles/roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py
 
 
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_rc_number.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_rc_number.py: /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG roboboat/rc_number"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/rc_number.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_status.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_status.py: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG roboboat/node_status"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/node_status.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
 
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py: /home/amvui/AUVSI/src/roboboat/msg/image_process.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG roboboat/image_process"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG roboboat/override_motor"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
 
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_flight_mode.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_flight_mode.py: /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG roboboat/flight_mode"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/flight_mode.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py: /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG roboboat/image_process"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/roboboat/msg/image_process.msg -Iroboboat:/home/mfikih15/Documents/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
 
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_master.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_master.py: /home/amvui/AUVSI/src/roboboat/msg/node_master.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG roboboat/node_master"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/node_master.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
-
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py: /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG roboboat/override_motor"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/override_motor.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
-
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_setpoint.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_setpoint.py: /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG roboboat/setpoint"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/roboboat/msg/setpoint.msg -Iroboboat:/home/amvui/AUVSI/src/roboboat/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p roboboat -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg
-
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_rc_number.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_flight_mode.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_master.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
-/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_setpoint.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python msg __init__.py for roboboat"
-	cd /home/amvui/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg --initpy
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_status.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for roboboat"
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg --initpy
 
 roboboat_generate_messages_py: roboboat/CMakeFiles/roboboat_generate_messages_py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_rc_number.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_flight_mode.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_master.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_setpoint.py
-roboboat_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py
+roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_node_status.py
+roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_override_motor.py
+roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/_image_process.py
+roboboat_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/roboboat/msg/__init__.py
 roboboat_generate_messages_py: roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build.make
 
 .PHONY : roboboat_generate_messages_py
@@ -120,10 +96,10 @@ roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build: roboboat_generate_m
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build
 
 roboboat/CMakeFiles/roboboat_generate_messages_py.dir/clean:
-	cd /home/amvui/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/roboboat && $(CMAKE_COMMAND) -P CMakeFiles/roboboat_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_py.dir/clean
 
 roboboat/CMakeFiles/roboboat_generate_messages_py.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/roboboat /home/amvui/AUVSI/build /home/amvui/AUVSI/build/roboboat /home/amvui/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/roboboat /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/roboboat /home/mfikih15/Documents/AUVSI/build/roboboat/CMakeFiles/roboboat_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : roboboat/CMakeFiles/roboboat_generate_messages_py.dir/depend
 

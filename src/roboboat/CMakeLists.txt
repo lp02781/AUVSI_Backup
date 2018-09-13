@@ -54,12 +54,9 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 ## Generate messages in the 'msg' folder
 add_message_files(
 	FILES
-	override_motor.msg
-	node_master.msg
-	rc_number.msg
-	flight_mode.msg
 	image_process.msg
-	setpoint.msg
+	node_status.msg
+	override_motor.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -162,55 +159,43 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
 add_executable(motor_controller src/main/motor_controller.cpp )
 target_link_libraries(motor_controller
 ${catkin_LIBRARIES}
 )
-
-add_executable(node_controller src/main/node_controller.cpp )
-target_link_libraries(node_controller
+add_executable(override_monitor src/main/override_monitor.cpp )
+target_link_libraries(override_monitor
 ${catkin_LIBRARIES}
 )
 
-add_executable(remote_monitor src/main/remote_monitor.cpp )
-target_link_libraries(remote_monitor
-${catkin_LIBRARIES}
-)
-
-add_executable(debug_makara src/main/debug_makara.cpp )
-target_link_libraries(debug_makara
-${catkin_LIBRARIES}
-)
-
-add_executable(simple_red_controller src/controller/simple_red_controller.cpp )
-target_link_libraries(simple_red_controller
-${catkin_LIBRARIES}
-)
-
-add_executable(avoid_controller src/controller/avoid_controller.cpp )
-target_link_libraries(avoid_controller
-${catkin_LIBRARIES}
-)
-
-add_executable(image_front src/image/image_front.cpp )
-target_link_libraries(image_front
-${catkin_LIBRARIES}
-${OpenCV_LIBRARIES}
-)
-
-add_executable(red_hough src/image/red_hough.cpp )
-target_link_libraries(red_hough
-${catkin_LIBRARIES}
-${OpenCV_LIBRARIES}
-)
 
 add_executable(green_hough src/image/green_hough.cpp )
 target_link_libraries(green_hough
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
+add_executable(red_hough src/image/red_hough.cpp )
+target_link_libraries(red_hough
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+add_executable(blue_hough src/image/blue_hough.cpp )
+target_link_libraries(blue_hough
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
 
+
+add_executable(image_front src/image/image_front.cpp )
+target_link_libraries(image_front
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+add_executable(image_back src/image/image_back.cpp )
+target_link_libraries(image_back
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
 #############
 ## Install ##
 #############

@@ -7,16 +7,22 @@ import struct
 
 
 class image_process(genpy.Message):
-  _md5sum = "e5e1c278fbb5698de32e1d5d47db51b4"
+  _md5sum = "f2466f92f806c6e64e91ea6278fe0b11"
   _type = "roboboat/image_process"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int16 state_red
-int16 state_green
-int16 count_red
-int16 count_green
+  _full_text = """int16 buoy_red
+int16 buoy_green
+int16 buoy_blue
+int16 gate_red
+int16 gate_green
+int16 x_flag
+int16 y_flag
+int16 dock_one
+int16 dock_two
+int16 dock_three
 """
-  __slots__ = ['state_red','state_green','count_red','count_green']
-  _slot_types = ['int16','int16','int16','int16']
+  __slots__ = ['buoy_red','buoy_green','buoy_blue','gate_red','gate_green','x_flag','y_flag','dock_one','dock_two','dock_three']
+  _slot_types = ['int16','int16','int16','int16','int16','int16','int16','int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -26,7 +32,7 @@ int16 count_green
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       state_red,state_green,count_red,count_green
+       buoy_red,buoy_green,buoy_blue,gate_red,gate_green,x_flag,y_flag,dock_one,dock_two,dock_three
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,19 +41,37 @@ int16 count_green
     if args or kwds:
       super(image_process, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.state_red is None:
-        self.state_red = 0
-      if self.state_green is None:
-        self.state_green = 0
-      if self.count_red is None:
-        self.count_red = 0
-      if self.count_green is None:
-        self.count_green = 0
+      if self.buoy_red is None:
+        self.buoy_red = 0
+      if self.buoy_green is None:
+        self.buoy_green = 0
+      if self.buoy_blue is None:
+        self.buoy_blue = 0
+      if self.gate_red is None:
+        self.gate_red = 0
+      if self.gate_green is None:
+        self.gate_green = 0
+      if self.x_flag is None:
+        self.x_flag = 0
+      if self.y_flag is None:
+        self.y_flag = 0
+      if self.dock_one is None:
+        self.dock_one = 0
+      if self.dock_two is None:
+        self.dock_two = 0
+      if self.dock_three is None:
+        self.dock_three = 0
     else:
-      self.state_red = 0
-      self.state_green = 0
-      self.count_red = 0
-      self.count_green = 0
+      self.buoy_red = 0
+      self.buoy_green = 0
+      self.buoy_blue = 0
+      self.gate_red = 0
+      self.gate_green = 0
+      self.x_flag = 0
+      self.y_flag = 0
+      self.dock_one = 0
+      self.dock_two = 0
+      self.dock_three = 0
 
   def _get_types(self):
     """
@@ -62,7 +86,7 @@ int16 count_green
     """
     try:
       _x = self
-      buff.write(_get_struct_4h().pack(_x.state_red, _x.state_green, _x.count_red, _x.count_green))
+      buff.write(_get_struct_10h().pack(_x.buoy_red, _x.buoy_green, _x.buoy_blue, _x.gate_red, _x.gate_green, _x.x_flag, _x.y_flag, _x.dock_one, _x.dock_two, _x.dock_three))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -75,8 +99,8 @@ int16 count_green
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.state_red, _x.state_green, _x.count_red, _x.count_green,) = _get_struct_4h().unpack(str[start:end])
+      end += 20
+      (_x.buoy_red, _x.buoy_green, _x.buoy_blue, _x.gate_red, _x.gate_green, _x.x_flag, _x.y_flag, _x.dock_one, _x.dock_two, _x.dock_three,) = _get_struct_10h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -90,7 +114,7 @@ int16 count_green
     """
     try:
       _x = self
-      buff.write(_get_struct_4h().pack(_x.state_red, _x.state_green, _x.count_red, _x.count_green))
+      buff.write(_get_struct_10h().pack(_x.buoy_red, _x.buoy_green, _x.buoy_blue, _x.gate_red, _x.gate_green, _x.x_flag, _x.y_flag, _x.dock_one, _x.dock_two, _x.dock_three))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -104,8 +128,8 @@ int16 count_green
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.state_red, _x.state_green, _x.count_red, _x.count_green,) = _get_struct_4h().unpack(str[start:end])
+      end += 20
+      (_x.buoy_red, _x.buoy_green, _x.buoy_blue, _x.gate_red, _x.gate_green, _x.x_flag, _x.y_flag, _x.dock_one, _x.dock_two, _x.dock_three,) = _get_struct_10h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -114,9 +138,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4h = None
-def _get_struct_4h():
-    global _struct_4h
-    if _struct_4h is None:
-        _struct_4h = struct.Struct("<4h")
-    return _struct_4h
+_struct_10h = None
+def _get_struct_10h():
+    global _struct_10h
+    if _struct_10h is None:
+        _struct_10h = struct.Struct("<10h")
+    return _struct_10h

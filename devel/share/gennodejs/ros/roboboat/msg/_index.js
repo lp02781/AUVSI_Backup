@@ -1,18 +1,12 @@
 
 "use strict";
 
-let image_process = require('./image_process.js');
-let setpoint = require('./setpoint.js');
-let flight_mode = require('./flight_mode.js');
-let rc_number = require('./rc_number.js');
+let node_status = require('./node_status.js');
 let override_motor = require('./override_motor.js');
-let node_master = require('./node_master.js');
+let image_process = require('./image_process.js');
 
 module.exports = {
-  image_process: image_process,
-  setpoint: setpoint,
-  flight_mode: flight_mode,
-  rc_number: rc_number,
+  node_status: node_status,
   override_motor: override_motor,
-  node_master: node_master,
+  image_process: image_process,
 };

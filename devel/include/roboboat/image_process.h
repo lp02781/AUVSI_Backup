@@ -24,32 +24,62 @@ struct image_process_
   typedef image_process_<ContainerAllocator> Type;
 
   image_process_()
-    : state_red(0)
-    , state_green(0)
-    , count_red(0)
-    , count_green(0)  {
+    : buoy_red(0)
+    , buoy_green(0)
+    , buoy_blue(0)
+    , gate_red(0)
+    , gate_green(0)
+    , x_flag(0)
+    , y_flag(0)
+    , dock_one(0)
+    , dock_two(0)
+    , dock_three(0)  {
     }
   image_process_(const ContainerAllocator& _alloc)
-    : state_red(0)
-    , state_green(0)
-    , count_red(0)
-    , count_green(0)  {
+    : buoy_red(0)
+    , buoy_green(0)
+    , buoy_blue(0)
+    , gate_red(0)
+    , gate_green(0)
+    , x_flag(0)
+    , y_flag(0)
+    , dock_one(0)
+    , dock_two(0)
+    , dock_three(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int16_t _state_red_type;
-  _state_red_type state_red;
+   typedef int16_t _buoy_red_type;
+  _buoy_red_type buoy_red;
 
-   typedef int16_t _state_green_type;
-  _state_green_type state_green;
+   typedef int16_t _buoy_green_type;
+  _buoy_green_type buoy_green;
 
-   typedef int16_t _count_red_type;
-  _count_red_type count_red;
+   typedef int16_t _buoy_blue_type;
+  _buoy_blue_type buoy_blue;
 
-   typedef int16_t _count_green_type;
-  _count_green_type count_green;
+   typedef int16_t _gate_red_type;
+  _gate_red_type gate_red;
+
+   typedef int16_t _gate_green_type;
+  _gate_green_type gate_green;
+
+   typedef int16_t _x_flag_type;
+  _x_flag_type x_flag;
+
+   typedef int16_t _y_flag_type;
+  _y_flag_type y_flag;
+
+   typedef int16_t _dock_one_type;
+  _dock_one_type dock_one;
+
+   typedef int16_t _dock_two_type;
+  _dock_two_type dock_two;
+
+   typedef int16_t _dock_three_type;
+  _dock_three_type dock_three;
 
 
 
@@ -86,7 +116,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'roboboat': ['/home/amvui/AUVSI/src/roboboat/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/opt/ros/kinetic/share/mavros_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
+// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'roboboat': ['/home/mfikih15/Documents/AUVSI/src/roboboat/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/opt/ros/kinetic/share/mavros_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -129,12 +159,12 @@ struct MD5Sum< ::roboboat::image_process_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e5e1c278fbb5698de32e1d5d47db51b4";
+    return "f2466f92f806c6e64e91ea6278fe0b11";
   }
 
   static const char* value(const ::roboboat::image_process_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe5e1c278fbb5698dULL;
-  static const uint64_t static_value2 = 0xe32e1d5d47db51b4ULL;
+  static const uint64_t static_value1 = 0xf2466f92f806c6e6ULL;
+  static const uint64_t static_value2 = 0x4e91ea6278fe0b11ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,10 +183,16 @@ struct Definition< ::roboboat::image_process_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 state_red\n\
-int16 state_green\n\
-int16 count_red\n\
-int16 count_green\n\
+    return "int16 buoy_red\n\
+int16 buoy_green\n\
+int16 buoy_blue\n\
+int16 gate_red\n\
+int16 gate_green\n\
+int16 x_flag\n\
+int16 y_flag\n\
+int16 dock_one\n\
+int16 dock_two\n\
+int16 dock_three\n\
 ";
   }
 
@@ -175,10 +211,16 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.state_red);
-      stream.next(m.state_green);
-      stream.next(m.count_red);
-      stream.next(m.count_green);
+      stream.next(m.buoy_red);
+      stream.next(m.buoy_green);
+      stream.next(m.buoy_blue);
+      stream.next(m.gate_red);
+      stream.next(m.gate_green);
+      stream.next(m.x_flag);
+      stream.next(m.y_flag);
+      stream.next(m.dock_one);
+      stream.next(m.dock_two);
+      stream.next(m.dock_three);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -197,14 +239,26 @@ struct Printer< ::roboboat::image_process_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::roboboat::image_process_<ContainerAllocator>& v)
   {
-    s << indent << "state_red: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.state_red);
-    s << indent << "state_green: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.state_green);
-    s << indent << "count_red: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.count_red);
-    s << indent << "count_green: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.count_green);
+    s << indent << "buoy_red: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.buoy_red);
+    s << indent << "buoy_green: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.buoy_green);
+    s << indent << "buoy_blue: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.buoy_blue);
+    s << indent << "gate_red: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.gate_red);
+    s << indent << "gate_green: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.gate_green);
+    s << indent << "x_flag: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.x_flag);
+    s << indent << "y_flag: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.y_flag);
+    s << indent << "dock_one: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.dock_one);
+    s << indent << "dock_two: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.dock_two);
+    s << indent << "dock_three: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.dock_three);
   }
 };
 

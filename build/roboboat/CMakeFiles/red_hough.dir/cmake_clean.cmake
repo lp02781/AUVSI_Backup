@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/red_hough.dir/src/image/red_hough.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/roboboat/red_hough.pdb"
-  "/home/amvui/AUVSI/devel/lib/roboboat/red_hough"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/red_hough.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/roboboat/red_hough"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,11 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/roboboat_generate_messages_nodejs"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/rc_number.js"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/image_process.js"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/flight_mode.js"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/node_master.js"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/override_motor.js"
-  "/home/amvui/AUVSI/devel/share/gennodejs/ros/roboboat/msg/setpoint.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/roboboat/msg/node_status.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/roboboat/msg/override_motor.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/roboboat/msg/image_process.js"
 )
 
 # Per-language clean rules from dependency scanning.
