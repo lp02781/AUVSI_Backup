@@ -695,7 +695,7 @@ mavros_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 mavros_msgs_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
 .PHONY : mavros_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -708,7 +708,7 @@ mavros_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 mavros_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -721,8 +721,21 @@ uuid_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 uuid_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
 .PHONY : uuid_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named node_controller
+
+# Build rule for target.
+node_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_controller
+.PHONY : node_controller
+
+# fast build rule for target.
+node_controller/fast:
+	$(MAKE) -f kocheng/CMakeFiles/node_controller.dir/build.make kocheng/CMakeFiles/node_controller.dir/build
+.PHONY : node_controller/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
@@ -734,21 +747,8 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_eus
@@ -760,7 +760,7 @@ geographic_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 geographic_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -773,7 +773,7 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -786,21 +786,34 @@ mavros_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 mavros_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
 .PHONY : mavros_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named geographic_msgs_generate_messages_nodejs
+# Target rules for targets named sensor_msgs_generate_messages_py
 
 # Build rule for target.
-geographic_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_nodejs
-.PHONY : geographic_msgs_generate_messages_nodejs
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
 
 # fast build rule for target.
-geographic_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
-.PHONY : geographic_msgs_generate_messages_nodejs/fast
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named kocheng_generate_messages_lisp
+
+# Build rule for target.
+kocheng_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages_lisp
+.PHONY : kocheng_generate_messages_lisp
+
+# fast build rule for target.
+kocheng_generate_messages_lisp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build
+.PHONY : kocheng_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
@@ -812,7 +825,7 @@ sensor_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -825,7 +838,7 @@ mavros_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 mavros_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
 .PHONY : mavros_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -838,7 +851,7 @@ sensor_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -851,7 +864,7 @@ motor_controller: cmake_check_build_system
 
 # fast build rule for target.
 motor_controller/fast:
-	$(MAKE) -f roboboat/CMakeFiles/motor_controller.dir/build.make roboboat/CMakeFiles/motor_controller.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
 .PHONY : motor_controller/fast
 
 #=============================================================================
@@ -864,8 +877,21 @@ geographic_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 geographic_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
 .PHONY : geographic_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_rc_number
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_rc_number: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_rc_number
+.PHONY : _kocheng_generate_messages_check_deps_rc_number
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_rc_number/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_rc_number/fast
 
 #=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_py
@@ -877,7 +903,7 @@ geographic_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 geographic_msgs_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
 .PHONY : geographic_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -890,7 +916,7 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -903,7 +929,7 @@ geographic_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 geographic_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
 .PHONY : geographic_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -916,21 +942,34 @@ mavros_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 mavros_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named blue_hough
+# Target rules for targets named remote_monitor
 
 # Build rule for target.
-blue_hough: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 blue_hough
-.PHONY : blue_hough
+remote_monitor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 remote_monitor
+.PHONY : remote_monitor
 
 # fast build rule for target.
-blue_hough/fast:
-	$(MAKE) -f roboboat/CMakeFiles/blue_hough.dir/build.make roboboat/CMakeFiles/blue_hough.dir/build
-.PHONY : blue_hough/fast
+remote_monitor/fast:
+	$(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/build
+.PHONY : remote_monitor/fast
+
+#=============================================================================
+# Target rules for targets named debug_makara
+
+# Build rule for target.
+debug_makara: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
@@ -942,8 +981,34 @@ geometry_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geographic_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_nodejs
+.PHONY : geographic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geographic_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
+.PHONY : geographic_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named kocheng_generate_messages_eus
+
+# Build rule for target.
+kocheng_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages_eus
+.PHONY : kocheng_generate_messages_eus
+
+# fast build rule for target.
+kocheng_generate_messages_eus/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/build
+.PHONY : kocheng_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_cpp
@@ -955,7 +1020,7 @@ uuid_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 uuid_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
 .PHONY : uuid_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -968,34 +1033,8 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named image_back
-
-# Build rule for target.
-image_back: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_back
-.PHONY : image_back
-
-# fast build rule for target.
-image_back/fast:
-	$(MAKE) -f roboboat/CMakeFiles/image_back.dir/build.make roboboat/CMakeFiles/image_back.dir/build
-.PHONY : image_back/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_genpy
-
-# Build rule for target.
-roboboat_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_genpy
-.PHONY : roboboat_genpy
-
-# fast build rule for target.
-roboboat_genpy/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_genpy.dir/build.make roboboat/CMakeFiles/roboboat_genpy.dir/build
-.PHONY : roboboat_genpy/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -1007,7 +1046,7 @@ geometry_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -1020,34 +1059,8 @@ uuid_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 uuid_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
 .PHONY : uuid_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_genlisp
-
-# Build rule for target.
-roboboat_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_genlisp
-.PHONY : roboboat_genlisp
-
-# fast build rule for target.
-roboboat_genlisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_genlisp.dir/build.make roboboat/CMakeFiles/roboboat_genlisp.dir/build
-.PHONY : roboboat_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named red_hough
-
-# Build rule for target.
-red_hough: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 red_hough
-.PHONY : red_hough
-
-# fast build rule for target.
-red_hough/fast:
-	$(MAKE) -f roboboat/CMakeFiles/red_hough.dir/build.make roboboat/CMakeFiles/red_hough.dir/build
-.PHONY : red_hough/fast
 
 #=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_lisp
@@ -1059,8 +1072,21 @@ uuid_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 uuid_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
 .PHONY : uuid_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named kocheng_genlisp
+
+# Build rule for target.
+kocheng_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_genlisp
+.PHONY : kocheng_genlisp
+
+# fast build rule for target.
+kocheng_genlisp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_genlisp.dir/build.make kocheng/CMakeFiles/kocheng_genlisp.dir/build
+.PHONY : kocheng_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_py
@@ -1072,216 +1098,151 @@ uuid_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 uuid_msgs_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
 .PHONY : uuid_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named roboboat_generate_messages
+# Target rules for targets named kocheng_generate_messages
 
 # Build rule for target.
-roboboat_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages
-.PHONY : roboboat_generate_messages
+kocheng_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages
+.PHONY : kocheng_generate_messages
 
 # fast build rule for target.
-roboboat_generate_messages/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages.dir/build
-.PHONY : roboboat_generate_messages/fast
+kocheng_generate_messages/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages.dir/build
+.PHONY : kocheng_generate_messages/fast
 
 #=============================================================================
-# Target rules for targets named override_monitor
+# Target rules for targets named kocheng_generate_messages_cpp
 
 # Build rule for target.
-override_monitor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 override_monitor
-.PHONY : override_monitor
+kocheng_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages_cpp
+.PHONY : kocheng_generate_messages_cpp
 
 # fast build rule for target.
-override_monitor/fast:
-	$(MAKE) -f roboboat/CMakeFiles/override_monitor.dir/build.make roboboat/CMakeFiles/override_monitor.dir/build
-.PHONY : override_monitor/fast
+kocheng_generate_messages_cpp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build
+.PHONY : kocheng_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
+# Target rules for targets named _kocheng_generate_messages_check_deps_override_motor
 
 # Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
+_kocheng_generate_messages_check_deps_override_motor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_override_motor
+.PHONY : _kocheng_generate_messages_check_deps_override_motor
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make roboboat/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+_kocheng_generate_messages_check_deps_override_motor/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_override_motor/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_image_process
+# Target rules for targets named _kocheng_generate_messages_check_deps_node_master
 
 # Build rule for target.
-_roboboat_generate_messages_check_deps_image_process: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_image_process
-.PHONY : _roboboat_generate_messages_check_deps_image_process
+_kocheng_generate_messages_check_deps_node_master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_node_master
+.PHONY : _kocheng_generate_messages_check_deps_node_master
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_image_process/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_image_process.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_image_process/fast
+_kocheng_generate_messages_check_deps_node_master/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_node_master.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_node_master.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_node_master/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_override_motor
+# Target rules for targets named kocheng_gencpp
 
 # Build rule for target.
-_roboboat_generate_messages_check_deps_override_motor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_override_motor
-.PHONY : _roboboat_generate_messages_check_deps_override_motor
+kocheng_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_gencpp
+.PHONY : kocheng_gencpp
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_override_motor/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_override_motor.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_override_motor/fast
+kocheng_gencpp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_gencpp.dir/build.make kocheng/CMakeFiles/kocheng_gencpp.dir/build
+.PHONY : kocheng_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named _roboboat_generate_messages_check_deps_node_status
+# Target rules for targets named kocheng_geneus
 
 # Build rule for target.
-_roboboat_generate_messages_check_deps_node_status: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _roboboat_generate_messages_check_deps_node_status
-.PHONY : _roboboat_generate_messages_check_deps_node_status
+kocheng_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_geneus
+.PHONY : kocheng_geneus
 
 # fast build rule for target.
-_roboboat_generate_messages_check_deps_node_status/fast:
-	$(MAKE) -f roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build.make roboboat/CMakeFiles/_roboboat_generate_messages_check_deps_node_status.dir/build
-.PHONY : _roboboat_generate_messages_check_deps_node_status/fast
+kocheng_geneus/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_geneus.dir/build.make kocheng/CMakeFiles/kocheng_geneus.dir/build
+.PHONY : kocheng_geneus/fast
 
 #=============================================================================
-# Target rules for targets named roboboat_generate_messages_cpp
+# Target rules for targets named kocheng_generate_messages_nodejs
 
 # Build rule for target.
-roboboat_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages_cpp
-.PHONY : roboboat_generate_messages_cpp
+kocheng_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages_nodejs
+.PHONY : kocheng_generate_messages_nodejs
 
 # fast build rule for target.
-roboboat_generate_messages_cpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_cpp.dir/build
-.PHONY : roboboat_generate_messages_cpp/fast
+kocheng_generate_messages_nodejs/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/build
+.PHONY : kocheng_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named roboboat_gencpp
+# Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
-roboboat_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_gencpp
-.PHONY : roboboat_gencpp
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # fast build rule for target.
-roboboat_gencpp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_gencpp.dir/build.make roboboat/CMakeFiles/roboboat_gencpp.dir/build
-.PHONY : roboboat_gencpp/fast
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named image_front
+# Target rules for targets named kocheng_gennodejs
 
 # Build rule for target.
-image_front: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image_front
-.PHONY : image_front
+kocheng_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_gennodejs
+.PHONY : kocheng_gennodejs
 
 # fast build rule for target.
-image_front/fast:
-	$(MAKE) -f roboboat/CMakeFiles/image_front.dir/build.make roboboat/CMakeFiles/image_front.dir/build
-.PHONY : image_front/fast
+kocheng_gennodejs/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_gennodejs.dir/build.make kocheng/CMakeFiles/kocheng_gennodejs.dir/build
+.PHONY : kocheng_gennodejs/fast
 
 #=============================================================================
-# Target rules for targets named roboboat_generate_messages_eus
+# Target rules for targets named kocheng_generate_messages_py
 
 # Build rule for target.
-roboboat_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages_eus
-.PHONY : roboboat_generate_messages_eus
+kocheng_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_generate_messages_py
+.PHONY : kocheng_generate_messages_py
 
 # fast build rule for target.
-roboboat_generate_messages_eus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_eus.dir/build
-.PHONY : roboboat_generate_messages_eus/fast
+kocheng_generate_messages_py/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_py.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_py.dir/build
+.PHONY : kocheng_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named roboboat_geneus
+# Target rules for targets named kocheng_genpy
 
 # Build rule for target.
-roboboat_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_geneus
-.PHONY : roboboat_geneus
+kocheng_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng_genpy
+.PHONY : kocheng_genpy
 
 # fast build rule for target.
-roboboat_geneus/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_geneus.dir/build.make roboboat/CMakeFiles/roboboat_geneus.dir/build
-.PHONY : roboboat_geneus/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_generate_messages_lisp
-
-# Build rule for target.
-roboboat_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages_lisp
-.PHONY : roboboat_generate_messages_lisp
-
-# fast build rule for target.
-roboboat_generate_messages_lisp/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_lisp.dir/build
-.PHONY : roboboat_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_generate_messages_nodejs
-
-# Build rule for target.
-roboboat_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages_nodejs
-.PHONY : roboboat_generate_messages_nodejs
-
-# fast build rule for target.
-roboboat_generate_messages_nodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_nodejs.dir/build
-.PHONY : roboboat_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_gennodejs
-
-# Build rule for target.
-roboboat_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_gennodejs
-.PHONY : roboboat_gennodejs
-
-# fast build rule for target.
-roboboat_gennodejs/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_gennodejs.dir/build.make roboboat/CMakeFiles/roboboat_gennodejs.dir/build
-.PHONY : roboboat_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named roboboat_generate_messages_py
-
-# Build rule for target.
-roboboat_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roboboat_generate_messages_py
-.PHONY : roboboat_generate_messages_py
-
-# fast build rule for target.
-roboboat_generate_messages_py/fast:
-	$(MAKE) -f roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build.make roboboat/CMakeFiles/roboboat_generate_messages_py.dir/build
-.PHONY : roboboat_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named green_hough
-
-# Build rule for target.
-green_hough: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 green_hough
-.PHONY : green_hough
-
-# fast build rule for target.
-green_hough/fast:
-	$(MAKE) -f roboboat/CMakeFiles/green_hough.dir/build.make roboboat/CMakeFiles/green_hough.dir/build
-.PHONY : green_hough/fast
+kocheng_genpy/fast:
+	$(MAKE) -f kocheng/CMakeFiles/kocheng_genpy.dir/build.make kocheng/CMakeFiles/kocheng_genpy.dir/build
+.PHONY : kocheng_genpy/fast
 
 # Help Target
 help:
@@ -1339,49 +1300,46 @@ help:
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
+	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
-	@echo "... geographic_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... kocheng_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... motor_controller"
 	@echo "... geographic_msgs_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
-	@echo "... blue_hough"
+	@echo "... remote_monitor"
+	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... geographic_msgs_generate_messages_nodejs"
+	@echo "... kocheng_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... image_back"
-	@echo "... roboboat_genpy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
-	@echo "... roboboat_genlisp"
-	@echo "... red_hough"
 	@echo "... uuid_msgs_generate_messages_lisp"
+	@echo "... kocheng_genlisp"
 	@echo "... uuid_msgs_generate_messages_py"
-	@echo "... roboboat_generate_messages"
-	@echo "... override_monitor"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... _roboboat_generate_messages_check_deps_image_process"
-	@echo "... _roboboat_generate_messages_check_deps_override_motor"
-	@echo "... _roboboat_generate_messages_check_deps_node_status"
-	@echo "... roboboat_generate_messages_cpp"
-	@echo "... roboboat_gencpp"
-	@echo "... image_front"
-	@echo "... roboboat_generate_messages_eus"
-	@echo "... roboboat_geneus"
-	@echo "... roboboat_generate_messages_lisp"
-	@echo "... roboboat_generate_messages_nodejs"
-	@echo "... roboboat_gennodejs"
-	@echo "... roboboat_generate_messages_py"
-	@echo "... green_hough"
+	@echo "... kocheng_generate_messages"
+	@echo "... kocheng_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_override_motor"
+	@echo "... _kocheng_generate_messages_check_deps_node_master"
+	@echo "... kocheng_gencpp"
+	@echo "... kocheng_geneus"
+	@echo "... kocheng_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... kocheng_gennodejs"
+	@echo "... kocheng_generate_messages_py"
+	@echo "... kocheng_genpy"
 .PHONY : help
 
 

@@ -341,6 +341,12 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
+//Value Computed by CMake
+kocheng_BINARY_DIR:STATIC=/home/mfikih15/Documents/AUVSI/build/kocheng
+
+//Value Computed by CMake
+kocheng_SOURCE_DIR:STATIC=/home/mfikih15/Documents/AUVSI/src/kocheng
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/kinetic/lib/librospack.so
 
