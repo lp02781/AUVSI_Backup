@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
+CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
+CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 
 # Utility rule file for kocheng_generate_messages.
 
@@ -63,10 +63,10 @@ kocheng/CMakeFiles/kocheng_generate_messages.dir/build: kocheng_generate_message
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages.dir/build
 
 kocheng/CMakeFiles/kocheng_generate_messages.dir/clean:
-	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/kocheng_generate_messages.dir/cmake_clean.cmake
+	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/kocheng_generate_messages.dir/cmake_clean.cmake
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages.dir/clean
 
 kocheng/CMakeFiles/kocheng_generate_messages.dir/depend:
-	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/kocheng /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/kocheng /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/kocheng /home/amvui/AUVSI/build /home/amvui/AUVSI/build/kocheng /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages.dir/depend
 

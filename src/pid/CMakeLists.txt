@@ -108,14 +108,25 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 ## Declare a cpp executable
 # add_executable(pid_node src/pid_node.cpp)
 
+
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+# add_dependencies(pid_node pid_generate_messages_cpp)
+
+## Specify libraries to link a library or executable target against
+# target_link_libraries(pid_node
+#   ${catkin_LIBRARIES}
+# )
 add_executable(controller_adaptive_x src/controller_adaptive_x.cpp)
 add_dependencies(controller_adaptive_x pid_generate_messages_cpp)
-target_link_libraries(controller_adaptive_x ${catkin_LIBRARIES})
+target_link_libraries(controller_adaptive_x 
+${catkin_LIBRARIES})
 
 add_executable(controller_adaptive_y src/controller_adaptive_y.cpp)
 add_dependencies(controller_adaptive_y pid_generate_messages_cpp)
-target_link_libraries(controller_adaptive_y ${catkin_LIBRARIES})
-
+target_link_libraries(controller_adaptive_y 
+${catkin_LIBRARIES})
 #############
 ## Install ##
 #############

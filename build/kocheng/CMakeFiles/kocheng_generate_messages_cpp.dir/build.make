@@ -43,43 +43,35 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
+CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
+CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 
 # Utility rule file for kocheng_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/progress.make
 
-kocheng/CMakeFiles/kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h
-kocheng/CMakeFiles/kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h
-kocheng/CMakeFiles/kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h
+kocheng/CMakeFiles/kocheng_generate_messages_cpp: /home/amvui/AUVSI/devel/include/kocheng/rc_number.h
+kocheng/CMakeFiles/kocheng_generate_messages_cpp: /home/amvui/AUVSI/devel/include/kocheng/override_motor.h
 
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from kocheng/rc_number.msg"
-	cd /home/mfikih15/Documents/AUVSI/src/kocheng && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/include/kocheng -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/amvui/AUVSI/devel/include/kocheng/rc_number.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/amvui/AUVSI/devel/include/kocheng/rc_number.h: /home/amvui/AUVSI/src/kocheng/msg/rc_number.msg
+/home/amvui/AUVSI/devel/include/kocheng/rc_number.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from kocheng/rc_number.msg"
+	cd /home/amvui/AUVSI/src/kocheng && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/amvui/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/amvui/AUVSI/devel/include/kocheng -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from kocheng/override_motor.msg"
-	cd /home/mfikih15/Documents/AUVSI/src/kocheng && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/include/kocheng -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/node_master.msg
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from kocheng/node_master.msg"
-	cd /home/mfikih15/Documents/AUVSI/src/kocheng && /home/mfikih15/Documents/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/node_master.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/include/kocheng -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/amvui/AUVSI/devel/include/kocheng/override_motor.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/amvui/AUVSI/devel/include/kocheng/override_motor.h: /home/amvui/AUVSI/src/kocheng/msg/override_motor.msg
+/home/amvui/AUVSI/devel/include/kocheng/override_motor.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from kocheng/override_motor.msg"
+	cd /home/amvui/AUVSI/src/kocheng && /home/amvui/AUVSI/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/amvui/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/amvui/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/amvui/AUVSI/devel/include/kocheng -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 kocheng_generate_messages_cpp: kocheng/CMakeFiles/kocheng_generate_messages_cpp
-kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h
-kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h
-kocheng_generate_messages_cpp: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h
+kocheng_generate_messages_cpp: /home/amvui/AUVSI/devel/include/kocheng/rc_number.h
+kocheng_generate_messages_cpp: /home/amvui/AUVSI/devel/include/kocheng/override_motor.h
 kocheng_generate_messages_cpp: kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build.make
 
 .PHONY : kocheng_generate_messages_cpp
@@ -90,10 +82,10 @@ kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build: kocheng_generate_mes
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build
 
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/clean:
-	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/kocheng_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/kocheng_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/clean
 
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/depend:
-	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/kocheng /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/kocheng /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/kocheng /home/amvui/AUVSI/build /home/amvui/AUVSI/build/kocheng /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/depend
 

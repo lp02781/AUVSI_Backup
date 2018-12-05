@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
+CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
+CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,9 +135,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles /home/mfikih15/Documents/AUVSI/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles /home/amvui/AUVSI/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -582,19 +582,6 @@ pid_generate_messages_eus/fast:
 .PHONY : pid_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named _pid_generate_messages_check_deps_controller_msg
-
-# Build rule for target.
-_pid_generate_messages_check_deps_controller_msg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _pid_generate_messages_check_deps_controller_msg
-.PHONY : _pid_generate_messages_check_deps_controller_msg
-
-# fast build rule for target.
-_pid_generate_messages_check_deps_controller_msg/fast:
-	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build
-.PHONY : _pid_generate_messages_check_deps_controller_msg/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -619,6 +606,19 @@ _pid_generate_messages_check_deps_pid_const_msg: cmake_check_build_system
 _pid_generate_messages_check_deps_pid_const_msg/fast:
 	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/build
 .PHONY : _pid_generate_messages_check_deps_pid_const_msg/fast
+
+#=============================================================================
+# Target rules for targets named _pid_generate_messages_check_deps_controller_msg
+
+# Build rule for target.
+_pid_generate_messages_check_deps_controller_msg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _pid_generate_messages_check_deps_controller_msg
+.PHONY : _pid_generate_messages_check_deps_controller_msg
+
+# fast build rule for target.
+_pid_generate_messages_check_deps_controller_msg/fast:
+	$(MAKE) -f pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build.make pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg.dir/build
+.PHONY : _pid_generate_messages_check_deps_controller_msg/fast
 
 #=============================================================================
 # Target rules for targets named controller_adaptive_x
@@ -749,6 +749,19 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 sensor_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_eus
@@ -1141,17 +1154,17 @@ _kocheng_generate_messages_check_deps_override_motor/fast:
 .PHONY : _kocheng_generate_messages_check_deps_override_motor/fast
 
 #=============================================================================
-# Target rules for targets named _kocheng_generate_messages_check_deps_node_master
+# Target rules for targets named navigation
 
 # Build rule for target.
-_kocheng_generate_messages_check_deps_node_master: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_node_master
-.PHONY : _kocheng_generate_messages_check_deps_node_master
+navigation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 navigation
+.PHONY : navigation
 
 # fast build rule for target.
-_kocheng_generate_messages_check_deps_node_master/fast:
-	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_node_master.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_node_master.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_node_master/fast
+navigation/fast:
+	$(MAKE) -f kocheng/CMakeFiles/navigation.dir/build.make kocheng/CMakeFiles/navigation.dir/build
+.PHONY : navigation/fast
 
 #=============================================================================
 # Target rules for targets named kocheng_gencpp
@@ -1193,19 +1206,6 @@ kocheng_generate_messages_nodejs/fast:
 .PHONY : kocheng_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named kocheng_gennodejs
 
 # Build rule for target.
@@ -1243,6 +1243,19 @@ kocheng_genpy: cmake_check_build_system
 kocheng_genpy/fast:
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_genpy.dir/build.make kocheng/CMakeFiles/kocheng_genpy.dir/build
 .PHONY : kocheng_genpy/fast
+
+#=============================================================================
+# Target rules for targets named image_front
+
+# Build rule for target.
+image_front: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_front
+.PHONY : image_front
+
+# fast build rule for target.
+image_front/fast:
+	$(MAKE) -f kocheng/CMakeFiles/image_front.dir/build.make kocheng/CMakeFiles/image_front.dir/build
+.PHONY : image_front/fast
 
 # Help Target
 help:
@@ -1289,9 +1302,9 @@ help:
 	@echo "... _pid_generate_messages_check_deps_plant_msg"
 	@echo "... pid_genpy"
 	@echo "... pid_generate_messages_eus"
-	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... _pid_generate_messages_check_deps_pid_const_msg"
+	@echo "... _pid_generate_messages_check_deps_controller_msg"
 	@echo "... controller_adaptive_x"
 	@echo "... pid_generate_messages_cpp"
 	@echo "... controller_adaptive_y"
@@ -1302,6 +1315,7 @@ help:
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
@@ -1332,14 +1346,14 @@ help:
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
-	@echo "... _kocheng_generate_messages_check_deps_node_master"
+	@echo "... navigation"
 	@echo "... kocheng_gencpp"
 	@echo "... kocheng_geneus"
 	@echo "... kocheng_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... kocheng_gennodejs"
 	@echo "... kocheng_generate_messages_py"
 	@echo "... kocheng_genpy"
+	@echo "... image_front"
 .PHONY : help
 
 

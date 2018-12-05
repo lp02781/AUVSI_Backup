@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/controller_adaptive.dir/src/controller_adaptive.cpp.o"
-  "/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive.pdb"
-  "/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive"
+  "/home/amvui/AUVSI/devel/lib/pid/controller_adaptive.pdb"
+  "/home/amvui/AUVSI/devel/lib/pid/controller_adaptive"
 )
 
 # Per-language clean rules from dependency scanning.

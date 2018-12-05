@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/mfikih15/Documents/AUVSI/build"
+export PWD="/home/amvui/AUVSI/build"

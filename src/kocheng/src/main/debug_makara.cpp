@@ -7,7 +7,6 @@
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
 #include "kocheng/override_motor.h"
-#include "kocheng/node_master.h"
 #include "kocheng/rc_number.h"
 
 using namespace std;
@@ -31,7 +30,6 @@ int in_channel[8];
 string armed;
 string mode;
 
-void node_master_cb	(const kocheng::node_master& master);
 void override_rc_cb	(const kocheng::override_motor& rc);
 void rc_number_cb (const kocheng::rc_number& state);
 
@@ -44,7 +42,6 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "debug_makara");
 	ros::NodeHandle nh;
 	
-	ros::Subscriber sub_node_master 	= nh.subscribe("/auvsi/node/master", 8, node_master_cb);
 	ros::Subscriber sub_override_rc 	= nh.subscribe("/auvsi/override/motor", 8, override_rc_cb);
 	ros::Subscriber sub_rc_number 		= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
@@ -58,7 +55,6 @@ int main(int argc, char **argv)
 		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s rc:%d", override_status.c_str(), rc_flag);
-		ROS_INFO("1:%s 2:%s ", first_simple_status.c_str(), second_simple_status.c_str());
 		ROS_INFO(" ");
 				
 		
@@ -84,11 +80,8 @@ int main(int argc, char **argv)
 }
 
 void rc_number_cb (const kocheng::rc_number& number){
-	rc_flag 		= number.rc_number;
-}
-
-void node_master_cb	(const kocheng::node_master& master){
-	if(master.override_status == true){override_status = "true";}
+	rc_flag = number.rc_number;
+	if(number.override_status == true){override_status = "true";}
 	else{override_status = "false";}
 }
 

@@ -1,2 +1,2 @@
 kocheng:pid
--DCATKIN_DEVEL_PREFIX=/home/mfikih15/Documents/AUVSI/devel -DCMAKE_INSTALL_PREFIX=/home/mfikih15/Documents/AUVSI/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/amvui/AUVSI/devel -DCMAKE_INSTALL_PREFIX=/home/amvui/AUVSI/install -G Unix Makefiles

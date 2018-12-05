@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/node_master.h
+/home/amvui/AUVSI/devel/include/kocheng/override_motor.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h
+/home/amvui/AUVSI/devel/include/kocheng/rc_number.h
 string
 -
 vector
@@ -38,7 +38,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/rc_number.h
+/home/amvui/AUVSI/devel/include/pid/controller_msg.h
 string
 -
 vector
@@ -54,31 +54,15 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AUVSI/devel/include/pid/controller_msg.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/home/mfikih15/Documents/AUVSI/src/kocheng/include/kocheng/hehe.hpp
+/home/amvui/AUVSI/src/kocheng/include/kocheng/hehe.hpp
 iostream
 -
 stdio.h
 -
 
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/debug_makara.cpp
+/home/amvui/AUVSI/src/kocheng/src/main/debug_makara.cpp
 ../../include/kocheng/hehe.hpp
-/home/mfikih15/Documents/AUVSI/src/kocheng/include/kocheng/hehe.hpp
+/home/amvui/AUVSI/src/kocheng/include/kocheng/hehe.hpp
 iostream
 -
 stdio.h
@@ -86,19 +70,17 @@ stdio.h
 ros/ros.h
 -
 pid/controller_msg.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/pid/controller_msg.h
+/home/amvui/AUVSI/src/kocheng/src/main/pid/controller_msg.h
 mavros_msgs/State.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/mavros_msgs/State.h
+/home/amvui/AUVSI/src/kocheng/src/main/mavros_msgs/State.h
 mavros_msgs/OverrideRCIn.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/mavros_msgs/OverrideRCIn.h
+/home/amvui/AUVSI/src/kocheng/src/main/mavros_msgs/OverrideRCIn.h
 mavros_msgs/RCIn.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/mavros_msgs/RCIn.h
+/home/amvui/AUVSI/src/kocheng/src/main/mavros_msgs/RCIn.h
 kocheng/override_motor.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/override_motor.h
-kocheng/node_master.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/node_master.h
+/home/amvui/AUVSI/src/kocheng/src/main/kocheng/override_motor.h
 kocheng/rc_number.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
+/home/amvui/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
 
 /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h
 string

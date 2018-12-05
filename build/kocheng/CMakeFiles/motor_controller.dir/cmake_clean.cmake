@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.o"
-  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/motor_controller.pdb"
-  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/motor_controller"
+  "/home/amvui/AUVSI/devel/lib/kocheng/motor_controller.pdb"
+  "/home/amvui/AUVSI/devel/lib/kocheng/motor_controller"
 )
 
 # Per-language clean rules from dependency scanning.

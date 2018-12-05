@@ -24,14 +24,19 @@ struct rc_number_
   typedef rc_number_<ContainerAllocator> Type;
 
   rc_number_()
-    : rc_number(0)  {
+    : override_status(false)
+    , rc_number(0)  {
     }
   rc_number_(const ContainerAllocator& _alloc)
-    : rc_number(0)  {
+    : override_status(false)
+    , rc_number(0)  {
   (void)_alloc;
     }
 
 
+
+   typedef uint8_t _override_status_type;
+  _override_status_type override_status;
 
    typedef int16_t _rc_number_type;
   _rc_number_type rc_number;
@@ -71,7 +76,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/opt/ros/kinetic/share/mavros_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'kocheng': ['/home/mfikih15/Documents/AUVSI/src/kocheng/msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
+// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/opt/ros/kinetic/share/mavros_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'kocheng': ['/home/amvui/AUVSI/src/kocheng/msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -114,12 +119,12 @@ struct MD5Sum< ::kocheng::rc_number_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2244ae5f9aac7ce5c8daccbb71337be0";
+    return "245976b4840f71d588f1be6b4dde93f8";
   }
 
   static const char* value(const ::kocheng::rc_number_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2244ae5f9aac7ce5ULL;
-  static const uint64_t static_value2 = 0xc8daccbb71337be0ULL;
+  static const uint64_t static_value1 = 0x245976b4840f71d5ULL;
+  static const uint64_t static_value2 = 0x88f1be6b4dde93f8ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +143,8 @@ struct Definition< ::kocheng::rc_number_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 rc_number\n\
+    return "bool override_status\n\
+int16 rc_number\n\
 ";
   }
 
@@ -157,6 +163,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
+      stream.next(m.override_status);
       stream.next(m.rc_number);
     }
 
@@ -176,6 +183,8 @@ struct Printer< ::kocheng::rc_number_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::kocheng::rc_number_<ContainerAllocator>& v)
   {
+    s << indent << "override_status: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.override_status);
     s << indent << "rc_number: ";
     Printer<int16_t>::stream(s, indent + "  ", v.rc_number);
   }

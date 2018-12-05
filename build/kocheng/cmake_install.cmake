@@ -1,8 +1,8 @@
-# Install script for directory: /home/mfikih15/Documents/AUVSI/src/kocheng
+# Install script for directory: /home/amvui/AUVSI/src/kocheng
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mfikih15/Documents/AUVSI/install")
+  set(CMAKE_INSTALL_PREFIX "/home/amvui/AUVSI/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,60 +34,59 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/msg" TYPE FILE FILES
-    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
-    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/node_master.msg"
-    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg"
+    "/home/amvui/AUVSI/src/kocheng/msg/rc_number.msg"
+    "/home/amvui/AUVSI/src/kocheng/msg/override_motor.msg"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/cmake" TYPE FILE FILES "/home/mfikih15/Documents/AUVSI/build/kocheng/catkin_generated/installspace/kocheng-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/cmake" TYPE FILE FILES "/home/amvui/AUVSI/build/kocheng/catkin_generated/installspace/kocheng-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/devel/include/kocheng")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/amvui/AUVSI/devel/include/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/amvui/AUVSI/devel/share/common-lisp/ros/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/amvui/AUVSI/devel/share/gennodejs/ros/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mfikih15/Documents/AUVSI/build/kocheng/catkin_generated/installspace/kocheng.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amvui/AUVSI/build/kocheng/catkin_generated/installspace/kocheng.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/cmake" TYPE FILE FILES "/home/mfikih15/Documents/AUVSI/build/kocheng/catkin_generated/installspace/kocheng-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/cmake" TYPE FILE FILES "/home/amvui/AUVSI/build/kocheng/catkin_generated/installspace/kocheng-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/cmake" TYPE FILE FILES
-    "/home/mfikih15/Documents/AUVSI/build/kocheng/catkin_generated/installspace/kochengConfig.cmake"
-    "/home/mfikih15/Documents/AUVSI/build/kocheng/catkin_generated/installspace/kochengConfig-version.cmake"
+    "/home/amvui/AUVSI/build/kocheng/catkin_generated/installspace/kochengConfig.cmake"
+    "/home/amvui/AUVSI/build/kocheng/catkin_generated/installspace/kochengConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng" TYPE FILE FILES "/home/mfikih15/Documents/AUVSI/src/kocheng/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng" TYPE FILE FILES "/home/amvui/AUVSI/src/kocheng/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kocheng" TYPE DIRECTORY FILES "/home/mfikih15/Documents/AUVSI/src/kocheng/include/kocheng/" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kocheng" TYPE DIRECTORY FILES "/home/amvui/AUVSI/src/kocheng/include/kocheng/" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

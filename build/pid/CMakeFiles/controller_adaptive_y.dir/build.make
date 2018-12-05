@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
+CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
+CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 
 # Include any dependencies generated for this target.
 include pid/CMakeFiles/controller_adaptive_y.dir/depend.make
@@ -58,17 +58,17 @@ include pid/CMakeFiles/controller_adaptive_y.dir/progress.make
 include pid/CMakeFiles/controller_adaptive_y.dir/flags.make
 
 pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o: pid/CMakeFiles/controller_adaptive_y.dir/flags.make
-pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o: /home/mfikih15/Documents/AUVSI/src/pid/src/controller_adaptive_y.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o"
-	cd /home/mfikih15/Documents/AUVSI/build/pid && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o -c /home/mfikih15/Documents/AUVSI/src/pid/src/controller_adaptive_y.cpp
+pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o: /home/amvui/AUVSI/src/pid/src/controller_adaptive_y.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o"
+	cd /home/amvui/AUVSI/build/pid && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o -c /home/amvui/AUVSI/src/pid/src/controller_adaptive_y.cpp
 
 pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.i"
-	cd /home/mfikih15/Documents/AUVSI/build/pid && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mfikih15/Documents/AUVSI/src/pid/src/controller_adaptive_y.cpp > CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.i
+	cd /home/amvui/AUVSI/build/pid && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amvui/AUVSI/src/pid/src/controller_adaptive_y.cpp > CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.i
 
 pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.s"
-	cd /home/mfikih15/Documents/AUVSI/build/pid && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mfikih15/Documents/AUVSI/src/pid/src/controller_adaptive_y.cpp -o CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.s
+	cd /home/amvui/AUVSI/build/pid && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amvui/AUVSI/src/pid/src/controller_adaptive_y.cpp -o CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.s
 
 pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o.requires:
 
@@ -88,33 +88,33 @@ controller_adaptive_y_OBJECTS = \
 # External object files for target controller_adaptive_y
 controller_adaptive_y_EXTERNAL_OBJECTS =
 
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/build.make
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libroscpp.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librostime.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libcpp_common.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y"
-	cd /home/mfikih15/Documents/AUVSI/build/pid && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_adaptive_y.dir/link.txt --verbose=$(VERBOSE)
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/src/controller_adaptive_y.cpp.o
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/build.make
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libroscpp.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/librostime.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /opt/ros/kinetic/lib/libcpp_common.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y: pid/CMakeFiles/controller_adaptive_y.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y"
+	cd /home/amvui/AUVSI/build/pid && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_adaptive_y.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-pid/CMakeFiles/controller_adaptive_y.dir/build: /home/mfikih15/Documents/AUVSI/devel/lib/pid/controller_adaptive_y
+pid/CMakeFiles/controller_adaptive_y.dir/build: /home/amvui/AUVSI/devel/lib/pid/controller_adaptive_y
 
 .PHONY : pid/CMakeFiles/controller_adaptive_y.dir/build
 
@@ -123,10 +123,10 @@ pid/CMakeFiles/controller_adaptive_y.dir/requires: pid/CMakeFiles/controller_ada
 .PHONY : pid/CMakeFiles/controller_adaptive_y.dir/requires
 
 pid/CMakeFiles/controller_adaptive_y.dir/clean:
-	cd /home/mfikih15/Documents/AUVSI/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/controller_adaptive_y.dir/cmake_clean.cmake
+	cd /home/amvui/AUVSI/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/controller_adaptive_y.dir/cmake_clean.cmake
 .PHONY : pid/CMakeFiles/controller_adaptive_y.dir/clean
 
 pid/CMakeFiles/controller_adaptive_y.dir/depend:
-	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/pid /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/pid /home/mfikih15/Documents/AUVSI/build/pid/CMakeFiles/controller_adaptive_y.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/pid /home/amvui/AUVSI/build /home/amvui/AUVSI/build/pid /home/amvui/AUVSI/build/pid/CMakeFiles/controller_adaptive_y.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pid/CMakeFiles/controller_adaptive_y.dir/depend
 

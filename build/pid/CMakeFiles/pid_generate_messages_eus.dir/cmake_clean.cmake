@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pid_generate_messages_eus"
-  "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/pid/msg/plant_msg.l"
-  "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/pid/msg/controller_msg.l"
-  "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/pid/msg/pid_const_msg.l"
-  "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/pid/manifest.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/pid/msg/plant_msg.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/pid/msg/pid_const_msg.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/pid/msg/controller_msg.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/pid/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

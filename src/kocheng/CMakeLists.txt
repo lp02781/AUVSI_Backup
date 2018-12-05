@@ -56,7 +56,6 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_message_files(
 	FILES
 	rc_number.msg
-	node_master.msg
 	override_motor.msg
 )
 
@@ -180,6 +179,18 @@ ${catkin_LIBRARIES}
 add_executable(debug_makara src/main/debug_makara.cpp )
 target_link_libraries(debug_makara
 ${catkin_LIBRARIES}
+)
+
+add_executable(navigation src/mission/navigation.cpp )
+target_link_libraries(navigation
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(image_front src/main/image_front.cpp )
+target_link_libraries(image_front
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
 )
 #############
 ## Install ##

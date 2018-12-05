@@ -1,8 +1,8 @@
-prefix=/home/mfikih15/Documents/AUVSI/install
+prefix=/home/amvui/AUVSI/install
 
 Name: kocheng
 Description: Description of kocheng
 Version: 0.0.0
-Cflags: -I/home/mfikih15/Documents/AUVSI/install/include
-Libs: -L/home/mfikih15/Documents/AUVSI/install/lib 
+Cflags: -I/home/amvui/AUVSI/install/include
+Libs: -L/home/amvui/AUVSI/install/lib 
 Requires: message_runtime

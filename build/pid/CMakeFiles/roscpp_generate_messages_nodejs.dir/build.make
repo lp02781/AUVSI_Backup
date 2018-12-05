@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
+CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
+CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 
 # Utility rule file for roscpp_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/build: roscpp_generate_messag
 .PHONY : pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 
 pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	cd /home/mfikih15/Documents/AUVSI/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/amvui/AUVSI/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 
 pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend:
-	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/pid /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/pid /home/mfikih15/Documents/AUVSI/build/pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/pid /home/amvui/AUVSI/build /home/amvui/AUVSI/build/pid /home/amvui/AUVSI/build/pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
 
