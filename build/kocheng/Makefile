@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
-.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
-
-# Convenience name for target.
-_kocheng_generate_messages_check_deps_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
-
-.PHONY : _kocheng_generate_messages_check_deps_mission
-
-# fast build rule for target.
-_kocheng_generate_messages_check_deps_mission/fast:
-	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_mission/fast
-
-# Convenience name for target.
 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
 	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
@@ -284,6 +269,21 @@ geographic_msgs_generate_messages_eus: kocheng/CMakeFiles/geographic_msgs_genera
 geographic_msgs_generate_messages_eus/fast:
 	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
 .PHONY : geographic_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_mission_status: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_mission_status
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_mission_status/fast:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_mission_status/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
@@ -706,6 +706,21 @@ kocheng_generate_messages_cpp/fast:
 .PHONY : kocheng_generate_messages_cpp/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_debug_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission/fast:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule:
 	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule
@@ -1013,7 +1028,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
-	@echo "... _kocheng_generate_messages_check_deps_mission"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
@@ -1022,6 +1036,7 @@ help:
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -1050,6 +1065,7 @@ help:
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
 	@echo "... navigation"
 	@echo "... kocheng_gencpp"

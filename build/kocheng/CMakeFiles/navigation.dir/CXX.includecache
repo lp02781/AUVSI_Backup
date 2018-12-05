@@ -6,6 +6,38 @@
 
 #IncludeRegexTransform: 
 
+/home/amvui/AUVSI/devel/include/kocheng/debug_mission.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/home/amvui/AUVSI/devel/include/kocheng/mission_status.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/amvui/AUVSI/devel/include/kocheng/override_motor.h
 string
 -
@@ -101,6 +133,10 @@ pid/pid_const_msg.h
 /home/amvui/AUVSI/src/kocheng/src/mission/pid/pid_const_msg.h
 kocheng/override_motor.h
 /home/amvui/AUVSI/src/kocheng/src/mission/kocheng/override_motor.h
+kocheng/mission_status.h
+/home/amvui/AUVSI/src/kocheng/src/mission/kocheng/mission_status.h
+kocheng/debug_mission.h
+/home/amvui/AUVSI/src/kocheng/src/mission/kocheng/debug_mission.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

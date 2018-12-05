@@ -21,17 +21,15 @@ float update_time=0.01;
 float delta_t = 0.01;
 float initial_time = 0; 
 
-float kpx = 1.65;//1.5
-float kix = 1;//1
-float kdx = 0.5;//0.5
-
-float kpy = 1.65;//1.5
-float kiy = 1;//1
-float kdy = 0.5;//0.5
-
 int number_camera=0;
 
 #define PWM_NAV 1400
+float kp_nav = 1.65;//1.5
+float ki_nav = 1;//1
+float kd_nav = 0.5;//0.5
+float longtitude_nav_end;
+float latitude_nav_end;
+float tolerance_nav;
 int setpoint_nav=160;
 int x_nav=0;
 int y_nav=180;

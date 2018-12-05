@@ -1,3 +1,1 @@
-bool navigation_status
-bool go_to_speed_status
-bool speed_status
+string mission_makara

@@ -686,19 +686,6 @@ pid_gencpp/fast:
 .PHONY : pid_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named _kocheng_generate_messages_check_deps_mission
-
-# Build rule for target.
-_kocheng_generate_messages_check_deps_mission: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_mission
-.PHONY : _kocheng_generate_messages_check_deps_mission
-
-# fast build rule for target.
-_kocheng_generate_messages_check_deps_mission/fast:
-	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_mission/fast
-
-#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -788,6 +775,19 @@ geographic_msgs_generate_messages_eus: cmake_check_build_system
 geographic_msgs_generate_messages_eus/fast:
 	$(MAKE) -f kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
 .PHONY : geographic_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_mission_status
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_mission_status: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_mission_status
+.PHONY : _kocheng_generate_messages_check_deps_mission_status
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_mission_status/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_mission_status/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
@@ -1154,6 +1154,19 @@ kocheng_generate_messages_cpp/fast:
 .PHONY : kocheng_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_debug_mission
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_debug_mission
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
+
+#=============================================================================
 # Target rules for targets named _kocheng_generate_messages_check_deps_override_motor
 
 # Build rule for target.
@@ -1323,7 +1336,6 @@ help:
 	@echo "... controller_adaptive_y"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
-	@echo "... _kocheng_generate_messages_check_deps_mission"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
@@ -1331,6 +1343,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -1359,6 +1372,7 @@ help:
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
 	@echo "... navigation"
 	@echo "... kocheng_gencpp"

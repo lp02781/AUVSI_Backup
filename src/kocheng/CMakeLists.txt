@@ -8,7 +8,7 @@ project(kocheng)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-   cv_bridge
+  cv_bridge
   image_transport
   sensor_msgs
   roscpp
@@ -57,8 +57,8 @@ add_message_files(
 	FILES
 	rc_number.msg
 	override_motor.msg
+	debug_mission.msg
 	mission_status.msg
-	navigation_mission.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kocheng_generate_messages_eus"
-  "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/msg/mission.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l"
+  "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/msg/debug_mission.l"
   "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/msg/rc_number.l"
   "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l"
   "/home/amvui/AUVSI/devel/share/roseus/ros/kocheng/manifest.l"

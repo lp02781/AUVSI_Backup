@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/amvui/AUVSI/devel/include/kocheng/mission_status.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/amvui/AUVSI/devel/include/kocheng/rc_number.h
 string
 -
@@ -43,6 +59,8 @@ mavros_msgs/State.h
 /home/amvui/AUVSI/src/kocheng/src/main/mavros_msgs/State.h
 kocheng/rc_number.h
 /home/amvui/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
+kocheng/mission_status.h
+/home/amvui/AUVSI/src/kocheng/src/main/kocheng/mission_status.h
 
 /opt/ros/kinetic/include/mavros_msgs/SetMode.h
 ros/service_traits.h

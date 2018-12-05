@@ -5,22 +5,33 @@
 #include "mavros_msgs/SetMode.h"
 #include "mavros_msgs/State.h"
 #include "kocheng/rc_number.h"
-
+#include "kocheng/mission_status.h"
 
 using namespace std;
 int rc_flag_in;
+string receive_mission;
 
 ros::ServiceClient client_set_flightmode;
+kocheng::mission_status	mission;
 
 void rc_number_cb	(const kocheng::rc_number& number);
+void rc_mission_cb	(const kocheng::mission_status& data);
+void waypoint_running(string waypoint);
+void mission_running(string mission_name);
 
 bool changeFlightMode(const char* flight_mode);
+bool changeFlightModeDebug(string fm);
+
+ros::Subscriber sub_mission_rc;
+ros::Publisher pub_mission_rc;
 
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "node_controller");
 	ros::NodeHandle nh;
 	
+	pub_mission_rc = nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	sub_mission_rc = nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_rc_number = nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
 	client_set_flightmode = nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 	
@@ -30,15 +41,42 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		sleep(0.5);
 		if(rc_flag_in == first_simple ){
-			int a=1+1;
+			waypoint_running("navigation_gate");
+			mission_running("navigation");
+			waypoint_running("speed_gate");
+			mission_running("speed");
 		}
 		else if(rc_flag_in == second_simple){
-			int b=1+1;
+			ros::spinOnce();
 		}
 		else if(rc_flag_in == zero_flag){
-			int c=1+1;	
+			changeFlightModeDebug("MANUAL");
 		}
 	}
+}
+
+void waypoint_running(string waypoint){
+	string waypoint_start=waypoint+"_gate.start";
+	changeFlightModeDebug("HOLD");
+	mission.mission_makara=waypoint_start;
+	pub_mission_rc.publish(mission);
+	system("rosrun mavros mavwp clear"); //clear wp
+	string command = "rosrun mavros mavwp load ~/"+waypoint+"_gate.waypoints";
+	system(command.c_str());
+	changeFlightModeDebug("AUTO");
+	changeFlightModeDebug("HOLD");
+	string waypoint_end=waypoint+"_gate.end";
+	mission.mission_makara=waypoint_end;
+	pub_mission_rc.publish(mission);
+}
+	
+void mission_running(string mission_name){
+	string mission_start=mission_name+".start";
+	changeFlightModeDebug("MANUAL");
+	mission.mission_makara=mission_start;
+	pub_mission_rc.publish(mission);
+	string mission_end=mission_name+".end";
+	while(ros::ok() && receive_mission != mission_end ) ros::spinOnce();
 }
 
 void rc_number_cb (const kocheng::rc_number& number){
@@ -58,4 +96,19 @@ bool changeFlightMode(const char* flight_mode){
 		return  false;
 	}
 }
+
+bool changeFlightModeDebug(string fm){
+	if(changeFlightMode(fm.c_str())){
+		ROS_WARN_STREAM("Changed to " << fm);
+	}
+	else {
+
+		ROS_ERROR_STREAM("Failed changing to " << fm);
+	}
+}
+void rc_mission_cb	(const kocheng::mission_status& data){
+	receive_mission = data.mission_makara;
+}
+
+
 

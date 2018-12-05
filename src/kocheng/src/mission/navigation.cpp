@@ -10,22 +10,32 @@
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
 #include "kocheng/override_motor.h"
+#include "kocheng/mission_status.h"
+#include "kocheng/debug_mission.h"
 
 using namespace std;
 using namespace cv;
 
 void imageProcessing(Mat input_image);
 void pid_receiver_cb(const pid::controller_msg& control);
+void rc_mission_cb	(const kocheng::mission_status& data);
 
 Mat receive_image;
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
 kocheng::override_motor controller;
+kocheng::mission_status	mission;
+kocheng::debug_mission	debug;
 
 int state;
 int throttle_pwm;
 int steer_pwm;
 int control_effort;
+
+float latitude;
+float longtitude;
+
+string receive_mission;
 
 void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
@@ -41,15 +51,19 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 }
 
 int main(int argc, char **argv){
-	ros::init(argc, argv, "videoRec");
+	ros::init(argc, argv, "navigation");
 	ros::NodeHandle nh;
 	cv::startWindowThread();
 	
+	ROS_WARN("NC : navigation.cpp active");
 	image_transport::ImageTransport it(nh);
 	
+	ros::Publisher pub_debug_rc 	= nh.advertise<kocheng::debug_mission>("/auvsi/debug/rc", 10);
 	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_motor>("/auvsi/override/motor", 10);
 	ros::Publisher pub_pid_in 		= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);
 	ros::Publisher pub_pid_const 	= nh.advertise<pid::pid_const_msg>("/auvsi/pid/constX", 1,true);
+	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	ros::Subscriber sub_mission_rc 	= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_pid_x_out 	= nh.subscribe("/auvsi/pid/outX", 10, pid_receiver_cb );
 	ros::Subscriber sub_image_cb	= nh.subscribe("camera/image/compressed", 1, imageCallback);
 	
@@ -67,14 +81,14 @@ int main(int argc, char **argv){
 	createTrackbar("hight_Nav", "panel_nav", &height_nav, 700);
 	createTrackbar("noise_Nav", "panel_nav", &Noise_nav, 255);
 	
-	while (ros::ok()) {
+	while (ros::ok() && receive_mission=="navigation.start") {
 		ros::spinOnce();
 		
 		imageProcessing(receive_image);
 		
-		pid_const.p = kpx;
-		pid_const.i = kix;
-		pid_const.d = kdx;
+		pid_const.p = kp_nav;
+		pid_const.i = ki_nav;
+		pid_const.d = kd_nav;
 		pub_pid_const.publish(pid_const);
 		
 		pid_in.x = state;
@@ -92,6 +106,19 @@ int main(int argc, char **argv){
 		controller.steering = steer_pwm;
 		controller.throttle = throttle_pwm;
 		pub_override_rc.publish(controller);
+		
+		debug.setpoint=setpoint_nav;
+		debug.state=state;
+		debug.effort=control_effort;
+		debug.longtitude=longtitude_nav_end;
+		debug.latitude=latitude_nav_end;
+
+		if(longtitude<longtitude_nav_end+tolerance_nav && longtitude>longtitude_nav_end-tolerance_nav &&
+		latitude<latitude_nav_end+tolerance_nav && latitude>latitude_nav_end-tolerance_nav){
+			mission.mission_makara="navigation.end";
+			pub_mission_rc.publish(mission);
+			ros::shutdown();
+		}
 	}
 }
 
@@ -155,4 +182,8 @@ void imageProcessing(Mat input_image){
 
 void pid_receiver_cb(const pid::controller_msg& control){
 	control_effort = control.u;
+}
+
+void rc_mission_cb	(const kocheng::mission_status& data){
+	receive_mission = data.mission_makara;
 }
