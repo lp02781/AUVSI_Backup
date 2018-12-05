@@ -55,22 +55,9 @@ int main(int argc, char **argv)
 		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s rc:%d", override_status.c_str(), rc_flag);
-		ROS_INFO(" ");
-				
-		
-		ROS_WARN("NC : topic override");
 		ROS_INFO("steering:%d throttle:%d", steering, throttle);
-		ROS_INFO(" ");
-		
-		ROS_WARN("NC : topic rc");
 		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", in_channel[0], in_channel[1], in_channel[2], in_channel[3], in_channel[4], in_channel[5], in_channel[6], in_channel[7]);		
-		ROS_INFO(" ");
-		
-		ROS_WARN("NC : topic motor");
 		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", out_channel[0], out_channel[1], out_channel[2], out_channel[3], out_channel[4], out_channel[5], out_channel[6], out_channel[7]);		
-		ROS_INFO(" ");
-		
-		ROS_WARN("NC : topic state");
 		ROS_INFO("armed:%s mode:%s", armed.c_str(), mode.c_str());
 		ROS_INFO(" ");
 		
@@ -111,7 +98,6 @@ void rc_state_cb (const mavros_msgs::State& state){
 	else{armed = "false";}
 	mode = state.mode;	
 }
-	
 
 void pid_receiver_cb(const pid::controller_msg& control){
 	effort = control.u;

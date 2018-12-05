@@ -53,28 +53,36 @@ CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 # Include the progress variables for this target.
 include kocheng/CMakeFiles/kocheng_generate_messages_py.dir/progress.make
 
+kocheng/CMakeFiles/kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py
 
 
+/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission.py: /home/amvui/AUVSI/src/kocheng/msg/mission.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG kocheng/mission"
+	cd /home/amvui/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/kocheng/msg/mission.msg -Ikocheng:/home/amvui/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
+
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py: /home/amvui/AUVSI/src/kocheng/msg/rc_number.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG kocheng/rc_number"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG kocheng/rc_number"
 	cd /home/amvui/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/amvui/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
 
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py: /home/amvui/AUVSI/src/kocheng/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG kocheng/override_motor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG kocheng/override_motor"
 	cd /home/amvui/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/amvui/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/amvui/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
 
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission.py
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
 /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for kocheng"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for kocheng"
 	cd /home/amvui/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg --initpy
 
 kocheng_generate_messages_py: kocheng/CMakeFiles/kocheng_generate_messages_py
+kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission.py
 kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
 kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
 kocheng_generate_messages_py: /home/amvui/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py

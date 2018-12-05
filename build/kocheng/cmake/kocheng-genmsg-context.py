@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/amvui/AUVSI/src/kocheng/msg/rc_number.msg;/home/amvui/AUVSI/src/kocheng/msg/override_motor.msg"
+messages_str = "/home/amvui/AUVSI/src/kocheng/msg/rc_number.msg;/home/amvui/AUVSI/src/kocheng/msg/override_motor.msg;/home/amvui/AUVSI/src/kocheng/msg/mission_status.msg;/home/amvui/AUVSI/src/kocheng/msg/navigation_mission.msg"
 services_str = ""
 pkg_name = "kocheng"
 dependencies_str = "mavros_msgs;std_msgs;sensor_msgs"

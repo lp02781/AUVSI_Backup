@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kocheng_generate_messages_lisp"
+  "/home/amvui/AUVSI/devel/share/common-lisp/ros/kocheng/msg/mission.lisp"
   "/home/amvui/AUVSI/devel/share/common-lisp/ros/kocheng/msg/rc_number.lisp"
   "/home/amvui/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp"
 )

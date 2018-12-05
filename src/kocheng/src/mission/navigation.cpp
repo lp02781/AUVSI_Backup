@@ -33,7 +33,6 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
   {
     receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
     waitKey(10);
-    imageProcessing(receive_image);
   }
   catch (cv_bridge::Exception& e)
   {
@@ -70,7 +69,9 @@ int main(int argc, char **argv){
 	
 	while (ros::ok()) {
 		ros::spinOnce();
-
+		
+		imageProcessing(receive_image);
+		
 		pid_const.p = kpx;
 		pid_const.i = kix;
 		pid_const.d = kdx;

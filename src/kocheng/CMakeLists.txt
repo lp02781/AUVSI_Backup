@@ -57,6 +57,8 @@ add_message_files(
 	FILES
 	rc_number.msg
 	override_motor.msg
+	mission_status.msg
+	navigation_mission.msg
 )
 
 ## Generate services in the 'srv' folder

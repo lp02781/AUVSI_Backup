@@ -70,6 +70,8 @@
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/install.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/rebuild_cache.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/edit_cache.dir
+/home/amvui/AUVSI/build/kocheng/CMakeFiles/install/local.dir
+/home/amvui/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir
@@ -116,4 +118,3 @@
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_genpy.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/install/strip.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/image_front.dir
-/home/amvui/AUVSI/build/kocheng/CMakeFiles/install/local.dir

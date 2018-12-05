@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -121,17 +132,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -164,6 +164,21 @@ preinstall/fast:
 depend:
 	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_mission/fast:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_mission/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
@@ -997,6 +1012,8 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... _kocheng_generate_messages_check_deps_mission"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"
@@ -1043,7 +1060,6 @@ help:
 	@echo "... kocheng_genpy"
 	@echo "... install/strip"
 	@echo "... image_front"
-	@echo "... install/local"
 	@echo "... src/main/debug_makara.o"
 	@echo "... src/main/debug_makara.i"
 	@echo "... src/main/debug_makara.s"

@@ -686,6 +686,19 @@ pid_gencpp/fast:
 .PHONY : pid_gencpp/fast
 
 #=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_mission
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_mission: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_mission
+.PHONY : _kocheng_generate_messages_check_deps_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_mission/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_mission/fast
+
+#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1310,6 +1323,7 @@ help:
 	@echo "... controller_adaptive_y"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
+	@echo "... _kocheng_generate_messages_check_deps_mission"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_eus"

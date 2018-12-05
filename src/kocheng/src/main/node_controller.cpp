@@ -12,7 +12,6 @@ int rc_flag_in;
 
 ros::ServiceClient client_set_flightmode;
 
-
 void rc_number_cb	(const kocheng::rc_number& number);
 
 bool changeFlightMode(const char* flight_mode);
