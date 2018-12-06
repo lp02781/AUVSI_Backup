@@ -97,7 +97,7 @@ int main(int argc, char **argv){
 			pid_const.i = ki_nav;
 			pid_const.d = kd_nav;
 			pub_pid_const.publish(pid_const);
-		
+			
 			pid_in.x = state;
 			pid_in.t = pid_in.t+delta_t;
 			pid_in.setpoint = setpoint_nav;
@@ -109,6 +109,10 @@ int main(int argc, char **argv){
 			
 			camera_pwm=CAM_INIT_PWM;
 			drone_pwm=DRONE_INIT_PWM;
+			
+			if(state==0){
+				steer_pwm=MIDDLE_PWM;
+			}
 			
 			controller.drone_servo = drone_pwm;
 			controller.camera_servo = camera_pwm;
@@ -127,7 +131,6 @@ int main(int argc, char **argv){
 			latitude<latitude_nav_end+tolerance_nav && latitude>latitude_nav_end-tolerance_nav){
 				mission.mission_makara="navigation.end";
 				pub_mission_rc.publish(mission);
-				ros::shutdown();
 			}
 		}
 	}
@@ -199,6 +202,6 @@ void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
 }
 void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
-	latitude=data.latitude;
-	longitude=data.longitude;
+	latitude	=data.latitude;
+	longitude	=data.longitude;
 }

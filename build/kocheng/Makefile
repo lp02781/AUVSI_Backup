@@ -661,6 +661,21 @@ kocheng_genlisp/fast:
 .PHONY : kocheng_genlisp/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/speed.dir/rule:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/speed.dir/rule
+.PHONY : kocheng/CMakeFiles/speed.dir/rule
+
+# Convenience name for target.
+speed: kocheng/CMakeFiles/speed.dir/rule
+
+.PHONY : speed
+
+# fast build rule for target.
+speed/fast:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/build
+.PHONY : speed/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
 	cd /home/amvui/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 .PHONY : kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
@@ -1017,6 +1032,33 @@ src/mission/navigation.cpp.s:
 	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/navigation.dir/build.make kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.s
 .PHONY : src/mission/navigation.cpp.s
 
+src/mission/speed.o: src/mission/speed.cpp.o
+
+.PHONY : src/mission/speed.o
+
+# target to build an object file
+src/mission/speed.cpp.o:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/src/mission/speed.cpp.o
+.PHONY : src/mission/speed.cpp.o
+
+src/mission/speed.i: src/mission/speed.cpp.i
+
+.PHONY : src/mission/speed.i
+
+# target to preprocess a source file
+src/mission/speed.cpp.i:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/src/mission/speed.cpp.i
+.PHONY : src/mission/speed.cpp.i
+
+src/mission/speed.s: src/mission/speed.cpp.s
+
+.PHONY : src/mission/speed.s
+
+# target to generate assembly for a file
+src/mission/speed.cpp.s:
+	cd /home/amvui/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/src/mission/speed.cpp.s
+.PHONY : src/mission/speed.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1062,6 +1104,7 @@ help:
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... kocheng_genlisp"
+	@echo "... speed"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
@@ -1094,6 +1137,9 @@ help:
 	@echo "... src/mission/navigation.o"
 	@echo "... src/mission/navigation.i"
 	@echo "... src/mission/navigation.s"
+	@echo "... src/mission/speed.o"
+	@echo "... src/mission/speed.i"
+	@echo "... src/mission/speed.s"
 .PHONY : help
 
 

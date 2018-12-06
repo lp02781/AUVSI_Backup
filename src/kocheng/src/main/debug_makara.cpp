@@ -104,8 +104,8 @@ void compass_rc_cb(const std_msgs::Float64& msg){
 }
 
 void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
-	latitude_now=data.latitude;
-	longitude_now=data.longitude;
+	latitude_now	=data.latitude;
+	longitude_now	=data.longitude;
 }
 
 void rc_mission_cb (const kocheng::mission_status& mission){

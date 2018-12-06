@@ -23,19 +23,19 @@ void override_status_cb(const kocheng::rc_number& override_status_recv);
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "motor_controller");
-  ros::NodeHandle n;
+	ros::init(argc, argv, "motor_controller");
+	ros::NodeHandle n;
 
-  pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
+	pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
   
-  sub_override_motor = n.subscribe("/auvsi/override/motor", 8, override_input_cb);
-  sub_override_status = n.subscribe("/auvsi/rc/number", 8, override_status_cb);
+	sub_override_motor = n.subscribe("/auvsi/override/motor", 8, override_input_cb);
+	sub_override_status = n.subscribe("/auvsi/rc/number", 8, override_status_cb);
   
-  ROS_WARN("NC : motor_controller.cpp active");
+	ROS_WARN("NC : motor_controller.cpp active");
   
-  override_out.channels[DRONE_SERVO] = cam_servo;
-  override_out.channels[CAMERA_SERVO] = drone_servo;
-  pub_override_rc.publish(override_out);
+	override_out.channels[DRONE_SERVO] = cam_servo;
+	override_out.channels[CAMERA_SERVO] = drone_servo;
+	pub_override_rc.publish(override_out);
 	
 	while(ros::ok()){
 		sleep(0.2);
@@ -74,8 +74,8 @@ void override_status_cb(const kocheng::rc_number& override_status_recv){
 }
 
 void override_input_cb(const kocheng::override_motor& override_recv){
-	throttle=override_recv.throttle;
-	steering=override_recv.steering;
-	cam_servo=override_recv.camera_servo;
-	drone_servo=override_recv.drone_servo;
+	throttle	=override_recv.throttle;
+	steering	=override_recv.steering;
+	cam_servo	=override_recv.camera_servo;
+	drone_servo	=override_recv.drone_servo;
 }

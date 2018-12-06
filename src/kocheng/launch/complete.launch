@@ -25,5 +25,5 @@
 	<node name="image_front" pkg="kocheng" output="screen" type="image_front" />
 	
 	<node name="navigation" pkg="kocheng" output="screen" type="navigation" />
-	
+	<node name="speed" pkg="kocheng" output="screen" type="speed" />
 </launch>

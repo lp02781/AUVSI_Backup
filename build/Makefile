@@ -1115,6 +1115,19 @@ kocheng_genlisp/fast:
 .PHONY : kocheng_genlisp/fast
 
 #=============================================================================
+# Target rules for targets named speed
+
+# Build rule for target.
+speed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 speed
+.PHONY : speed
+
+# fast build rule for target.
+speed/fast:
+	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/build
+.PHONY : speed/fast
+
+#=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1369,6 +1382,7 @@ help:
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... kocheng_genlisp"
+	@echo "... speed"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"

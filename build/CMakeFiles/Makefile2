@@ -1470,6 +1470,7 @@ kocheng/all: kocheng/CMakeFiles/node_controller.dir/all
 kocheng/all: kocheng/CMakeFiles/motor_controller.dir/all
 kocheng/all: kocheng/CMakeFiles/remote_monitor.dir/all
 kocheng/all: kocheng/CMakeFiles/debug_makara.dir/all
+kocheng/all: kocheng/CMakeFiles/speed.dir/all
 kocheng/all: kocheng/CMakeFiles/kocheng_generate_messages.dir/all
 kocheng/all: kocheng/CMakeFiles/navigation.dir/all
 kocheng/all: kocheng/CMakeFiles/image_front.dir/all
@@ -1510,6 +1511,7 @@ kocheng/clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/cle
 kocheng/clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/clean
 kocheng/clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/kocheng_genlisp.dir/clean
+kocheng/clean: kocheng/CMakeFiles/speed.dir/clean
 kocheng/clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir/clean
 kocheng/clean: kocheng/CMakeFiles/kocheng_generate_messages.dir/clean
 kocheng/clean: kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/clean
@@ -2616,6 +2618,43 @@ kocheng/CMakeFiles/kocheng_genlisp.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/kocheng_genlisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kocheng/CMakeFiles/speed.dir
+
+# All Build rule for target.
+kocheng/CMakeFiles/speed.dir/all:
+	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/depend
+	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=67,68 "Built target speed"
+.PHONY : kocheng/CMakeFiles/speed.dir/all
+
+# Include target in all.
+all: kocheng/CMakeFiles/speed.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+kocheng/CMakeFiles/speed.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/speed.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AUVSI/build/CMakeFiles 0
+.PHONY : kocheng/CMakeFiles/speed.dir/rule
+
+# Convenience name for target.
+speed: kocheng/CMakeFiles/speed.dir/rule
+
+.PHONY : speed
+
+# clean rule for target.
+kocheng/CMakeFiles/speed.dir/clean:
+	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/clean
+.PHONY : kocheng/CMakeFiles/speed.dir/clean
+
+# clean rule for target.
+clean: kocheng/CMakeFiles/speed.dir/clean
 
 .PHONY : clean
 

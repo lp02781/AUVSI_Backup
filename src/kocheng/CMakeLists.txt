@@ -183,14 +183,20 @@ target_link_libraries(debug_makara
 ${catkin_LIBRARIES}
 )
 
+add_executable(image_front src/main/image_front.cpp )
+target_link_libraries(image_front
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
 add_executable(navigation src/mission/navigation.cpp )
 target_link_libraries(navigation
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(image_front src/main/image_front.cpp )
-target_link_libraries(image_front
+add_executable(speed src/mission/speed.cpp )
+target_link_libraries(speed
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )

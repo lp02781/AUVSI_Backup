@@ -105,6 +105,7 @@
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/uuid_msgs_generate_messages_lisp.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_genlisp.dir
+/home/amvui/AUVSI/build/kocheng/CMakeFiles/speed.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/uuid_msgs_generate_messages_py.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages.dir
 /home/amvui/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir
