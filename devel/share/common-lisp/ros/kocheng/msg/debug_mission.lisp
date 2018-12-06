@@ -22,9 +22,9 @@
     :initarg :effort
     :type cl:fixnum
     :initform 0)
-   (longtitude
-    :reader longtitude
-    :initarg :longtitude
+   (longitude
+    :reader longitude
+    :initarg :longitude
     :type cl:float
     :initform 0.0)
    (latitude
@@ -57,10 +57,10 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader kocheng-msg:effort-val is deprecated.  Use kocheng-msg:effort instead.")
   (effort m))
 
-(cl:ensure-generic-function 'longtitude-val :lambda-list '(m))
-(cl:defmethod longtitude-val ((m <debug_mission>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader kocheng-msg:longtitude-val is deprecated.  Use kocheng-msg:longtitude instead.")
-  (longtitude m))
+(cl:ensure-generic-function 'longitude-val :lambda-list '(m))
+(cl:defmethod longitude-val ((m <debug_mission>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader kocheng-msg:longitude-val is deprecated.  Use kocheng-msg:longitude instead.")
+  (longitude m))
 
 (cl:ensure-generic-function 'latitude-val :lambda-list '(m))
 (cl:defmethod latitude-val ((m <debug_mission>))
@@ -80,7 +80,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'longtitude))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'longitude))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -110,7 +110,7 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'longtitude) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'longitude) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -127,16 +127,16 @@
   "kocheng/debug_mission")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<debug_mission>)))
   "Returns md5sum for a message object of type '<debug_mission>"
-  "433552a2441e9b753923ee971fe5f102")
+  "5ca02c94f587bbdb18e5bb5621c35260")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'debug_mission)))
   "Returns md5sum for a message object of type 'debug_mission"
-  "433552a2441e9b753923ee971fe5f102")
+  "5ca02c94f587bbdb18e5bb5621c35260")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<debug_mission>)))
   "Returns full string definition for message of type '<debug_mission>"
-  (cl:format cl:nil "int16 setpoint~%int16 state~%int16 effort~%float32 longtitude~%float32 latitude~%~%~%"))
+  (cl:format cl:nil "int16 setpoint~%int16 state~%int16 effort~%float32 longitude~%float32 latitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'debug_mission)))
   "Returns full string definition for message of type 'debug_mission"
-  (cl:format cl:nil "int16 setpoint~%int16 state~%int16 effort~%float32 longtitude~%float32 latitude~%~%~%"))
+  (cl:format cl:nil "int16 setpoint~%int16 state~%int16 effort~%float32 longitude~%float32 latitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <debug_mission>))
   (cl:+ 0
      2
@@ -151,6 +151,6 @@
     (cl:cons ':setpoint (setpoint msg))
     (cl:cons ':state (state msg))
     (cl:cons ':effort (effort msg))
-    (cl:cons ':longtitude (longtitude msg))
+    (cl:cons ':longitude (longitude msg))
     (cl:cons ':latitude (latitude msg))
 ))

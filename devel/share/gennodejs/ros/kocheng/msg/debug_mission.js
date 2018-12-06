@@ -21,7 +21,7 @@ class debug_mission {
       this.setpoint = null;
       this.state = null;
       this.effort = null;
-      this.longtitude = null;
+      this.longitude = null;
       this.latitude = null;
     }
     else {
@@ -43,11 +43,11 @@ class debug_mission {
       else {
         this.effort = 0;
       }
-      if (initObj.hasOwnProperty('longtitude')) {
-        this.longtitude = initObj.longtitude
+      if (initObj.hasOwnProperty('longitude')) {
+        this.longitude = initObj.longitude
       }
       else {
-        this.longtitude = 0.0;
+        this.longitude = 0.0;
       }
       if (initObj.hasOwnProperty('latitude')) {
         this.latitude = initObj.latitude
@@ -66,8 +66,8 @@ class debug_mission {
     bufferOffset = _serializer.int16(obj.state, buffer, bufferOffset);
     // Serialize message field [effort]
     bufferOffset = _serializer.int16(obj.effort, buffer, bufferOffset);
-    // Serialize message field [longtitude]
-    bufferOffset = _serializer.float32(obj.longtitude, buffer, bufferOffset);
+    // Serialize message field [longitude]
+    bufferOffset = _serializer.float32(obj.longitude, buffer, bufferOffset);
     // Serialize message field [latitude]
     bufferOffset = _serializer.float32(obj.latitude, buffer, bufferOffset);
     return bufferOffset;
@@ -83,8 +83,8 @@ class debug_mission {
     data.state = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [effort]
     data.effort = _deserializer.int16(buffer, bufferOffset);
-    // Deserialize message field [longtitude]
-    data.longtitude = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [longitude]
+    data.longitude = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [latitude]
     data.latitude = _deserializer.float32(buffer, bufferOffset);
     return data;
@@ -101,7 +101,7 @@ class debug_mission {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '433552a2441e9b753923ee971fe5f102';
+    return '5ca02c94f587bbdb18e5bb5621c35260';
   }
 
   static messageDefinition() {
@@ -110,7 +110,7 @@ class debug_mission {
     int16 setpoint
     int16 state
     int16 effort
-    float32 longtitude
+    float32 longitude
     float32 latitude
     
     `;
@@ -143,11 +143,11 @@ class debug_mission {
       resolved.effort = 0
     }
 
-    if (msg.longtitude !== undefined) {
-      resolved.longtitude = msg.longtitude;
+    if (msg.longitude !== undefined) {
+      resolved.longitude = msg.longitude;
     }
     else {
-      resolved.longtitude = 0.0
+      resolved.longitude = 0.0
     }
 
     if (msg.latitude !== undefined) {

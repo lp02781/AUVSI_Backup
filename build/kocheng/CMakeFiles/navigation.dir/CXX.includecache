@@ -137,6 +137,8 @@ kocheng/mission_status.h
 /home/amvui/AUVSI/src/kocheng/src/mission/kocheng/mission_status.h
 kocheng/debug_mission.h
 /home/amvui/AUVSI/src/kocheng/src/mission/kocheng/debug_mission.h
+mavros_msgs/GlobalPositionTarget.h
+/home/amvui/AUVSI/src/kocheng/src/mission/mavros_msgs/GlobalPositionTarget.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
@@ -154,6 +156,22 @@ opencv2/imgproc/imgproc.hpp
 opencv2/imgproc/types_c.h
 -
 stdexcept
+-
+
+/opt/ros/kinetic/include/geometry_msgs/Vector3.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/image_transport/camera_publisher.h
@@ -226,6 +244,28 @@ image_transport/loader_fwds.h
 
 /opt/ros/kinetic/include/image_transport/transport_hints.h
 ros/ros.h
+-
+
+/opt/ros/kinetic/include/mavros_msgs/GlobalPositionTarget.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Vector3.h
+-
+geometry_msgs/Vector3.h
 -
 
 /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h

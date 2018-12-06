@@ -5,8 +5,8 @@
           STATE
           EFFORT-VAL
           EFFORT
-          LONGTITUDE-VAL
-          LONGTITUDE
+          LONGITUDE-VAL
+          LONGITUDE
           LATITUDE-VAL
           LATITUDE
 ))

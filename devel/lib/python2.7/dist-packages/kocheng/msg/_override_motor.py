@@ -7,14 +7,16 @@ import struct
 
 
 class override_motor(genpy.Message):
-  _md5sum = "c4dd5817de7802d91e66008f92eca79e"
+  _md5sum = "5db88c405e17879270731989801ea69a"
   _type = "kocheng/override_motor"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int16 steering
 int16 throttle
+int16 camera_servo
+int16 drone_servo
 """
-  __slots__ = ['steering','throttle']
-  _slot_types = ['int16','int16']
+  __slots__ = ['steering','throttle','camera_servo','drone_servo']
+  _slot_types = ['int16','int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +26,7 @@ int16 throttle
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       steering,throttle
+       steering,throttle,camera_servo,drone_servo
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -37,9 +39,15 @@ int16 throttle
         self.steering = 0
       if self.throttle is None:
         self.throttle = 0
+      if self.camera_servo is None:
+        self.camera_servo = 0
+      if self.drone_servo is None:
+        self.drone_servo = 0
     else:
       self.steering = 0
       self.throttle = 0
+      self.camera_servo = 0
+      self.drone_servo = 0
 
   def _get_types(self):
     """
@@ -54,7 +62,7 @@ int16 throttle
     """
     try:
       _x = self
-      buff.write(_get_struct_2h().pack(_x.steering, _x.throttle))
+      buff.write(_get_struct_4h().pack(_x.steering, _x.throttle, _x.camera_servo, _x.drone_servo))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -67,8 +75,8 @@ int16 throttle
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.steering, _x.throttle,) = _get_struct_2h().unpack(str[start:end])
+      end += 8
+      (_x.steering, _x.throttle, _x.camera_servo, _x.drone_servo,) = _get_struct_4h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -82,7 +90,7 @@ int16 throttle
     """
     try:
       _x = self
-      buff.write(_get_struct_2h().pack(_x.steering, _x.throttle))
+      buff.write(_get_struct_4h().pack(_x.steering, _x.throttle, _x.camera_servo, _x.drone_servo))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -96,8 +104,8 @@ int16 throttle
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.steering, _x.throttle,) = _get_struct_2h().unpack(str[start:end])
+      end += 8
+      (_x.steering, _x.throttle, _x.camera_servo, _x.drone_servo,) = _get_struct_4h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -106,9 +114,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2h = None
-def _get_struct_2h():
-    global _struct_2h
-    if _struct_2h is None:
-        _struct_2h = struct.Struct("<2h")
-    return _struct_2h
+_struct_4h = None
+def _get_struct_4h():
+    global _struct_4h
+    if _struct_4h is None:
+        _struct_4h = struct.Struct("<4h")
+    return _struct_4h

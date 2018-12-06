@@ -20,6 +20,8 @@ class override_motor {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.steering = null;
       this.throttle = null;
+      this.camera_servo = null;
+      this.drone_servo = null;
     }
     else {
       if (initObj.hasOwnProperty('steering')) {
@@ -34,6 +36,18 @@ class override_motor {
       else {
         this.throttle = 0;
       }
+      if (initObj.hasOwnProperty('camera_servo')) {
+        this.camera_servo = initObj.camera_servo
+      }
+      else {
+        this.camera_servo = 0;
+      }
+      if (initObj.hasOwnProperty('drone_servo')) {
+        this.drone_servo = initObj.drone_servo
+      }
+      else {
+        this.drone_servo = 0;
+      }
     }
   }
 
@@ -43,6 +57,10 @@ class override_motor {
     bufferOffset = _serializer.int16(obj.steering, buffer, bufferOffset);
     // Serialize message field [throttle]
     bufferOffset = _serializer.int16(obj.throttle, buffer, bufferOffset);
+    // Serialize message field [camera_servo]
+    bufferOffset = _serializer.int16(obj.camera_servo, buffer, bufferOffset);
+    // Serialize message field [drone_servo]
+    bufferOffset = _serializer.int16(obj.drone_servo, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -54,11 +72,15 @@ class override_motor {
     data.steering = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [throttle]
     data.throttle = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [camera_servo]
+    data.camera_servo = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [drone_servo]
+    data.drone_servo = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 4;
+    return 8;
   }
 
   static datatype() {
@@ -68,7 +90,7 @@ class override_motor {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'c4dd5817de7802d91e66008f92eca79e';
+    return '5db88c405e17879270731989801ea69a';
   }
 
   static messageDefinition() {
@@ -76,6 +98,8 @@ class override_motor {
     return `
     int16 steering
     int16 throttle
+    int16 camera_servo
+    int16 drone_servo
     
     `;
   }
@@ -98,6 +122,20 @@ class override_motor {
     }
     else {
       resolved.throttle = 0
+    }
+
+    if (msg.camera_servo !== undefined) {
+      resolved.camera_servo = msg.camera_servo;
+    }
+    else {
+      resolved.camera_servo = 0
+    }
+
+    if (msg.drone_servo !== undefined) {
+      resolved.drone_servo = msg.drone_servo;
+    }
+    else {
+      resolved.drone_servo = 0
     }
 
     return resolved;

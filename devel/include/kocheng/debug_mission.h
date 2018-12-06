@@ -27,14 +27,14 @@ struct debug_mission_
     : setpoint(0)
     , state(0)
     , effort(0)
-    , longtitude(0.0)
+    , longitude(0.0)
     , latitude(0.0)  {
     }
   debug_mission_(const ContainerAllocator& _alloc)
     : setpoint(0)
     , state(0)
     , effort(0)
-    , longtitude(0.0)
+    , longitude(0.0)
     , latitude(0.0)  {
   (void)_alloc;
     }
@@ -50,8 +50,8 @@ struct debug_mission_
    typedef int16_t _effort_type;
   _effort_type effort;
 
-   typedef float _longtitude_type;
-  _longtitude_type longtitude;
+   typedef float _longitude_type;
+  _longitude_type longitude;
 
    typedef float _latitude_type;
   _latitude_type latitude;
@@ -134,12 +134,12 @@ struct MD5Sum< ::kocheng::debug_mission_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "433552a2441e9b753923ee971fe5f102";
+    return "5ca02c94f587bbdb18e5bb5621c35260";
   }
 
   static const char* value(const ::kocheng::debug_mission_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x433552a2441e9b75ULL;
-  static const uint64_t static_value2 = 0x3923ee971fe5f102ULL;
+  static const uint64_t static_value1 = 0x5ca02c94f587bbdbULL;
+  static const uint64_t static_value2 = 0x18e5bb5621c35260ULL;
 };
 
 template<class ContainerAllocator>
@@ -161,7 +161,7 @@ struct Definition< ::kocheng::debug_mission_<ContainerAllocator> >
     return "int16 setpoint\n\
 int16 state\n\
 int16 effort\n\
-float32 longtitude\n\
+float32 longitude\n\
 float32 latitude\n\
 ";
   }
@@ -184,7 +184,7 @@ namespace serialization
       stream.next(m.setpoint);
       stream.next(m.state);
       stream.next(m.effort);
-      stream.next(m.longtitude);
+      stream.next(m.longitude);
       stream.next(m.latitude);
     }
 
@@ -210,8 +210,8 @@ struct Printer< ::kocheng::debug_mission_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.state);
     s << indent << "effort: ";
     Printer<int16_t>::stream(s, indent + "  ", v.effort);
-    s << indent << "longtitude: ";
-    Printer<float>::stream(s, indent + "  ", v.longtitude);
+    s << indent << "longitude: ";
+    Printer<float>::stream(s, indent + "  ", v.longitude);
     s << indent << "latitude: ";
     Printer<float>::stream(s, indent + "  ", v.latitude);
   }

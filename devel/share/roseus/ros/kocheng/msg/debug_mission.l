@@ -14,7 +14,7 @@
 
 (defclass kocheng::debug_mission
   :super ros::object
-  :slots (_setpoint _state _effort _longtitude _latitude ))
+  :slots (_setpoint _state _effort _longitude _latitude ))
 
 (defmethod kocheng::debug_mission
   (:init
@@ -22,14 +22,14 @@
     ((:setpoint __setpoint) 0)
     ((:state __state) 0)
     ((:effort __effort) 0)
-    ((:longtitude __longtitude) 0.0)
+    ((:longitude __longitude) 0.0)
     ((:latitude __latitude) 0.0)
     )
    (send-super :init)
    (setq _setpoint (round __setpoint))
    (setq _state (round __state))
    (setq _effort (round __effort))
-   (setq _longtitude (float __longtitude))
+   (setq _longitude (float __longitude))
    (setq _latitude (float __latitude))
    self)
   (:setpoint
@@ -41,9 +41,9 @@
   (:effort
    (&optional __effort)
    (if __effort (setq _effort __effort)) _effort)
-  (:longtitude
-   (&optional __longtitude)
-   (if __longtitude (setq _longtitude __longtitude)) _longtitude)
+  (:longitude
+   (&optional __longitude)
+   (if __longitude (setq _longitude __longitude)) _longitude)
   (:latitude
    (&optional __latitude)
    (if __latitude (setq _latitude __latitude)) _latitude)
@@ -56,7 +56,7 @@
     2
     ;; int16 _effort
     2
-    ;; float32 _longtitude
+    ;; float32 _longitude
     4
     ;; float32 _latitude
     4
@@ -71,8 +71,8 @@
        (write-word _state s)
      ;; int16 _effort
        (write-word _effort s)
-     ;; float32 _longtitude
-       (sys::poke _longtitude (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _longitude
+       (sys::poke _longitude (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _latitude
        (sys::poke _latitude (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
@@ -85,27 +85,27 @@
      (setq _state (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _effort
      (setq _effort (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; float32 _longtitude
-     (setq _longtitude (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _longitude
+     (setq _longitude (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _latitude
      (setq _latitude (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get kocheng::debug_mission :md5sum-) "433552a2441e9b753923ee971fe5f102")
+(setf (get kocheng::debug_mission :md5sum-) "5ca02c94f587bbdb18e5bb5621c35260")
 (setf (get kocheng::debug_mission :datatype-) "kocheng/debug_mission")
 (setf (get kocheng::debug_mission :definition-)
       "int16 setpoint
 int16 state
 int16 effort
-float32 longtitude
+float32 longitude
 float32 latitude
 
 ")
 
 
 
-(provide :kocheng/debug_mission "433552a2441e9b753923ee971fe5f102")
+(provide :kocheng/debug_mission "5ca02c94f587bbdb18e5bb5621c35260")
 
 

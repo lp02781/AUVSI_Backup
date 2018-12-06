@@ -10,6 +10,7 @@ kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /home/amvui/AUVS
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /home/amvui/AUVSI/src/kocheng/include/kocheng/hehe.hpp
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /home/amvui/AUVSI/src/kocheng/src/mission/navigation.cpp
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
+kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/camera_publisher.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/camera_subscriber.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/exception.h
@@ -19,6 +20,7 @@ kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/single_subscriber_publisher.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/subscriber.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/image_transport/transport_hints.h
+kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/mavros_msgs/GlobalPositionTarget.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d/calib3d_c.h

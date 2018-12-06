@@ -61,7 +61,7 @@ void waypoint_running(string waypoint){
 	mission.mission_makara=waypoint_start;
 	pub_mission_rc.publish(mission);
 	system("rosrun mavros mavwp clear"); //clear wp
-	string command = "rosrun mavros mavwp load ~/"+waypoint+"_gate.waypoints";
+	string command = "rosrun mavros mavwp load ~/"+waypoint+".waypoints";
 	system(command.c_str());
 	changeFlightModeDebug("AUTO");
 	changeFlightModeDebug("HOLD");

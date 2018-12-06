@@ -12,6 +12,7 @@
 #include "kocheng/override_motor.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
+#include "mavros_msgs/GlobalPositionTarget.h"
 
 using namespace std;
 using namespace cv;
@@ -19,6 +20,7 @@ using namespace cv;
 void imageProcessing(Mat input_image);
 void pid_receiver_cb(const pid::controller_msg& control);
 void rc_mission_cb	(const kocheng::mission_status& data);
+void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data);
 
 Mat receive_image;
 pid::plant_msg  pid_in;
@@ -32,8 +34,11 @@ int throttle_pwm;
 int steer_pwm;
 int control_effort;
 
+int drone_pwm;
+int camera_pwm;
+
 float latitude;
-float longtitude;
+float longitude;
 
 string receive_mission;
 
@@ -63,10 +68,12 @@ int main(int argc, char **argv){
 	ros::Publisher pub_pid_in 		= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);
 	ros::Publisher pub_pid_const 	= nh.advertise<pid::pid_const_msg>("/auvsi/pid/constX", 1,true);
 	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	
 	ros::Subscriber sub_mission_rc 	= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_pid_x_out 	= nh.subscribe("/auvsi/pid/outX", 10, pid_receiver_cb );
 	ros::Subscriber sub_image_cb	= nh.subscribe("camera/image/compressed", 1, imageCallback);
-	
+	ros::Subscriber sub_gps_cb		= nh.subscribe("/mavros/global_position/global", 1, gps_rc_cb);
+	 
 	namedWindow("panel_nav", CV_WINDOW_AUTOSIZE);
 	
 	createTrackbar("LowH_Nav", "panel_nav", &LowH_nav, 255);
@@ -81,43 +88,47 @@ int main(int argc, char **argv){
 	createTrackbar("hight_Nav", "panel_nav", &height_nav, 700);
 	createTrackbar("noise_Nav", "panel_nav", &Noise_nav, 255);
 	
-	while (ros::ok() && receive_mission=="navigation.start") {
+	while (ros::ok()) {
 		ros::spinOnce();
+		while(receive_mission=="navigation.start"){
+			imageProcessing(receive_image);
 		
-		imageProcessing(receive_image);
+			pid_const.p = kp_nav;
+			pid_const.i = ki_nav;
+			pid_const.d = kd_nav;
+			pub_pid_const.publish(pid_const);
 		
-		pid_const.p = kp_nav;
-		pid_const.i = ki_nav;
-		pid_const.d = kd_nav;
-		pub_pid_const.publish(pid_const);
-		
-		pid_in.x = state;
-		pid_in.t = pid_in.t+delta_t;
-		pid_in.setpoint = setpoint_nav;
-		pub_pid_in.publish(pid_in);
+			pid_in.x = state;
+			pid_in.t = pid_in.t+delta_t;
+			pid_in.setpoint = setpoint_nav;
+			pub_pid_in.publish(pid_in);
 			
-		ros::spinOnce();
-		throttle_pwm = MAX_THROTTLE;
-		steer_pwm = MIDDLE_PWM - control_effort;
+			ros::spinOnce();
+			throttle_pwm = THROT_NAV;
+			steer_pwm = MIDDLE_PWM - control_effort;
 			
-		if(state==0){
-			steer_pwm = PWM_NAV;
-		}
-		controller.steering = steer_pwm;
-		controller.throttle = throttle_pwm;
-		pub_override_rc.publish(controller);
+			camera_pwm=CAM_INIT_PWM;
+			drone_pwm=DRONE_INIT_PWM;
+			
+			controller.drone_servo = drone_pwm;
+			controller.camera_servo = camera_pwm;
+			controller.steering = steer_pwm;
+			controller.throttle = throttle_pwm;
+			pub_override_rc.publish(controller);
 		
-		debug.setpoint=setpoint_nav;
-		debug.state=state;
-		debug.effort=control_effort;
-		debug.longtitude=longtitude_nav_end;
-		debug.latitude=latitude_nav_end;
+			debug.setpoint=setpoint_nav;
+			debug.state=state;
+			debug.effort=control_effort;
+			debug.longitude=longitude_nav_end;
+			debug.latitude=latitude_nav_end;
+			pub_debug_rc.publish(debug);
 
-		if(longtitude<longtitude_nav_end+tolerance_nav && longtitude>longtitude_nav_end-tolerance_nav &&
-		latitude<latitude_nav_end+tolerance_nav && latitude>latitude_nav_end-tolerance_nav){
-			mission.mission_makara="navigation.end";
-			pub_mission_rc.publish(mission);
-			ros::shutdown();
+			if(longitude<longitude_nav_end+tolerance_nav && longitude>longitude_nav_end-tolerance_nav &&
+			latitude<latitude_nav_end+tolerance_nav && latitude>latitude_nav_end-tolerance_nav){
+				mission.mission_makara="navigation.end";
+				pub_mission_rc.publish(mission);
+				ros::shutdown();
+			}
 		}
 	}
 }
@@ -186,4 +197,8 @@ void pid_receiver_cb(const pid::controller_msg& control){
 
 void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
+}
+void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
+	latitude=data.latitude;
+	longitude=data.longitude;
 }

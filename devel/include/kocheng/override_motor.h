@@ -25,11 +25,15 @@ struct override_motor_
 
   override_motor_()
     : steering(0)
-    , throttle(0)  {
+    , throttle(0)
+    , camera_servo(0)
+    , drone_servo(0)  {
     }
   override_motor_(const ContainerAllocator& _alloc)
     : steering(0)
-    , throttle(0)  {
+    , throttle(0)
+    , camera_servo(0)
+    , drone_servo(0)  {
   (void)_alloc;
     }
 
@@ -40,6 +44,12 @@ struct override_motor_
 
    typedef int16_t _throttle_type;
   _throttle_type throttle;
+
+   typedef int16_t _camera_servo_type;
+  _camera_servo_type camera_servo;
+
+   typedef int16_t _drone_servo_type;
+  _drone_servo_type drone_servo;
 
 
 
@@ -119,12 +129,12 @@ struct MD5Sum< ::kocheng::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "c4dd5817de7802d91e66008f92eca79e";
+    return "5db88c405e17879270731989801ea69a";
   }
 
   static const char* value(const ::kocheng::override_motor_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xc4dd5817de7802d9ULL;
-  static const uint64_t static_value2 = 0x1e66008f92eca79eULL;
+  static const uint64_t static_value1 = 0x5db88c405e178792ULL;
+  static const uint64_t static_value2 = 0x70731989801ea69aULL;
 };
 
 template<class ContainerAllocator>
@@ -145,6 +155,8 @@ struct Definition< ::kocheng::override_motor_<ContainerAllocator> >
   {
     return "int16 steering\n\
 int16 throttle\n\
+int16 camera_servo\n\
+int16 drone_servo\n\
 ";
   }
 
@@ -165,6 +177,8 @@ namespace serialization
     {
       stream.next(m.steering);
       stream.next(m.throttle);
+      stream.next(m.camera_servo);
+      stream.next(m.drone_servo);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -187,6 +201,10 @@ struct Printer< ::kocheng::override_motor_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.steering);
     s << indent << "throttle: ";
     Printer<int16_t>::stream(s, indent + "  ", v.throttle);
+    s << indent << "camera_servo: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.camera_servo);
+    s << indent << "drone_servo: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.drone_servo);
   }
 };
 
