@@ -2,59 +2,62 @@
 #include <iostream>
 #include <stdio.h>
 #include <ros/ros.h>
-#include "pid/controller_msg.h"
+#include "std_msgs/Float64.h"
+
 #include "mavros_msgs/State.h"
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
 #include "mavros_msgs/GlobalPositionTarget.h"
-#include "std_msgs/Float64.h"
+
 #include "kocheng/override_motor.h"
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
 
+#include "pid/plant_msg.h"
+#include "pid/controller_msg.h"
+#include "pid/pid_const_msg.h"
+
 using namespace std;
 
 string override_status;
 
-string first_simple_status;
-string second_simple_status; 
+string first_simple_status, second_simple_status; 
 
 int rc_flag;
 string flight_mode;
 
-int steering;
-int throttle;
+int steering, throttle;
 
-int out_channel[8];
-int in_channel[8];
+int out_channel[8], in_channel[8];
 
-string armed;
-string mode;
+string armed, mode;
 
 string mission_name;
 
-int setpoint;
-int state;
-int effort;
-float longitude;
-float latitude;
-
-float latitude_now;
-float longitude_now;
+float longitude, latitude;
+float latitude_now, longitude_now;
 
 double compass_hdg;
 
-void override_rc_cb	(const kocheng::override_motor& rc);
-void rc_number_cb (const kocheng::rc_number& state);
+int setpoint_x, setpoint_y, state_x, state_y,effort_x, effort_y;
+float kp_x, kp_y, ki_x, ki_y,  kd_x, kd_y;
 
-void override_motor_cb (const mavros_msgs::OverrideRCIn& motor);
-void rc_in_cb (const mavros_msgs::RCIn& input);
-void rc_state_cb (const mavros_msgs::State& state);
-void rc_debug_cb (const kocheng::debug_mission& debug);
-void rc_mission_cb (const kocheng::mission_status& mission);
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data);
-void compass_rc_cb(const std_msgs::Float64& msg);
+void override_rc_cb		(const kocheng::override_motor& rc);
+void rc_number_cb 		(const kocheng::rc_number& state);
+void override_motor_cb 	(const mavros_msgs::OverrideRCIn& motor);
+void rc_in_cb 			(const mavros_msgs::RCIn& input);
+void rc_state_cb 		(const mavros_msgs::State& state);
+void rc_debug_cb 		(const kocheng::debug_mission& debug);
+void rc_mission_cb 		(const kocheng::mission_status& mission);
+void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
+void compass_rc_cb		(const std_msgs::Float64& msg);
+void pid_effort_x_cb	(const pid::controller_msg& data);
+void pid_const_x_cb		(const pid::pid_const_msg& data);
+void pid_plant_x_cb		(const pid::plant_msg& data);
+void pid_effort_y_cb	(const pid::controller_msg& data);
+void pid_const_y_cb		(const pid::pid_const_msg& data);
+void pid_plant_y_cb		(const pid::plant_msg& data);
 
 int main(int argc, char **argv)
 {
@@ -63,14 +66,22 @@ int main(int argc, char **argv)
 	
 	ros::Subscriber sub_override_rc 	= nh.subscribe("/auvsi/override/motor", 8, override_rc_cb);
 	ros::Subscriber sub_rc_number 		= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
+	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 8, rc_mission_cb);
+	ros::Subscriber sub_debug_rc 		= nh.subscribe("/auvsi/debug/rc", 8, rc_debug_cb);
+	
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
 	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 8, rc_in_cb);
 	ros::Subscriber sub_state_rc 		= nh.subscribe("/mavros/state", 8, rc_state_cb);
-	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 8, rc_mission_cb);
-	ros::Subscriber sub_debug_rc 		= nh.subscribe("/auvsi/debug/rc", 8, rc_debug_cb);
 	ros::Subscriber sub_gps_cb			= nh.subscribe("/mavros/global_position/global", 8, gps_rc_cb);
 	ros::Subscriber sub_compass_cb		= nh.subscribe("/mavros/global_position/compass_hdg", 8, compass_rc_cb);
-
+	
+	ros::Subscriber sub_pid_x_in 	= nh.subscribe("/auvsi/pid/inX", 10, pid_plant_x_cb );
+	ros::Subscriber sub_pid_x_out 	= nh.subscribe("/auvsi/pid/outX", 10, pid_effort_x_cb );
+	ros::Subscriber sub_pid_x_const = nh.subscribe("/auvsi/pid/constX", 10, pid_const_x_cb );
+	ros::Subscriber sub_pid_y_in 	= nh.subscribe("/auvsi/pid/inY", 10, pid_plant_y_cb);
+	ros::Subscriber sub_pid_y_out 	= nh.subscribe("/auvsi/pid/outY", 10, pid_effort_y_cb );
+	ros::Subscriber sub_pid_y_const = nh.subscribe("/auvsi/pid/constX", 10, pid_const_y_cb );
+	
 	ROS_WARN("NC : debug_makara.cpp active");
 
 	while( ros::ok() ){	
@@ -82,7 +93,12 @@ int main(int argc, char **argv)
 		ROS_INFO(" ");
 		
 		ROS_INFO("compass:%0.2f\t long:%0.2f\t lat:%0.2f", compass_hdg, longitude, latitude);
-		ROS_INFO("setpoint:%d\t state:%d\t effort:%d\t long:%0.2f\t lat:%0.2f", setpoint, state, effort, longitude, latitude);
+		ROS_INFO("long:%0.2f\t lat:%0.2f", longitude, latitude);
+		ROS_INFO(" ");
+		
+		ROS_WARN("NC : topic PID");
+		ROS_INFO("kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_x, ki_x, kd_x, setpoint_x, state_x, effort_x);
+		ROS_INFO("kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_y, ki_y, kd_y, setpoint_y, state_y, effort_y);
 		ROS_INFO(" ");
 		
 		ROS_INFO("steering:%d\t throttle:%d", steering, throttle);
@@ -104,20 +120,17 @@ void compass_rc_cb(const std_msgs::Float64& msg){
 }
 
 void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
-	latitude_now	=data.latitude;
-	longitude_now	=data.longitude;
+	latitude_now	= data.latitude;
+	longitude_now	= data.longitude;
 }
 
 void rc_mission_cb (const kocheng::mission_status& mission){
-	mission_name=mission.mission_makara;
+	mission_name = mission.mission_makara;
 }
 
 void rc_debug_cb (const kocheng::debug_mission& debug){
-	setpoint	=debug.setpoint;
-	state		=debug.state;
-	effort		=debug.effort;
-	longitude	=debug.longitude;
-	latitude	=debug.latitude;
+	longitude	= debug.longitude;
+	latitude	= debug.latitude;
 }
 
 void rc_number_cb (const kocheng::rc_number& number){
@@ -153,6 +166,27 @@ void rc_state_cb (const mavros_msgs::State& state){
 	mode = state.mode;	
 }
 
-void pid_receiver_cb(const pid::controller_msg& control){
-	effort = control.u;
+void pid_effort_x_cb(const pid::controller_msg& data){
+	effort_x=data.u;
+}
+void pid_const_x_cb(const pid::pid_const_msg& data){
+	kp_x = data.p;
+	ki_x = data.i;
+	kd_x = data.d;
+}
+void pid_plant_x_cb(const pid::plant_msg& data){
+	state_x		= data.x;
+	setpoint_x	= data.setpoint;
+}
+void pid_effort_y_cb(const pid::controller_msg& data){
+	effort_y=data.u;
+}
+void pid_const_y_cb(const pid::pid_const_msg& data){
+	kp_y = data.p;
+	ki_y = data.i;
+	kd_y = data.d;
+}
+void pid_plant_y_cb(const pid::plant_msg& data){
+	state_y		= data.x;
+	setpoint_y	= data.setpoint;
 }

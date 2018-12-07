@@ -107,6 +107,8 @@ iostream
 -
 stdio.h
 -
+string.h
+-
 
 /home/amvui/AUVSI/src/kocheng/src/mission/speed.cpp
 ../../include/kocheng/hehe.hpp
@@ -115,24 +117,20 @@ ros/ros.h
 -
 image_transport/image_transport.h
 -
+cv_bridge/cv_bridge.h
+-
+std_msgs/Float64.h
+/home/amvui/AUVSI/src/kocheng/src/mission/std_msgs/Float64.h
 opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
 /home/amvui/AUVSI/src/kocheng/src/mission/opencv2/imgproc/imgproc.hpp
-cv_bridge/cv_bridge.h
--
-iostream
--
-stdio.h
--
 pid/plant_msg.h
 /home/amvui/AUVSI/src/kocheng/src/mission/pid/plant_msg.h
 pid/controller_msg.h
 /home/amvui/AUVSI/src/kocheng/src/mission/pid/controller_msg.h
 pid/pid_const_msg.h
 /home/amvui/AUVSI/src/kocheng/src/mission/pid/pid_const_msg.h
-std_msgs/Float64.h
-/home/amvui/AUVSI/src/kocheng/src/mission/std_msgs/Float64.h
 kocheng/override_motor.h
 /home/amvui/AUVSI/src/kocheng/src/mission/kocheng/override_motor.h
 kocheng/mission_status.h

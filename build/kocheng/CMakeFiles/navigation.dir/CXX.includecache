@@ -107,6 +107,8 @@ iostream
 -
 stdio.h
 -
+string.h
+-
 
 /home/amvui/AUVSI/src/kocheng/src/mission/navigation.cpp
 ../../include/kocheng/hehe.hpp

@@ -1,56 +1,52 @@
 #include "../../include/kocheng/hehe.hpp"
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
+
 #include <opencv2/highgui/highgui.hpp>
 #include "opencv2/imgproc/imgproc.hpp"
-#include <cv_bridge/cv_bridge.h>
-#include <iostream>
-#include <stdio.h>
+
 #include "pid/plant_msg.h"
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
+
 #include "kocheng/override_motor.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
+
 #include "mavros_msgs/GlobalPositionTarget.h"
 
 using namespace std;
 using namespace cv;
 
-void imageProcessing(Mat input_image);
-void pid_receiver_cb(const pid::controller_msg& control);
-void rc_mission_cb	(const kocheng::mission_status& data);
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data);
+void imageProcessing	(Mat input_image);
+void pid_receiver_cb	(const pid::controller_msg& control);
+void rc_mission_cb		(const kocheng::mission_status& data);
+void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
 
 Mat receive_image;
+
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
+
 kocheng::override_motor controller;
 kocheng::mission_status	mission;
 kocheng::debug_mission	debug;
 
-int state;
-int throttle_pwm;
-int steer_pwm;
-int control_effort;
+int state, throttle_pwm, steer_pwm, control_effort;
 
-int drone_pwm;
-int camera_pwm;
+int drone_pwm, camera_pwm;
 
-float latitude;
-float longitude;
+float latitude, longitude;
 
 string receive_mission;
 
-void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
-{
-  try
-  {
+void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg){
+  try{
     receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
     waitKey(10);
   }
-  catch (cv_bridge::Exception& e)
-  {
+  catch (cv_bridge::Exception& e){
     ROS_ERROR("Could not convert to image!");
   }
 }
@@ -65,14 +61,16 @@ int main(int argc, char **argv){
 	
 	ros::Publisher pub_debug_rc 	= nh.advertise<kocheng::debug_mission>("/auvsi/debug/rc", 10);
 	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_motor>("/auvsi/override/motor", 10);
+	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	
 	ros::Publisher pub_pid_in 		= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);
 	ros::Publisher pub_pid_const 	= nh.advertise<pid::pid_const_msg>("/auvsi/pid/constX", 1,true);
-	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
 	
 	ros::Subscriber sub_mission_rc 	= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_pid_x_out 	= nh.subscribe("/auvsi/pid/outX", 10, pid_receiver_cb );
-	ros::Subscriber sub_image_cb	= nh.subscribe("camera/image/compressed", 1, imageCallback);
+	
 	ros::Subscriber sub_gps_cb		= nh.subscribe("/mavros/global_position/global", 1, gps_rc_cb);
+	ros::Subscriber sub_image_cb	= nh.subscribe("camera/image/compressed", 1, imageCallback);
 	 
 	namedWindow("panel_nav", CV_WINDOW_AUTOSIZE);
 	
@@ -98,33 +96,30 @@ int main(int argc, char **argv){
 			pid_const.d = kd_nav;
 			pub_pid_const.publish(pid_const);
 			
-			pid_in.x = state;
-			pid_in.t = pid_in.t+delta_t;
+			pid_in.x		= state;
+			pid_in.t 		= pid_in.t+delta_t;
 			pid_in.setpoint = setpoint_nav;
 			pub_pid_in.publish(pid_in);
 			
 			ros::spinOnce();
-			throttle_pwm = THROT_NAV;
-			steer_pwm = MIDDLE_PWM - control_effort;
+			throttle_pwm 	= THROT_NAV;
+			steer_pwm 		= MIDDLE_PWM - control_effort;
 			
-			camera_pwm=CAM_INIT_PWM;
-			drone_pwm=DRONE_INIT_PWM;
+			camera_pwm		= CAM_INIT_PWM;
+			drone_pwm		= DRONE_INIT_PWM;
 			
 			if(state==0){
 				steer_pwm=MIDDLE_PWM;
 			}
 			
-			controller.drone_servo = drone_pwm;
+			controller.drone_servo 	= drone_pwm;
 			controller.camera_servo = camera_pwm;
-			controller.steering = steer_pwm;
-			controller.throttle = throttle_pwm;
+			controller.steering 	= steer_pwm;
+			controller.throttle 	= throttle_pwm;
 			pub_override_rc.publish(controller);
 		
-			debug.setpoint=setpoint_nav;
-			debug.state=state;
-			debug.effort=control_effort;
-			debug.longitude=longitude_nav_end;
-			debug.latitude=latitude_nav_end;
+			debug.longitude			= longitude_nav_end;
+			debug.latitude			= latitude_nav_end;
 			pub_debug_rc.publish(debug);
 
 			if(longitude<longitude_nav_end+tolerance_nav && longitude>longitude_nav_end-tolerance_nav &&
@@ -156,8 +151,8 @@ void imageProcessing(Mat input_image){
 	int original_width	= sz.width;
 	
 	Size sx = input_image.size();
-	int input_height = sx.height;
-	int input_width = sx.width; 
+	int input_height 	= sx.height;
+	int input_width 	= sx.width; 
 	
 	imgOriginal = Original.clone();
 	
@@ -175,7 +170,7 @@ void imageProcessing(Mat input_image){
 	Moments mu=moments(imgThresholded);
 	int area = mu.m00; // sum of zero'th moment is area
 	int posX = mu.m10/area; // center of mass = w*x/weight
-	area /= 255; // scale from bytes to pixels	
+	area 	/= 255; // scale from bytes to pixels	
 	
 	state = posX;
 	
@@ -202,6 +197,6 @@ void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
 }
 void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
-	latitude	=data.latitude;
-	longitude	=data.longitude;
+	latitude	= data.latitude;
+	longitude	= data.longitude;
 }

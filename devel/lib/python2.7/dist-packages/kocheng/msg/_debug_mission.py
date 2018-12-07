@@ -7,17 +7,14 @@ import struct
 
 
 class debug_mission(genpy.Message):
-  _md5sum = "5ca02c94f587bbdb18e5bb5621c35260"
+  _md5sum = "826f8fcadfa8742a6495798d3978624a"
   _type = "kocheng/debug_mission"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int16 setpoint
-int16 state
-int16 effort
-float32 longitude
+  _full_text = """float32 longitude
 float32 latitude
 """
-  __slots__ = ['setpoint','state','effort','longitude','latitude']
-  _slot_types = ['int16','int16','int16','float32','float32']
+  __slots__ = ['longitude','latitude']
+  _slot_types = ['float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -27,7 +24,7 @@ float32 latitude
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       setpoint,state,effort,longitude,latitude
+       longitude,latitude
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -36,20 +33,11 @@ float32 latitude
     if args or kwds:
       super(debug_mission, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.setpoint is None:
-        self.setpoint = 0
-      if self.state is None:
-        self.state = 0
-      if self.effort is None:
-        self.effort = 0
       if self.longitude is None:
         self.longitude = 0.
       if self.latitude is None:
         self.latitude = 0.
     else:
-      self.setpoint = 0
-      self.state = 0
-      self.effort = 0
       self.longitude = 0.
       self.latitude = 0.
 
@@ -66,7 +54,7 @@ float32 latitude
     """
     try:
       _x = self
-      buff.write(_get_struct_3h2f().pack(_x.setpoint, _x.state, _x.effort, _x.longitude, _x.latitude))
+      buff.write(_get_struct_2f().pack(_x.longitude, _x.latitude))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -79,8 +67,8 @@ float32 latitude
       end = 0
       _x = self
       start = end
-      end += 14
-      (_x.setpoint, _x.state, _x.effort, _x.longitude, _x.latitude,) = _get_struct_3h2f().unpack(str[start:end])
+      end += 8
+      (_x.longitude, _x.latitude,) = _get_struct_2f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -94,7 +82,7 @@ float32 latitude
     """
     try:
       _x = self
-      buff.write(_get_struct_3h2f().pack(_x.setpoint, _x.state, _x.effort, _x.longitude, _x.latitude))
+      buff.write(_get_struct_2f().pack(_x.longitude, _x.latitude))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,8 +96,8 @@ float32 latitude
       end = 0
       _x = self
       start = end
-      end += 14
-      (_x.setpoint, _x.state, _x.effort, _x.longitude, _x.latitude,) = _get_struct_3h2f().unpack(str[start:end])
+      end += 8
+      (_x.longitude, _x.latitude,) = _get_struct_2f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -118,9 +106,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3h2f = None
-def _get_struct_3h2f():
-    global _struct_3h2f
-    if _struct_3h2f is None:
-        _struct_3h2f = struct.Struct("<3h2f")
-    return _struct_3h2f
+_struct_2f = None
+def _get_struct_2f():
+    global _struct_2f
+    if _struct_2f is None:
+        _struct_2f = struct.Struct("<2f")
+    return _struct_2f

@@ -18,31 +18,10 @@ class debug_mission {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.setpoint = null;
-      this.state = null;
-      this.effort = null;
       this.longitude = null;
       this.latitude = null;
     }
     else {
-      if (initObj.hasOwnProperty('setpoint')) {
-        this.setpoint = initObj.setpoint
-      }
-      else {
-        this.setpoint = 0;
-      }
-      if (initObj.hasOwnProperty('state')) {
-        this.state = initObj.state
-      }
-      else {
-        this.state = 0;
-      }
-      if (initObj.hasOwnProperty('effort')) {
-        this.effort = initObj.effort
-      }
-      else {
-        this.effort = 0;
-      }
       if (initObj.hasOwnProperty('longitude')) {
         this.longitude = initObj.longitude
       }
@@ -60,12 +39,6 @@ class debug_mission {
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type debug_mission
-    // Serialize message field [setpoint]
-    bufferOffset = _serializer.int16(obj.setpoint, buffer, bufferOffset);
-    // Serialize message field [state]
-    bufferOffset = _serializer.int16(obj.state, buffer, bufferOffset);
-    // Serialize message field [effort]
-    bufferOffset = _serializer.int16(obj.effort, buffer, bufferOffset);
     // Serialize message field [longitude]
     bufferOffset = _serializer.float32(obj.longitude, buffer, bufferOffset);
     // Serialize message field [latitude]
@@ -77,12 +50,6 @@ class debug_mission {
     //deserializes a message object of type debug_mission
     let len;
     let data = new debug_mission(null);
-    // Deserialize message field [setpoint]
-    data.setpoint = _deserializer.int16(buffer, bufferOffset);
-    // Deserialize message field [state]
-    data.state = _deserializer.int16(buffer, bufferOffset);
-    // Deserialize message field [effort]
-    data.effort = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [longitude]
     data.longitude = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [latitude]
@@ -91,7 +58,7 @@ class debug_mission {
   }
 
   static getMessageSize(object) {
-    return 14;
+    return 8;
   }
 
   static datatype() {
@@ -101,15 +68,12 @@ class debug_mission {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '5ca02c94f587bbdb18e5bb5621c35260';
+    return '826f8fcadfa8742a6495798d3978624a';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int16 setpoint
-    int16 state
-    int16 effort
     float32 longitude
     float32 latitude
     
@@ -122,27 +86,6 @@ class debug_mission {
       msg = {};
     }
     const resolved = new debug_mission(null);
-    if (msg.setpoint !== undefined) {
-      resolved.setpoint = msg.setpoint;
-    }
-    else {
-      resolved.setpoint = 0
-    }
-
-    if (msg.state !== undefined) {
-      resolved.state = msg.state;
-    }
-    else {
-      resolved.state = 0
-    }
-
-    if (msg.effort !== undefined) {
-      resolved.effort = msg.effort;
-    }
-    else {
-      resolved.effort = 0
-    }
-
     if (msg.longitude !== undefined) {
       resolved.longitude = msg.longitude;
     }

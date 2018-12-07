@@ -24,31 +24,16 @@ struct debug_mission_
   typedef debug_mission_<ContainerAllocator> Type;
 
   debug_mission_()
-    : setpoint(0)
-    , state(0)
-    , effort(0)
-    , longitude(0.0)
+    : longitude(0.0)
     , latitude(0.0)  {
     }
   debug_mission_(const ContainerAllocator& _alloc)
-    : setpoint(0)
-    , state(0)
-    , effort(0)
-    , longitude(0.0)
+    : longitude(0.0)
     , latitude(0.0)  {
   (void)_alloc;
     }
 
 
-
-   typedef int16_t _setpoint_type;
-  _setpoint_type setpoint;
-
-   typedef int16_t _state_type;
-  _state_type state;
-
-   typedef int16_t _effort_type;
-  _effort_type effort;
 
    typedef float _longitude_type;
   _longitude_type longitude;
@@ -134,12 +119,12 @@ struct MD5Sum< ::kocheng::debug_mission_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "5ca02c94f587bbdb18e5bb5621c35260";
+    return "826f8fcadfa8742a6495798d3978624a";
   }
 
   static const char* value(const ::kocheng::debug_mission_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x5ca02c94f587bbdbULL;
-  static const uint64_t static_value2 = 0x18e5bb5621c35260ULL;
+  static const uint64_t static_value1 = 0x826f8fcadfa8742aULL;
+  static const uint64_t static_value2 = 0x6495798d3978624aULL;
 };
 
 template<class ContainerAllocator>
@@ -158,10 +143,7 @@ struct Definition< ::kocheng::debug_mission_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 setpoint\n\
-int16 state\n\
-int16 effort\n\
-float32 longitude\n\
+    return "float32 longitude\n\
 float32 latitude\n\
 ";
   }
@@ -181,9 +163,6 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.setpoint);
-      stream.next(m.state);
-      stream.next(m.effort);
       stream.next(m.longitude);
       stream.next(m.latitude);
     }
@@ -204,12 +183,6 @@ struct Printer< ::kocheng::debug_mission_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::kocheng::debug_mission_<ContainerAllocator>& v)
   {
-    s << indent << "setpoint: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.setpoint);
-    s << indent << "state: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.state);
-    s << indent << "effort: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.effort);
     s << indent << "longitude: ";
     Printer<float>::stream(s, indent + "  ", v.longitude);
     s << indent << "latitude: ";

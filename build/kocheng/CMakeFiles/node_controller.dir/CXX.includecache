@@ -43,6 +43,8 @@ iostream
 -
 stdio.h
 -
+string.h
+-
 
 /home/amvui/AUVSI/src/kocheng/src/main/node_controller.cpp
 ../../include/kocheng/hehe.hpp

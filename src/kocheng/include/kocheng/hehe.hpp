@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <string.h>
 
 //#################  MAIN VARIABLE  ###############
 #define STEERING 0
@@ -19,6 +20,8 @@
 
 #define CAM_INIT_PWM 1500
 #define DRONE_INIT_PWM 1300
+
+char mission_idle[] = "no_mission";
 
 float update_time=0.01;
 float delta_t = 0.01;

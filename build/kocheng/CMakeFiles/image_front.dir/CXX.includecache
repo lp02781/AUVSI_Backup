@@ -11,6 +11,8 @@ iostream
 -
 stdio.h
 -
+string.h
+-
 
 /home/amvui/AUVSI/src/kocheng/src/main/image_front.cpp
 ../../include/kocheng/hehe.hpp

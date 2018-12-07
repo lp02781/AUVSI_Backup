@@ -1,62 +1,57 @@
 #include "../../include/kocheng/hehe.hpp"
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
+#include "std_msgs/Float64.h"
+
 #include <opencv2/highgui/highgui.hpp>
 #include "opencv2/imgproc/imgproc.hpp"
-#include <cv_bridge/cv_bridge.h>
-#include <iostream>
-#include <stdio.h>
+
 #include "pid/plant_msg.h"
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
-#include "std_msgs/Float64.h"
+
 #include "kocheng/override_motor.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
+
 #include "mavros_msgs/GlobalPositionTarget.h"
 
 using namespace std;
 using namespace cv;
 
-void imageProcessing(Mat input_image);
-void pid_receiver_cb(const pid::controller_msg& control);
-void rc_mission_cb	(const kocheng::mission_status& data);
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data);
-void compass_rc_cb(const std_msgs::Float64& msg);
+void imageProcessing	(Mat input_image);
+void pid_receiver_cb	(const pid::controller_msg& control);
+void rc_mission_cb		(const kocheng::mission_status& data);
+void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
+void compass_rc_cb		(const std_msgs::Float64& msg);
+void change_value_image_processing();
 
 Mat receive_image;
+
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
+
 kocheng::override_motor controller;
 kocheng::mission_status	mission;
 kocheng::debug_mission	debug;
 
-int state;
-int throttle_pwm;
-int steer_pwm;
-int control_effort;
+int state, throttle_pwm, steer_pwm, control_effort;
 
-int drone_pwm;
-int camera_pwm;
+int drone_pwm, camera_pwm;
 
-float latitude;
-float longitude;
+float latitude, longitude;
 
-double compass_hdg;
-double compass_init;
-double compass_end;
+double compass_hdg, compass_init, compass_end;
 
 string receive_mission;
 
-void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
-{
-  try
-  {
+void imageCallback		(const sensor_msgs::CompressedImageConstPtr& msg){
+  try{
     receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
     waitKey(10);
   }
-  catch (cv_bridge::Exception& e)
-  {
+  catch (cv_bridge::Exception& e){
     ROS_ERROR("Could not convert to image!");
   }
 }
@@ -108,20 +103,21 @@ int main(int argc, char **argv){
 			pub_mission_rc.publish(mission);
 			ros::spinOnce();
 			
-			compass_init=compass_hdg;
-			compass_end=compass_init+compass_point;
+			compass_init	=compass_hdg;
+			compass_end		=compass_init+compass_point;
 			
 			while(receive_mission=="speed.step_1"){
 				ros::spinOnce();
 				imageProcessing(receive_image);
-				pid_in.x = state;
-				pid_in.t = pid_in.t+delta_t;
+				
+				pid_in.x 		= state;
+				pid_in.t 		= pid_in.t+delta_t;
 				pid_in.setpoint = setpoint_speed;
 				pub_pid_in.publish(pid_in);
 			
 				ros::spinOnce();
-				throttle_pwm = THROT_SPEED;
-				steer_pwm = MIDDLE_PWM - control_effort;
+				throttle_pwm 	= THROT_SPEED;
+				steer_pwm 		= MIDDLE_PWM - control_effort;
 			
 				camera_pwm=CAM_INIT_PWM;
 				drone_pwm=DRONE_INIT_PWM;
@@ -130,17 +126,14 @@ int main(int argc, char **argv){
 					steer_pwm=MIDDLE_PWM;
 				}
 			
-				controller.drone_servo = drone_pwm;
+				controller.drone_servo 	= drone_pwm;
 				controller.camera_servo = camera_pwm;
 				controller.steering = steer_pwm;
 				controller.throttle = throttle_pwm;
 				pub_override_rc.publish(controller);
 		
-				debug.setpoint=setpoint_speed;
-				debug.state=state;
-				debug.effort=control_effort;
-				debug.longitude=longitude_speed_end;
-				debug.latitude=latitude_speed_end;
+				debug.longitude	= longitude_speed_end;
+				debug.latitude	= latitude_speed_end;
 				pub_debug_rc.publish(debug);
 
 				if(compass_hdg < compass_end-compass_tolerance && compass_hdg > compass_end+compass_tolerance){
@@ -150,20 +143,7 @@ int main(int argc, char **argv){
 				}
 			}
 			ros::spinOnce();
-			kp_speed=kp_speed_new;//1.5
-			ki_speed = ki_speed_new;//1
-			kd_speed = kd_speed;//0.5
-			setpoint_speed=setpoint_speed_new;
-			x_speed=x_speed_new;
-			y_speed=y_speed_new;
-			width_speed	=width_speed_new; //width 400 for simple
-			height_speed=height_speed_new;
-			LowH_speed	= LowH_speed_new; 		//0  
-			HighH_speed = HighH_speed_new;		//184 
-			LowS_speed 	= LowS_speed_new;      //130  65
-			HighS_speed = HighS_speed_new;      //248  246
-			LowV_speed 	= LowV_speed_new;		//49   242
-			HighV_speed = HighV_speed_new;		//230  255
+			change_value_image_processing();
 			
 			pid_const.p = kp_speed;
 			pid_const.i = ki_speed;
@@ -173,33 +153,30 @@ int main(int argc, char **argv){
 			while(receive_mission=="speed.step_2"){
 				ros::spinOnce();
 				imageProcessing(receive_image);
-				pid_in.x = state;
-				pid_in.t = pid_in.t+delta_t;
+				pid_in.x 		= state;
+				pid_in.t 		= pid_in.t+delta_t;
 				pid_in.setpoint = setpoint_speed;
 				pub_pid_in.publish(pid_in);
 			
 				ros::spinOnce();
-				throttle_pwm = THROT_SPEED;
-				steer_pwm = MIDDLE_PWM - control_effort;
+				throttle_pwm 	= THROT_SPEED;
+				steer_pwm 		= MIDDLE_PWM - control_effort;
 			
-				camera_pwm=CAM_INIT_PWM;
-				drone_pwm=DRONE_INIT_PWM;
+				camera_pwm	= CAM_INIT_PWM;
+				drone_pwm	= DRONE_INIT_PWM;
 			
 				if(state==0){
 					steer_pwm=MIDDLE_PWM;
 				}
 			
-				controller.drone_servo = drone_pwm;
+				controller.drone_servo 	= drone_pwm;
 				controller.camera_servo = camera_pwm;
-				controller.steering = steer_pwm;
-				controller.throttle = throttle_pwm;
+				controller.steering 	= steer_pwm;
+				controller.throttle 	= throttle_pwm;
 				pub_override_rc.publish(controller);
 		
-				debug.setpoint=setpoint_speed;
-				debug.state=state;
-				debug.effort=control_effort;
-				debug.longitude=longitude_speed_end;
-				debug.latitude=latitude_speed_end;
+				debug.longitude	= longitude_speed_end;
+				debug.latitude	= latitude_speed_end;
 				pub_debug_rc.publish(debug);
 
 				if(longitude<longitude_speed_end+tolerance_speed && longitude>longitude_speed_end-tolerance_speed &&
@@ -251,7 +228,7 @@ void imageProcessing(Mat input_image){
 	Moments mu=moments(imgThresholded);
 	int area = mu.m00; // sum of zero'th moment is area
 	int posX = mu.m10/area; // center of mass = w*x/weight
-	area /= 255; // scale from bytes to pixels	
+	area 	/= 255; // scale from bytes to pixels	
 	
 	state = posX;
 	
@@ -278,9 +255,26 @@ void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
 }
 void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
-	latitude	=data.latitude;
-	longitude	=data.longitude;
+	latitude	= data.latitude;
+	longitude	= data.longitude;
 }
 void compass_rc_cb(const std_msgs::Float64& msg){
 	compass_hdg = msg.data;
 }
+
+void change_value_image_processing(){
+	kp_speed 	= kp_speed_new;//1.5
+	ki_speed 	= ki_speed_new;//1
+	kd_speed 	= kd_speed;//0.5
+	setpoint_speed = setpoint_speed_new;
+	x_speed		= x_speed_new;
+	y_speed		= y_speed_new;
+	width_speed	= width_speed_new; //width 400 for simple
+	height_speed= height_speed_new;
+	LowH_speed	= LowH_speed_new; 		//0  
+	HighH_speed = HighH_speed_new;		//184 
+	LowS_speed 	= LowS_speed_new;      //130  65
+	HighS_speed = HighS_speed_new;      //248  246
+	LowV_speed 	= LowV_speed_new;		//49   242
+	HighV_speed = HighV_speed_new;		//230  255
+}		

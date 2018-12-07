@@ -6,6 +6,8 @@ kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUV
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/devel/include/kocheng/override_motor.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/devel/include/kocheng/rc_number.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/devel/include/pid/controller_msg.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/devel/include/pid/pid_const_msg.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/devel/include/pid/plant_msg.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/src/kocheng/include/kocheng/hehe.hpp
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/amvui/AUVSI/src/kocheng/src/main/debug_makara.cpp
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h

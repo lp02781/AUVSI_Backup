@@ -11,8 +11,7 @@ ros::Publisher pub_camera_setpoint;
 
 Mat image;
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
 	ros::init(argc, argv, "image_front");
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
