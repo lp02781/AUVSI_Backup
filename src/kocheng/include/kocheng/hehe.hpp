@@ -146,7 +146,7 @@ int HighV_speed_new = 230;		//230  255
 //############################################ COMMUNICATION ####################################################
 using namespace rapidjson;
 
-enum communicationType {navigation, speed, docking, push, flag, find, start_run, end_run};
+enum communicationType {navigation, speed, docking, path, follow, flag, return_dock, start_run, end_run};
 
 // Not yet implemented code for adding Interop and and pinger
 // ########################################## start of JSONHandler struct ########################################## //
@@ -478,16 +478,65 @@ bool StartEndRunMessage::setPayloadCommunication(communicationType comm_type){
 // ########################################## end of StartEndRunMessage class ########################################## //
   
 
-  // ########################################## start of mission class ########################################## //
-  // ########################################## end of mission class ########################################## //
+// ########################################## start of mission class ########################################## //
+class MissionMessage : public AUVSICommunication {
+
+	public:
+		MissionMessage(string hostname, int port_number, string course_type, string team_code);
+		bool setPayloadCommunication(communicationType comm_type);
+};
+
+MissionMessage::MissionMessage(string hostname, int port_number, string course_type, string team_code)
+  : AUVSICommunication(hostname, port_number, course_type, team_code){}
+
+bool MissionMessage::setPayloadCommunication(communicationType comm_type){
+
+    if (comm_type == navigation || comm_type == speed || comm_type == docking || comm_type == path || comm_type == follow || comm_type == flag || comm_type == return_dock ){
+
+      string course_description;
+
+      if (comm_type == navigation){
+			course_description = "navigation";
+      } 
+      else if (comm_type == speed){
+			course_description = "speed";
+      }
+      else if (comm_type == docking){
+			course_description = "docking";
+      }
+      else if (comm_type == path){
+			course_description = "path";
+      }
+      else if (comm_type == follow){
+			course_description = "follow";
+      }
+      else if (comm_type == flag){
+			course_description = "flag";
+      }
+      else if (comm_type == return_dock){
+			course_description = "return";
+      }
+
+      string filename;
+      string http_request;
+      filename.append("/" + course_description + "/" + course_type + "/" + team_code);
+      http_request.append("GET "+ filename +" HTTP/1.1\r\n");
+      http_request.append("Host: " + hostname + ":" + to_string(port_number) + "\r\n");
+      http_request.append("Accept: */*\r\n\r\n");
+      payload = http_request;
+      return true;
+   }
+   return false;
+}
+// ########################################## end of mission class ########################################## //
 
 
-  // ########################################## start of LeaderMessage class ########################################## //
-  // ########################################## end of LeaderMessage class ########################################## //
+// ########################################## start of LeaderMessage class ########################################## //
+// ########################################## end of LeaderMessage class ########################################## //
 
 
-  // ########################################## start of DockingMessage class ########################################## //
-  // ########################################## end of DockingMessage class ########################################## //
+// ########################################## start of DockingMessage class ########################################## //
+// ########################################## end of DockingMessage class ########################################## //
 
 
 
