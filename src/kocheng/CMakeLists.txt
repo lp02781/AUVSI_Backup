@@ -163,6 +163,16 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(run_course src/communication/run_course.cpp )
+target_link_libraries(run_course
+${catkin_LIBRARIES}
+)
+
+add_executable(heartbeat src/communication/heartbeat.cpp )
+target_link_libraries(heartbeat
+${catkin_LIBRARIES}
+)
+
 add_executable(remote_monitor src/main/remote_monitor.cpp )
 target_link_libraries(remote_monitor
 ${catkin_LIBRARIES}

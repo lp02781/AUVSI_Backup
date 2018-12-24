@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for geometry_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build: geometry_ms
 .PHONY : kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 
 kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 
 kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/kocheng /home/amvui/AUVSI/build /home/amvui/AUVSI/build/kocheng /home/amvui/AUVSI/build/kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/kocheng /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/kocheng /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
 

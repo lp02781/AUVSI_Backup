@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/amvui/AUVSI/src/pid/src/controller_adaptive_x.cpp" "/home/amvui/AUVSI/build/pid/CMakeFiles/controller_adaptive_x.dir/src/controller_adaptive_x.cpp.o"
+  "/home/mfikih15/Documents/AUVSI/src/pid/src/controller_adaptive_x.cpp" "/home/mfikih15/Documents/AUVSI/build/pid/CMakeFiles/controller_adaptive_x.dir/src/controller_adaptive_x.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,10 +17,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/amvui/AUVSI/devel/include"
+  "/home/mfikih15/Documents/AUVSI/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/amvui/AUVSI/src/pid/include"
+  "/home/mfikih15/Documents/AUVSI/src/pid/include"
   )
 
 # Targets to which this target links.

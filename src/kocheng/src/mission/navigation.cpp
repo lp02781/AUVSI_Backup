@@ -41,6 +41,9 @@ float latitude, longitude;
 
 string receive_mission;
 
+float longitude_nav_end;
+float latitude_nav_end;
+
 void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg){
   try{
     receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
@@ -85,6 +88,23 @@ int main(int argc, char **argv){
 	createTrackbar("width_Nav", "panel_nav", &width_nav, 700); //Saturation (0 - 255)
 	createTrackbar("hight_Nav", "panel_nav", &height_nav, 700);
 	createTrackbar("noise_Nav", "panel_nav", &Noise_nav, 255);
+	
+	if(course_type.compare("courseA")==0){
+		longitude_nav_end=longitude_nav_end_A;
+		latitude_nav_end=latitude_nav_end_A;
+	}
+	else if(course_type.compare("courseB")==0){
+		longitude_nav_end=longitude_nav_end_B;
+		latitude_nav_end=latitude_nav_end_B;
+	}
+	else if(course_type.compare("courseC")==0){
+		longitude_nav_end=longitude_nav_end_C;
+		latitude_nav_end=latitude_nav_end_C;
+	}
+	else if(course_type.compare("courseUI")==0){
+		longitude_nav_end=longitude_nav_end_UI;
+		latitude_nav_end=latitude_nav_end_UI;
+	}
 	
 	while (ros::ok()) {
 		ros::spinOnce();

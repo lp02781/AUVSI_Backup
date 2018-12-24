@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 
 void waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
-		string waypoint_start = waypoint+"_gate.start";
+		string waypoint_start = waypoint+course_type+"_gate.start";
 		changeFlightModeDebug("HOLD");
 		mission.mission_makara = waypoint_start;
 		pub_mission_rc.publish(mission);
@@ -68,7 +68,7 @@ void waypoint_running(string waypoint){
 		system(command.c_str());
 		changeFlightModeDebug("AUTO");
 		changeFlightModeDebug("HOLD");
-		string waypoint_end		= waypoint+"_gate.end";
+		string waypoint_end		= waypoint+course_type+"_gate.end";
 		mission.mission_makara	= waypoint_end;
 		pub_mission_rc.publish(mission);
 	}

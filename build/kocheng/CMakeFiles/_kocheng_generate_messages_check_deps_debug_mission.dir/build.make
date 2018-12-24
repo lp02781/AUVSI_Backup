@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Utility rule file for _kocheng_generate_messages_check_deps_debug_mission.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
 include kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/progress.make
 
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission:
-	cd /home/amvui/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kocheng /home/amvui/AUVSI/src/kocheng/msg/debug_mission.msg 
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kocheng /home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg 
 
 _kocheng_generate_messages_check_deps_debug_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission
 _kocheng_generate_messages_check_deps_debug_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make
@@ -67,10 +67,10 @@ kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
 
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/clean:
-	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/cmake_clean.cmake
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/clean
 
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/kocheng /home/amvui/AUVSI/build /home/amvui/AUVSI/build/kocheng /home/amvui/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/kocheng /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/kocheng /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/depend
 

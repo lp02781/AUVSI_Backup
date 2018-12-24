@@ -46,6 +46,10 @@ double compass_hdg, compass_init, compass_end;
 
 string receive_mission;
 
+
+float longitude_speed_end;
+float latitude_speed_end;
+
 void imageCallback		(const sensor_msgs::CompressedImageConstPtr& msg){
   try{
     receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
@@ -90,6 +94,23 @@ int main(int argc, char **argv){
 	createTrackbar("hight_speed", "panel_speed", &height_speed, 700);
 	createTrackbar("noise_speed", "panel_speed", &Noise_speed, 255);
 	
+	if(course_type.compare("courseA")==0){
+		longitude_speed_end=longitude_speed_end_A;
+		latitude_speed_end=latitude_speed_end_A;
+	}
+	else if(course_type.compare("courseB")==0){
+		longitude_speed_end=longitude_speed_end_B;
+		latitude_speed_end=latitude_speed_end_B;
+	}
+	else if(course_type.compare("courseC")==0){
+		longitude_speed_end=longitude_speed_end_C;
+		latitude_speed_end=latitude_speed_end_C;
+	}
+	else if(course_type.compare("courseUI")==0){
+		longitude_speed_end=longitude_speed_end_UI;
+		latitude_speed_end=latitude_speed_end_UI;
+	}
+	
 	while (ros::ok()) {
 		ros::spinOnce();
 		while(receive_mission=="speed.start"){
@@ -103,8 +124,8 @@ int main(int argc, char **argv){
 			pub_mission_rc.publish(mission);
 			ros::spinOnce();
 			
-			compass_init	=compass_hdg;
-			compass_end		=compass_init+compass_point;
+			compass_init	= compass_hdg;
+			compass_end		= compass_init+compass_point;
 			
 			while(receive_mission=="speed.step_1"){
 				ros::spinOnce();
@@ -189,6 +210,7 @@ int main(int argc, char **argv){
 		}
 	}
 }
+
 void imageProcessing(Mat input_image){
 	Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate, imgDebug;
 	

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AUVSI/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AUVSI/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AUVSI/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 
 # Include any dependencies generated for this target.
 include kocheng/CMakeFiles/node_controller.dir/depend.make
@@ -58,17 +58,17 @@ include kocheng/CMakeFiles/node_controller.dir/progress.make
 include kocheng/CMakeFiles/node_controller.dir/flags.make
 
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: kocheng/CMakeFiles/node_controller.dir/flags.make
-kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /home/amvui/AUVSI/src/kocheng/src/main/node_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o"
-	cd /home/amvui/AUVSI/build/kocheng && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o -c /home/amvui/AUVSI/src/kocheng/src/main/node_controller.cpp
+kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/node_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o -c /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/node_controller.cpp
 
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i"
-	cd /home/amvui/AUVSI/build/kocheng && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amvui/AUVSI/src/kocheng/src/main/node_controller.cpp > CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/node_controller.cpp > CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i
 
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s"
-	cd /home/amvui/AUVSI/build/kocheng && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amvui/AUVSI/src/kocheng/src/main/node_controller.cpp -o CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/node_controller.cpp -o CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
 
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o.requires:
 
@@ -88,48 +88,48 @@ node_controller_OBJECTS = \
 # External object files for target node_controller
 node_controller_EXTERNAL_OBJECTS =
 
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/build.make
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libcv_bridge.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libimage_transport.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libclass_loader.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/libPocoFoundation.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroslib.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librospack.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroscpp.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librostime.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libcpp_common.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/amvui/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amvui/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/amvui/AUVSI/devel/lib/kocheng/node_controller"
-	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/node_controller.dir/link.txt --verbose=$(VERBOSE)
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/build.make
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libimage_transport.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libclass_loader.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/libPocoFoundation.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroslib.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librospack.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroscpp.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/librostime.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /opt/ros/kinetic/lib/libcpp_common.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller: kocheng/CMakeFiles/node_controller.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/node_controller.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-kocheng/CMakeFiles/node_controller.dir/build: /home/amvui/AUVSI/devel/lib/kocheng/node_controller
+kocheng/CMakeFiles/node_controller.dir/build: /home/mfikih15/Documents/AUVSI/devel/lib/kocheng/node_controller
 
 .PHONY : kocheng/CMakeFiles/node_controller.dir/build
 
@@ -138,10 +138,10 @@ kocheng/CMakeFiles/node_controller.dir/requires: kocheng/CMakeFiles/node_control
 .PHONY : kocheng/CMakeFiles/node_controller.dir/requires
 
 kocheng/CMakeFiles/node_controller.dir/clean:
-	cd /home/amvui/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/node_controller.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && $(CMAKE_COMMAND) -P CMakeFiles/node_controller.dir/cmake_clean.cmake
 .PHONY : kocheng/CMakeFiles/node_controller.dir/clean
 
 kocheng/CMakeFiles/node_controller.dir/depend:
-	cd /home/amvui/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AUVSI/src /home/amvui/AUVSI/src/kocheng /home/amvui/AUVSI/build /home/amvui/AUVSI/build/kocheng /home/amvui/AUVSI/build/kocheng/CMakeFiles/node_controller.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AUVSI/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AUVSI/src /home/mfikih15/Documents/AUVSI/src/kocheng /home/mfikih15/Documents/AUVSI/build /home/mfikih15/Documents/AUVSI/build/kocheng /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/node_controller.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kocheng/CMakeFiles/node_controller.dir/depend
 

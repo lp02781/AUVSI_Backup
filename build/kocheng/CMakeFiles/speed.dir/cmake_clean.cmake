@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/speed.dir/src/mission/speed.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/kocheng/speed.pdb"
-  "/home/amvui/AUVSI/devel/lib/kocheng/speed"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/speed.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/speed"
 )
 
 # Per-language clean rules from dependency scanning.

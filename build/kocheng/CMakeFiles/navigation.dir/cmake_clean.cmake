@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/navigation.dir/src/mission/navigation.cpp.o"
-  "/home/amvui/AUVSI/devel/lib/kocheng/navigation.pdb"
-  "/home/amvui/AUVSI/devel/lib/kocheng/navigation"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/navigation.pdb"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/kocheng/navigation"
 )
 
 # Per-language clean rules from dependency scanning.
