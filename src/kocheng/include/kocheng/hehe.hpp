@@ -146,7 +146,7 @@ int HighV_speed_new = 230;		//230  255
 //############################################ COMMUNICATION ####################################################
 using namespace rapidjson;
 
-enum communicationType {obstacle, docking, interoperability, pinger, heartbeat, start_run, end_run};
+enum communicationType {navigation, speed, docking, push, flag, find, start_run, end_run};
 
 // Not yet implemented code for adding Interop and and pinger
 // ########################################## start of JSONHandler struct ########################################## //
