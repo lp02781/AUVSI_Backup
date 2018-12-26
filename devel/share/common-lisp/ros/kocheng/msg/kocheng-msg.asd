@@ -4,8 +4,12 @@
 (defsystem "kocheng-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils )
   :components ((:file "_package")
+    (:file "communication" :depends-on ("_package_communication"))
+    (:file "_package_communication" :depends-on ("_package"))
     (:file "debug_mission" :depends-on ("_package_debug_mission"))
     (:file "_package_debug_mission" :depends-on ("_package"))
+    (:file "decode_status" :depends-on ("_package_decode_status"))
+    (:file "_package_decode_status" :depends-on ("_package"))
     (:file "mission_status" :depends-on ("_package_mission_status"))
     (:file "_package_mission_status" :depends-on ("_package"))
     (:file "override_motor" :depends-on ("_package_override_motor"))

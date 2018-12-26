@@ -1,4 +1,6 @@
+from ._communication import *
 from ._debug_mission import *
+from ._decode_status import *
 from ._mission import *
 from ._mission_status import *
 from ._nav_msgs import *

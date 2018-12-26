@@ -1,0 +1,4 @@
+string heartbeat_payload
+string run_course_payload
+string follow_payload
+string docking_payload

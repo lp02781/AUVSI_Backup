@@ -59,6 +59,8 @@ add_message_files(
 	override_motor.msg
 	debug_mission.msg
 	mission_status.msg
+	decode_status.msg
+	communication.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -9,6 +9,8 @@
 #include "mavros_msgs/RCIn.h"
 #include "mavros_msgs/GlobalPositionTarget.h"
 
+#include "sensor_msgs/NavSatFix.h"
+
 #include "kocheng/override_motor.h"
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
@@ -50,7 +52,7 @@ void rc_in_cb 			(const mavros_msgs::RCIn& input);
 void rc_state_cb 		(const mavros_msgs::State& state);
 void rc_debug_cb 		(const kocheng::debug_mission& debug);
 void rc_mission_cb 		(const kocheng::mission_status& mission);
-void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
+void gps_rc_cb			(const sensor_msgs::NavSatFix& data);
 void compass_rc_cb		(const std_msgs::Float64& msg);
 void pid_effort_x_cb	(const pid::controller_msg& data);
 void pid_const_x_cb		(const pid::pid_const_msg& data);
@@ -119,7 +121,7 @@ void compass_rc_cb(const std_msgs::Float64& msg){
 	compass_hdg = msg.data;
 }
 
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
+void gps_rc_cb	(const sensor_msgs::NavSatFix& data){
 	latitude_now	= data.latitude;
 	longitude_now	= data.longitude;
 }

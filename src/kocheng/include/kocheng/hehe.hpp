@@ -148,7 +148,6 @@ using namespace rapidjson;
 
 enum communicationType {navigation, speed, docking, path, follow, flag, return_dock, start_run, end_run};
 
-// Not yet implemented code for adding Interop and and pinger
 // ########################################## start of JSONHandler struct ########################################## //
 struct JSONHandler {
 	vector<string> json_element;

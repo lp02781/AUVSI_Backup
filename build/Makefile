@@ -712,6 +712,32 @@ image_front/fast:
 .PHONY : image_front/fast
 
 #=============================================================================
+# Target rules for targets named debug_makara
+
+# Build rule for target.
+debug_makara: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
+
+#=============================================================================
+# Target rules for targets named motor_controller
+
+# Build rule for target.
+motor_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 motor_controller
+.PHONY : motor_controller
+
+# fast build rule for target.
+motor_controller/fast:
+	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
+.PHONY : motor_controller/fast
+
+#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -894,19 +920,6 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named motor_controller
-
-# Build rule for target.
-motor_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 motor_controller
-.PHONY : motor_controller
-
-# fast build rule for target.
-motor_controller/fast:
-	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
-.PHONY : motor_controller/fast
-
-#=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -998,19 +1011,6 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 #=============================================================================
-# Target rules for targets named debug_makara
-
-# Build rule for target.
-debug_makara: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
-.PHONY : debug_makara
-
-# fast build rule for target.
-debug_makara/fast:
-	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1022,6 +1022,19 @@ geometry_msgs_generate_messages_eus: cmake_check_build_system
 geometry_msgs_generate_messages_eus/fast:
 	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_decode_status
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_decode_status: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_decode_status
+.PHONY : _kocheng_generate_messages_check_deps_decode_status
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_decode_status/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_decode_status/fast
 
 #=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_nodejs
@@ -1061,6 +1074,19 @@ uuid_msgs_generate_messages_cpp: cmake_check_build_system
 uuid_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
 .PHONY : uuid_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_communication
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_communication: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_communication
+.PHONY : _kocheng_generate_messages_check_deps_communication
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_communication/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_communication/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -1377,6 +1403,8 @@ help:
 	@echo "... pid_gencpp"
 	@echo "... navigation"
 	@echo "... image_front"
+	@echo "... debug_makara"
+	@echo "... motor_controller"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... node_controller"
@@ -1391,7 +1419,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... motor_controller"
 	@echo "... geographic_msgs_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
@@ -1399,11 +1426,12 @@ help:
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... remote_monitor"
-	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _kocheng_generate_messages_check_deps_decode_status"
 	@echo "... geographic_msgs_generate_messages_nodejs"
 	@echo "... kocheng_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_communication"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"

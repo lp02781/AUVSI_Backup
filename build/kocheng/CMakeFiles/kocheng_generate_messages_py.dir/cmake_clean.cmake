@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py"
   "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py"
   "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py"
+  "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_communication.py"
   "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_debug_mission.py"
   "/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py"
 )

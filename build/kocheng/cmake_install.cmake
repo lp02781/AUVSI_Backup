@@ -38,6 +38,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg"
+    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/decode_status.msg"
+    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg"
     )
 endif()
 

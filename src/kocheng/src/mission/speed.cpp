@@ -17,13 +17,15 @@
 
 #include "mavros_msgs/GlobalPositionTarget.h"
 
+#include "sensor_msgs/NavSatFix.h"
+
 using namespace std;
 using namespace cv;
 
 void imageProcessing	(Mat input_image);
 void pid_receiver_cb	(const pid::controller_msg& control);
 void rc_mission_cb		(const kocheng::mission_status& data);
-void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
+void gps_rc_cb			(const sensor_msgs::NavSatFix& data);
 void compass_rc_cb		(const std_msgs::Float64& msg);
 void change_value_image_processing();
 
@@ -276,10 +278,11 @@ void pid_receiver_cb(const pid::controller_msg& control){
 void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
 }
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
+void gps_rc_cb	(const sensor_msgs::NavSatFix& data){
 	latitude	= data.latitude;
 	longitude	= data.longitude;
 }
+
 void compass_rc_cb(const std_msgs::Float64& msg){
 	compass_hdg = msg.data;
 }

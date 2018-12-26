@@ -95,6 +95,8 @@ kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kineti
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h

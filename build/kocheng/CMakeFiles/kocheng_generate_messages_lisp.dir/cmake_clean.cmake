@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/rc_number.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/mission_status.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp"
+  "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp"
+  "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp"
 )
 

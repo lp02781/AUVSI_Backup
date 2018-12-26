@@ -446,7 +446,7 @@ pid/CMakeFiles/pid_generate_messages_py.dir/all: pid/CMakeFiles/_pid_generate_me
 pid/CMakeFiles/pid_generate_messages_py.dir/all: pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/all
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_py.dir/build.make pid/CMakeFiles/pid_generate_messages_py.dir/depend
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_py.dir/build.make pid/CMakeFiles/pid_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=63,64,65,66 "Built target pid_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=73,74,75,76 "Built target pid_generate_messages_py"
 .PHONY : pid/CMakeFiles/pid_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -513,7 +513,7 @@ pid/CMakeFiles/pid_generate_messages_nodejs.dir/all: pid/CMakeFiles/std_msgs_gen
 pid/CMakeFiles/pid_generate_messages_nodejs.dir/all: pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/all
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_nodejs.dir/build.make pid/CMakeFiles/pid_generate_messages_nodejs.dir/depend
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_nodejs.dir/build.make pid/CMakeFiles/pid_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=60,61,62 "Built target pid_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=70,71,72 "Built target pid_generate_messages_nodejs"
 .PHONY : pid/CMakeFiles/pid_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -580,7 +580,7 @@ pid/CMakeFiles/pid_generate_messages_lisp.dir/all: pid/CMakeFiles/_pid_generate_
 pid/CMakeFiles/pid_generate_messages_lisp.dir/all: pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_lisp.dir/build.make pid/CMakeFiles/pid_generate_messages_lisp.dir/depend
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_lisp.dir/build.make pid/CMakeFiles/pid_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=57,58,59 "Built target pid_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=67,68,69 "Built target pid_generate_messages_lisp"
 .PHONY : pid/CMakeFiles/pid_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1168,7 +1168,7 @@ pid/CMakeFiles/pid_generate_messages_eus.dir/all: pid/CMakeFiles/_pid_generate_m
 pid/CMakeFiles/pid_generate_messages_eus.dir/all: pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/all
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_eus.dir/build.make pid/CMakeFiles/pid_generate_messages_eus.dir/depend
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_eus.dir/build.make pid/CMakeFiles/pid_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=53,54,55,56 "Built target pid_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=63,64,65,66 "Built target pid_generate_messages_eus"
 .PHONY : pid/CMakeFiles/pid_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1336,7 +1336,7 @@ pid/CMakeFiles/pid_generate_messages_cpp.dir/all: pid/CMakeFiles/_pid_generate_m
 pid/CMakeFiles/pid_generate_messages_cpp.dir/all: pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg.dir/all
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_cpp.dir/build.make pid/CMakeFiles/pid_generate_messages_cpp.dir/depend
 	$(MAKE) -f pid/CMakeFiles/pid_generate_messages_cpp.dir/build.make pid/CMakeFiles/pid_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=50,51,52 "Built target pid_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=60,61,62 "Built target pid_generate_messages_cpp"
 .PHONY : pid/CMakeFiles/pid_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1468,10 +1468,10 @@ clean: pid/CMakeFiles/pid_gencpp.dir/clean
 # Convenience name for "all" pass in the directory.
 kocheng/all: kocheng/CMakeFiles/navigation.dir/all
 kocheng/all: kocheng/CMakeFiles/image_front.dir/all
-kocheng/all: kocheng/CMakeFiles/node_controller.dir/all
-kocheng/all: kocheng/CMakeFiles/motor_controller.dir/all
-kocheng/all: kocheng/CMakeFiles/remote_monitor.dir/all
 kocheng/all: kocheng/CMakeFiles/debug_makara.dir/all
+kocheng/all: kocheng/CMakeFiles/motor_controller.dir/all
+kocheng/all: kocheng/CMakeFiles/node_controller.dir/all
+kocheng/all: kocheng/CMakeFiles/remote_monitor.dir/all
 kocheng/all: kocheng/CMakeFiles/speed.dir/all
 kocheng/all: kocheng/CMakeFiles/kocheng_generate_messages.dir/all
 kocheng/all: kocheng/CMakeFiles/run_course.dir/all
@@ -1482,6 +1482,8 @@ kocheng/all: kocheng/CMakeFiles/heartbeat.dir/all
 # Convenience name for "clean" pass in the directory.
 kocheng/clean: kocheng/CMakeFiles/navigation.dir/clean
 kocheng/clean: kocheng/CMakeFiles/image_front.dir/clean
+kocheng/clean: kocheng/CMakeFiles/debug_makara.dir/clean
+kocheng/clean: kocheng/CMakeFiles/motor_controller.dir/clean
 kocheng/clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/clean
 kocheng/clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
 kocheng/clean: kocheng/CMakeFiles/node_controller.dir/clean
@@ -1496,7 +1498,6 @@ kocheng/clean: kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-kocheng/clean: kocheng/CMakeFiles/motor_controller.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geographic_msgs_generate_messages_py.dir/clean
@@ -1504,11 +1505,12 @@ kocheng/clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/clean
 kocheng/clean: kocheng/CMakeFiles/remote_monitor.dir/clean
-kocheng/clean: kocheng/CMakeFiles/debug_makara.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+kocheng/clean: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/clean
 kocheng/clean: kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/clean
 kocheng/clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/clean
+kocheng/clean: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 kocheng/clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 kocheng/clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/clean
@@ -1544,7 +1546,7 @@ kocheng/preinstall:
 kocheng/CMakeFiles/navigation.dir/all:
 	$(MAKE) -f kocheng/CMakeFiles/navigation.dir/build.make kocheng/CMakeFiles/navigation.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/navigation.dir/build.make kocheng/CMakeFiles/navigation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=46,47 "Built target navigation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=56,57 "Built target navigation"
 .PHONY : kocheng/CMakeFiles/navigation.dir/all
 
 # Include target in all.
@@ -1608,6 +1610,80 @@ kocheng/CMakeFiles/image_front.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/image_front.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kocheng/CMakeFiles/debug_makara.dir
+
+# All Build rule for target.
+kocheng/CMakeFiles/debug_makara.dir/all:
+	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/depend
+	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=5,6 "Built target debug_makara"
+.PHONY : kocheng/CMakeFiles/debug_makara.dir/all
+
+# Include target in all.
+all: kocheng/CMakeFiles/debug_makara.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+kocheng/CMakeFiles/debug_makara.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/debug_makara.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+.PHONY : kocheng/CMakeFiles/debug_makara.dir/rule
+
+# Convenience name for target.
+debug_makara: kocheng/CMakeFiles/debug_makara.dir/rule
+
+.PHONY : debug_makara
+
+# clean rule for target.
+kocheng/CMakeFiles/debug_makara.dir/clean:
+	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/clean
+.PHONY : kocheng/CMakeFiles/debug_makara.dir/clean
+
+# clean rule for target.
+clean: kocheng/CMakeFiles/debug_makara.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kocheng/CMakeFiles/motor_controller.dir
+
+# All Build rule for target.
+kocheng/CMakeFiles/motor_controller.dir/all:
+	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/depend
+	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=54,55 "Built target motor_controller"
+.PHONY : kocheng/CMakeFiles/motor_controller.dir/all
+
+# Include target in all.
+all: kocheng/CMakeFiles/motor_controller.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+kocheng/CMakeFiles/motor_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/motor_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+.PHONY : kocheng/CMakeFiles/motor_controller.dir/rule
+
+# Convenience name for target.
+motor_controller: kocheng/CMakeFiles/motor_controller.dir/rule
+
+.PHONY : motor_controller
+
+# clean rule for target.
+kocheng/CMakeFiles/motor_controller.dir/clean:
+	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/clean
+.PHONY : kocheng/CMakeFiles/motor_controller.dir/clean
+
+# clean rule for target.
+clean: kocheng/CMakeFiles/motor_controller.dir/clean
 
 .PHONY : clean
 
@@ -1682,7 +1758,7 @@ clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
 kocheng/CMakeFiles/node_controller.dir/all:
 	$(MAKE) -f kocheng/CMakeFiles/node_controller.dir/build.make kocheng/CMakeFiles/node_controller.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/node_controller.dir/build.make kocheng/CMakeFiles/node_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=48,49 "Built target node_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=58,59 "Built target node_controller"
 .PHONY : kocheng/CMakeFiles/node_controller.dir/all
 
 # Include target in all.
@@ -1945,16 +2021,18 @@ kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_k
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/all
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=31,32,33,34 "Built target kocheng_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=35,36,37,38,39,40 "Built target kocheng_generate_messages_lisp"
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/rule
@@ -2067,43 +2145,6 @@ kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target kocheng/CMakeFiles/motor_controller.dir
-
-# All Build rule for target.
-kocheng/CMakeFiles/motor_controller.dir/all:
-	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/depend
-	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=44,45 "Built target motor_controller"
-.PHONY : kocheng/CMakeFiles/motor_controller.dir/all
-
-# Include target in all.
-all: kocheng/CMakeFiles/motor_controller.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-kocheng/CMakeFiles/motor_controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/motor_controller.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
-.PHONY : kocheng/CMakeFiles/motor_controller.dir/rule
-
-# Convenience name for target.
-motor_controller: kocheng/CMakeFiles/motor_controller.dir/rule
-
-.PHONY : motor_controller
-
-# clean rule for target.
-kocheng/CMakeFiles/motor_controller.dir/clean:
-	$(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/clean
-.PHONY : kocheng/CMakeFiles/motor_controller.dir/clean
-
-# clean rule for target.
-clean: kocheng/CMakeFiles/motor_controller.dir/clean
 
 .PHONY : clean
 
@@ -2306,7 +2347,7 @@ clean: kocheng/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/clean
 kocheng/CMakeFiles/remote_monitor.dir/all:
 	$(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=67,68 "Built target remote_monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=77,78 "Built target remote_monitor"
 .PHONY : kocheng/CMakeFiles/remote_monitor.dir/all
 
 # Include target in all.
@@ -2333,43 +2374,6 @@ kocheng/CMakeFiles/remote_monitor.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/remote_monitor.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target kocheng/CMakeFiles/debug_makara.dir
-
-# All Build rule for target.
-kocheng/CMakeFiles/debug_makara.dir/all:
-	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/depend
-	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=5,6 "Built target debug_makara"
-.PHONY : kocheng/CMakeFiles/debug_makara.dir/all
-
-# Include target in all.
-all: kocheng/CMakeFiles/debug_makara.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-kocheng/CMakeFiles/debug_makara.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/debug_makara.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
-.PHONY : kocheng/CMakeFiles/debug_makara.dir/rule
-
-# Convenience name for target.
-debug_makara: kocheng/CMakeFiles/debug_makara.dir/rule
-
-.PHONY : debug_makara
-
-# clean rule for target.
-kocheng/CMakeFiles/debug_makara.dir/clean:
-	$(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/clean
-.PHONY : kocheng/CMakeFiles/debug_makara.dir/clean
-
-# clean rule for target.
-clean: kocheng/CMakeFiles/debug_makara.dir/clean
 
 .PHONY : clean
 
@@ -2402,6 +2406,38 @@ kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir
+
+# All Build rule for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/depend
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num= "Built target _kocheng_generate_messages_check_deps_decode_status"
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+
+# Build rule for subdir invocation for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_decode_status: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_decode_status
+
+# clean rule for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/clean:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/clean
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/clean
+
+# clean rule for target.
+clean: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/clean
 
 .PHONY : clean
 
@@ -2446,16 +2482,18 @@ kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/mav
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/all
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=26,27,28,29,30 "Built target kocheng_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=28,29,30,31,32,33,34 "Built target kocheng_generate_messages_eus"
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/rule
@@ -2504,6 +2542,38 @@ kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir
+
+# All Build rule for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/depend
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num= "Built target _kocheng_generate_messages_check_deps_communication"
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
+
+# Build rule for subdir invocation for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_communication: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_communication
+
+# clean rule for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/clean:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/clean
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/clean
+
+# clean rule for target.
+clean: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/clean
 
 .PHONY : clean
 
@@ -2647,7 +2717,7 @@ kocheng/CMakeFiles/kocheng_genlisp.dir/all: kocheng/CMakeFiles/kocheng_generate_
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_genlisp.dir/rule
@@ -2674,7 +2744,7 @@ clean: kocheng/CMakeFiles/kocheng_genlisp.dir/clean
 kocheng/CMakeFiles/speed.dir/all:
 	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/speed.dir/build.make kocheng/CMakeFiles/speed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=71,72 "Built target speed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=81,82 "Built target speed"
 .PHONY : kocheng/CMakeFiles/speed.dir/all
 
 # Include target in all.
@@ -2757,7 +2827,7 @@ all: kocheng/CMakeFiles/kocheng_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 32
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages.dir/rule
@@ -2786,16 +2856,18 @@ kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_ko
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/all
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=22,23,24,25 "Built target kocheng_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=22,23,24,25,26,27 "Built target kocheng_generate_messages_cpp"
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/rule
@@ -2891,7 +2963,7 @@ kocheng/CMakeFiles/kocheng_gencpp.dir/all: kocheng/CMakeFiles/kocheng_generate_m
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_gencpp.dir/rule
@@ -2923,7 +2995,7 @@ kocheng/CMakeFiles/kocheng_geneus.dir/all: kocheng/CMakeFiles/kocheng_generate_m
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_geneus.dir/rule
@@ -2952,16 +3024,18 @@ kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/all
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=35,36,37,38 "Built target kocheng_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=41,42,43,44,45,46 "Built target kocheng_generate_messages_nodejs"
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/rule
@@ -2993,7 +3067,7 @@ kocheng/CMakeFiles/kocheng_gennodejs.dir/all: kocheng/CMakeFiles/kocheng_generat
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_gennodejs.dir/rule
@@ -3022,16 +3096,18 @@ kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/mavr
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_rc_number.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/all
+kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/all
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/all
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_py.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_py.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_py.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=39,40,41,42,43 "Built target kocheng_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=47,48,49,50,51,52,53 "Built target kocheng_generate_messages_py"
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_generate_messages_py.dir/rule
@@ -3063,7 +3139,7 @@ kocheng/CMakeFiles/kocheng_genpy.dir/all: kocheng/CMakeFiles/kocheng_generate_me
 
 # Build rule for subdir invocation for target.
 kocheng/CMakeFiles/kocheng_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/kocheng_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
 .PHONY : kocheng/CMakeFiles/kocheng_genpy.dir/rule
@@ -3122,7 +3198,7 @@ clean: kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/clean
 kocheng/CMakeFiles/run_course.dir/all:
 	$(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/depend
 	$(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=69,70 "Built target run_course"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=79,80 "Built target run_course"
 .PHONY : kocheng/CMakeFiles/run_course.dir/all
 
 # Include target in all.

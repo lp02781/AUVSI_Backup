@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/rc_number.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/communication.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/debug_mission.js"
 )
 

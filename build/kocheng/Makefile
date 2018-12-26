@@ -196,6 +196,36 @@ image_front/fast:
 .PHONY : image_front/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/debug_makara.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/debug_makara.dir/rule
+.PHONY : kocheng/CMakeFiles/debug_makara.dir/rule
+
+# Convenience name for target.
+debug_makara: kocheng/CMakeFiles/debug_makara.dir/rule
+
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/motor_controller.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/motor_controller.dir/rule
+.PHONY : kocheng/CMakeFiles/motor_controller.dir/rule
+
+# Convenience name for target.
+motor_controller: kocheng/CMakeFiles/motor_controller.dir/rule
+
+.PHONY : motor_controller
+
+# fast build rule for target.
+motor_controller/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
+.PHONY : motor_controller/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
@@ -406,21 +436,6 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-kocheng/CMakeFiles/motor_controller.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/motor_controller.dir/rule
-.PHONY : kocheng/CMakeFiles/motor_controller.dir/rule
-
-# Convenience name for target.
-motor_controller: kocheng/CMakeFiles/motor_controller.dir/rule
-
-.PHONY : motor_controller
-
-# fast build rule for target.
-motor_controller/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/motor_controller.dir/build.make kocheng/CMakeFiles/motor_controller.dir/build
-.PHONY : motor_controller/fast
-
-# Convenience name for target.
 kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
 .PHONY : kocheng/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
@@ -526,21 +541,6 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 # Convenience name for target.
-kocheng/CMakeFiles/debug_makara.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/debug_makara.dir/rule
-.PHONY : kocheng/CMakeFiles/debug_makara.dir/rule
-
-# Convenience name for target.
-debug_makara: kocheng/CMakeFiles/debug_makara.dir/rule
-
-.PHONY : debug_makara
-
-# fast build rule for target.
-debug_makara/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/debug_makara.dir/build.make kocheng/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
-
-# Convenience name for target.
 kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -554,6 +554,21 @@ geometry_msgs_generate_messages_eus: kocheng/CMakeFiles/geometry_msgs_generate_m
 geometry_msgs_generate_messages_eus/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_decode_status: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_decode_status
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_decode_status/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_decode_status/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
@@ -599,6 +614,21 @@ uuid_msgs_generate_messages_cpp: kocheng/CMakeFiles/uuid_msgs_generate_messages_
 uuid_msgs_generate_messages_cpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
 .PHONY : uuid_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_communication: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_communication
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_communication/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_communication/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
@@ -1157,6 +1187,8 @@ help:
 	@echo "... navigation"
 	@echo "... install/strip"
 	@echo "... image_front"
+	@echo "... debug_makara"
+	@echo "... motor_controller"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... node_controller"
@@ -1172,7 +1204,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... motor_controller"
 	@echo "... geographic_msgs_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
@@ -1180,11 +1211,12 @@ help:
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... remote_monitor"
-	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _kocheng_generate_messages_check_deps_decode_status"
 	@echo "... geographic_msgs_generate_messages_nodejs"
 	@echo "... kocheng_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
+	@echo "... _kocheng_generate_messages_check_deps_communication"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"

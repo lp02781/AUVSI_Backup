@@ -15,12 +15,12 @@ string receive_mission;
 ros::ServiceClient client_set_flightmode;
 kocheng::mission_status	mission;
 
-void rc_number_cb		(const kocheng::rc_number& number);
-void rc_mission_cb		(const kocheng::mission_status& data);
-void waypoint_running	(string waypoint);
-void mission_running	(string mission_name);
-bool changeFlightMode	(const char* flight_mode);
-bool changeFlightModeDebug(string fm);
+void rc_number_cb			(const kocheng::rc_number& number);
+void rc_mission_cb			(const kocheng::mission_status& data);
+void waypoint_running		(string waypoint);
+void mission_running		(string mission_name);
+bool changeFlightMode		(const char* flight_mode);
+bool changeFlightModeDebug	(string fm);
 
 ros::Subscriber sub_mission_rc;
 ros::Publisher pub_mission_rc;
@@ -41,10 +41,32 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		sleep(0.2);
 		if(rc_flag_in == first_simple ){
+			
+			mission.mission_makara = "start_run";
+			pub_mission_rc.publish(mission);
+			
 			waypoint_running("navigation_gate");
 			mission_running("navigation");
+			
 			waypoint_running("speed_gate");
 			mission_running("speed");
+			
+			waypoint_running("path_gate");
+			mission_running("path");
+			
+			waypoint_running("follow_gate");
+			mission_running("follow");
+			
+			waypoint_running("docking_gate");
+			mission_running("docking");
+			
+			waypoint_running("push_gate");
+			mission_running("push");
+			
+			waypoint_running("return");
+			
+			mission.mission_makara = "end_run";
+			pub_mission_rc.publish(mission);
 		}
 		else if(rc_flag_in == second_simple){
 			ros::spinOnce();
@@ -81,6 +103,7 @@ void mission_running(string mission_name){
 		mission.mission_makara = mission_start;
 		pub_mission_rc.publish(mission);
 		string mission_end = mission_name+".end";
+		
 		while(ros::ok() && receive_mission != mission_end ) ros::spinOnce();
 	}
 }

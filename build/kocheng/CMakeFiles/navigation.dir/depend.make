@@ -237,6 +237,8 @@ kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CameraInfo.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
+kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
+kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
 kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h

@@ -15,6 +15,7 @@
 #include "kocheng/debug_mission.h"
 
 #include "mavros_msgs/GlobalPositionTarget.h"
+#include "sensor_msgs/NavSatFix.h"
 
 using namespace std;
 using namespace cv;
@@ -22,7 +23,7 @@ using namespace cv;
 void imageProcessing	(Mat input_image);
 void pid_receiver_cb	(const pid::controller_msg& control);
 void rc_mission_cb		(const kocheng::mission_status& data);
-void gps_rc_cb			(const mavros_msgs::GlobalPositionTarget& data);
+void gps_rc_cb			(const sensor_msgs::NavSatFix& data);
 
 Mat receive_image;
 
@@ -216,7 +217,7 @@ void pid_receiver_cb(const pid::controller_msg& control){
 void rc_mission_cb	(const kocheng::mission_status& data){
 	receive_mission = data.mission_makara;
 }
-void gps_rc_cb	(const mavros_msgs::GlobalPositionTarget& data){
+void gps_rc_cb		(const sensor_msgs::NavSatFix& data){
 	latitude	= data.latitude;
 	longitude	= data.longitude;
 }
