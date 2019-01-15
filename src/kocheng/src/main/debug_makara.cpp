@@ -15,6 +15,10 @@
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
+#include "kocheng/communication.h"
+#include "kocheng/decode_status.h"
+#include "kocheng/image_in.h"
+#include "kocheng/image_out.h"
 
 #include "pid/plant_msg.h"
 #include "pid/controller_msg.h"
@@ -45,6 +49,23 @@ double compass_hdg;
 int setpoint_x, setpoint_y, state_x, state_y,effort_x, effort_y;
 float kp_x, kp_y, ki_x, ki_y,  kd_x, kd_y;
 
+int state_x_image, state_y_image;
+
+int run_course_status, heartbeat_status, follow_status, docking_status;
+string heartbeat_payload, run_course_payload, follow_payload, docking_payload;
+
+int x_init=5;
+int y_init=5;
+int width=5; //width 400 for simple
+int height=5;
+int LowH=5; 		//0  
+int HighH=5;		//184 
+int LowS=5;      //130  65
+int HighS=5;      //248  246
+int LowV=5;		//49   242
+int HighV=5;		//230  255
+int Noise=15;
+
 void override_rc_cb		(const kocheng::override_motor& rc);
 void rc_number_cb 		(const kocheng::rc_number& state);
 void override_motor_cb 	(const mavros_msgs::OverrideRCIn& motor);
@@ -60,6 +81,10 @@ void pid_plant_x_cb		(const pid::plant_msg& data);
 void pid_effort_y_cb	(const pid::controller_msg& data);
 void pid_const_y_cb		(const pid::pid_const_msg& data);
 void pid_plant_y_cb		(const pid::plant_msg& data);
+void image_in_cb		(const kocheng::image_in& in);
+void image_out_cb		(const kocheng::image_out& image);
+void decode_status_cb	(const kocheng::decode_status& data);
+void string_payload_cb	(const kocheng::communication& data);
 
 int main(int argc, char **argv)
 {
@@ -70,6 +95,10 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_rc_number 		= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
 	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 8, rc_mission_cb);
 	ros::Subscriber sub_debug_rc 		= nh.subscribe("/auvsi/debug/rc", 8, rc_debug_cb);
+	ros::Subscriber sub_image_in		= nh.subscribe("/auvsi/image/in", 1, image_in_cb);
+	ros::Subscriber sub_image_out		= nh.subscribe("/auvsi/image/out", 8, image_out_cb);
+	ros::Subscriber sub_run_status		= nh.subscribe("/auvsi/run_course/status", 8, decode_status_cb);
+	//ros::Subscriber sub_string_payload	= nh.subscribe("/auvsi/run_course/status", 8, string_payload_cb);
 	
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
 	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 8, rc_in_cb);
@@ -99,8 +128,8 @@ int main(int argc, char **argv)
 		ROS_INFO(" ");
 		
 		ROS_WARN("NC : topic PID");
-		ROS_INFO("kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_x, ki_x, kd_x, setpoint_x, state_x, effort_x);
-		ROS_INFO("kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_y, ki_y, kd_y, setpoint_y, state_y, effort_y);
+		ROS_INFO("X: kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_x, ki_x, kd_x, setpoint_x, state_x, effort_x);
+		ROS_INFO("Y: kp:%0.2f\t ki:%0.2f\t kd:%0.2f\t setpoint:%d\t state:%d\t effort:%d\t", kp_y, ki_y, kd_y, setpoint_y, state_y, effort_y);
 		ROS_INFO(" ");
 		
 		ROS_INFO("steering:%d\t throttle:%d", steering, throttle);
@@ -112,9 +141,56 @@ int main(int argc, char **argv)
 		ROS_INFO("1:%d\t 2:%d\t 3:%d\t 4:%d\t 5:%d\t 6:%d\t 7:%d\t 8:%d", out_channel[0], out_channel[1], out_channel[2], out_channel[3], out_channel[4], out_channel[5], out_channel[6], out_channel[7]);		
 		ROS_INFO(" ");
 		
+		ROS_WARN("NC: topic image");
+		ROS_INFO("x:%d\t y:%d\t w:%d\t h:%d\t Lh:%d\t Hh:%d\t Ls:%d\t Hs:%d\t Lv:%d\t Hv:%d\t N:%d", x_init, y_init, width, height, LowH, HighH, LowS, HighS, LowV, HighV, Noise);
+		ROS_INFO("state_x:%d\t state_y:%d", state_x_image, state_y_image);
+		ROS_INFO(" ");
+		
+		ROS_WARN("NC: Communication");
+		ROS_INFO("run:%d\t heartbeat:%d\t follow:%d\t docking:%d\t", run_course_status, heartbeat_status, follow_status, docking_status);
+		/*
+		ROS_INFO("run_course:%s", run_course_payload.c_str());
+		ROS_INFO("heartbeat:%s", heartbeat_payload.c_str());
+		ROS_INFO("follow:%s", follow_payload.c_str());
+		ROS_INFO("docking:%s", docking_payload.c_str());
+		ROS_INFO(" ");
+		*/
 		sleep(1);
 		system("clear");
 	}
+}
+
+void decode_status_cb	(const kocheng::decode_status& data){
+	run_course_status	= data.run_course_status;
+	heartbeat_status	= data.heartbeat_status;
+	follow_status		= data.follow_status;
+	docking_status		= data.docking_status;
+}
+/*
+void string_payload_cb	(const kocheng::communication& data){
+	heartbeat_payload	= data.heartbeat_payload;
+	run_course_payload	= data.run_course_payload;
+	follow_payload		= data.follow_payload;
+	docking_payload		= data.docking_payload;
+}
+*/
+void image_in_cb(const kocheng::image_in& in){
+	x_init	= in.x_init;
+	y_init	= in.y_init;
+	width	= in.width; //width 400 for simple
+	height	= in.height;
+	LowH	= in.LowH; 		//0  
+	HighH	= in.HighH;		//184 
+	LowS	= in.LowS;      //130  65
+	HighS	= in.HighS;      //248  246
+	LowV	= in.LowV;		//49   242
+	HighV	= in.HighV;		//230  255
+	Noise	= in.Noise;
+}
+
+void image_out_cb(const kocheng::image_out& image){
+	state_x_image = image.state_x;
+	state_y_image = image.state_y;
 }
 
 void compass_rc_cb(const std_msgs::Float64& msg){

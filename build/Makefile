@@ -738,6 +738,32 @@ motor_controller/fast:
 .PHONY : motor_controller/fast
 
 #=============================================================================
+# Target rules for targets named node_controller
+
+# Build rule for target.
+node_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_controller
+.PHONY : node_controller
+
+# fast build rule for target.
+node_controller/fast:
+	$(MAKE) -f kocheng/CMakeFiles/node_controller.dir/build.make kocheng/CMakeFiles/node_controller.dir/build
+.PHONY : node_controller/fast
+
+#=============================================================================
+# Target rules for targets named remote_monitor
+
+# Build rule for target.
+remote_monitor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 remote_monitor
+.PHONY : remote_monitor
+
+# fast build rule for target.
+remote_monitor/fast:
+	$(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/build
+.PHONY : remote_monitor/fast
+
+#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -762,19 +788,6 @@ mavros_msgs_generate_messages_eus: cmake_check_build_system
 mavros_msgs_generate_messages_eus/fast:
 	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named node_controller
-
-# Build rule for target.
-node_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 node_controller
-.PHONY : node_controller
-
-# fast build rule for target.
-node_controller/fast:
-	$(MAKE) -f kocheng/CMakeFiles/node_controller.dir/build.make kocheng/CMakeFiles/node_controller.dir/build
-.PHONY : node_controller/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
@@ -998,19 +1011,6 @@ mavros_msgs_generate_messages_nodejs/fast:
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named remote_monitor
-
-# Build rule for target.
-remote_monitor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 remote_monitor
-.PHONY : remote_monitor
-
-# fast build rule for target.
-remote_monitor/fast:
-	$(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/build
-.PHONY : remote_monitor/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1141,6 +1141,19 @@ uuid_msgs_generate_messages_lisp/fast:
 .PHONY : uuid_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_image_in
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_image_in: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_image_in
+.PHONY : _kocheng_generate_messages_check_deps_image_in
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_image_in/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_in.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_in.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_image_in/fast
+
+#=============================================================================
 # Target rules for targets named kocheng_genlisp
 
 # Build rule for target.
@@ -1219,6 +1232,19 @@ _kocheng_generate_messages_check_deps_override_motor/fast:
 .PHONY : _kocheng_generate_messages_check_deps_override_motor/fast
 
 #=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_image_out
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_image_out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_image_out
+.PHONY : _kocheng_generate_messages_check_deps_image_out
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_image_out/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_image_out/fast
+
+#=============================================================================
 # Target rules for targets named _kocheng_generate_messages_check_deps_debug_mission
 
 # Build rule for target.
@@ -1282,6 +1308,19 @@ kocheng_gennodejs: cmake_check_build_system
 kocheng_gennodejs/fast:
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_gennodejs.dir/build.make kocheng/CMakeFiles/kocheng_gennodejs.dir/build
 .PHONY : kocheng_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named image_processing
+
+# Build rule for target.
+image_processing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_processing
+.PHONY : image_processing
+
+# fast build rule for target.
+image_processing/fast:
+	$(MAKE) -f kocheng/CMakeFiles/image_processing.dir/build.make kocheng/CMakeFiles/image_processing.dir/build
+.PHONY : image_processing/fast
 
 #=============================================================================
 # Target rules for targets named kocheng_generate_messages_py
@@ -1405,9 +1444,10 @@ help:
 	@echo "... image_front"
 	@echo "... debug_makara"
 	@echo "... motor_controller"
+	@echo "... node_controller"
+	@echo "... remote_monitor"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
-	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
@@ -1425,7 +1465,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
-	@echo "... remote_monitor"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... _kocheng_generate_messages_check_deps_decode_status"
 	@echo "... geographic_msgs_generate_messages_nodejs"
@@ -1436,17 +1475,20 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"
+	@echo "... _kocheng_generate_messages_check_deps_image_in"
 	@echo "... kocheng_genlisp"
 	@echo "... speed"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
+	@echo "... _kocheng_generate_messages_check_deps_image_out"
 	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... kocheng_gencpp"
 	@echo "... kocheng_geneus"
 	@echo "... kocheng_generate_messages_nodejs"
 	@echo "... kocheng_gennodejs"
+	@echo "... image_processing"
 	@echo "... kocheng_generate_messages_py"
 	@echo "... kocheng_genpy"
 	@echo "... uuid_msgs_generate_messages_eus"

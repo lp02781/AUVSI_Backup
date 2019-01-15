@@ -57,14 +57,14 @@ int main(int argc, char **argv)
 			waypoint_running("follow_gate");
 			mission_running("follow");
 			
-			waypoint_running("docking_gate");
-			mission_running("docking");
-			
 			waypoint_running("push_gate");
 			mission_running("push");
 			
-			waypoint_running("return");
+			waypoint_running("docking_gate");
+			mission_running("docking");
 			
+			waypoint_running("return");
+						
 			mission.mission_makara = "end_run";
 			pub_mission_rc.publish(mission);
 		}

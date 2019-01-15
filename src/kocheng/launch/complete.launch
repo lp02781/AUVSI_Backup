@@ -1,4 +1,17 @@
-<launch>
+<launch>	
+	<node name="motor_controller" pkg="kocheng" output="screen" type="motor_controller"/>
+	<node name="node_controller" pkg="kocheng" output="screen" type="node_controller" />
+	<node name="remote_monitor" pkg="kocheng" output="screen" type="remote_monitor" />
+	<node name="image_front" pkg="kocheng" output="screen" type="image_front" />
+	<node name="image_processing" pkg="kocheng" output="screen" type="image_processing" />
+	<node name="debug_makara" pkg="kocheng" output="screen" type="debug_makara" />
+	
+	<node name="navigation" pkg="kocheng" output="screen" type="navigation" />
+	<node name="speed" pkg="kocheng" output="screen" type="speed" />
+	
+	<node name="heartbeat" pkg="kocheng" output="screen" type="heartbeat" />
+	<node name="run_course" pkg="kocheng" output="screen" type="run_course" />
+	
 	<arg name="topic_x_in" default="/auvsi/pid/inX" />
 	<arg name="topic_x_out" default="/auvsi/pid/outX" />
 	<!-- topic for constant x /auvsi/pid/constX -->
@@ -17,13 +30,5 @@
 	
 	<node name="control_x" pkg="pid" output="screen" type="controller_adaptive_x" args="$(arg kp) $(arg ki) $(arg kd) $(arg pid_rate) -tfp $(arg topic_x_in) -tfc $(arg topic_x_out) -ul $(arg upper_limit) -ll $(arg lower_limit) -aw $(arg anti_windup)" />
 	<node name="control_y" pkg="pid" output="screen" type="controller_adaptive_y" args="$(arg kp) $(arg ki) $(arg kd) $(arg pid_rate) -tfp $(arg topic_y_in) -tfc $(arg topic_y_out) -ul $(arg upper_limit) -ll $(arg lower_limit) -aw $(arg anti_windup)" />
-	
-	<node name="motor_controller" pkg="kocheng" output="screen" type="motor_controller"/>
-	<node name="node_controller" pkg="kocheng" output="screen" type="node_controller" />
-	<node name="remote_monitor" pkg="kocheng" output="screen" type="remote_monitor" />
-	<node name="debug_makara" pkg="kocheng" output="screen" type="debug_makara" />
-	<node name="image_front" pkg="kocheng" output="screen" type="image_front" />
-	
-	<node name="navigation" pkg="kocheng" output="screen" type="navigation" />
-	<node name="speed" pkg="kocheng" output="screen" type="speed" />
+
 </launch>

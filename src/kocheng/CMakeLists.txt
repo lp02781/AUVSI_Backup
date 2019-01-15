@@ -61,6 +61,8 @@ add_message_files(
 	mission_status.msg
 	decode_status.msg
 	communication.msg
+	image_in.msg
+	image_out.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -201,16 +203,20 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
+add_executable(image_processing src/main/image_processing.cpp )
+target_link_libraries(image_processing
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
 add_executable(navigation src/mission/navigation.cpp )
 target_link_libraries(navigation
 ${catkin_LIBRARIES}
-${OpenCV_LIBRARIES}
 )
 
 add_executable(speed src/mission/speed.cpp )
 target_link_libraries(speed
 ${catkin_LIBRARIES}
-${OpenCV_LIBRARIES}
 )
 #############
 ## Install ##

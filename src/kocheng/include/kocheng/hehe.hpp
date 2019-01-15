@@ -20,9 +20,9 @@
 
 using namespace std;
 
-//#################  MAIN VARIABLE  ###############
+//#############################################################################################  MAIN VARIABLE  ###############
 string	challenge_status	= "idle";
-string 	server_ip			= "10.0.0.2";
+string 	server_ip			= "10.0.2.2";
 int 	server_port			= 80;
 string 	team_code			= "AMVUI";
 string	course_type 		= "courseUI"; //courseA courseB courseC courseUI
@@ -57,7 +57,7 @@ int zero_flag 		= 0;
 int first_simple 	= 1;
 int second_simple 	= 2;
 
-//#################  NAVIGATION VARIABLE  ###############
+//###############################################################################################  NAVIGATION VARIABLE  ###############
 #define THROT_NAV 1650
 
 float longitude_nav_end_A=0;
@@ -72,7 +72,7 @@ float latitude_nav_end_C=0;
 float longitude_nav_end_UI=0;
 float latitude_nav_end_UI=0;
 
-float tolerance_nav;
+float tolerance_nav=0;
 float kp_nav = 1.65;//1.5
 float ki_nav = 1;//1
 float kd_nav = 0.5;//0.5
@@ -104,8 +104,8 @@ float latitude_speed_end_C=0;
 float longitude_speed_end_UI=0;
 float latitude_speed_end_UI=0;
 
-float tolerance_speed;
-int Noise_speed = 15;
+float tolerance_speed=0;
+
 double compass_point=60;
 double compass_tolerance = 5;
 
@@ -124,6 +124,7 @@ int LowS_speed 	= 130;      //130  65
 int HighS_speed = 248;      //248  246
 int LowV_speed 	= 49;		//49   242
 int HighV_speed = 230;		//230  255
+int Noise_speed = 15;
 
 //red buoy
 float kp_speed_new= 1.65;//1.5
@@ -140,15 +141,15 @@ int LowS_speed_new 	= 130;      //130  65
 int HighS_speed_new = 248;      //248  246
 int LowV_speed_new 	= 49;		//49   242
 int HighV_speed_new = 230;		//230  255
+int Noise_speed_new = 15;
 
 
-
-//############################################ COMMUNICATION ####################################################
+//############################################################################################# COMMUNICATION ####################################################
 using namespace rapidjson;
 
 enum communicationType {navigation, speed, docking, path, follow, flag, return_dock, start_run, end_run};
 
-// ########################################## start of JSONHandler struct ########################################## //
+// ######################################################################################## start of JSONHandler struct ########################################## //
 struct JSONHandler {
 	vector<string> json_element;
 	void clearJSONVector(){this->json_element.clear();}
@@ -181,9 +182,9 @@ struct JSONHandler {
     bool StartArray() {return true; }
     bool EndArray(SizeType elementCount) {return true; }
 };
-  // ########################################## start of JSONHandler struct ########################################## //
+  // ####################################################################################### start of JSONHandler struct ########################################## //
 
-  // ########################################## start of AUVSICommunication class ########################################## //
+  // ####################################################################################### start of AUVSICommunication class ########################################## //
 class AUVSICommunication {
 
 	protected:
@@ -386,9 +387,9 @@ int AUVSICommunication::decodedResponse(string response_message){
     return this->decodeJSON(parsed_http_response);
 }
 
-  // ########################################## end of AUVSICommunication class ########################################## //
+  // ################################################################################################ end of AUVSICommunication class ########################################## //
 
-  // ########################################## start of heartbeat class ########################################## //
+  // ##################################################################################################### start of heartbeat class ########################################## //
 
 class HeartbeatMessage : public AUVSICommunication {
 
@@ -435,8 +436,8 @@ void HeartbeatMessage::setPayloadCommunication(string timestamp_mission, string 
     payload = http_request;
 }
 
-  // ########################################## end of heartbeat class ########################################## //
-  // ########################################## start of StartEndRunMessage class ########################################## //
+  // ################################################################################################# end of heartbeat class ########################################## //
+  // ############################################################################################# start of StartEndRunMessage class ########################################## //
 
 class StartEndRunMessage : public AUVSICommunication {
 
@@ -474,10 +475,10 @@ bool StartEndRunMessage::setPayloadCommunication(communicationType comm_type){
     }
     return false;
 }
-// ########################################## end of StartEndRunMessage class ########################################## //
+// ################################################################################################ end of StartEndRunMessage class ########################################## //
   
 
-// ########################################## start of mission class ########################################## //
+// ################################################################################################### start of mission class ########################################## //
 class MissionMessage : public AUVSICommunication {
 
 	public:
@@ -527,20 +528,20 @@ bool MissionMessage::setPayloadCommunication(communicationType comm_type){
    }
    return false;
 }
-// ########################################## end of mission class ########################################## //
+// ################################################################################################## end of mission class ########################################## //
 
 
-// ########################################## start of LeaderMessage class ########################################## //
-// ########################################## end of LeaderMessage class ########################################## //
+// ################################################################################################ start of LeaderMessage class ########################################## //
+// ################################################################################################## end of LeaderMessage class ########################################## //
 
 
-// ########################################## start of DockingMessage class ########################################## //
-// ########################################## end of DockingMessage class ########################################## //
+// ################################################################################################ start of DockingMessage class ########################################## //
+// ################################################################################################ end of DockingMessage class ########################################## //
 
 
 
 
-  // ########################################## start of getTime class ########################################## //
+  // ####################################################################################################### start of getTime class ########################################## //
 class getTime {
 
 	private:
@@ -635,4 +636,4 @@ string getTime::getYMDHS(){
     string complete_date = this->getYear() + this->getMonth() + this->getDay() + this->getHour() + this-> getMinute() + this->getSecond();
     return complete_date;
 }
-  // ########################################## end of getTime class ########################################## //
+  // ############################################################################################### end of getTime class ########################################## //

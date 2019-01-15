@@ -1,10 +1,5 @@
 #include "../../include/kocheng/hehe.hpp"
 #include <ros/ros.h>
-#include <image_transport/image_transport.h>
-#include <cv_bridge/cv_bridge.h>
-
-#include <opencv2/highgui/highgui.hpp>
-#include "opencv2/imgproc/imgproc.hpp"
 
 #include "pid/plant_msg.h"
 #include "pid/controller_msg.h"
@@ -13,19 +8,18 @@
 #include "kocheng/override_motor.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
+#include "kocheng/image_in.h"
+#include "kocheng/image_out.h"
 
 #include "mavros_msgs/GlobalPositionTarget.h"
 #include "sensor_msgs/NavSatFix.h"
 
 using namespace std;
-using namespace cv;
 
-void imageProcessing	(Mat input_image);
 void pid_receiver_cb	(const pid::controller_msg& control);
 void rc_mission_cb		(const kocheng::mission_status& data);
 void gps_rc_cb			(const sensor_msgs::NavSatFix& data);
-
-Mat receive_image;
+void image_out_cb		(const kocheng::image_out& image);
 
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
@@ -33,8 +27,9 @@ pid::pid_const_msg pid_const;
 kocheng::override_motor controller;
 kocheng::mission_status	mission;
 kocheng::debug_mission	debug;
+kocheng::image_in image_in;
 
-int state, throttle_pwm, steer_pwm, control_effort;
+int state_x, state_y, throttle_pwm, steer_pwm, control_effort;
 
 int drone_pwm, camera_pwm;
 
@@ -45,23 +40,12 @@ string receive_mission;
 float longitude_nav_end;
 float latitude_nav_end;
 
-void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg){
-  try{
-    receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
-    waitKey(10);
-  }
-  catch (cv_bridge::Exception& e){
-    ROS_ERROR("Could not convert to image!");
-  }
-}
 
 int main(int argc, char **argv){
 	ros::init(argc, argv, "navigation");
 	ros::NodeHandle nh;
-	cv::startWindowThread();
 	
 	ROS_WARN("NC : navigation.cpp active");
-	image_transport::ImageTransport it(nh);
 	
 	ros::Publisher pub_debug_rc 	= nh.advertise<kocheng::debug_mission>("/auvsi/debug/rc", 10);
 	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_motor>("/auvsi/override/motor", 10);
@@ -70,54 +54,55 @@ int main(int argc, char **argv){
 	ros::Publisher pub_pid_in 		= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);
 	ros::Publisher pub_pid_const 	= nh.advertise<pid::pid_const_msg>("/auvsi/pid/constX", 1,true);
 	
+	ros::Publisher pub_image_in 	= nh.advertise<kocheng::image_in>("/auvsi/image/in", 1);
+	
 	ros::Subscriber sub_mission_rc 	= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_pid_x_out 	= nh.subscribe("/auvsi/pid/outX", 10, pid_receiver_cb );
 	
 	ros::Subscriber sub_gps_cb		= nh.subscribe("/mavros/global_position/global", 1, gps_rc_cb);
-	ros::Subscriber sub_image_cb	= nh.subscribe("camera/image/compressed", 1, imageCallback);
-	 
-	namedWindow("panel_nav", CV_WINDOW_AUTOSIZE);
 	
-	createTrackbar("LowH_Nav", "panel_nav", &LowH_nav, 255);
-	createTrackbar("HighH_Nav", "panel_nav", &HighH_nav, 255);
-	createTrackbar("LowS_Nav", "panel_nav", &LowS_nav, 255); 
-	createTrackbar("HighS_Nav", "panel_nav", &HighS_nav, 255);
-	createTrackbar("LowV_Nav", "panel_nav", &LowV_nav, 255);
-	createTrackbar("HighV_Nav", "panel_nav", &HighV_nav, 255);
-	createTrackbar("x_Nav", "panel_nav", &x_nav, 700); //Hue (0 - 255)
-	createTrackbar("y_Nav", "panel_nav", &y_nav, 700);
-	createTrackbar("width_Nav", "panel_nav", &width_nav, 700); //Saturation (0 - 255)
-	createTrackbar("hight_Nav", "panel_nav", &height_nav, 700);
-	createTrackbar("noise_Nav", "panel_nav", &Noise_nav, 255);
-	
+	ros::Subscriber sub_image_out	= nh.subscribe("/auvsi/image/out", 8, image_out_cb);
+
 	if(course_type.compare("courseA")==0){
-		longitude_nav_end=longitude_nav_end_A;
-		latitude_nav_end=latitude_nav_end_A;
+		longitude_nav_end	= longitude_nav_end_A;
+		latitude_nav_end	= latitude_nav_end_A;
 	}
 	else if(course_type.compare("courseB")==0){
-		longitude_nav_end=longitude_nav_end_B;
-		latitude_nav_end=latitude_nav_end_B;
+		longitude_nav_end	= longitude_nav_end_B;
+		latitude_nav_end	= latitude_nav_end_B;
 	}
 	else if(course_type.compare("courseC")==0){
-		longitude_nav_end=longitude_nav_end_C;
-		latitude_nav_end=latitude_nav_end_C;
+		longitude_nav_end	= longitude_nav_end_C;
+		latitude_nav_end	= latitude_nav_end_C;
 	}
 	else if(course_type.compare("courseUI")==0){
-		longitude_nav_end=longitude_nav_end_UI;
-		latitude_nav_end=latitude_nav_end_UI;
+		longitude_nav_end	= longitude_nav_end_UI;
+		latitude_nav_end	= latitude_nav_end_UI;
 	}
+
 	
 	while (ros::ok()) {
 		ros::spinOnce();
 		while(receive_mission=="navigation.start"){
-			imageProcessing(receive_image);
-		
+			image_in.x_init	= x_nav;
+			image_in.y_init	= y_nav;
+			image_in.width	= width_nav;
+			image_in.height	= height_nav;
+			image_in.LowH	= LowH_nav;
+			image_in.HighH	= HighH_nav;
+			image_in.LowS	= LowS_nav;
+			image_in.HighS	= HighS_nav;
+			image_in.LowV	= LowV_nav;
+			image_in.HighV	= HighV_nav;
+			image_in.Noise	= Noise_nav;
+			pub_image_in.publish(image_in);
+	
 			pid_const.p = kp_nav;
 			pid_const.i = ki_nav;
 			pid_const.d = kd_nav;
 			pub_pid_const.publish(pid_const);
 			
-			pid_in.x		= state;
+			pid_in.x		= state_x;
 			pid_in.t 		= pid_in.t+delta_t;
 			pid_in.setpoint = setpoint_nav;
 			pub_pid_in.publish(pid_in);
@@ -129,7 +114,7 @@ int main(int argc, char **argv){
 			camera_pwm		= CAM_INIT_PWM;
 			drone_pwm		= DRONE_INIT_PWM;
 			
-			if(state==0){
+			if(state_x==0){
 				steer_pwm=MIDDLE_PWM;
 			}
 			
@@ -152,62 +137,9 @@ int main(int argc, char **argv){
 	}
 }
 
-void imageProcessing(Mat input_image){
-	Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate, imgDebug;
-	
-	imgDebug = input_image.clone();
-	medianBlur(imgDebug, imgDebug, 5);
-	cvtColor(imgDebug, imgDebug, COLOR_BGR2HSV);
-	inRange(imgDebug, Scalar(LowH_nav, LowS_nav, LowV_nav), Scalar(HighH_nav, HighS_nav, HighV_nav), imgDebug);//range threshold
-	erode(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) );
-	dilate( imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-	dilate(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-	erode(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-	
-	Rect region_of_interest = Rect(x_nav, y_nav, width_nav, height_nav);
-	Mat Original = input_image(region_of_interest);
-	
-	Size sz = Original.size();
-	int original_height = sz.height; 
-	int original_width	= sz.width;
-	
-	Size sx = input_image.size();
-	int input_height 	= sx.height;
-	int input_width 	= sx.width; 
-	
-	imgOriginal = Original.clone();
-	
-	medianBlur(imgOriginal, imgOriginal, 5);
-		
-	cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
-	inRange(imgHSV, Scalar(LowH_nav, LowS_nav, LowV_nav), Scalar(HighH_nav, HighS_nav, HighV_nav), imgThresholded);//range threshold
-		
-	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) );
-	dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-		
-	dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_nav, Noise_nav)) ); 
-	
-	Moments mu=moments(imgThresholded);
-	int area = mu.m00; // sum of zero'th moment is area
-	int posX = mu.m10/area; // center of mass = w*x/weight
-	area 	/= 255; // scale from bytes to pixels	
-	
-	state = posX;
-	
-	line( Original, Point( setpoint_nav, 0 ), Point( setpoint_nav, original_height), Scalar( 50, 50, 50 ), 2, 8 );
-	line( Original, Point( state, 0 ), Point( state, original_height), Scalar( 150, 150, 150 ), 2, 8 );
-	line( input_image, Point( setpoint_nav, 0 ), Point( setpoint_nav, input_height), Scalar( 50, 50, 50 ), 2, 8 );
-	line( input_image, Point( state, 0 ), Point( state, input_height), Scalar( 150, 150, 150 ), 2, 8 );
-	
-	line( input_image, Point( x_nav, y_nav ), Point( x_nav+original_width, y_nav), Scalar( 100, 100, 100 ), 2, 8 );
-	line( input_image, Point( x_nav, y_nav+original_height ), Point( x_nav+original_width, y_nav+original_height), Scalar( 100, 100, 100 ), 2, 8 );	
-	line( input_image, Point( x_nav, y_nav ), Point( x_nav, y_nav+original_height), Scalar( 100, 100, 100 ), 2, 8 );
-	line( input_image, Point( x_nav+original_width, y_nav ), Point( x_nav+original_width, y_nav+original_height), Scalar( 100, 100, 100 ), 2, 8 );
-	
-	imshow("Threshold_nav", imgThresholded);
-	imshow("Input_nav", input_image);
-	imshow("All_nav", imgDebug);
+void image_out_cb(const kocheng::image_out& image){
+	state_x = image.state_x;
+	state_y = image.state_y;
 }
 
 void pid_receiver_cb(const pid::controller_msg& control){

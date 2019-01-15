@@ -50,10 +50,13 @@ int main(int argc, char **argv){
 	while(ros::ok()){
 		auvsi_protocol.setPayloadCommunication(time_lord.getYMDHS(), challenge_status, global_position.latitude,global_position.longitude);
 		auvsi_protocol.sendTCP();
+		
 		heartbeat_payload_string.heartbeat_payload=auvsi_protocol.getPayload();
-		//cout << auvsi_protocol.getRespone();
-		heartbeat_status_decode.heartbeat_status = auvsi_protocol.decodeResponeStatus();
+		
+		//cout << auvsi_protocol.getPayload();
 		//ROS_INFO_STREAM("Response code : "<<heartbeat_status.data);
+		
+		heartbeat_status_decode.heartbeat_status = auvsi_protocol.decodeResponeStatus();
 		pub_run_status.publish(heartbeat_status_decode);
 		pub_payload_status.publish(heartbeat_payload_string);
 		ros::spinOnce();

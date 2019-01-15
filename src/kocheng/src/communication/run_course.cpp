@@ -69,7 +69,6 @@ void rc_mission_cb(const kocheng::mission_status& msg){
 			pub_mission_rc.publish(node_select);
 		}
 		
-		
 		run_course_payload_string.run_course_payload=auvsi_protocol.getPayload();
 		pub_payload_status.publish(run_course_payload_string);
 
@@ -99,8 +98,6 @@ void rc_mission_cb(const kocheng::mission_status& msg){
 		
 		run_course_payload_string.run_course_payload=auvsi_protocol.getPayload();
 		pub_payload_status.publish(run_course_payload_string);
-
-
 
 		//cout << auvsi_protocol.getRespone();
 

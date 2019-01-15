@@ -1,0 +1,11 @@
+int32 x_init
+int32 y_init
+int32 width
+int32 height
+int32 LowH 
+int32 HighH
+int32 LowS
+int32 HighS
+int32 LowV
+int32 HighV
+int32 Noise
