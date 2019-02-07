@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <ros/ros.h>
 #include "std_msgs/Float64.h"
+#include "std_msgs/Int32MultiArray.h"
 
 #include "mavros_msgs/State.h"
 #include "mavros_msgs/OverrideRCIn.h"
@@ -46,6 +47,8 @@ float latitude_now, longitude_now;
 
 double compass_hdg;
 
+int srf_1, srf_2, srf_3, srf_4;
+
 int setpoint_x, setpoint_y, state_x, state_y,effort_x, effort_y;
 float kp_x, kp_y, ki_x, ki_y,  kd_x, kd_y;
 
@@ -85,6 +88,7 @@ void image_in_cb		(const kocheng::image_in& in);
 void image_out_cb		(const kocheng::image_out& image);
 void decode_status_cb	(const kocheng::decode_status& data);
 void string_payload_cb	(const kocheng::communication& data);
+void ardu_srf_cb		(const std_msgs::Int32MultiArray& data);
 
 int main(int argc, char **argv)
 {
@@ -98,6 +102,7 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_image_in		= nh.subscribe("/auvsi/image/in", 1, image_in_cb);
 	ros::Subscriber sub_image_out		= nh.subscribe("/auvsi/image/out", 8, image_out_cb);
 	ros::Subscriber sub_run_status		= nh.subscribe("/auvsi/run_course/status", 8, decode_status_cb);
+	ros::Subscriber sub_ardu_srf		= nh.subscribe("/auvsi/ardu/srf", 1, ardu_srf_cb);
 	//ros::Subscriber sub_string_payload	= nh.subscribe("/auvsi/run_course/status", 8, string_payload_cb);
 	
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
@@ -148,6 +153,13 @@ int main(int argc, char **argv)
 		
 		ROS_WARN("NC: Communication");
 		ROS_INFO("run:%d\t heartbeat:%d\t follow:%d\t docking:%d\t", run_course_status, heartbeat_status, follow_status, docking_status);
+		ROS_INFO(" ");
+		
+		ROS_WARN("NC: ardu data");
+		ROS_INFO("srf_1:%d\t srf_2:%d\t srf_3:%d\t srf_4:%d\t", srf_1,srf_2,srf_3,srf_4);
+		
+		
+		
 		/*
 		ROS_INFO("run_course:%s", run_course_payload.c_str());
 		ROS_INFO("heartbeat:%s", heartbeat_payload.c_str());
@@ -267,4 +279,11 @@ void pid_const_y_cb(const pid::pid_const_msg& data){
 void pid_plant_y_cb(const pid::plant_msg& data){
 	state_y		= data.x;
 	setpoint_y	= data.setpoint;
+}
+
+void ardu_srf_cb	(const std_msgs::Int32MultiArray& data){
+	srf_1=data.data[0];
+	srf_2=data.data[1];
+	srf_3=data.data[2];
+	srf_4=data.data[3];
 }

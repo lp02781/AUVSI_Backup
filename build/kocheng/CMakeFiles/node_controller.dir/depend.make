@@ -90,6 +90,7 @@ kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/Int32.h
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 kocheng/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

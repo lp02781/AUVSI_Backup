@@ -796,6 +796,21 @@ _kocheng_generate_messages_check_deps_override_motor/fast:
 .PHONY : _kocheng_generate_messages_check_deps_override_motor/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/path.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/path.dir/rule
+.PHONY : kocheng/CMakeFiles/path.dir/rule
+
+# Convenience name for target.
+path: kocheng/CMakeFiles/path.dir/rule
+
+.PHONY : path
+
+# fast build rule for target.
+path/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/path.dir/build.make kocheng/CMakeFiles/path.dir/build
+.PHONY : path/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir/rule
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir/rule
@@ -1218,6 +1233,33 @@ src/mission/navigation.cpp.s:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/navigation.dir/build.make kocheng/CMakeFiles/navigation.dir/src/mission/navigation.cpp.s
 .PHONY : src/mission/navigation.cpp.s
 
+src/mission/path.o: src/mission/path.cpp.o
+
+.PHONY : src/mission/path.o
+
+# target to build an object file
+src/mission/path.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/path.dir/build.make kocheng/CMakeFiles/path.dir/src/mission/path.cpp.o
+.PHONY : src/mission/path.cpp.o
+
+src/mission/path.i: src/mission/path.cpp.i
+
+.PHONY : src/mission/path.i
+
+# target to preprocess a source file
+src/mission/path.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/path.dir/build.make kocheng/CMakeFiles/path.dir/src/mission/path.cpp.i
+.PHONY : src/mission/path.cpp.i
+
+src/mission/path.s: src/mission/path.cpp.s
+
+.PHONY : src/mission/path.s
+
+# target to generate assembly for a file
+src/mission/path.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/path.dir/build.make kocheng/CMakeFiles/path.dir/src/mission/path.cpp.s
+.PHONY : src/mission/path.cpp.s
+
 src/mission/speed.o: src/mission/speed.cpp.o
 
 .PHONY : src/mission/speed.o
@@ -1300,6 +1342,7 @@ help:
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
+	@echo "... path"
 	@echo "... _kocheng_generate_messages_check_deps_image_out"
 	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... kocheng_gencpp"
@@ -1339,6 +1382,9 @@ help:
 	@echo "... src/mission/navigation.o"
 	@echo "... src/mission/navigation.i"
 	@echo "... src/mission/navigation.s"
+	@echo "... src/mission/path.o"
+	@echo "... src/mission/path.i"
+	@echo "... src/mission/path.s"
 	@echo "... src/mission/speed.o"
 	@echo "... src/mission/speed.i"
 	@echo "... src/mission/speed.s"

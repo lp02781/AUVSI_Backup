@@ -7,6 +7,8 @@
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
 
+#include <std_msgs/Int32.h>
+
 using namespace std;
 
 int rc_flag_in;
@@ -14,6 +16,7 @@ string receive_mission;
 
 ros::ServiceClient client_set_flightmode;
 kocheng::mission_status	mission;
+std_msgs::Int32	mode;
 
 void rc_number_cb			(const kocheng::rc_number& number);
 void rc_mission_cb			(const kocheng::mission_status& data);
@@ -31,6 +34,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 	
 	pub_mission_rc 					= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	ros::Publisher pub_mode_rc 		= nh.advertise<std_msgs::Int32>("/auvsi/ardu/status", 1);
 	sub_mission_rc	 				= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_rc_number 	= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
 	client_set_flightmode 			= nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
@@ -41,6 +45,8 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		sleep(0.2);
 		if(rc_flag_in == first_simple ){
+			mode.data=1;
+			pub_mode_rc.publish(mode);
 			
 			mission.mission_makara = "start_run";
 			pub_mission_rc.publish(mission);
@@ -68,10 +74,18 @@ int main(int argc, char **argv)
 			mission.mission_makara = "end_run";
 			pub_mission_rc.publish(mission);
 		}
+		
 		else if(rc_flag_in == second_simple){
+			mode.data=0;
+			pub_mode_rc.publish(mode);
 			ros::spinOnce();
 		}
+		
 		else if(rc_flag_in == zero_flag){
+			mode.data=0;
+			pub_mode_rc.publish(mode);
+			
+			changeFlightModeDebug("MANUAL");
 			mission.mission_makara=mission_idle;
 			pub_mission_rc.publish(mission);
 			sleep(0.2);
@@ -81,12 +95,12 @@ int main(int argc, char **argv)
 
 void waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
-		string waypoint_start = waypoint+course_type+"_gate.start";
+		string waypoint_start = waypoint+".start";
 		changeFlightModeDebug("HOLD");
 		mission.mission_makara = waypoint_start;
 		pub_mission_rc.publish(mission);
 		system("rosrun mavros mavwp clear"); //clear wp
-		string command = "rosrun mavros mavwp load ~/"+waypoint+".waypoints";
+		string command = "rosrun mavros mavwp load ~/"+waypoint+"_"+course_type+".waypoints";
 		system(command.c_str());
 		changeFlightModeDebug("AUTO");
 		changeFlightModeDebug("HOLD");

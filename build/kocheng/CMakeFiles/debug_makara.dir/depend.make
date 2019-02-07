@@ -103,6 +103,9 @@ kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kineti
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/Int32MultiArray.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

@@ -218,6 +218,11 @@ add_executable(speed src/mission/speed.cpp )
 target_link_libraries(speed
 ${catkin_LIBRARIES}
 )
+
+add_executable(path src/mission/path.cpp )
+target_link_libraries(path
+${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############
