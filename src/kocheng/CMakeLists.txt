@@ -223,6 +223,11 @@ add_executable(path src/mission/path.cpp )
 target_link_libraries(path
 ${catkin_LIBRARIES}
 )
+
+add_executable(follow src/mission/follow.cpp )
+target_link_libraries(follow
+${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############

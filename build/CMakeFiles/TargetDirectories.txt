@@ -223,6 +223,7 @@
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/test.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/geographic_msgs_generate_messages_eus.dir
+/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/follow.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir

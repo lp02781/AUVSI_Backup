@@ -331,6 +331,21 @@ geographic_msgs_generate_messages_eus/fast:
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/follow.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/follow.dir/rule
+.PHONY : kocheng/CMakeFiles/follow.dir/rule
+
+# Convenience name for target.
+follow: kocheng/CMakeFiles/follow.dir/rule
+
+.PHONY : follow
+
+# fast build rule for target.
+follow/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/follow.dir/build.make kocheng/CMakeFiles/follow.dir/build
+.PHONY : follow/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule
 .PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir/rule
@@ -1206,6 +1221,33 @@ src/main/remote_monitor.cpp.s:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
 .PHONY : src/main/remote_monitor.cpp.s
 
+src/mission/follow.o: src/mission/follow.cpp.o
+
+.PHONY : src/mission/follow.o
+
+# target to build an object file
+src/mission/follow.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/follow.dir/build.make kocheng/CMakeFiles/follow.dir/src/mission/follow.cpp.o
+.PHONY : src/mission/follow.cpp.o
+
+src/mission/follow.i: src/mission/follow.cpp.i
+
+.PHONY : src/mission/follow.i
+
+# target to preprocess a source file
+src/mission/follow.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/follow.dir/build.make kocheng/CMakeFiles/follow.dir/src/mission/follow.cpp.i
+.PHONY : src/mission/follow.cpp.i
+
+src/mission/follow.s: src/mission/follow.cpp.s
+
+.PHONY : src/mission/follow.s
+
+# target to generate assembly for a file
+src/mission/follow.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/follow.dir/build.make kocheng/CMakeFiles/follow.dir/src/mission/follow.cpp.s
+.PHONY : src/mission/follow.cpp.s
+
 src/mission/navigation.o: src/mission/navigation.cpp.o
 
 .PHONY : src/mission/navigation.o
@@ -1311,6 +1353,7 @@ help:
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
@@ -1379,6 +1422,9 @@ help:
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"
+	@echo "... src/mission/follow.o"
+	@echo "... src/mission/follow.i"
+	@echo "... src/mission/follow.s"
 	@echo "... src/mission/navigation.o"
 	@echo "... src/mission/navigation.i"
 	@echo "... src/mission/navigation.s"

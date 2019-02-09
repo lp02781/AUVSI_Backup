@@ -1635,6 +1635,19 @@ geographic_msgs_generate_messages_eus/fast:
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named follow
+
+# Build rule for target.
+follow: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 follow
+.PHONY : follow
+
+# fast build rule for target.
+follow/fast:
+	$(MAKE) -f kocheng/CMakeFiles/follow.dir/build.make kocheng/CMakeFiles/follow.dir/build
+.PHONY : follow/fast
+
+#=============================================================================
 # Target rules for targets named _kocheng_generate_messages_check_deps_mission_status
 
 # Build rule for target.
@@ -2631,6 +2644,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"

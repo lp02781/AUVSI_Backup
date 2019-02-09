@@ -89,7 +89,7 @@ int LowV_nav 	= 49;		//49   242
 int HighV_nav 	= 230;		//230  255
 int Noise_nav 	= 15;
 
-//#################  SPEED VARIABLE  ###############
+//####################################################################################	SPEEED VARIABLE  ###############
 #define THROT_SPEED 1650
 
 float longitude_speed_end_A=0;
@@ -143,15 +143,58 @@ int LowV_speed_new 	= 49;		//49   242
 int HighV_speed_new = 230;		//230  255
 int Noise_speed_new = 15;
 
-//###############################	PATH	##############################################
+//#################################################################################################	PATH	##############################################
 #define THROT_PATH 1650
 
+//################################################################################################  FOLLOW  ###############
+#define THROT_FOLLOW 1650
+#define CAM_FOLLOW_PWM 1700
+
+double compass_point_follow=300;
+
+float longitude_follow_end_A=0;
+float latitude_follow_end_A=0;
+
+float longitude_follow_end_B=0;
+float latitude_follow_end_B=0;
+
+float longitude_follow_end_C=0;
+float latitude_follow_end_C=0;
+
+float longitude_follow_end_UI=0;
+float latitude_follow_end_UI=0;
+
+float tolerance_follow=0;
+
+float kp_follow_x = 1.65;//1.5
+float ki_follow_x = 1;//1
+float kd_follow_x = 0.5;//0.5
+int setpoint_follow_x=160;
+
+float kp_follow_y = 1.65;//1.5
+float ki_follow_y = 1;//1
+float kd_follow_y = 0.5;//0.5
+int setpoint_follow_y=160;
+
+int x_follow=0;
+int y_follow=180;
+
+int width_follow=280; //width 400 for simple
+int height_follow=180;
+
+int LowH_follow		= 0; 		//0  
+int HighH_follow 	= 184;		//184 
+int LowS_follow 	= 130;      //130  65
+int HighS_follow 	= 248;      //248  246
+int LowV_follow 	= 49;		//49   242
+int HighV_follow 	= 230;		//230  255
+int Noise_follow 	= 15;
 //############################################################################################# COMMUNICATION ####################################################
 using namespace rapidjson;
 
 enum communicationType {navigation, speed, docking, path, follow, flag, return_dock, start_run, end_run};
 
-// ######################################################################################## start of JSONHandler struct ########################################## //
+// ######################################################################################## JSONHandler struct ########################################## //
 struct JSONHandler {
 	vector<string> json_element;
 	void clearJSONVector(){this->json_element.clear();}
@@ -184,9 +227,7 @@ struct JSONHandler {
     bool StartArray() {return true; }
     bool EndArray(SizeType elementCount) {return true; }
 };
-  // ####################################################################################### start of JSONHandler struct ########################################## //
-
-  // ####################################################################################### start of AUVSICommunication class ########################################## //
+ // ####################################################################################### AUVSICommunication class ########################################## //
 class AUVSICommunication {
 
 	protected:
@@ -389,9 +430,8 @@ int AUVSICommunication::decodedResponse(string response_message){
     return this->decodeJSON(parsed_http_response);
 }
 
-  // ################################################################################################ end of AUVSICommunication class ########################################## //
 
-  // ##################################################################################################### start of heartbeat class ########################################## //
+  // ################################################################################# HEARTBEAT CLASS ########################################## //
 
 class HeartbeatMessage : public AUVSICommunication {
 
@@ -438,8 +478,7 @@ void HeartbeatMessage::setPayloadCommunication(string timestamp_mission, string 
     payload = http_request;
 }
 
-  // ################################################################################################# end of heartbeat class ########################################## //
-  // ############################################################################################# start of StartEndRunMessage class ########################################## //
+  // ######################################################################################## StartEndRunMessage class ########################################## //
 
 class StartEndRunMessage : public AUVSICommunication {
 
@@ -477,10 +516,7 @@ bool StartEndRunMessage::setPayloadCommunication(communicationType comm_type){
     }
     return false;
 }
-// ################################################################################################ end of StartEndRunMessage class ########################################## //
-  
-
-// ################################################################################################### start of mission class ########################################## //
+// ################################################################################### START MISSION CLASS ########################################## //
 class MissionMessage : public AUVSICommunication {
 
 	public:
@@ -510,7 +546,7 @@ bool MissionMessage::setPayloadCommunication(communicationType comm_type){
 			course_description = "path";
       }
       else if (comm_type == follow){
-			course_description = "follow";
+			course_description = "followLeader";
       }
       else if (comm_type == flag){
 			course_description = "flag";
@@ -530,16 +566,8 @@ bool MissionMessage::setPayloadCommunication(communicationType comm_type){
    }
    return false;
 }
-// ################################################################################################## end of mission class ########################################## //
 
-
-// ################################################################################################ start of LeaderMessage class ########################################## //
-// ################################################################################################## end of LeaderMessage class ########################################## //
-
-
-// ################################################################################################ start of DockingMessage class ########################################## //
-// ################################################################################################ end of DockingMessage class ########################################## //
-
+// ################################################################################################ DockingMessage class ########################################## //
 
 
 
@@ -638,4 +666,3 @@ string getTime::getYMDHS(){
     string complete_date = this->getYear() + this->getMonth() + this->getDay() + this->getHour() + this-> getMinute() + this->getSecond();
     return complete_date;
 }
-  // ############################################################################################### end of getTime class ########################################## //
