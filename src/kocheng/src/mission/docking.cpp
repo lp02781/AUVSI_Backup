@@ -87,6 +87,7 @@ int main(int argc, char **argv){
 			ros::spinOnce();
 			if(drone_status=="docking_landing"){
 				//#################################################  get image
+				//#################################################  send communication
 				//################################################   convert to str
 				changeFlightModeDebug("HOLD");
 				system("rosrun mavros mavwp clear");
