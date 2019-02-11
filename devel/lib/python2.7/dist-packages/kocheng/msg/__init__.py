@@ -1,6 +1,7 @@
 from ._communication import *
 from ._debug_mission import *
 from ._decode_status import *
+from ._drone_kocheng import *
 from ._image_in import *
 from ._image_out import *
 from ._mission import *

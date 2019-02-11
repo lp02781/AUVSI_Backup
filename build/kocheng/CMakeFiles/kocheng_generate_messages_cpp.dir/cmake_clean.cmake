@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h"
   "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/image_out.h"
   "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/decode_status.h"
+  "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/drone_kocheng.h"
   "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/communication.h"
   "/home/mfikih15/Documents/AUVSI/devel/include/kocheng/debug_mission.h"
 )

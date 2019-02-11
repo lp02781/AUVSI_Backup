@@ -256,6 +256,21 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/heartbeat.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/heartbeat.dir/rule
+.PHONY : kocheng/CMakeFiles/heartbeat.dir/rule
+
+# Convenience name for target.
+heartbeat: kocheng/CMakeFiles/heartbeat.dir/rule
+
+.PHONY : heartbeat
+
+# fast build rule for target.
+heartbeat/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/heartbeat.dir/build.make kocheng/CMakeFiles/heartbeat.dir/build
+.PHONY : heartbeat/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
@@ -374,6 +389,21 @@ sensor_msgs_generate_messages_eus: kocheng/CMakeFiles/sensor_msgs_generate_messa
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/flag.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/flag.dir/rule
+.PHONY : kocheng/CMakeFiles/flag.dir/rule
+
+# Convenience name for target.
+flag: kocheng/CMakeFiles/flag.dir/rule
+
+.PHONY : flag
+
+# fast build rule for target.
+flag/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag.dir/build.make kocheng/CMakeFiles/flag.dir/build
+.PHONY : flag/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
@@ -841,19 +871,19 @@ _kocheng_generate_messages_check_deps_image_out/fast:
 .PHONY : _kocheng_generate_messages_check_deps_image_out/fast
 
 # Convenience name for target.
-kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
-.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/rule
 
 # Convenience name for target.
-_kocheng_generate_messages_check_deps_debug_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+_kocheng_generate_messages_check_deps_drone_kocheng: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/rule
 
-.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+.PHONY : _kocheng_generate_messages_check_deps_drone_kocheng
 
 # fast build rule for target.
-_kocheng_generate_messages_check_deps_debug_mission/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
+_kocheng_generate_messages_check_deps_drone_kocheng/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_drone_kocheng/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/kocheng_gencpp.dir/rule:
@@ -869,6 +899,21 @@ kocheng_gencpp: kocheng/CMakeFiles/kocheng_gencpp.dir/rule
 kocheng_gencpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/kocheng_gencpp.dir/build.make kocheng/CMakeFiles/kocheng_gencpp.dir/build
 .PHONY : kocheng_gencpp/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_debug_mission: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/kocheng_geneus.dir/rule:
@@ -989,21 +1034,6 @@ run_course: kocheng/CMakeFiles/run_course.dir/rule
 run_course/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
 .PHONY : run_course/fast
-
-# Convenience name for target.
-kocheng/CMakeFiles/heartbeat.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/heartbeat.dir/rule
-.PHONY : kocheng/CMakeFiles/heartbeat.dir/rule
-
-# Convenience name for target.
-heartbeat: kocheng/CMakeFiles/heartbeat.dir/rule
-
-.PHONY : heartbeat
-
-# fast build rule for target.
-heartbeat/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/heartbeat.dir/build.make kocheng/CMakeFiles/heartbeat.dir/build
-.PHONY : heartbeat/fast
 
 src/communication/heartbeat.o: src/communication/heartbeat.cpp.o
 
@@ -1221,6 +1251,33 @@ src/main/remote_monitor.cpp.s:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
 .PHONY : src/main/remote_monitor.cpp.s
 
+src/mission/flag.o: src/mission/flag.cpp.o
+
+.PHONY : src/mission/flag.o
+
+# target to build an object file
+src/mission/flag.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag.dir/build.make kocheng/CMakeFiles/flag.dir/src/mission/flag.cpp.o
+.PHONY : src/mission/flag.cpp.o
+
+src/mission/flag.i: src/mission/flag.cpp.i
+
+.PHONY : src/mission/flag.i
+
+# target to preprocess a source file
+src/mission/flag.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag.dir/build.make kocheng/CMakeFiles/flag.dir/src/mission/flag.cpp.i
+.PHONY : src/mission/flag.cpp.i
+
+src/mission/flag.s: src/mission/flag.cpp.s
+
+.PHONY : src/mission/flag.s
+
+# target to generate assembly for a file
+src/mission/flag.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag.dir/build.make kocheng/CMakeFiles/flag.dir/src/mission/flag.cpp.s
+.PHONY : src/mission/flag.cpp.s
+
 src/mission/follow.o: src/mission/follow.cpp.o
 
 .PHONY : src/mission/follow.o
@@ -1347,6 +1404,7 @@ help:
 	@echo "... motor_controller"
 	@echo "... node_controller"
 	@echo "... remote_monitor"
+	@echo "... heartbeat"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -1356,6 +1414,7 @@ help:
 	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... flag"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages_lisp"
@@ -1387,8 +1446,9 @@ help:
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
 	@echo "... path"
 	@echo "... _kocheng_generate_messages_check_deps_image_out"
-	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
+	@echo "... _kocheng_generate_messages_check_deps_drone_kocheng"
 	@echo "... kocheng_gencpp"
+	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... kocheng_geneus"
 	@echo "... kocheng_generate_messages_nodejs"
 	@echo "... kocheng_gennodejs"
@@ -1397,7 +1457,6 @@ help:
 	@echo "... kocheng_genpy"
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... run_course"
-	@echo "... heartbeat"
 	@echo "... src/communication/heartbeat.o"
 	@echo "... src/communication/heartbeat.i"
 	@echo "... src/communication/heartbeat.s"
@@ -1422,6 +1481,9 @@ help:
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"
+	@echo "... src/mission/flag.o"
+	@echo "... src/mission/flag.i"
+	@echo "... src/mission/flag.s"
 	@echo "... src/mission/follow.o"
 	@echo "... src/mission/follow.i"
 	@echo "... src/mission/follow.s"

@@ -42,6 +42,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_in.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg"
+    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/drone_kocheng.msg"
     )
 endif()
 

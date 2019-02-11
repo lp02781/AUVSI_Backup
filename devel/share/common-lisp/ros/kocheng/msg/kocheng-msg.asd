@@ -10,6 +10,8 @@
     (:file "_package_debug_mission" :depends-on ("_package"))
     (:file "decode_status" :depends-on ("_package_decode_status"))
     (:file "_package_decode_status" :depends-on ("_package"))
+    (:file "drone_kocheng" :depends-on ("_package_drone_kocheng"))
+    (:file "_package_drone_kocheng" :depends-on ("_package"))
     (:file "image_in" :depends-on ("_package_image_in"))
     (:file "_package_image_in" :depends-on ("_package"))
     (:file "image_out" :depends-on ("_package_image_out"))

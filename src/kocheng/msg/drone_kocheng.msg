@@ -1,0 +1,1 @@
+string drone_status

@@ -4,6 +4,7 @@
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/communication.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/debug_mission.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/decode_status.h
+kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/drone_kocheng.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/image_in.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/image_out.h
 kocheng/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AUVSI/devel/include/kocheng/mission_status.h

@@ -1570,6 +1570,19 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 #=============================================================================
+# Target rules for targets named heartbeat
+
+# Build rule for target.
+heartbeat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 heartbeat
+.PHONY : heartbeat
+
+# fast build rule for target.
+heartbeat/fast:
+	$(MAKE) -f kocheng/CMakeFiles/heartbeat.dir/build.make kocheng/CMakeFiles/heartbeat.dir/build
+.PHONY : heartbeat/fast
+
+#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1672,6 +1685,19 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 sensor_msgs_generate_messages_eus/fast:
 	$(MAKE) -f kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named flag
+
+# Build rule for target.
+flag: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 flag
+.PHONY : flag
+
+# fast build rule for target.
+flag/fast:
+	$(MAKE) -f kocheng/CMakeFiles/flag.dir/build.make kocheng/CMakeFiles/flag.dir/build
+.PHONY : flag/fast
 
 #=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_cpp
@@ -2077,17 +2103,17 @@ _kocheng_generate_messages_check_deps_image_out/fast:
 .PHONY : _kocheng_generate_messages_check_deps_image_out/fast
 
 #=============================================================================
-# Target rules for targets named _kocheng_generate_messages_check_deps_debug_mission
+# Target rules for targets named _kocheng_generate_messages_check_deps_drone_kocheng
 
 # Build rule for target.
-_kocheng_generate_messages_check_deps_debug_mission: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_debug_mission
-.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+_kocheng_generate_messages_check_deps_drone_kocheng: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_drone_kocheng
+.PHONY : _kocheng_generate_messages_check_deps_drone_kocheng
 
 # fast build rule for target.
-_kocheng_generate_messages_check_deps_debug_mission/fast:
-	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
+_kocheng_generate_messages_check_deps_drone_kocheng/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_drone_kocheng/fast
 
 #=============================================================================
 # Target rules for targets named kocheng_gencpp
@@ -2101,6 +2127,19 @@ kocheng_gencpp: cmake_check_build_system
 kocheng_gencpp/fast:
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_gencpp.dir/build.make kocheng/CMakeFiles/kocheng_gencpp.dir/build
 .PHONY : kocheng_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_debug_mission
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_debug_mission
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_debug_mission/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_debug_mission/fast
 
 #=============================================================================
 # Target rules for targets named kocheng_geneus
@@ -2205,19 +2244,6 @@ run_course: cmake_check_build_system
 run_course/fast:
 	$(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
 .PHONY : run_course/fast
-
-#=============================================================================
-# Target rules for targets named heartbeat
-
-# Build rule for target.
-heartbeat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 heartbeat
-.PHONY : heartbeat
-
-# fast build rule for target.
-heartbeat/fast:
-	$(MAKE) -f kocheng/CMakeFiles/heartbeat.dir/build.make kocheng/CMakeFiles/heartbeat.dir/build
-.PHONY : heartbeat/fast
 
 #=============================================================================
 # Target rules for targets named run_tests_rosserial_test_rostest_test_rosserial_python_socket.test
@@ -2639,6 +2665,7 @@ help:
 	@echo "... motor_controller"
 	@echo "... node_controller"
 	@echo "... remote_monitor"
+	@echo "... heartbeat"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -2647,6 +2674,7 @@ help:
 	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... flag"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages_lisp"
@@ -2678,8 +2706,9 @@ help:
 	@echo "... _kocheng_generate_messages_check_deps_override_motor"
 	@echo "... path"
 	@echo "... _kocheng_generate_messages_check_deps_image_out"
-	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
+	@echo "... _kocheng_generate_messages_check_deps_drone_kocheng"
 	@echo "... kocheng_gencpp"
+	@echo "... _kocheng_generate_messages_check_deps_debug_mission"
 	@echo "... kocheng_geneus"
 	@echo "... kocheng_generate_messages_nodejs"
 	@echo "... kocheng_gennodejs"
@@ -2688,7 +2717,6 @@ help:
 	@echo "... kocheng_genpy"
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... run_course"
-	@echo "... heartbeat"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
 	@echo "... run_tests_rosserial_test"

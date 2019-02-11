@@ -217,6 +217,7 @@
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/motor_controller.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/node_controller.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/remote_monitor.dir
+/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/heartbeat.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_py.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
@@ -226,6 +227,7 @@
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/follow.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/flag.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir
@@ -257,8 +259,9 @@
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/path.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out.dir
-/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir
+/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_gencpp.dir
+/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_geneus.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_gennodejs.dir
@@ -267,7 +270,6 @@
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/kocheng_genpy.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir
 /home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/run_course.dir
-/home/mfikih15/Documents/AUVSI/build/kocheng/CMakeFiles/heartbeat.dir
 /home/mfikih15/Documents/AUVSI/build/rosserial/rosserial_embeddedlinux/CMakeFiles/list_install_components.dir
 /home/mfikih15/Documents/AUVSI/build/rosserial/rosserial_embeddedlinux/CMakeFiles/install.dir
 /home/mfikih15/Documents/AUVSI/build/rosserial/rosserial_embeddedlinux/CMakeFiles/rebuild_cache.dir

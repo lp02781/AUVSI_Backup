@@ -63,6 +63,7 @@ add_message_files(
 	communication.msg
 	image_in.msg
 	image_out.msg
+	drone_kocheng.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -226,6 +227,11 @@ ${catkin_LIBRARIES}
 
 add_executable(follow src/mission/follow.cpp )
 target_link_libraries(follow
+${catkin_LIBRARIES}
+)
+
+add_executable(flag src/mission/flag.cpp )
+target_link_libraries(flag
 ${catkin_LIBRARIES}
 )
 #############

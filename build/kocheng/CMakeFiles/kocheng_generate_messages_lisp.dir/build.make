@@ -59,6 +59,7 @@ kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVS
 kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp
 kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_out.lisp
 kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp
+kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp
 kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp
 kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp
 
@@ -93,14 +94,19 @@ kocheng/CMakeFiles/kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVS
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from kocheng/decode_status.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/decode_status.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg
 
+/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/drone_kocheng.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from kocheng/drone_kocheng.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/drone_kocheng.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg
+
 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from kocheng/communication.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from kocheng/communication.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from kocheng/debug_mission.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Lisp code from kocheng/debug_mission.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg
 
 kocheng_generate_messages_lisp: kocheng/CMakeFiles/kocheng_generate_messages_lisp
@@ -110,6 +116,7 @@ kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/commo
 kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp
 kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_out.lisp
 kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp
+kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp
 kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp
 kocheng_generate_messages_lisp: /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp
 kocheng_generate_messages_lisp: kocheng/CMakeFiles/kocheng_generate_messages_lisp.dir/build.make

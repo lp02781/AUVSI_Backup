@@ -2,6 +2,7 @@
 d4153d57973353ba73d3a81697bff764 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/communication.h
 15bb02482b29298fdd3337aae53d62f1 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/debug_mission.h
 5add992d280aec116a17829f41c6579c /home/mfikih15/Documents/AUVSI/devel/include/kocheng/decode_status.h
+af65542d1bdc035c74ce9141301ac8b2 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/drone_kocheng.h
 40e7fba526b546707e6514397d417d9a /home/mfikih15/Documents/AUVSI/devel/include/kocheng/image_in.h
 2a998c683d21defecef1ca7f68c638cd /home/mfikih15/Documents/AUVSI/devel/include/kocheng/image_out.h
 acf138814c2bdf6a7843ac153e6ab575 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/mission_status.h
@@ -23,6 +24,7 @@ ab4a3f36d6b3fe8fee933aa37b38e8eb /home/mfikih15/Documents/AUVSI/devel/include/ro
 6a55b0b281d7d661c5aa47f1c938a92d /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_communication.py
 ef37f20cf6feb507e9edf927dff12c9f /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_debug_mission.py
 84780479431933d5936b287a15e69347 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py
+baf792a46883aba57554b9d600d52792 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_drone_kocheng.py
 8106b2fb5f5026d02ee0d2f4cea0343e /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_in.py
 b1a5e0903ac707101898d4715a82dc9a /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py
 1ec19e269364805952e9659e19f07b89 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py
@@ -50,6 +52,7 @@ affa8b23d83f9bac17c2f9aeee38f946 /home/mfikih15/Documents/AUVSI/devel/lib/python
 74c08ffbd8baa81cd26cfa0c20e7b1fd /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp
 762ccfaee0544288cc6787cadb65d45d /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp
 7ea0fe6a2675d09c44c5699bc0876d73 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp
+1d44cd58a6d67b5c590c77d43e31ad5f /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp
 d8e286037ddc32b14de42483cfdd2b8c /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_in.lisp
 0de06b0b6dfa99dfba66c874aa146496 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_out.lisp
 6c9a131a7bd8235b06055d50e8df2079 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/mission_status.lisp
@@ -70,6 +73,7 @@ bebd81d40cf30885f5b3ac08484b59be /home/mfikih15/Documents/AUVSI/devel/share/comm
 08d010a435a2ba15ea1cd21214fe1044 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/communication.js
 0957ec92d762e9bfc5a7e0f0d21c5260 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/debug_mission.js
 9b16f2211daa9a32dda0dee489b5980d /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js
+98b3a9304b715f13fbae632074f975fe /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/drone_kocheng.js
 abbac46d226ef8f15dbb3d72782d40c8 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_in.js
 6fe588ff13cd00484bb4c21b5a411e0e /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js
 b6002672b70009d17f229f1674f7fb88 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js
@@ -91,6 +95,7 @@ a2b9e0b8222ba708612dc6c9ea1ecebd /home/mfikih15/Documents/AUVSI/devel/share/genn
 f3771ca6a6f01667042b53dbd43cc703 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/communication.l
 a37c27fa95a0a4febfa17a0cfb77a0e0 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/debug_mission.l
 36d55be90b6cd558274dd12029bc8099 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/decode_status.l
+864d3d147adecee73ae7f181f23087e0 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/drone_kocheng.l
 6b5d8214e999dfff484db42dd1a7944f /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_in.l
 9d9946fe78660afbef9de599f860794b /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l
 15d7504b3a1092d84d694d53703f0b47 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l
@@ -116,6 +121,7 @@ a3e9dc0443e19310541bfe66d087e73f /home/mfikih15/Documents/AUVSI/devel/share/rose
 1682939f7602c77fcae7ee5587752368 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication
 89840260a230dd369822b2687304b37a kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission
 53d40ef5879a90c75f8addba111851e4 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status
+1e6a5cfedef9f4d2c39515bbeb1edba7 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_drone_kocheng
 3f7f8556f4d883eaa3f4cd4f224f0349 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_in
 b38367170e3f339a5598fad9e84ba8c3 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_image_out
 a7cccbb6a0873c857c633fd02fbd08cb kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_mission_status

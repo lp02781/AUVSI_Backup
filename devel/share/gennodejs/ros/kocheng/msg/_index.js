@@ -2,6 +2,7 @@
 "use strict";
 
 let image_in = require('./image_in.js');
+let drone_kocheng = require('./drone_kocheng.js');
 let rc_number = require('./rc_number.js');
 let communication = require('./communication.js');
 let mission_status = require('./mission_status.js');
@@ -12,6 +13,7 @@ let debug_mission = require('./debug_mission.js');
 
 module.exports = {
   image_in: image_in,
+  drone_kocheng: drone_kocheng,
   rc_number: rc_number,
   communication: communication,
   mission_status: mission_status,

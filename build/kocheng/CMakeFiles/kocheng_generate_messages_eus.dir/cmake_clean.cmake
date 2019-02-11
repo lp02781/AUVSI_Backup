@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l"
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l"
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/decode_status.l"
+  "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/drone_kocheng.l"
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/communication.l"
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/debug_mission.l"
   "/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/manifest.l"

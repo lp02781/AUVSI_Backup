@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_out.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp"
+  "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/drone_kocheng.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp"
 )

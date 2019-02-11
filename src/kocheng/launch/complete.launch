@@ -10,6 +10,7 @@
 	<node name="speed" pkg="kocheng" output="screen" type="speed" />
 	<node name="path" pkg="kocheng" output="screen" type="path" />
 	<node name="follow" pkg="kocheng" output="screen" type="follow" />
+	<node name="flag" pkg="kocheng" output="screen" type="flag" />
 	
 	<node name="heartbeat" pkg="kocheng" output="screen" type="heartbeat" />
 	<node name="run_course" pkg="kocheng" output="screen" type="run_course" />

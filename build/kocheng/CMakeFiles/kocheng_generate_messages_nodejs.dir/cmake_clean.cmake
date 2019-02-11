@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js"
+  "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/drone_kocheng.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/communication.js"
   "/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/debug_mission.js"
 )

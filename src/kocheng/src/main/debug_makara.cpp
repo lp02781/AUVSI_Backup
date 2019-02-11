@@ -20,12 +20,15 @@
 #include "kocheng/decode_status.h"
 #include "kocheng/image_in.h"
 #include "kocheng/image_out.h"
+#include "kocheng/drone_kocheng.h"
 
 #include "pid/plant_msg.h"
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
 
 using namespace std;
+
+string drone_status;
 
 string override_status;
 
@@ -89,6 +92,7 @@ void image_out_cb		(const kocheng::image_out& image);
 void decode_status_cb	(const kocheng::decode_status& data);
 void string_payload_cb	(const kocheng::communication& data);
 void ardu_srf_cb		(const std_msgs::Int32MultiArray& data);
+void drone_status_cb	(const kocheng::drone_kocheng& data);
 
 int main(int argc, char **argv)
 {
@@ -103,6 +107,7 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_image_out		= nh.subscribe("/auvsi/image/out", 8, image_out_cb);
 	ros::Subscriber sub_run_status		= nh.subscribe("/auvsi/run_course/status", 8, decode_status_cb);
 	ros::Subscriber sub_ardu_srf		= nh.subscribe("/auvsi/ardu/srf", 1, ardu_srf_cb);
+	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/rc/mission", 8, drone_status_cb);
 	//ros::Subscriber sub_string_payload	= nh.subscribe("/auvsi/run_course/status", 8, string_payload_cb);
 	
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
@@ -157,6 +162,9 @@ int main(int argc, char **argv)
 		
 		ROS_WARN("NC: ardu data");
 		ROS_INFO("srf_1:%d\t srf_2:%d\t srf_3:%d\t srf_4:%d\t", srf_1,srf_2,srf_3,srf_4);
+		
+		ROS_WARN("NC: drone data");
+		ROS_INFO("drone: %s", drone_status.c_str());
 		
 		
 		
@@ -287,3 +295,8 @@ void ardu_srf_cb	(const std_msgs::Int32MultiArray& data){
 	srf_3=data.data[2];
 	srf_4=data.data[3];
 }
+
+void drone_status_cb	(const kocheng::drone_kocheng& data){
+	drone_status=data.drone_status;
+}
+
