@@ -64,6 +64,7 @@ add_message_files(
 	image_in.msg
 	image_out.msg
 	drone_kocheng.msg
+	com_auvsi.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -233,6 +234,35 @@ ${catkin_LIBRARIES}
 add_executable(flag src/mission/flag.cpp )
 target_link_libraries(flag
 ${catkin_LIBRARIES}
+)
+
+add_executable(docking src/mission/docking.cpp )
+target_link_libraries(docking
+${catkin_LIBRARIES}
+)
+
+add_executable(processing_drone src/drone/processing_drone.cpp )
+target_link_libraries(processing_drone
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(image_drone src/drone/image_drone.cpp )
+target_link_libraries(image_drone
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(flag_drone src/drone/flag_drone.cpp )
+target_link_libraries(flag_drone
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(docking_drone src/drone/docking_drone.cpp )
+target_link_libraries(docking_drone
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
 )
 #############
 ## Install ##

@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/kocheng_generate_messages_lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_in.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/rc_number.lisp"
+  "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/com_auvsi.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/mission_status.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/override_motor.lisp"
   "/home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/image_out.lisp"

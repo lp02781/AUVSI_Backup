@@ -1,6 +1,8 @@
 (cl:defpackage kocheng-msg
   (:use )
   (:export
+   "<COM_AUVSI>"
+   "COM_AUVSI"
    "<COMMUNICATION>"
    "COMMUNICATION"
    "<DEBUG_MISSION>"

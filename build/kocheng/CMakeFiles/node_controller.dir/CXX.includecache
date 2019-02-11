@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/mfikih15/Documents/AUVSI/devel/include/kocheng/com_auvsi.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/mission_status.h
 string
 -
@@ -299,6 +315,8 @@ kocheng/rc_number.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
 kocheng/mission_status.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/mission_status.h
+kocheng/com_auvsi.h
+/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/com_auvsi.h
 std_msgs/Int32.h
 -
 

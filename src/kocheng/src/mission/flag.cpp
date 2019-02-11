@@ -19,7 +19,7 @@ void drone_status_cb	(const kocheng::drone_kocheng& data);
 bool changeFlightMode		(const char* flight_mode);
 bool changeFlightModeDebug	(string fm);
 
-int flag_number;
+string flag_number;
 
 kocheng::mission_status	mission;
 kocheng::drone_kocheng drone;
@@ -46,11 +46,10 @@ int main(int argc, char **argv){
 	ros::Publisher pub_drone_status = nh.advertise<kocheng::drone_kocheng>("/auvsi/drone/status", 8);
 	ros::Publisher pub_rc_pos 		= nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 1000);
 	
-	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/rc/mission", 8, drone_status_cb);	
+	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/drone/status", 8, drone_status_cb);	
 	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	client_set_flightmode 			= nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 	
-	system("rosrun mavros mavwp clear"); //clear wp
 	flag_1 = "rosrun mavros mavwp load ~/flag_1_"+course_type+".waypoints";
 	flag_2 = "rosrun mavros mavwp load ~/flag_2_"+course_type+".waypoints";
 	flag_3 = "rosrun mavros mavwp load ~/flag_3_"+course_type+".waypoints";
@@ -60,30 +59,39 @@ int main(int argc, char **argv){
 		ros::spinOnce();
 		while(receive_mission=="flag.start"){
 			changeFlightModeDebug("HOLD");
-			mission.mission_makara="flag_1";
-			pub_mission_rc.publish(mission);
 			ros::spinOnce();
 			drone.drone_status="flag_drone";
 			pub_drone_status.publish(drone);
 			ros::spinOnce();
-			
-			if(drone_status=="drone_landing"){
-				changeFlightModeDebug("MANUAL");
-				
-				if(flag_number==1){
+			mission.mission_makara == "flag_wait";
+			ros::spinOnce();
+		}
+		while(receive_mission=="flag_wait"){
+			ros::spinOnce();
+			if(drone_status=="flag_landing"){
+				//#################################################  get image
+				//################################################   convert to str
+				changeFlightModeDebug("HOLD");
+				system("rosrun mavros mavwp clear");
+				if(flag_number=="1"){
 					system(flag_1.c_str());
+					changeFlightModeDebug("AUTO");
 				}
-				else if(flag_number==2){
+				else if(flag_number=="2"){
 					system(flag_2.c_str());
+					changeFlightModeDebug("AUTO");
 				}
-				else if(flag_number==3){
+				else if(flag_number=="3"){
 					system(flag_3.c_str());
+					changeFlightModeDebug("AUTO");
 				}
-				else if(flag_number==4){
+				else if(flag_number=="4"){
 					system(flag_4.c_str());
+					changeFlightModeDebug("AUTO");
 				}
 				else{
 					system(flag_1.c_str());
+					changeFlightModeDebug("AUTO");
 				}
 				
 				rc_pos.header.stamp = ros::Time::now();

@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+kocheng/CMakeFiles/processing_drone.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/processing_drone.dir/rule
+.PHONY : kocheng/CMakeFiles/processing_drone.dir/rule
+
+# Convenience name for target.
+processing_drone: kocheng/CMakeFiles/processing_drone.dir/rule
+
+.PHONY : processing_drone
+
+# fast build rule for target.
+processing_drone/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/processing_drone.dir/build.make kocheng/CMakeFiles/processing_drone.dir/build
+.PHONY : processing_drone/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/navigation.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/navigation.dir/rule
 .PHONY : kocheng/CMakeFiles/navigation.dir/rule
@@ -241,6 +256,21 @@ node_controller/fast:
 .PHONY : node_controller/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/flag_drone.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/flag_drone.dir/rule
+.PHONY : kocheng/CMakeFiles/flag_drone.dir/rule
+
+# Convenience name for target.
+flag_drone: kocheng/CMakeFiles/flag_drone.dir/rule
+
+.PHONY : flag_drone
+
+# fast build rule for target.
+flag_drone/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag_drone.dir/build.make kocheng/CMakeFiles/flag_drone.dir/build
+.PHONY : flag_drone/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/remote_monitor.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/remote_monitor.dir/rule
 .PHONY : kocheng/CMakeFiles/remote_monitor.dir/rule
@@ -299,6 +329,36 @@ mavros_msgs_generate_messages_eus: kocheng/CMakeFiles/mavros_msgs_generate_messa
 mavros_msgs_generate_messages_eus/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/run_course.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/run_course.dir/rule
+.PHONY : kocheng/CMakeFiles/run_course.dir/rule
+
+# Convenience name for target.
+run_course: kocheng/CMakeFiles/run_course.dir/rule
+
+.PHONY : run_course
+
+# fast build rule for target.
+run_course/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
+.PHONY : run_course/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+.PHONY : kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_eus: kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_eus
+
+# fast build rule for target.
+uuid_msgs_generate_messages_eus/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+.PHONY : uuid_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -391,6 +451,21 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/docking_drone.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/docking_drone.dir/rule
+.PHONY : kocheng/CMakeFiles/docking_drone.dir/rule
+
+# Convenience name for target.
+docking_drone: kocheng/CMakeFiles/docking_drone.dir/rule
+
+.PHONY : docking_drone
+
+# fast build rule for target.
+docking_drone/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking_drone.dir/build.make kocheng/CMakeFiles/docking_drone.dir/build
+.PHONY : docking_drone/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/flag.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/flag.dir/rule
 .PHONY : kocheng/CMakeFiles/flag.dir/rule
@@ -419,6 +494,36 @@ mavros_msgs_generate_messages_cpp: kocheng/CMakeFiles/mavros_msgs_generate_messa
 mavros_msgs_generate_messages_cpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
 .PHONY : mavros_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/image_drone.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/image_drone.dir/rule
+.PHONY : kocheng/CMakeFiles/image_drone.dir/rule
+
+# Convenience name for target.
+image_drone: kocheng/CMakeFiles/image_drone.dir/rule
+
+.PHONY : image_drone
+
+# fast build rule for target.
+image_drone/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/image_drone.dir/build.make kocheng/CMakeFiles/image_drone.dir/build
+.PHONY : image_drone/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/docking.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/docking.dir/rule
+.PHONY : kocheng/CMakeFiles/docking.dir/rule
+
+# Convenience name for target.
+docking: kocheng/CMakeFiles/docking.dir/rule
+
+.PHONY : docking
+
+# fast build rule for target.
+docking/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking.dir/build.make kocheng/CMakeFiles/docking.dir/build
+.PHONY : docking/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
@@ -554,6 +659,21 @@ geometry_msgs_generate_messages_py: kocheng/CMakeFiles/geometry_msgs_generate_me
 geometry_msgs_generate_messages_py/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_com_auvsi: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_com_auvsi
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_com_auvsi/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_com_auvsi/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
@@ -1005,36 +1125,6 @@ kocheng_genpy/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/kocheng_genpy.dir/build.make kocheng/CMakeFiles/kocheng_genpy.dir/build
 .PHONY : kocheng_genpy/fast
 
-# Convenience name for target.
-kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-.PHONY : kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_eus: kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-kocheng/CMakeFiles/run_course.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/run_course.dir/rule
-.PHONY : kocheng/CMakeFiles/run_course.dir/rule
-
-# Convenience name for target.
-run_course: kocheng/CMakeFiles/run_course.dir/rule
-
-.PHONY : run_course
-
-# fast build rule for target.
-run_course/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
-.PHONY : run_course/fast
-
 src/communication/heartbeat.o: src/communication/heartbeat.cpp.o
 
 .PHONY : src/communication/heartbeat.o
@@ -1088,6 +1178,114 @@ src/communication/run_course.s: src/communication/run_course.cpp.s
 src/communication/run_course.cpp.s:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/src/communication/run_course.cpp.s
 .PHONY : src/communication/run_course.cpp.s
+
+src/drone/docking_drone.o: src/drone/docking_drone.cpp.o
+
+.PHONY : src/drone/docking_drone.o
+
+# target to build an object file
+src/drone/docking_drone.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking_drone.dir/build.make kocheng/CMakeFiles/docking_drone.dir/src/drone/docking_drone.cpp.o
+.PHONY : src/drone/docking_drone.cpp.o
+
+src/drone/docking_drone.i: src/drone/docking_drone.cpp.i
+
+.PHONY : src/drone/docking_drone.i
+
+# target to preprocess a source file
+src/drone/docking_drone.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking_drone.dir/build.make kocheng/CMakeFiles/docking_drone.dir/src/drone/docking_drone.cpp.i
+.PHONY : src/drone/docking_drone.cpp.i
+
+src/drone/docking_drone.s: src/drone/docking_drone.cpp.s
+
+.PHONY : src/drone/docking_drone.s
+
+# target to generate assembly for a file
+src/drone/docking_drone.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking_drone.dir/build.make kocheng/CMakeFiles/docking_drone.dir/src/drone/docking_drone.cpp.s
+.PHONY : src/drone/docking_drone.cpp.s
+
+src/drone/flag_drone.o: src/drone/flag_drone.cpp.o
+
+.PHONY : src/drone/flag_drone.o
+
+# target to build an object file
+src/drone/flag_drone.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag_drone.dir/build.make kocheng/CMakeFiles/flag_drone.dir/src/drone/flag_drone.cpp.o
+.PHONY : src/drone/flag_drone.cpp.o
+
+src/drone/flag_drone.i: src/drone/flag_drone.cpp.i
+
+.PHONY : src/drone/flag_drone.i
+
+# target to preprocess a source file
+src/drone/flag_drone.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag_drone.dir/build.make kocheng/CMakeFiles/flag_drone.dir/src/drone/flag_drone.cpp.i
+.PHONY : src/drone/flag_drone.cpp.i
+
+src/drone/flag_drone.s: src/drone/flag_drone.cpp.s
+
+.PHONY : src/drone/flag_drone.s
+
+# target to generate assembly for a file
+src/drone/flag_drone.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/flag_drone.dir/build.make kocheng/CMakeFiles/flag_drone.dir/src/drone/flag_drone.cpp.s
+.PHONY : src/drone/flag_drone.cpp.s
+
+src/drone/image_drone.o: src/drone/image_drone.cpp.o
+
+.PHONY : src/drone/image_drone.o
+
+# target to build an object file
+src/drone/image_drone.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/image_drone.dir/build.make kocheng/CMakeFiles/image_drone.dir/src/drone/image_drone.cpp.o
+.PHONY : src/drone/image_drone.cpp.o
+
+src/drone/image_drone.i: src/drone/image_drone.cpp.i
+
+.PHONY : src/drone/image_drone.i
+
+# target to preprocess a source file
+src/drone/image_drone.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/image_drone.dir/build.make kocheng/CMakeFiles/image_drone.dir/src/drone/image_drone.cpp.i
+.PHONY : src/drone/image_drone.cpp.i
+
+src/drone/image_drone.s: src/drone/image_drone.cpp.s
+
+.PHONY : src/drone/image_drone.s
+
+# target to generate assembly for a file
+src/drone/image_drone.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/image_drone.dir/build.make kocheng/CMakeFiles/image_drone.dir/src/drone/image_drone.cpp.s
+.PHONY : src/drone/image_drone.cpp.s
+
+src/drone/processing_drone.o: src/drone/processing_drone.cpp.o
+
+.PHONY : src/drone/processing_drone.o
+
+# target to build an object file
+src/drone/processing_drone.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/processing_drone.dir/build.make kocheng/CMakeFiles/processing_drone.dir/src/drone/processing_drone.cpp.o
+.PHONY : src/drone/processing_drone.cpp.o
+
+src/drone/processing_drone.i: src/drone/processing_drone.cpp.i
+
+.PHONY : src/drone/processing_drone.i
+
+# target to preprocess a source file
+src/drone/processing_drone.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/processing_drone.dir/build.make kocheng/CMakeFiles/processing_drone.dir/src/drone/processing_drone.cpp.i
+.PHONY : src/drone/processing_drone.cpp.i
+
+src/drone/processing_drone.s: src/drone/processing_drone.cpp.s
+
+.PHONY : src/drone/processing_drone.s
+
+# target to generate assembly for a file
+src/drone/processing_drone.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/processing_drone.dir/build.make kocheng/CMakeFiles/processing_drone.dir/src/drone/processing_drone.cpp.s
+.PHONY : src/drone/processing_drone.cpp.s
 
 src/main/debug_makara.o: src/main/debug_makara.cpp.o
 
@@ -1251,6 +1449,33 @@ src/main/remote_monitor.cpp.s:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/remote_monitor.dir/build.make kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
 .PHONY : src/main/remote_monitor.cpp.s
 
+src/mission/docking.o: src/mission/docking.cpp.o
+
+.PHONY : src/mission/docking.o
+
+# target to build an object file
+src/mission/docking.cpp.o:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking.dir/build.make kocheng/CMakeFiles/docking.dir/src/mission/docking.cpp.o
+.PHONY : src/mission/docking.cpp.o
+
+src/mission/docking.i: src/mission/docking.cpp.i
+
+.PHONY : src/mission/docking.i
+
+# target to preprocess a source file
+src/mission/docking.cpp.i:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking.dir/build.make kocheng/CMakeFiles/docking.dir/src/mission/docking.cpp.i
+.PHONY : src/mission/docking.cpp.i
+
+src/mission/docking.s: src/mission/docking.cpp.s
+
+.PHONY : src/mission/docking.s
+
+# target to generate assembly for a file
+src/mission/docking.cpp.s:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/docking.dir/build.make kocheng/CMakeFiles/docking.dir/src/mission/docking.cpp.s
+.PHONY : src/mission/docking.cpp.s
+
 src/mission/flag.o: src/mission/flag.cpp.o
 
 .PHONY : src/mission/flag.o
@@ -1397,16 +1622,20 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... processing_drone"
 	@echo "... navigation"
 	@echo "... install/strip"
 	@echo "... image_front"
 	@echo "... debug_makara"
 	@echo "... motor_controller"
 	@echo "... node_controller"
+	@echo "... flag_drone"
 	@echo "... remote_monitor"
 	@echo "... heartbeat"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
+	@echo "... run_course"
+	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -1414,8 +1643,11 @@ help:
 	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... docking_drone"
 	@echo "... flag"
 	@echo "... mavros_msgs_generate_messages_cpp"
+	@echo "... image_drone"
+	@echo "... docking"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1425,6 +1657,7 @@ help:
 	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... _kocheng_generate_messages_check_deps_com_auvsi"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -1455,14 +1688,24 @@ help:
 	@echo "... image_processing"
 	@echo "... kocheng_generate_messages_py"
 	@echo "... kocheng_genpy"
-	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... run_course"
 	@echo "... src/communication/heartbeat.o"
 	@echo "... src/communication/heartbeat.i"
 	@echo "... src/communication/heartbeat.s"
 	@echo "... src/communication/run_course.o"
 	@echo "... src/communication/run_course.i"
 	@echo "... src/communication/run_course.s"
+	@echo "... src/drone/docking_drone.o"
+	@echo "... src/drone/docking_drone.i"
+	@echo "... src/drone/docking_drone.s"
+	@echo "... src/drone/flag_drone.o"
+	@echo "... src/drone/flag_drone.i"
+	@echo "... src/drone/flag_drone.s"
+	@echo "... src/drone/image_drone.o"
+	@echo "... src/drone/image_drone.i"
+	@echo "... src/drone/image_drone.s"
+	@echo "... src/drone/processing_drone.o"
+	@echo "... src/drone/processing_drone.i"
+	@echo "... src/drone/processing_drone.s"
 	@echo "... src/main/debug_makara.o"
 	@echo "... src/main/debug_makara.i"
 	@echo "... src/main/debug_makara.s"
@@ -1481,6 +1724,9 @@ help:
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"
+	@echo "... src/mission/docking.o"
+	@echo "... src/mission/docking.i"
+	@echo "... src/mission/docking.s"
 	@echo "... src/mission/flag.o"
 	@echo "... src/mission/flag.i"
 	@echo "... src/mission/flag.s"

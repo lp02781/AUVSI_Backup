@@ -5,19 +5,19 @@
 #include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
-#include "kocheng/mission_status.h"
+#include "kocheng/com_auvsi.h"
 #include "kocheng/decode_status.h"
 #include "kocheng/communication.h"
 #include "../../include/kocheng/hehe.hpp"
 
 using namespace std;
 
-void rc_mission_cb(const kocheng::mission_status& msg);
+void rc_com_cb(const kocheng::com_auvsi& msg);
 
 kocheng::communication run_course_payload_string;
 
 ros::Publisher pub_run_status;
-ros::Publisher pub_mission_rc;
+ros::Publisher pub_com_rc;
 ros::Publisher pub_payload_status;
 
 StartEndRunMessage auvsi_protocol(server_ip, server_port, course_type, team_code);
@@ -32,10 +32,10 @@ int main(int argc, char **argv){
 	auvsi_protocol.setCourseType(course_type);
 
 	pub_run_status		= run_course_nh.advertise<kocheng::decode_status>("/auvsi/run_course/status", 16);
-	pub_mission_rc 		= run_course_nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 16);
+	pub_com_rc 			= run_course_nh.advertise<kocheng::com_auvsi>("/auvsi/rc/com", 16);
 	pub_payload_status	= run_course_nh.advertise<kocheng::communication>("/auvsi/communication/status", 16);
 	
-	ros::Subscriber sub_mission_rc	 	= run_course_nh.subscribe("/auvsi/rc/mission", 16, rc_mission_cb);
+	ros::Subscriber sub_com_rc	 	= run_course_nh.subscribe("/auvsi/rc/com", 16, rc_com_cb);
 
 	ROS_INFO("Starting Run Course.");
 
@@ -43,12 +43,12 @@ int main(int argc, char **argv){
 	return 0;
 }
 
-void rc_mission_cb(const kocheng::mission_status& msg){
+void rc_com_cb(const kocheng::com_auvsi& msg){
 
 	//ROS_INFO_STREAM("[RC] Receive command : "<< msg.data);
 	
 	kocheng::decode_status response_status;
-	kocheng::mission_status node_select;
+	kocheng::com_auvsi node_select;
 	
 	if (msg.mission_makara.compare("start_run") == 0){
 		auvsi_protocol.setPayloadCommunication(communicationType::start_run);
@@ -62,11 +62,11 @@ void rc_mission_cb(const kocheng::mission_status& msg){
 
 		if(response_status.run_course_status == 200){
 			node_select.mission_makara = "nc:node_select.start_run.ok";
-			pub_mission_rc.publish(node_select);
+			pub_com_rc.publish(node_select);
 		}
 		else{
 			node_select.mission_makara = "nc:node_select.start_run.error";
-			pub_mission_rc.publish(node_select);
+			pub_com_rc.publish(node_select);
 		}
 		
 		run_course_payload_string.run_course_payload=auvsi_protocol.getPayload();
@@ -89,11 +89,11 @@ void rc_mission_cb(const kocheng::mission_status& msg){
 		
 		if(response_status.run_course_status == 200){
 			node_select.mission_makara = "nc:node_select.end_run.ok";
-			pub_mission_rc.publish(node_select);
+			pub_com_rc.publish(node_select);
 		}
 		else{
 			node_select.mission_makara = "nc:node_select.end_run.error";
-			pub_mission_rc.publish(node_select);
+			pub_com_rc.publish(node_select);
 		}
 		
 		run_course_payload_string.run_course_payload=auvsi_protocol.getPayload();

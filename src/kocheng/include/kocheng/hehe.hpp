@@ -196,6 +196,35 @@ int Noise_follow 	= 15;
 #define CAM_FLAG_PWM 1700
 
 int x_flag_crash = 1;
+int x_docking_crash = 1;
+
+//################################################################################################  DRONE  #################
+int alt_threshold = 1;
+float kp_drone = 1.65;//1.5
+float ki_drone = 1;//1
+float kd_drone = 0.5;//0.5
+int setpoint_drone=160;
+int x_drone=0;
+int y_drone=180;
+int width_drone=280; //width 400 for simple
+int height_drone=180;
+int LowH_drone	= 0; 		//0  
+int HighH_drone 	= 184;		//184 
+int LowS_drone 	= 130;      //130  65
+int HighS_drone 	= 248;      //248  246
+int LowV_drone 	= 49;		//49   242
+int HighV_drone 	= 230;		//230  255
+int Noise_drone 	= 15;
+
+float kp_drone_x = 1.65;//1.5
+float ki_drone_x = 1;//1
+float kd_drone_x = 0.5;//0.5
+int setpoint_drone_x=160;
+
+float kp_drone_y = 1.65;//1.5
+float ki_drone_y = 1;//1
+float kd_drone_y = 0.5;//0.5
+int setpoint_drone_y=160;
 
 //############################################################################################# COMMUNICATION ####################################################
 using namespace rapidjson;

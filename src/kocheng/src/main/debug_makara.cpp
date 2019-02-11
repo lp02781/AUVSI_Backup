@@ -107,7 +107,7 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_image_out		= nh.subscribe("/auvsi/image/out", 8, image_out_cb);
 	ros::Subscriber sub_run_status		= nh.subscribe("/auvsi/run_course/status", 8, decode_status_cb);
 	ros::Subscriber sub_ardu_srf		= nh.subscribe("/auvsi/ardu/srf", 1, ardu_srf_cb);
-	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/rc/mission", 8, drone_status_cb);
+	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/drone/status", 8, drone_status_cb);
 	//ros::Subscriber sub_string_payload	= nh.subscribe("/auvsi/run_course/status", 8, string_payload_cb);
 	
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);

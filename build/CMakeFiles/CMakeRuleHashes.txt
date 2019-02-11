@@ -1,4 +1,5 @@
 # Hashes of file build rules.
+ab728423b4700d19a9890f947942e3b5 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/com_auvsi.h
 d4153d57973353ba73d3a81697bff764 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/communication.h
 15bb02482b29298fdd3337aae53d62f1 /home/mfikih15/Documents/AUVSI/devel/include/kocheng/debug_mission.h
 5add992d280aec116a17829f41c6579c /home/mfikih15/Documents/AUVSI/devel/include/kocheng/decode_status.h
@@ -21,6 +22,7 @@ d17510a4fc0762ca5328d495b8ab0621 /home/mfikih15/Documents/AUVSI/devel/include/ro
 ab4a3f36d6b3fe8fee933aa37b38e8eb /home/mfikih15/Documents/AUVSI/devel/include/rosserial_msgs/RequestServiceInfo.h
 6b78a2ec57b3ac37c536eb1edb19d37a /home/mfikih15/Documents/AUVSI/devel/include/rosserial_msgs/TopicInfo.h
 505c9da9af5ecd9a94d84534b4242d03 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py
+40d2f9ecae4db8be4353efe0b68121b7 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py
 6a55b0b281d7d661c5aa47f1c938a92d /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_communication.py
 ef37f20cf6feb507e9edf927dff12c9f /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_debug_mission.py
 84780479431933d5936b287a15e69347 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py
@@ -49,6 +51,7 @@ d2c436a2add4e47102fd4effc22fadb2 /home/mfikih15/Documents/AUVSI/devel/lib/python
 affa8b23d83f9bac17c2f9aeee38f946 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestParam.py
 1b4aa3affa838a09fc3ecf6b6afa1438 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestServiceInfo.py
 2c54cba0d0c21be0af9f04614d125724 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/__init__.py
+9851e8d623c7c051d80b092afca90a86 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/com_auvsi.lisp
 74c08ffbd8baa81cd26cfa0c20e7b1fd /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/communication.lisp
 762ccfaee0544288cc6787cadb65d45d /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/debug_mission.lisp
 7ea0fe6a2675d09c44c5699bc0876d73 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/kocheng/msg/decode_status.lisp
@@ -70,6 +73,7 @@ af5f379e682fc3337c435e871bf521ed /home/mfikih15/Documents/AUVSI/devel/share/comm
 bebd81d40cf30885f5b3ac08484b59be /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/rosserial_msgs/srv/RequestMessageInfo.lisp
 43568070a1fabb9c1fced79a8c745ff4 /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/rosserial_msgs/srv/RequestParam.lisp
 15c6929a14eabfd2a1fe39f25b895dbd /home/mfikih15/Documents/AUVSI/devel/share/common-lisp/ros/rosserial_msgs/srv/RequestServiceInfo.lisp
+4a63c225d467c79b293bcff182545a89 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/com_auvsi.js
 08d010a435a2ba15ea1cd21214fe1044 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/communication.js
 0957ec92d762e9bfc5a7e0f0d21c5260 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/debug_mission.js
 9b16f2211daa9a32dda0dee489b5980d /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js
@@ -92,6 +96,7 @@ eacb44046fb84ba607cb14a57c9c3ae4 /home/mfikih15/Documents/AUVSI/devel/share/genn
 d5a6a6af594dfaaa81043f3541a39089 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/rosserial_msgs/srv/RequestParam.js
 a2b9e0b8222ba708612dc6c9ea1ecebd /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/rosserial_msgs/srv/RequestServiceInfo.js
 83b681cf121dfa39f5850a9425a40087 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/manifest.l
+c09b61cb396156e30163ab7a084ab1f6 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/com_auvsi.l
 f3771ca6a6f01667042b53dbd43cc703 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/communication.l
 a37c27fa95a0a4febfa17a0cfb77a0e0 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/debug_mission.l
 36d55be90b6cd558274dd12029bc8099 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/decode_status.l
@@ -118,6 +123,7 @@ d1a4f50c1d6cb989bf23f9fb84167df2 /home/mfikih15/Documents/AUVSI/devel/share/rose
 a3e9dc0443e19310541bfe66d087e73f /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/rosserial_msgs/srv/RequestParam.l
 1b65e9ca2bf5c70f2430886d7cb38ce9 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/rosserial_msgs/srv/RequestServiceInfo.l
 3cceb35f32790b181af16d198459f0e3 CMakeFiles/clean_test_results
+da0496da18e788063b986948874a3efb kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi
 1682939f7602c77fcae7ee5587752368 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_communication
 89840260a230dd369822b2687304b37a kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_debug_mission
 53d40ef5879a90c75f8addba111851e4 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_decode_status

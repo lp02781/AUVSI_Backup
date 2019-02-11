@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/decode_status.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_in.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/drone_kocheng.msg"
+messages_str = "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/decode_status.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/communication.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_in.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/drone_kocheng.msg;/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
 services_str = ""
 pkg_name = "kocheng"
 dependencies_str = "mavros_msgs;std_msgs;sensor_msgs"

@@ -1492,6 +1492,19 @@ rosserial_server_socket_node/fast:
 .PHONY : rosserial_server_socket_node/fast
 
 #=============================================================================
+# Target rules for targets named processing_drone
+
+# Build rule for target.
+processing_drone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 processing_drone
+.PHONY : processing_drone
+
+# fast build rule for target.
+processing_drone/fast:
+	$(MAKE) -f kocheng/CMakeFiles/processing_drone.dir/build.make kocheng/CMakeFiles/processing_drone.dir/build
+.PHONY : processing_drone/fast
+
+#=============================================================================
 # Target rules for targets named navigation
 
 # Build rule for target.
@@ -1557,6 +1570,19 @@ node_controller/fast:
 .PHONY : node_controller/fast
 
 #=============================================================================
+# Target rules for targets named flag_drone
+
+# Build rule for target.
+flag_drone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 flag_drone
+.PHONY : flag_drone
+
+# fast build rule for target.
+flag_drone/fast:
+	$(MAKE) -f kocheng/CMakeFiles/flag_drone.dir/build.make kocheng/CMakeFiles/flag_drone.dir/build
+.PHONY : flag_drone/fast
+
+#=============================================================================
 # Target rules for targets named remote_monitor
 
 # Build rule for target.
@@ -1607,6 +1633,32 @@ mavros_msgs_generate_messages_eus: cmake_check_build_system
 mavros_msgs_generate_messages_eus/fast:
 	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named run_course
+
+# Build rule for target.
+run_course: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_course
+.PHONY : run_course
+
+# fast build rule for target.
+run_course/fast:
+	$(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
+.PHONY : run_course/fast
+
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_eus
+
+# Build rule for target.
+uuid_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_eus
+.PHONY : uuid_msgs_generate_messages_eus
+
+# fast build rule for target.
+uuid_msgs_generate_messages_eus/fast:
+	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+.PHONY : uuid_msgs_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
@@ -1687,6 +1739,19 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named docking_drone
+
+# Build rule for target.
+docking_drone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 docking_drone
+.PHONY : docking_drone
+
+# fast build rule for target.
+docking_drone/fast:
+	$(MAKE) -f kocheng/CMakeFiles/docking_drone.dir/build.make kocheng/CMakeFiles/docking_drone.dir/build
+.PHONY : docking_drone/fast
+
+#=============================================================================
 # Target rules for targets named flag
 
 # Build rule for target.
@@ -1711,6 +1776,32 @@ mavros_msgs_generate_messages_cpp: cmake_check_build_system
 mavros_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
 .PHONY : mavros_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named image_drone
+
+# Build rule for target.
+image_drone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_drone
+.PHONY : image_drone
+
+# fast build rule for target.
+image_drone/fast:
+	$(MAKE) -f kocheng/CMakeFiles/image_drone.dir/build.make kocheng/CMakeFiles/image_drone.dir/build
+.PHONY : image_drone/fast
+
+#=============================================================================
+# Target rules for targets named docking
+
+# Build rule for target.
+docking: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 docking
+.PHONY : docking
+
+# fast build rule for target.
+docking/fast:
+	$(MAKE) -f kocheng/CMakeFiles/docking.dir/build.make kocheng/CMakeFiles/docking.dir/build
+.PHONY : docking/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
@@ -1828,6 +1919,19 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 geometry_msgs_generate_messages_py/fast:
 	$(MAKE) -f kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make kocheng/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _kocheng_generate_messages_check_deps_com_auvsi
+
+# Build rule for target.
+_kocheng_generate_messages_check_deps_com_auvsi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _kocheng_generate_messages_check_deps_com_auvsi
+.PHONY : _kocheng_generate_messages_check_deps_com_auvsi
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_com_auvsi/fast:
+	$(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_com_auvsi.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_com_auvsi/fast
 
 #=============================================================================
 # Target rules for targets named geographic_msgs_generate_messages_lisp
@@ -2218,32 +2322,6 @@ kocheng_genpy: cmake_check_build_system
 kocheng_genpy/fast:
 	$(MAKE) -f kocheng/CMakeFiles/kocheng_genpy.dir/build.make kocheng/CMakeFiles/kocheng_genpy.dir/build
 .PHONY : kocheng_genpy/fast
-
-#=============================================================================
-# Target rules for targets named uuid_msgs_generate_messages_eus
-
-# Build rule for target.
-uuid_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_eus
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	$(MAKE) -f kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make kocheng/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named run_course
-
-# Build rule for target.
-run_course: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_course
-.PHONY : run_course
-
-# fast build rule for target.
-run_course/fast:
-	$(MAKE) -f kocheng/CMakeFiles/run_course.dir/build.make kocheng/CMakeFiles/run_course.dir/build
-.PHONY : run_course/fast
 
 #=============================================================================
 # Target rules for targets named run_tests_rosserial_test_rostest_test_rosserial_python_socket.test
@@ -2659,23 +2737,30 @@ help:
 	@echo "... topic_tools_generate_messages_cpp"
 	@echo "... rosserial_server_serial_node"
 	@echo "... rosserial_server_socket_node"
+	@echo "... processing_drone"
 	@echo "... navigation"
 	@echo "... image_front"
 	@echo "... debug_makara"
 	@echo "... motor_controller"
 	@echo "... node_controller"
+	@echo "... flag_drone"
 	@echo "... remote_monitor"
 	@echo "... heartbeat"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
+	@echo "... run_course"
+	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... follow"
 	@echo "... _kocheng_generate_messages_check_deps_mission_status"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... docking_drone"
 	@echo "... flag"
 	@echo "... mavros_msgs_generate_messages_cpp"
+	@echo "... image_drone"
+	@echo "... docking"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -2685,6 +2770,7 @@ help:
 	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... _kocheng_generate_messages_check_deps_com_auvsi"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -2715,8 +2801,6 @@ help:
 	@echo "... image_processing"
 	@echo "... kocheng_generate_messages_py"
 	@echo "... kocheng_genpy"
-	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... run_course"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
 	@echo "... run_tests_rosserial_test"

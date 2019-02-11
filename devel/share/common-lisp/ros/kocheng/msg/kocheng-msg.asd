@@ -4,6 +4,8 @@
 (defsystem "kocheng-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils )
   :components ((:file "_package")
+    (:file "com_auvsi" :depends-on ("_package_com_auvsi"))
+    (:file "_package_com_auvsi" :depends-on ("_package"))
     (:file "communication" :depends-on ("_package_communication"))
     (:file "_package_communication" :depends-on ("_package"))
     (:file "debug_mission" :depends-on ("_package_debug_mission"))

@@ -1,3 +1,4 @@
+from ._com_auvsi import *
 from ._communication import *
 from ._debug_mission import *
 from ._decode_status import *

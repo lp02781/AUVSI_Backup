@@ -6,6 +6,7 @@
 
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
+#include "kocheng/com_auvsi.h"
 
 #include <std_msgs/Int32.h>
 
@@ -16,6 +17,7 @@ string receive_mission;
 
 ros::ServiceClient client_set_flightmode;
 kocheng::mission_status	mission;
+kocheng::com_auvsi com;
 std_msgs::Int32	mode;
 
 void rc_number_cb			(const kocheng::rc_number& number);
@@ -27,6 +29,7 @@ bool changeFlightModeDebug	(string fm);
 
 ros::Subscriber sub_mission_rc;
 ros::Publisher pub_mission_rc;
+ros::Publisher pub_com_rc;
 
 int main(int argc, char **argv)
 {
@@ -34,6 +37,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 	
 	pub_mission_rc 					= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	pub_com_rc 						= nh.advertise<kocheng::com_auvsi>("/auvsi/rc/com", 1);
 	ros::Publisher pub_mode_rc 		= nh.advertise<std_msgs::Int32>("/auvsi/ardu/status", 1);
 	sub_mission_rc	 				= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
 	ros::Subscriber sub_rc_number 	= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
@@ -112,6 +116,8 @@ void waypoint_running(string waypoint){
 	
 void mission_running(string mission_name){
 	if(receive_mission != mission_idle){
+		com.mission_makara = mission_name;
+		pub_com_rc.publish(com);
 		string mission_start = mission_name+".start";
 		changeFlightModeDebug("MANUAL");
 		mission.mission_makara = mission_start;

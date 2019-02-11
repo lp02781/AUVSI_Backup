@@ -9,6 +9,7 @@ let mission_status = require('./mission_status.js');
 let override_motor = require('./override_motor.js');
 let image_out = require('./image_out.js');
 let decode_status = require('./decode_status.js');
+let com_auvsi = require('./com_auvsi.js');
 let debug_mission = require('./debug_mission.js');
 
 module.exports = {
@@ -20,5 +21,6 @@ module.exports = {
   override_motor: override_motor,
   image_out: image_out,
   decode_status: decode_status,
+  com_auvsi: com_auvsi,
   debug_mission: debug_mission,
 };

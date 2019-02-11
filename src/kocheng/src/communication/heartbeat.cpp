@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include <string>
-#include "kocheng/mission_status.h"
+#include "kocheng/com_auvsi.h"
 #include "kocheng/decode_status.h"
 #include "kocheng/communication.h"
 #include "sensor_msgs/NavSatFix.h"
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void rc_mission_cb	(const kocheng::mission_status& data);
+void rc_com_cb	(const kocheng::com_auvsi& data);
 void globalPositionCB(const sensor_msgs::NavSatFix& msg);
 
 sensor_msgs::NavSatFix	global_position;
@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 	pub_run_status		= heartbeat_nh.advertise<kocheng::decode_status>("/auvsi/run_course/status", 16);
 	pub_payload_status	= heartbeat_nh.advertise<kocheng::communication>("/auvsi/communication/status", 16);
 	
-	ros::Subscriber sub_mission_rc	 	= heartbeat_nh.subscribe("/auvsi/rc/mission", 16, rc_mission_cb);
+	ros::Subscriber sub_com_rc	 	= heartbeat_nh.subscribe("/auvsi/rc/com", 16, rc_com_cb);
 	ros::Subscriber sub_global_position = heartbeat_nh.subscribe("/mavros/global_position/global", 1, globalPositionCB);
 	
 	HeartbeatMessage auvsi_protocol(server_ip, server_port, course_type, team_code);
@@ -66,7 +66,7 @@ int main(int argc, char **argv){
 	return 0;
 }
 
-void rc_mission_cb	(const kocheng::mission_status& data){
+void rc_com_cb	(const kocheng::com_auvsi& data){
 	challenge_status = data.mission_makara;
 }
 

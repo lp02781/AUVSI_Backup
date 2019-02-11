@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "kocheng: 9 messages, 0 services")
+message(STATUS "kocheng: 10 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg;-Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg")
 
@@ -25,6 +25,11 @@ add_custom_target(_kocheng_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
 add_custom_target(_kocheng_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kocheng" "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" ""
+)
+
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
+add_custom_target(_kocheng_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kocheng" "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" ""
 )
 
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
@@ -76,6 +81,12 @@ _generate_msg_cpp(kocheng
 )
 _generate_msg_cpp(kocheng
   "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kocheng
+)
+_generate_msg_cpp(kocheng
+  "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kocheng
@@ -141,6 +152,8 @@ get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg
 add_dependencies(kocheng_generate_messages_cpp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_cpp _kocheng_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
+add_dependencies(kocheng_generate_messages_cpp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_cpp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg" NAME_WE)
@@ -173,6 +186,12 @@ _generate_msg_eus(kocheng
 )
 _generate_msg_eus(kocheng
   "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kocheng
+)
+_generate_msg_eus(kocheng
+  "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kocheng
@@ -238,6 +257,8 @@ get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg
 add_dependencies(kocheng_generate_messages_eus _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_eus _kocheng_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
+add_dependencies(kocheng_generate_messages_eus _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_eus _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg" NAME_WE)
@@ -270,6 +291,12 @@ _generate_msg_lisp(kocheng
 )
 _generate_msg_lisp(kocheng
   "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kocheng
+)
+_generate_msg_lisp(kocheng
+  "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kocheng
@@ -335,6 +362,8 @@ get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg
 add_dependencies(kocheng_generate_messages_lisp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_lisp _kocheng_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
+add_dependencies(kocheng_generate_messages_lisp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_lisp _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg" NAME_WE)
@@ -367,6 +396,12 @@ _generate_msg_nodejs(kocheng
 )
 _generate_msg_nodejs(kocheng
   "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kocheng
+)
+_generate_msg_nodejs(kocheng
+  "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kocheng
@@ -432,6 +467,8 @@ get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg
 add_dependencies(kocheng_generate_messages_nodejs _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_nodejs _kocheng_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
+add_dependencies(kocheng_generate_messages_nodejs _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_nodejs _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg" NAME_WE)
@@ -464,6 +501,12 @@ _generate_msg_py(kocheng
 )
 _generate_msg_py(kocheng
   "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kocheng
+)
+_generate_msg_py(kocheng
+  "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kocheng
@@ -528,6 +571,8 @@ add_dependencies(kocheng_generate_messages kocheng_generate_messages_py)
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_in.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_py _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg" NAME_WE)
+add_dependencies(kocheng_generate_messages_py _kocheng_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_py _kocheng_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg" NAME_WE)
 add_dependencies(kocheng_generate_messages_py _kocheng_generate_messages_check_deps_${_filename})
