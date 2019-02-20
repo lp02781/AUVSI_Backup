@@ -7,16 +7,17 @@ import struct
 
 
 class decode_status(genpy.Message):
-  _md5sum = "a2ff2b7cd0443eeeee765956b8e698bf"
+  _md5sum = "39541b4d1e52937d3a67a84020aded6d"
   _type = "kocheng/decode_status"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int32 run_course_status
 int32 heartbeat_status
 int32 follow_status
 int32 docking_status
+int32 flag_status
 """
-  __slots__ = ['run_course_status','heartbeat_status','follow_status','docking_status']
-  _slot_types = ['int32','int32','int32','int32']
+  __slots__ = ['run_course_status','heartbeat_status','follow_status','docking_status','flag_status']
+  _slot_types = ['int32','int32','int32','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -26,7 +27,7 @@ int32 docking_status
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       run_course_status,heartbeat_status,follow_status,docking_status
+       run_course_status,heartbeat_status,follow_status,docking_status,flag_status
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -43,11 +44,14 @@ int32 docking_status
         self.follow_status = 0
       if self.docking_status is None:
         self.docking_status = 0
+      if self.flag_status is None:
+        self.flag_status = 0
     else:
       self.run_course_status = 0
       self.heartbeat_status = 0
       self.follow_status = 0
       self.docking_status = 0
+      self.flag_status = 0
 
   def _get_types(self):
     """
@@ -62,7 +66,7 @@ int32 docking_status
     """
     try:
       _x = self
-      buff.write(_get_struct_4i().pack(_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status))
+      buff.write(_get_struct_5i().pack(_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status, _x.flag_status))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -75,8 +79,8 @@ int32 docking_status
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status,) = _get_struct_4i().unpack(str[start:end])
+      end += 20
+      (_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status, _x.flag_status,) = _get_struct_5i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -90,7 +94,7 @@ int32 docking_status
     """
     try:
       _x = self
-      buff.write(_get_struct_4i().pack(_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status))
+      buff.write(_get_struct_5i().pack(_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status, _x.flag_status))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -104,8 +108,8 @@ int32 docking_status
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status,) = _get_struct_4i().unpack(str[start:end])
+      end += 20
+      (_x.run_course_status, _x.heartbeat_status, _x.follow_status, _x.docking_status, _x.flag_status,) = _get_struct_5i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -114,9 +118,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4i = None
-def _get_struct_4i():
-    global _struct_4i
-    if _struct_4i is None:
-        _struct_4i = struct.Struct("<4i")
-    return _struct_4i
+_struct_5i = None
+def _get_struct_5i():
+    global _struct_5i
+    if _struct_5i is None:
+        _struct_5i = struct.Struct("<5i")
+    return _struct_5i

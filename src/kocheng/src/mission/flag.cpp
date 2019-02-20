@@ -1,8 +1,13 @@
 #include "../../include/kocheng/hehe.hpp"
 #include <ros/ros.h>
 
+#include <opencv2/highgui/highgui.hpp>
+#include <cv_bridge/cv_bridge.h>
+
 #include "kocheng/mission_status.h"
 #include "kocheng/drone_kocheng.h"
+#include "kocheng/decode_status.h"
+#include "kocheng/communication.h"
 
 #include "mavros_msgs/SetMode.h"
 #include "mavros_msgs/State.h"
@@ -12,6 +17,7 @@
 #include "geometry_msgs/PoseStamped.h"
 
 using namespace std;
+using namespace cv;
 
 void rc_mission_cb		(const kocheng::mission_status& data);
 void drone_status_cb	(const kocheng::drone_kocheng& data);
@@ -23,6 +29,8 @@ string flag_number;
 
 kocheng::mission_status	mission;
 kocheng::drone_kocheng drone;
+kocheng::decode_status flag_status_decode;
+kocheng::communication flag_payload_string;
 
 ros::ServiceClient client_set_flightmode;
 
@@ -36,6 +44,21 @@ string flag_2;
 string flag_3;
 string flag_4;
 
+Mat image;
+FlagMission flag_protocol(server_ip, server_port, course_type, team_code);
+
+void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
+{
+  try
+  {
+    image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+  }
+  catch (cv_bridge::Exception& e)
+  {
+    ROS_ERROR("Could not convert to image!");
+  }
+}
+
 int main(int argc, char **argv){
 	ros::init(argc, argv, "navigation");
 	ros::NodeHandle nh;
@@ -46,8 +69,13 @@ int main(int argc, char **argv){
 	ros::Publisher pub_drone_status = nh.advertise<kocheng::drone_kocheng>("/auvsi/drone/status", 8);
 	ros::Publisher pub_rc_pos 		= nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 1000);
 	
+	ros::Publisher pub_run_status		= nh.advertise<kocheng::decode_status>("/auvsi/run_course/status", 16);
+	ros::Publisher pub_payload_status	= nh.advertise<kocheng::communication>("/auvsi/communication/status", 16);
+	
 	ros::Subscriber sub_drone_status 	= nh.subscribe("/auvsi/drone/status", 8, drone_status_cb);	
 	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 1, rc_mission_cb);
+	ros::Subscriber sub_drone_image 	= nh.subscribe("/camera/drone/image", 1, imageCallback);
+	
 	client_set_flightmode 			= nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 	
 	flag_1 = "rosrun mavros mavwp load ~/flag_1_"+course_type+".waypoints";
@@ -69,9 +97,29 @@ int main(int argc, char **argv){
 		while(receive_mission=="flag_wait"){
 			ros::spinOnce();
 			if(drone_status=="flag_landing"){
-				//#################################################  get image
-				//################################################	 send communication
-				//################################################   convert to str
+				ros::spinOnce();
+				
+				vector<int> compression_params; 
+				compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
+				compression_params.push_back(98); 
+				bool cSuccess = imwrite("../docking.jpg", image, compression_params);
+				
+				flag_protocol.setPayloadCommunication(follow);
+				flag_protocol.sendTCP();
+				
+				flag_payload_string.flag_payload = flag_protocol.getPayload();
+				flag_status_decode.flag_status = flag_protocol.decodeResponeStatus();
+				pub_run_status.publish(flag_status_decode);
+				pub_payload_status.publish(flag_payload_string);
+				
+				Mat im_gray = imread("../docking.jpg",CV_LOAD_IMAGE_GRAYSCALE);
+				Mat img_bw = im_gray > 128;
+				imwrite("../flag_bw.jpg", img_bw);
+				sleep(8);
+    
+				system ("tesseract flag_bw.jpg flag_out -l letsgodigital");
+				//################################################# get number from flag_out.txt
+				
 				changeFlightModeDebug("HOLD");
 				system("rosrun mavros mavwp clear");
 				if(flag_number=="1"){

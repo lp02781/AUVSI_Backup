@@ -27,13 +27,15 @@ struct decode_status_
     : run_course_status(0)
     , heartbeat_status(0)
     , follow_status(0)
-    , docking_status(0)  {
+    , docking_status(0)
+    , flag_status(0)  {
     }
   decode_status_(const ContainerAllocator& _alloc)
     : run_course_status(0)
     , heartbeat_status(0)
     , follow_status(0)
-    , docking_status(0)  {
+    , docking_status(0)
+    , flag_status(0)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct decode_status_
 
    typedef int32_t _docking_status_type;
   _docking_status_type docking_status;
+
+   typedef int32_t _flag_status_type;
+  _flag_status_type flag_status;
 
 
 
@@ -129,12 +134,12 @@ struct MD5Sum< ::kocheng::decode_status_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a2ff2b7cd0443eeeee765956b8e698bf";
+    return "39541b4d1e52937d3a67a84020aded6d";
   }
 
   static const char* value(const ::kocheng::decode_status_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa2ff2b7cd0443eeeULL;
-  static const uint64_t static_value2 = 0xee765956b8e698bfULL;
+  static const uint64_t static_value1 = 0x39541b4d1e52937dULL;
+  static const uint64_t static_value2 = 0x3a67a84020aded6dULL;
 };
 
 template<class ContainerAllocator>
@@ -157,6 +162,7 @@ struct Definition< ::kocheng::decode_status_<ContainerAllocator> >
 int32 heartbeat_status\n\
 int32 follow_status\n\
 int32 docking_status\n\
+int32 flag_status\n\
 ";
   }
 
@@ -179,6 +185,7 @@ namespace serialization
       stream.next(m.heartbeat_status);
       stream.next(m.follow_status);
       stream.next(m.docking_status);
+      stream.next(m.flag_status);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -205,6 +212,8 @@ struct Printer< ::kocheng::decode_status_<ContainerAllocator> >
     Printer<int32_t>::stream(s, indent + "  ", v.follow_status);
     s << indent << "docking_status: ";
     Printer<int32_t>::stream(s, indent + "  ", v.docking_status);
+    s << indent << "flag_status: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.flag_status);
   }
 };
 

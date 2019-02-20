@@ -431,6 +431,9 @@ int AUVSICommunication::decodeResponeStatus(){
     else if (response_message.find("HTTP/1.1 503") != std::string::npos) {
 		return 503;
     }
+      else if (response_message.find("HTTP/1.1 100") != std::string::npos) {
+		return 100;
+    }
     else {
 		return -1;
     }
@@ -605,8 +608,162 @@ bool MissionMessage::setPayloadCommunication(communicationType comm_type){
 }
 
 // ################################################################################################ DockingMessage class ########################################## //
+class DockingMission : public AUVSICommunication {
 
+	public:
+		DockingMission(string hostname, int port_number, string course_type, string team_code);
+		bool setPayloadCommunication(communicationType comm_type);
+};
 
+DockingMission::DockingMission(string hostname, int port_number, string course_type, string team_code)
+  : AUVSICommunication(hostname, port_number, course_type, team_code){}
+
+bool DockingMission::setPayloadCommunication(communicationType comm_type){
+
+    if (comm_type == navigation || comm_type == speed || comm_type == docking || comm_type == path || comm_type == follow || comm_type == flag || comm_type == return_dock ){
+
+      string course_description;
+
+      if (comm_type == navigation){
+			course_description = "navigation";
+      } 
+      else if (comm_type == speed){
+			course_description = "speed";
+      }
+      else if (comm_type == docking){
+			course_description = "docking";
+      }
+      else if (comm_type == path){
+			course_description = "path";
+      }
+      else if (comm_type == follow){
+			course_description = "followLeader";
+      }
+      else if (comm_type == flag){
+			course_description = "flag";
+      }
+      else if (comm_type == return_dock){
+			course_description = "return";
+      }
+
+		string filename;
+		string http_request;
+		filename.append(course_description + "/image/" + course_type + "/" + team_code);
+		http_request.append("POST "+ filename +" HTTP/1.1\r\n");
+		http_request.append("Content-Type: multipart/form-data; boundary=PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV\r\n");
+		http_request.append("Host: " + hostname + ":" + to_string(port_number) + "\r\n");
+		http_request.append("Accept: */*\r\n");
+		http_request.append("Content-Length: 7280\r\n");
+		http_request.append("Expect: 100-continue\r\n\r\n");
+	
+		http_request.append("--PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV");
+		http_request.append("Content-Disposition: form-data; name=docking; filename=../docking.jpg");
+		http_request.append("Content-Type: application/octet-stream\r\n");
+		http_request.append("c1790bde8f831e7c\r\n");
+		http_request.append("--PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV\r\n\r\n");
+		
+		payload = http_request;
+		return true;
+   }
+   return false;
+   
+	//> POST /docking/image/courseA/AUVSI HTTP/1.1
+	//> Content-Type: multipart/form-data; boundary=PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//> User-Agent: curl/7.38.0
+	//> Host: 127.0.0.1:8080
+	//> Accept: */*
+	//> Content-Length: 7280
+	//> Expect: 100-continue
+	//>
+	//< HTTP/1.1 100 Continue
+	//> --PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//> Content-Disposition: form-data; name="file"; filename="test.jpg"
+	//> Content-Type: application/octet-stream
+	//>
+	//> c1790bde8f831e7c
+	//> --PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//>
+	//< HTTP/1.1 202 Accepted
+}
+
+// ################################################################################################ FlagMessage class ########################################## //
+class FlagMission : public AUVSICommunication {
+
+	public:
+		FlagMission(string hostname, int port_number, string course_type, string team_code);
+		bool setPayloadCommunication(communicationType comm_type);
+};
+
+FlagMission::FlagMission(string hostname, int port_number, string course_type, string team_code)
+  : AUVSICommunication(hostname, port_number, course_type, team_code){}
+
+bool FlagMission::setPayloadCommunication(communicationType comm_type){
+
+    if (comm_type == navigation || comm_type == speed || comm_type == docking || comm_type == path || comm_type == follow || comm_type == flag || comm_type == return_dock ){
+
+      string course_description;
+
+      if (comm_type == navigation){
+			course_description = "navigation";
+      } 
+      else if (comm_type == speed){
+			course_description = "speed";
+      }
+      else if (comm_type == docking){
+			course_description = "docking";
+      }
+      else if (comm_type == path){
+			course_description = "path";
+      }
+      else if (comm_type == follow){
+			course_description = "followLeader";
+      }
+      else if (comm_type == flag){
+			course_description = "flag";
+      }
+      else if (comm_type == return_dock){
+			course_description = "return";
+      }
+
+		string filename;
+		string http_request;
+		filename.append(course_description + "/image/" + course_type + "/" + team_code);
+		http_request.append("POST "+ filename +" HTTP/1.1\r\n");
+		http_request.append("Content-Type: multipart/form-data; boundary=PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV\r\n");
+		http_request.append("Host: " + hostname + ":" + to_string(port_number) + "\r\n");
+		http_request.append("Accept: */*\r\n");
+		http_request.append("Content-Length: 7280\r\n");
+		http_request.append("Expect: 100-continue\r\n\r\n");
+	
+		http_request.append("--PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV");
+		http_request.append("Content-Disposition: form-data; name=flag; filename=../flag.jpg");
+		http_request.append("Content-Type: application/octet-stream\r\n");
+		http_request.append("c1790bde8f831e7c\r\n");
+		http_request.append("--PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV\r\n\r\n");
+		
+		payload = http_request;
+		return true;
+   }
+   return false;
+   
+	//> POST /docking/image/courseA/AUVSI HTTP/1.1
+	//> Content-Type: multipart/form-data; boundary=PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//> User-Agent: curl/7.38.0
+	//> Host: 127.0.0.1:8080
+	//> Accept: */*
+	//> Content-Length: 7280
+	//> Expect: 100-continue
+	//>
+	//< HTTP/1.1 100 Continue
+	//> --PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//> Content-Disposition: form-data; name="file"; filename="test.jpg"
+	//> Content-Type: application/octet-stream
+	//>
+	//> c1790bde8f831e7c
+	//> --PqjtwSukItOMmSZ6NSvgT661LL9lxkOHSdnV
+	//>
+	//< HTTP/1.1 202 Accepted
+}
 
 // ####################################################################################################### start of getTime class ########################################## //
 class getTime {

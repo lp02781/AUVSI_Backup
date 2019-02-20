@@ -22,6 +22,7 @@ class communication {
       this.run_course_payload = null;
       this.follow_payload = null;
       this.docking_payload = null;
+      this.flag_payload = null;
     }
     else {
       if (initObj.hasOwnProperty('heartbeat_payload')) {
@@ -48,6 +49,12 @@ class communication {
       else {
         this.docking_payload = '';
       }
+      if (initObj.hasOwnProperty('flag_payload')) {
+        this.flag_payload = initObj.flag_payload
+      }
+      else {
+        this.flag_payload = '';
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class communication {
     bufferOffset = _serializer.string(obj.follow_payload, buffer, bufferOffset);
     // Serialize message field [docking_payload]
     bufferOffset = _serializer.string(obj.docking_payload, buffer, bufferOffset);
+    // Serialize message field [flag_payload]
+    bufferOffset = _serializer.string(obj.flag_payload, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,6 +85,8 @@ class communication {
     data.follow_payload = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [docking_payload]
     data.docking_payload = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [flag_payload]
+    data.flag_payload = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
@@ -85,7 +96,8 @@ class communication {
     length += object.run_course_payload.length;
     length += object.follow_payload.length;
     length += object.docking_payload.length;
-    return length + 16;
+    length += object.flag_payload.length;
+    return length + 20;
   }
 
   static datatype() {
@@ -95,7 +107,7 @@ class communication {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a4a71690d66d1b694fd29ac92ce201eb';
+    return '892ce67e7b2f9ec2fb90e613344b9551';
   }
 
   static messageDefinition() {
@@ -105,6 +117,7 @@ class communication {
     string run_course_payload
     string follow_payload
     string docking_payload
+    string flag_payload
     
     `;
   }
@@ -141,6 +154,13 @@ class communication {
     }
     else {
       resolved.docking_payload = ''
+    }
+
+    if (msg.flag_payload !== undefined) {
+      resolved.flag_payload = msg.flag_payload;
+    }
+    else {
+      resolved.flag_payload = ''
     }
 
     return resolved;

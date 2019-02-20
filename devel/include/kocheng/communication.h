@@ -27,13 +27,15 @@ struct communication_
     : heartbeat_payload()
     , run_course_payload()
     , follow_payload()
-    , docking_payload()  {
+    , docking_payload()
+    , flag_payload()  {
     }
   communication_(const ContainerAllocator& _alloc)
     : heartbeat_payload(_alloc)
     , run_course_payload(_alloc)
     , follow_payload(_alloc)
-    , docking_payload(_alloc)  {
+    , docking_payload(_alloc)
+    , flag_payload(_alloc)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct communication_
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _docking_payload_type;
   _docking_payload_type docking_payload;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _flag_payload_type;
+  _flag_payload_type flag_payload;
 
 
 
@@ -129,12 +134,12 @@ struct MD5Sum< ::kocheng::communication_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a4a71690d66d1b694fd29ac92ce201eb";
+    return "892ce67e7b2f9ec2fb90e613344b9551";
   }
 
   static const char* value(const ::kocheng::communication_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa4a71690d66d1b69ULL;
-  static const uint64_t static_value2 = 0x4fd29ac92ce201ebULL;
+  static const uint64_t static_value1 = 0x892ce67e7b2f9ec2ULL;
+  static const uint64_t static_value2 = 0xfb90e613344b9551ULL;
 };
 
 template<class ContainerAllocator>
@@ -157,6 +162,7 @@ struct Definition< ::kocheng::communication_<ContainerAllocator> >
 string run_course_payload\n\
 string follow_payload\n\
 string docking_payload\n\
+string flag_payload\n\
 ";
   }
 
@@ -179,6 +185,7 @@ namespace serialization
       stream.next(m.run_course_payload);
       stream.next(m.follow_payload);
       stream.next(m.docking_payload);
+      stream.next(m.flag_payload);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -205,6 +212,8 @@ struct Printer< ::kocheng::communication_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.follow_payload);
     s << indent << "docking_payload: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.docking_payload);
+    s << indent << "flag_payload: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.flag_payload);
   }
 };
 

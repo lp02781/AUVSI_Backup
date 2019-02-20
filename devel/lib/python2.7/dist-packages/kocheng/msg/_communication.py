@@ -7,16 +7,17 @@ import struct
 
 
 class communication(genpy.Message):
-  _md5sum = "a4a71690d66d1b694fd29ac92ce201eb"
+  _md5sum = "892ce67e7b2f9ec2fb90e613344b9551"
   _type = "kocheng/communication"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """string heartbeat_payload
 string run_course_payload
 string follow_payload
 string docking_payload
+string flag_payload
 """
-  __slots__ = ['heartbeat_payload','run_course_payload','follow_payload','docking_payload']
-  _slot_types = ['string','string','string','string']
+  __slots__ = ['heartbeat_payload','run_course_payload','follow_payload','docking_payload','flag_payload']
+  _slot_types = ['string','string','string','string','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -26,7 +27,7 @@ string docking_payload
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       heartbeat_payload,run_course_payload,follow_payload,docking_payload
+       heartbeat_payload,run_course_payload,follow_payload,docking_payload,flag_payload
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -43,11 +44,14 @@ string docking_payload
         self.follow_payload = ''
       if self.docking_payload is None:
         self.docking_payload = ''
+      if self.flag_payload is None:
+        self.flag_payload = ''
     else:
       self.heartbeat_payload = ''
       self.run_course_payload = ''
       self.follow_payload = ''
       self.docking_payload = ''
+      self.flag_payload = ''
 
   def _get_types(self):
     """
@@ -80,6 +84,12 @@ string docking_payload
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.docking_payload
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self.flag_payload
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -131,6 +141,15 @@ string docking_payload
         self.docking_payload = str[start:end].decode('utf-8')
       else:
         self.docking_payload = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.flag_payload = str[start:end].decode('utf-8')
+      else:
+        self.flag_payload = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -162,6 +181,12 @@ string docking_payload
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.docking_payload
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self.flag_payload
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -214,6 +239,15 @@ string docking_payload
         self.docking_payload = str[start:end].decode('utf-8')
       else:
         self.docking_payload = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.flag_payload = str[start:end].decode('utf-8')
+      else:
+        self.flag_payload = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

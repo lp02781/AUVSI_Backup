@@ -22,6 +22,7 @@ class decode_status {
       this.heartbeat_status = null;
       this.follow_status = null;
       this.docking_status = null;
+      this.flag_status = null;
     }
     else {
       if (initObj.hasOwnProperty('run_course_status')) {
@@ -48,6 +49,12 @@ class decode_status {
       else {
         this.docking_status = 0;
       }
+      if (initObj.hasOwnProperty('flag_status')) {
+        this.flag_status = initObj.flag_status
+      }
+      else {
+        this.flag_status = 0;
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class decode_status {
     bufferOffset = _serializer.int32(obj.follow_status, buffer, bufferOffset);
     // Serialize message field [docking_status]
     bufferOffset = _serializer.int32(obj.docking_status, buffer, bufferOffset);
+    // Serialize message field [flag_status]
+    bufferOffset = _serializer.int32(obj.flag_status, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,11 +85,13 @@ class decode_status {
     data.follow_status = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [docking_status]
     data.docking_status = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [flag_status]
+    data.flag_status = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    return 20;
   }
 
   static datatype() {
@@ -90,7 +101,7 @@ class decode_status {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a2ff2b7cd0443eeeee765956b8e698bf';
+    return '39541b4d1e52937d3a67a84020aded6d';
   }
 
   static messageDefinition() {
@@ -100,6 +111,7 @@ class decode_status {
     int32 heartbeat_status
     int32 follow_status
     int32 docking_status
+    int32 flag_status
     
     `;
   }
@@ -136,6 +148,13 @@ class decode_status {
     }
     else {
       resolved.docking_status = 0
+    }
+
+    if (msg.flag_status !== undefined) {
+      resolved.flag_status = msg.flag_status;
+    }
+    else {
+      resolved.flag_status = 0
     }
 
     return resolved;

@@ -7,4 +7,6 @@
           FOLLOW_STATUS
           DOCKING_STATUS-VAL
           DOCKING_STATUS
+          FLAG_STATUS-VAL
+          FLAG_STATUS
 ))

@@ -80,7 +80,9 @@ int main(int argc, char **argv){
 	cv::startWindowThread();
 	
 	ROS_WARN("NC : docking_drone.cpp active");
+	
 	image_transport::ImageTransport it(nh);
+	image_transport::Publisher pub = it.advertise("/camera/drone/image", 1, true);
 	
 	ros::Publisher pub_drone_status = nh.advertise<kocheng::drone_kocheng>("/auvsi/drone/status", 8);
 	ros::Publisher pub_quad_vel 	= nh.advertise<geometry_msgs::TwistStamped>("mavros/setpoint_velocity/cmd_vel", 1000);
@@ -119,15 +121,17 @@ int main(int argc, char **argv){
 			compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
 			compression_params.push_back(98); 
 			bool cSuccess = imwrite("../docking.jpg", Original, compression_params); 
+			if(!Original.empty()){	
+				sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", Original).toImageMsg();
+				pub.publish(msg);
+			}
 			
 			system("rosrun mavros mavwp clear"); 
 			system(docking_home.c_str());
 			changeFlightModeDebug("AUTO");
 			changeFlightModeDebug("LOITER");
 			sleep(1);
-			
-			//##############################################################  send picture to surface vehicle
-			
+	
 			drone.drone_status=="docking_capture";
 			pub_drone_status.publish(drone);
 			ros::spinOnce();

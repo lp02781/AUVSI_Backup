@@ -14,7 +14,7 @@
 
 (defclass kocheng::decode_status
   :super ros::object
-  :slots (_run_course_status _heartbeat_status _follow_status _docking_status ))
+  :slots (_run_course_status _heartbeat_status _follow_status _docking_status _flag_status ))
 
 (defmethod kocheng::decode_status
   (:init
@@ -23,12 +23,14 @@
     ((:heartbeat_status __heartbeat_status) 0)
     ((:follow_status __follow_status) 0)
     ((:docking_status __docking_status) 0)
+    ((:flag_status __flag_status) 0)
     )
    (send-super :init)
    (setq _run_course_status (round __run_course_status))
    (setq _heartbeat_status (round __heartbeat_status))
    (setq _follow_status (round __follow_status))
    (setq _docking_status (round __docking_status))
+   (setq _flag_status (round __flag_status))
    self)
   (:run_course_status
    (&optional __run_course_status)
@@ -42,6 +44,9 @@
   (:docking_status
    (&optional __docking_status)
    (if __docking_status (setq _docking_status __docking_status)) _docking_status)
+  (:flag_status
+   (&optional __flag_status)
+   (if __flag_status (setq _flag_status __flag_status)) _flag_status)
   (:serialization-length
    ()
    (+
@@ -52,6 +57,8 @@
     ;; int32 _follow_status
     4
     ;; int32 _docking_status
+    4
+    ;; int32 _flag_status
     4
     ))
   (:serialize
@@ -66,6 +73,8 @@
        (write-long _follow_status s)
      ;; int32 _docking_status
        (write-long _docking_status s)
+     ;; int32 _flag_status
+       (write-long _flag_status s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -78,22 +87,25 @@
      (setq _follow_status (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; int32 _docking_status
      (setq _docking_status (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _flag_status
+     (setq _flag_status (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get kocheng::decode_status :md5sum-) "a2ff2b7cd0443eeeee765956b8e698bf")
+(setf (get kocheng::decode_status :md5sum-) "39541b4d1e52937d3a67a84020aded6d")
 (setf (get kocheng::decode_status :datatype-) "kocheng/decode_status")
 (setf (get kocheng::decode_status :definition-)
       "int32 run_course_status
 int32 heartbeat_status
 int32 follow_status
 int32 docking_status
+int32 flag_status
 
 ")
 
 
 
-(provide :kocheng/decode_status "a2ff2b7cd0443eeeee765956b8e698bf")
+(provide :kocheng/decode_status "39541b4d1e52937d3a67a84020aded6d")
 
 

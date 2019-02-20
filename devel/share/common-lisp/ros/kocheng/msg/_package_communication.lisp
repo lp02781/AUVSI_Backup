@@ -7,4 +7,6 @@
           FOLLOW_PAYLOAD
           DOCKING_PAYLOAD-VAL
           DOCKING_PAYLOAD
+          FLAG_PAYLOAD-VAL
+          FLAG_PAYLOAD
 ))

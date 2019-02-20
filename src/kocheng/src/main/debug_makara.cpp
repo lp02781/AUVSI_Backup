@@ -57,8 +57,8 @@ float kp_x, kp_y, ki_x, ki_y,  kd_x, kd_y;
 
 int state_x_image, state_y_image;
 
-int run_course_status, heartbeat_status, follow_status, docking_status;
-string heartbeat_payload, run_course_payload, follow_payload, docking_payload;
+int run_course_status, heartbeat_status, follow_status, docking_status, flag_status;
+string heartbeat_payload, run_course_payload, follow_payload, docking_payload, flag_payload;
 
 int x_init=5;
 int y_init=5;
@@ -157,7 +157,7 @@ int main(int argc, char **argv)
 		ROS_INFO(" ");
 		
 		ROS_WARN("NC: Communication");
-		ROS_INFO("run:%d\t heartbeat:%d\t follow:%d\t docking:%d\t", run_course_status, heartbeat_status, follow_status, docking_status);
+		ROS_INFO("run:%d\t heartbeat:%d\t follow:%d\t docking:%d flag:%d\t", run_course_status, heartbeat_status, follow_status, docking_status, flag_status);
 		ROS_INFO(" ");
 		
 		ROS_WARN("NC: ardu data");
@@ -185,6 +185,7 @@ void decode_status_cb	(const kocheng::decode_status& data){
 	heartbeat_status	= data.heartbeat_status;
 	follow_status		= data.follow_status;
 	docking_status		= data.docking_status;
+	flag_status			= data.flag_status;
 }
 /*
 void string_payload_cb	(const kocheng::communication& data){
@@ -192,6 +193,7 @@ void string_payload_cb	(const kocheng::communication& data){
 	run_course_payload	= data.run_course_payload;
 	follow_payload		= data.follow_payload;
 	docking_payload		= data.docking_payload;
+	flag_status			= data.flag_status;
 }
 */
 void image_in_cb(const kocheng::image_in& in){
