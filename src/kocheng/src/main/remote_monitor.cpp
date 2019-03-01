@@ -3,6 +3,7 @@
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
 #include "std_msgs/Bool.h"
+#include "std_msgs/Int32.h"
 
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
@@ -23,8 +24,11 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data);
 kocheng::rc_number rc_action; 
 kocheng::mission_status	mission;
 
+std_msgs::Int32 mode;
+
 ros::Publisher pub_rc_flag;
 ros::Publisher pub_mission_rc;
+ros::Publisher pub_led_rc;
 	
 int main(int argc, char **argv){
 
@@ -32,6 +36,8 @@ int main(int argc, char **argv){
 	ros::NodeHandle ovrd_mon;
 	pub_rc_flag 		= ovrd_mon.advertise<kocheng::rc_number>("/auvsi/rc/number", 8);
 	pub_mission_rc 	= ovrd_mon.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	pub_led_rc 		= ovrd_mon.advertise<std_msgs::Int32>("/auvsi/ardu/led", 1);
+	
 	ros::Subscriber rc_in_sub 		= ovrd_mon.subscribe("/mavros/rc/in", 8, rcinReceiver);
 		
 	ROS_WARN("NC : remote_monitor.cpp active");
@@ -49,14 +55,20 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
 	}
 	
 	if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
+		mode.data = 2;
+		pub_led_rc.publish(mode);
 		override_flag = true;
 		number_flight = first_simple;
 	}
 	else if(rc_in_data_channel[SIMPLE_PIN] > PWM_UP){
+		mode.data = 2;
+		pub_led_rc.publish(mode);
 		override_flag = true;
 		number_flight = second_simple;
 	}
 	else{
+		mode.data = 1;
+		pub_led_rc.publish(mode);
 		override_flag 			= false;
 		mission.mission_makara	= mission_idle;
 		pub_mission_rc.publish(mission);

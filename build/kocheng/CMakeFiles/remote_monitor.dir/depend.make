@@ -89,6 +89,7 @@ kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/ki
 kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
 kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/std_msgs/Int32.h
 kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 kocheng/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

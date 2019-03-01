@@ -5,6 +5,7 @@
 ros::NodeHandle  nh;
 std_msgs::Int32MultiArray srf_msg;
 
+
 const int trigPin_1 = 3;
 const int echoPin_1 = 2;
 
@@ -41,7 +42,7 @@ void messageCb( const std_msgs::Int32& msg){
   kocheng_status=msg.data;
 }
 
-ros::Subscriber<std_msgs::Int32> sub("/auvsi/ardu/status", &messageCb );
+ros::Subscriber<std_msgs::Int32> sub("/auvsi/ardu/led", &messageCb );
 
 void setup()
 { 
@@ -101,11 +102,11 @@ void loop()
 
   chatter.publish( &srf_msg );
   
-  if(kocheng_status==0){
+  if(kocheng_status==1){
     digitalWrite(led_1, HIGH);
     digitalWrite(led_2, LOW);    
   }
-  else if(kocheng_status==1){
+  else if(kocheng_status==2){
     digitalWrite(led_1, LOW);
     digitalWrite(led_2, HIGH);
   }
