@@ -23,37 +23,23 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data);
 kocheng::rc_number rc_action; 
 kocheng::mission_status	mission;
 
+ros::Publisher pub_rc_flag;
+ros::Publisher pub_mission_rc;
+	
 int main(int argc, char **argv){
 
 	ros::init(argc, argv, "remote_monitor");
 	ros::NodeHandle ovrd_mon;
-	ros::Publisher pub_rc_flag 		= ovrd_mon.advertise<kocheng::rc_number>("/auvsi/rc/number", 8);
-	ros::Publisher pub_mission_rc 	= ovrd_mon.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
+	pub_rc_flag 		= ovrd_mon.advertise<kocheng::rc_number>("/auvsi/rc/number", 8);
+	pub_mission_rc 	= ovrd_mon.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
 	ros::Subscriber rc_in_sub 		= ovrd_mon.subscribe("/mavros/rc/in", 8, rcinReceiver);
 		
 	ROS_WARN("NC : remote_monitor.cpp active");
 	
-	while(ros::ok()){
-		sleep(0.2);
+	while (ros::ok()) {
 		ros::spinOnce();
-		if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
-			override_flag = true;
-			number_flight = first_simple;
-		}
-		else if(rc_in_data_channel[SIMPLE_PIN] > PWM_UP){
-			override_flag = true;
-			number_flight = second_simple;
-		}
-		else{
-			override_flag 			= false;
-			mission.mission_makara	= mission_idle;
-			pub_mission_rc.publish(mission);
-		}
-		
-		rc_action.override_status = override_flag;
-		rc_action.rc_number = number_flight;
-		pub_rc_flag.publish(rc_action);
 	}
+	
 }
 
 void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
@@ -61,6 +47,24 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
 	for (x=0; x<8;x++){
 		rc_in_data_channel[x] = rc_in_data.channels[x];
 	}
+	
+	if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
+		override_flag = true;
+		number_flight = first_simple;
+	}
+	else if(rc_in_data_channel[SIMPLE_PIN] > PWM_UP){
+		override_flag = true;
+		number_flight = second_simple;
+	}
+	else{
+		override_flag 			= false;
+		mission.mission_makara	= mission_idle;
+		pub_mission_rc.publish(mission);
+	}
+		
+	rc_action.override_status = override_flag;
+	rc_action.rc_number = number_flight;
+	pub_rc_flag.publish(rc_action);
 }
 
 

@@ -21,11 +21,6 @@
     :reader camera_servo
     :initarg :camera_servo
     :type cl:fixnum
-    :initform 0)
-   (drone_servo
-    :reader drone_servo
-    :initarg :drone_servo
-    :type cl:fixnum
     :initform 0))
 )
 
@@ -51,11 +46,6 @@
 (cl:defmethod camera_servo-val ((m <override_motor>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader kocheng-msg:camera_servo-val is deprecated.  Use kocheng-msg:camera_servo instead.")
   (camera_servo m))
-
-(cl:ensure-generic-function 'drone_servo-val :lambda-list '(m))
-(cl:defmethod drone_servo-val ((m <override_motor>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader kocheng-msg:drone_servo-val is deprecated.  Use kocheng-msg:drone_servo instead.")
-  (drone_servo m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <override_motor>) ostream)
   "Serializes a message object of type '<override_motor>"
   (cl:let* ((signed (cl:slot-value msg 'steering)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
@@ -67,10 +57,6 @@
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
   (cl:let* ((signed (cl:slot-value msg 'camera_servo)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    )
-  (cl:let* ((signed (cl:slot-value msg 'drone_servo)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
@@ -89,10 +75,6 @@
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'camera_servo) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'drone_servo) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<override_motor>)))
@@ -103,19 +85,18 @@
   "kocheng/override_motor")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<override_motor>)))
   "Returns md5sum for a message object of type '<override_motor>"
-  "5db88c405e17879270731989801ea69a")
+  "8b817f7d8452ec829c7dc50e436e6bd8")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'override_motor)))
   "Returns md5sum for a message object of type 'override_motor"
-  "5db88c405e17879270731989801ea69a")
+  "8b817f7d8452ec829c7dc50e436e6bd8")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<override_motor>)))
   "Returns full string definition for message of type '<override_motor>"
-  (cl:format cl:nil "int16 steering~%int16 throttle~%int16 camera_servo~%int16 drone_servo~%~%~%"))
+  (cl:format cl:nil "int16 steering~%int16 throttle~%int16 camera_servo~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'override_motor)))
   "Returns full string definition for message of type 'override_motor"
-  (cl:format cl:nil "int16 steering~%int16 throttle~%int16 camera_servo~%int16 drone_servo~%~%~%"))
+  (cl:format cl:nil "int16 steering~%int16 throttle~%int16 camera_servo~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <override_motor>))
   (cl:+ 0
-     2
      2
      2
      2
@@ -126,5 +107,4 @@
     (cl:cons ':steering (steering msg))
     (cl:cons ':throttle (throttle msg))
     (cl:cons ':camera_servo (camera_servo msg))
-    (cl:cons ':drone_servo (drone_servo msg))
 ))

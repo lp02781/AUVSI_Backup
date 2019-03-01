@@ -31,7 +31,6 @@ string	course_type 		= "courseUI"; //courseA courseB courseC courseUI
 #define THROTTLE 2
 #define SIMPLE_PIN 3
 #define CAMERA_SERVO 4
-#define DRONE_SERVO 5
 
 #define MAX_THROTTLE 1900//1750
 #define MIN_THROTTLE 1100
@@ -43,7 +42,6 @@ string	course_type 		= "courseUI"; //courseA courseB courseC courseUI
 #define MIDDLE_PWM 	1520
 
 #define CAM_INIT_PWM 1500
-#define DRONE_INIT_PWM 1300
 
 string mission_idle = "no_mission";
 

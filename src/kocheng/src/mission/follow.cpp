@@ -41,7 +41,7 @@ kocheng::communication follow_payload_string;
 
 int state_x, state_y, throttle_pwm, steer_pwm, control_effort_x, control_effort_y;
 
-int drone_pwm, camera_pwm;
+int camera_pwm;
 
 float latitude, longitude;
 
@@ -161,7 +161,6 @@ int main(int argc, char **argv){
 				steer_pwm 		= MIDDLE_PWM - control_effort_x;
 			
 				camera_pwm		= CAM_FOLLOW_PWM;
-				drone_pwm		= DRONE_INIT_PWM;
 			
 				if(state_x==0){
 					steer_pwm=MIDDLE_PWM;
@@ -170,7 +169,6 @@ int main(int argc, char **argv){
 					throttle_pwm=THROT_FOLLOW;
 				}
 			
-				controller.drone_servo 	= drone_pwm;
 				controller.camera_servo = camera_pwm;
 				controller.steering 	= steer_pwm;
 				controller.throttle 	= throttle_pwm;

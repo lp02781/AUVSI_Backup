@@ -31,7 +31,7 @@ kocheng::image_in image_in;
 
 int state_x, state_y, throttle_pwm, steer_pwm, control_effort;
 
-int drone_pwm, camera_pwm;
+int camera_pwm;
 
 float latitude, longitude;
 
@@ -112,13 +112,11 @@ int main(int argc, char **argv){
 			steer_pwm 		= MIDDLE_PWM - control_effort;
 			
 			camera_pwm		= CAM_INIT_PWM;
-			drone_pwm		= DRONE_INIT_PWM;
 			
 			if(state_x==0){
 				steer_pwm=MIDDLE_PWM;
 			}
 			
-			controller.drone_servo 	= drone_pwm;
 			controller.camera_servo = camera_pwm;
 			controller.steering 	= steer_pwm;
 			controller.throttle 	= throttle_pwm;

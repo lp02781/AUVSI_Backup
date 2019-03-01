@@ -10,7 +10,6 @@ bool override_status = false;
 int steering, throttle;
 
 int cam_servo	= CAM_INIT_PWM;
-int drone_servo = DRONE_INIT_PWM;
 
 ros::Publisher pub_override_rc;
 ros::Subscriber sub_override_motor;
@@ -32,8 +31,7 @@ int main(int argc, char **argv)
   
 	ROS_WARN("NC : motor_controller.cpp active");
   
-	override_out.channels[DRONE_SERVO] 	= cam_servo;
-	override_out.channels[CAMERA_SERVO] = drone_servo;
+	override_out.channels[CAMERA_SERVO] = cam_servo;
 	pub_override_rc.publish(override_out);
 	
 	while(ros::ok()){
@@ -61,7 +59,6 @@ int main(int argc, char **argv)
 			else {
 				override_out.channels[STEERING] = steering;
 			}
-			override_out.channels[DRONE_SERVO] 	= drone_servo;
 			override_out.channels[CAMERA_SERVO] = cam_servo;
 			pub_override_rc.publish(override_out);
 		}
@@ -76,5 +73,4 @@ void override_input_cb(const kocheng::override_motor& override_recv){
 	throttle	= override_recv.throttle;
 	steering	= override_recv.steering;
 	cam_servo	= override_recv.camera_servo;
-	drone_servo	= override_recv.drone_servo;
 }

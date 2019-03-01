@@ -21,7 +21,6 @@ class override_motor {
       this.steering = null;
       this.throttle = null;
       this.camera_servo = null;
-      this.drone_servo = null;
     }
     else {
       if (initObj.hasOwnProperty('steering')) {
@@ -42,12 +41,6 @@ class override_motor {
       else {
         this.camera_servo = 0;
       }
-      if (initObj.hasOwnProperty('drone_servo')) {
-        this.drone_servo = initObj.drone_servo
-      }
-      else {
-        this.drone_servo = 0;
-      }
     }
   }
 
@@ -59,8 +52,6 @@ class override_motor {
     bufferOffset = _serializer.int16(obj.throttle, buffer, bufferOffset);
     // Serialize message field [camera_servo]
     bufferOffset = _serializer.int16(obj.camera_servo, buffer, bufferOffset);
-    // Serialize message field [drone_servo]
-    bufferOffset = _serializer.int16(obj.drone_servo, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -74,13 +65,11 @@ class override_motor {
     data.throttle = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [camera_servo]
     data.camera_servo = _deserializer.int16(buffer, bufferOffset);
-    // Deserialize message field [drone_servo]
-    data.drone_servo = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 8;
+    return 6;
   }
 
   static datatype() {
@@ -90,7 +79,7 @@ class override_motor {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '5db88c405e17879270731989801ea69a';
+    return '8b817f7d8452ec829c7dc50e436e6bd8';
   }
 
   static messageDefinition() {
@@ -99,7 +88,6 @@ class override_motor {
     int16 steering
     int16 throttle
     int16 camera_servo
-    int16 drone_servo
     
     `;
   }
@@ -129,13 +117,6 @@ class override_motor {
     }
     else {
       resolved.camera_servo = 0
-    }
-
-    if (msg.drone_servo !== undefined) {
-      resolved.drone_servo = msg.drone_servo;
-    }
-    else {
-      resolved.drone_servo = 0
     }
 
     return resolved;

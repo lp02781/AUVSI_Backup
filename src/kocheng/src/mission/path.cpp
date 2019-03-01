@@ -14,7 +14,7 @@ kocheng::mission_status	mission;
 
 int throttle_pwm, steer_pwm;
 
-int drone_pwm, camera_pwm;
+int camera_pwm;
 
 int srf_1, srf_2, srf_3, srf_4;
 
@@ -39,7 +39,6 @@ int main(int argc, char **argv){
 			throttle_pwm 	= THROT_PATH;
 			
 			camera_pwm		= CAM_INIT_PWM;
-			drone_pwm		= DRONE_INIT_PWM;
 			if(srf_1<30){
 				throttle_pwm+=50;
 			}		
@@ -53,7 +52,6 @@ int main(int argc, char **argv){
 				throttle_pwm-=50;
 			}
 			
-			controller.drone_servo 	= drone_pwm;
 			controller.camera_servo = camera_pwm;
 			controller.steering 	= steer_pwm;
 			controller.throttle 	= throttle_pwm;

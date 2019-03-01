@@ -64,8 +64,8 @@ int main(int argc, char **argv)
 			waypoint_running("path_gate");
 			mission_running("path");
 			
-			waypoint_running("follow_gate");
-			mission_running("follow");
+			//waypoint_running("follow_gate");
+			//mission_running("follow");
 			
 			waypoint_running("push_gate");
 			mission_running("push");
@@ -99,15 +99,19 @@ int main(int argc, char **argv)
 
 void waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
-		string waypoint_start = waypoint+".start";
 		changeFlightModeDebug("HOLD");
+		
+		string waypoint_start = waypoint+".start";
 		mission.mission_makara = waypoint_start;
 		pub_mission_rc.publish(mission);
+		
 		system("rosrun mavros mavwp clear"); //clear wp
 		string command = "rosrun mavros mavwp load ~/"+waypoint+"_"+course_type+".waypoints";
 		system(command.c_str());
+		
 		changeFlightModeDebug("AUTO");
 		changeFlightModeDebug("HOLD");
+		
 		string waypoint_end		= waypoint+course_type+"_gate.end";
 		mission.mission_makara	= waypoint_end;
 		pub_mission_rc.publish(mission);
@@ -118,12 +122,15 @@ void mission_running(string mission_name){
 	if(receive_mission != mission_idle){
 		com.mission_makara = mission_name;
 		pub_com_rc.publish(com);
-		string mission_start = mission_name+".start";
+		
 		changeFlightModeDebug("MANUAL");
+		
+		string mission_start = mission_name+".start";
 		mission.mission_makara = mission_start;
 		pub_mission_rc.publish(mission);
-		string mission_end = mission_name+".end";
 		
+		string mission_end = mission_name+".end";
+
 		while(ros::ok() && receive_mission != mission_end ) ros::spinOnce();
 	}
 }

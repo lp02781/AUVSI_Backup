@@ -5,22 +5,25 @@
 ros::NodeHandle  nh;
 std_msgs::Int32MultiArray srf_msg;
 
-const int trigPin_1 = 8;
-const int echoPin_1 = 11;
+const int trigPin_1 = 3;
+const int echoPin_1 = 2;
 
-const int trigPin_2 = 9;
-const int echoPin_2 = 10;
+const int trigPin_2 = 5;
+const int echoPin_2 = 4;
 
-const int trigPin_3 = 7;
-const int echoPin_3 = 6;
+const int trigPin_3 = 6;
+const int echoPin_3 = 7;
 
-const int trigPin_4 = 4;
-const int echoPin_4 = 5;
+const int trigPin_4 = 9;
+const int echoPin_4 = 8;
+
+const int trigPin_5 = 11;
+const int echoPin_5 = 12;
 
 int kocheng_status;
 
-int led_1 = 13;
-int led_2 = 12;
+int led_1 = A1;
+int led_2 = A2;
 
 long duration_1;
 long duration_2;
