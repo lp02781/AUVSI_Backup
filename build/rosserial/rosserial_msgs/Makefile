@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -77,6 +67,39 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mfikih15/Documents/AUVSI/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -87,6 +110,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -121,17 +154,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -411,14 +433,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
+	@echo "... test"
+	@echo "... package"
+	@echo "... edit_cache"
 	@echo "... rosserial_msgs_generate_messages"
 	@echo "... _rosserial_msgs_generate_messages_check_deps_TopicInfo"
 	@echo "... rosserial_msgs_geneus"
 	@echo "... _rosserial_msgs_generate_messages_check_deps_RequestMessageInfo"
 	@echo "... rosserial_msgs_gencpp"
+	@echo "... package_source"
 	@echo "... rosserial_msgs_generate_messages_cpp"
-	@echo "... test"
 	@echo "... _rosserial_msgs_generate_messages_check_deps_RequestParam"
 	@echo "... rosserial_msgs_genpy"
 	@echo "... _rosserial_msgs_generate_messages_check_deps_RequestServiceInfo"
@@ -426,6 +450,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... rosserial_msgs_generate_messages_lisp"
 	@echo "... rosserial_msgs_genlisp"
+	@echo "... list_install_components"
 	@echo "... rosserial_msgs_generate_messages_nodejs"
 	@echo "... rosserial_msgs_gennodejs"
 	@echo "... install"
@@ -433,7 +458,6 @@ help:
 	@echo "... rosserial_msgs_generate_messages_py"
 	@echo "... rosserial_msgs_generate_messages_eus"
 	@echo "... install/local"
-	@echo "... edit_cache"
 .PHONY : help
 
 

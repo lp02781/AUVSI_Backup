@@ -231,8 +231,8 @@ gtest/all: gtest/gtest/all
 .PHONY : gtest/all
 
 # Convenience name for "clean" pass in the directory.
-gtest/clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/clean: gtest/CMakeFiles/gmock_main.dir/clean
+gtest/clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/clean: gtest/gtest/clean
 
 .PHONY : gtest/clean
@@ -241,38 +241,6 @@ gtest/clean: gtest/gtest/clean
 gtest/preinstall: gtest/gtest/preinstall
 
 .PHONY : gtest/preinstall
-
-#=============================================================================
-# Target rules for target gtest/CMakeFiles/gmock.dir
-
-# All Build rule for target.
-gtest/CMakeFiles/gmock.dir/all:
-	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
-	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=10,11 "Built target gmock"
-.PHONY : gtest/CMakeFiles/gmock.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gmock.dir/rule
-
-# Convenience name for target.
-gmock: gtest/CMakeFiles/gmock.dir/rule
-
-.PHONY : gmock
-
-# clean rule for target.
-gtest/CMakeFiles/gmock.dir/clean:
-	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/clean
-.PHONY : gtest/CMakeFiles/gmock.dir/clean
-
-# clean rule for target.
-clean: gtest/CMakeFiles/gmock.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Target rules for target gtest/CMakeFiles/gmock_main.dir
@@ -303,6 +271,38 @@ gtest/CMakeFiles/gmock_main.dir/clean:
 
 # clean rule for target.
 clean: gtest/CMakeFiles/gmock_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target gtest/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+gtest/CMakeFiles/gmock.dir/all:
+	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
+	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=10,11 "Built target gmock"
+.PHONY : gtest/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+gtest/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AUVSI/build/CMakeFiles 0
+.PHONY : gtest/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: gtest/CMakeFiles/gmock.dir/rule
+
+.PHONY : gmock
+
+# clean rule for target.
+gtest/CMakeFiles/gmock.dir/clean:
+	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/clean
+.PHONY : gtest/CMakeFiles/gmock.dir/clean
+
+# clean rule for target.
+clean: gtest/CMakeFiles/gmock.dir/clean
 
 .PHONY : clean
 

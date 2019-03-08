@@ -56,17 +56,16 @@ CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,6 +77,18 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -132,6 +143,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mfikih15/Documents/AUVSI/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -390,8 +412,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
+	@echo "... package"
 	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... install/strip"
@@ -404,6 +427,7 @@ help:
 	@echo "... subscriber_test"
 	@echo "... run_tests_rosserial_client_gtest"
 	@echo "... _run_tests_rosserial_client_gtest_float64_test"
+	@echo "... package_source"
 	@echo "... _run_tests_rosserial_client_gtest"
 	@echo "... run_tests_rosserial_client_gtest_subscriber_test"
 	@echo "... run_tests_rosserial_client_gtest_float64_test"
