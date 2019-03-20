@@ -84,6 +84,7 @@ int main(int argc, char **argv){
 	while (ros::ok()) {
 		ros::spinOnce();
 		while(receive_mission=="navigation.start"){
+			//ROS_ERROR("2");
 			image_in.x_init	= x_nav;
 			image_in.y_init	= y_nav;
 			image_in.width	= width_nav;
@@ -117,6 +118,7 @@ int main(int argc, char **argv){
 				steer_pwm=MIDDLE_PWM;
 			}
 			
+			cout<<steer_pwm<<"	"<<throttle_pwm<<endl;
 			controller.camera_servo = camera_pwm;
 			controller.steering 	= steer_pwm;
 			controller.throttle 	= throttle_pwm;

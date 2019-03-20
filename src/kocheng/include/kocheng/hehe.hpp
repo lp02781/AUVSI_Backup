@@ -58,19 +58,19 @@ int second_simple 	= 2;
 //###############################################################################################  NAVIGATION VARIABLE  ###############
 #define THROT_NAV 1650
 
-float longitude_nav_end_A=0;
-float latitude_nav_end_A=0;
+float longitude_nav_end_A=1551;
+float latitude_nav_end_A=12515;
 
-float longitude_nav_end_B=0;
-float latitude_nav_end_B=0;
+float longitude_nav_end_B=1161;
+float latitude_nav_end_B=3161613;
 
-float longitude_nav_end_C=0;
-float latitude_nav_end_C=0;
+float longitude_nav_end_C=21515;
+float latitude_nav_end_C=136136;
 
-float longitude_nav_end_UI=0;
-float latitude_nav_end_UI=0;
+float longitude_nav_end_UI=13613631;
+float latitude_nav_end_UI=3161361;
 
-float tolerance_nav=0;
+float tolerance_nav=12516;
 float kp_nav = 1.65;//1.5
 float ki_nav = 1;//1
 float kd_nav = 0.5;//0.5

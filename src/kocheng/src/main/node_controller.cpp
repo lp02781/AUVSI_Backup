@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 			mission.mission_makara = "start_run";
 			pub_mission_rc.publish(mission);
 			
-			waypoint_running("navigation_gate");
+			//waypoint_running("navigation_gate");
 			mission_running("navigation");
 			
 			waypoint_running("speed_gate");
