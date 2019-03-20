@@ -9,15 +9,12 @@ bool override_status = false;
 
 int steering, throttle;
 
-int cam_servo	= CAM_INIT_PWM;
 
 ros::Publisher pub_override_rc;
-ros::Subscriber sub_override_motor;
-ros::Subscriber sub_override_status;
 
 mavros_msgs::OverrideRCIn override_out;
 
-void override_input_cb	(const kocheng::override_motor& override_recv);
+void override_input_cb(const kocheng::override_motor& override_recv);
 void override_status_cb	(const kocheng::rc_number& override_status_recv);
 
 int main(int argc, char **argv)
@@ -26,42 +23,17 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 
 	pub_override_rc 	= n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
-	sub_override_motor 	= n.subscribe("/auvsi/override/motor", 8, override_input_cb);
-	sub_override_status = n.subscribe("/auvsi/rc/number", 8, override_status_cb);
+	ros::Subscriber sub_override_motor = n.subscribe("/auvsi/override/motor", 8, override_input_cb);
+	ros::Subscriber sub_override_status = n.subscribe("/auvsi/node/master", 8, override_status_cb);
   
 	ROS_WARN("NC : motor_controller.cpp active");
   
-	override_out.channels[CAMERA_SERVO] = cam_servo;
+	override_out.channels[CAMERA_SERVO] = CAM_INIT_PWM;
 	pub_override_rc.publish(override_out);
 	
 	while(ros::ok()){
 		sleep(0.2);
 		ros::spinOnce();
-		while(override_status == true){
-			for(int i=0; i < 8; i++) override_out.channels[i] = 0;
-			//ROS_ERROR("1");
-			if (throttle > MAX_THROTTLE){
-				override_out.channels[THROTTLE] = MAX_THROTTLE;
-			}
-			else if (throttle < MIN_THROTTLE){
-				override_out.channels[THROTTLE] = MIN_THROTTLE;
-			}
-			else {
-				override_out.channels[THROTTLE]=throttle;
-			}
-
-			if (steering > MAX_STEERING){
-				override_out.channels[STEERING] = MAX_STEERING;
-			}
-			else if (steering < MIN_STEERING){
-				override_out.channels[STEERING] = MIN_STEERING;
-			}
-			else {
-				override_out.channels[STEERING] = steering;
-			}
-			override_out.channels[CAMERA_SERVO] = cam_servo;
-			pub_override_rc.publish(override_out);
-		}
 	}
 }
 
@@ -70,7 +42,28 @@ void override_status_cb(const kocheng::rc_number& override_status_recv){
 }
 
 void override_input_cb(const kocheng::override_motor& override_recv){
-	throttle	= override_recv.throttle;
-	steering	= override_recv.steering;
-	cam_servo	= override_recv.camera_servo;
+	for(int i=0; i < 8; i++) override_out.channels[i] = 0;
+	if(override_status == true){
+		//ROS_ERROR("1");
+		if (override_recv.throttle > MAX_THROTTLE){
+			override_out.channels[THROTTLE] = MAX_THROTTLE;
+		}
+		else if (override_recv.throttle < MIN_THROTTLE){
+			override_out.channels[THROTTLE] = MIN_THROTTLE;
+		}
+		else {
+			override_out.channels[THROTTLE] = override_recv.throttle;
+		}
+
+		if (override_recv.steering > MAX_STEERING){
+			override_out.channels[STEERING] = MAX_STEERING;
+		}
+		else if (override_recv.steering < MIN_STEERING){
+			override_out.channels[STEERING] = MIN_STEERING;
+		}
+		else {
+			override_out.channels[STEERING] = override_recv.steering;
+		}
+	}
+	pub_override_rc.publish(override_out);
 }
