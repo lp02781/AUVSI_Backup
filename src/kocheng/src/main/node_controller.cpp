@@ -56,9 +56,9 @@ int main(int argc, char **argv)
 			pub_mission_rc.publish(mission);
 			
 			//waypoint_running("navigation_gate");
-			mission_running("navigation");
+			//mission_running("navigation");
 			
-			waypoint_running("speed_gate");
+			//waypoint_running("speed_gate");
 			mission_running("speed");
 			
 			waypoint_running("path_gate");
@@ -82,6 +82,36 @@ int main(int argc, char **argv)
 		else if(rc_flag_in == second_simple){
 			mode.data=0;
 			pub_mode_rc.publish(mode);
+			
+			mode.data=2;
+			pub_mode_rc.publish(mode);
+			
+			mission.mission_makara = "start_run";
+			pub_mission_rc.publish(mission);
+			
+			waypoint_running("navigation_gate");
+			waypoint_running("navigation");
+			
+			waypoint_running("speed_gate");
+			waypoint_running("speed");
+			
+			waypoint_running("path_gate");
+			waypoint_running("path");
+			
+			//waypoint_running("follow_gate");
+			//mission_running("follow");
+			
+			waypoint_running("push_gate");
+			mission_running("push");
+			
+			waypoint_running("docking_gate");
+			mission_running("docking");
+			
+			waypoint_running("return");
+						
+			mission.mission_makara = "end_run";
+			pub_mission_rc.publish(mission);
+			
 			ros::spinOnce();
 		}
 		

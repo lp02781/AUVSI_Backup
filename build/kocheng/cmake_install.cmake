@@ -35,7 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kocheng/msg" TYPE FILE FILES
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg"
-    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg"
+    "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/debug_mission.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg"
     "/home/mfikih15/Documents/AUVSI/src/kocheng/msg/decode_status.msg"

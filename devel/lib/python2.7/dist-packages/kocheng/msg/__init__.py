@@ -10,4 +10,5 @@ from ._mission_status import *
 from ._nav_msgs import *
 from ._node_master import *
 from ._override_motor import *
+from ._override_value import *
 from ._rc_number import *

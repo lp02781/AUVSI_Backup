@@ -7,7 +7,7 @@
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
 
-#include "kocheng/override_motor.h"
+#include "kocheng/override_value.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
 #include "kocheng/image_in.h"
@@ -29,7 +29,7 @@ void image_out_cb		(const kocheng::image_out& image);
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
 
-kocheng::override_motor controller;
+kocheng::override_value controller;
 kocheng::mission_status	mission;
 kocheng::debug_mission	debug;
 kocheng::image_in image_in;
@@ -54,7 +54,7 @@ int main(int argc, char **argv){
 	ROS_WARN("NC : speed.cpp active");
 	
 	ros::Publisher pub_debug_rc 	= nh.advertise<kocheng::debug_mission>("/auvsi/debug/rc", 10);
-	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_motor>("/auvsi/override/motor", 10);
+	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_value>("/auvsi/rc/value", 10);
 	ros::Publisher pub_pid_in 		= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);
 	ros::Publisher pub_pid_const 	= nh.advertise<pid::pid_const_msg>("/auvsi/pid/constX", 1,true);
 	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
@@ -87,6 +87,7 @@ int main(int argc, char **argv){
 	while (ros::ok()) {
 		ros::spinOnce();
 		while(receive_mission=="speed.start"){
+			//cout<<"0"<<endl;
 			
 			image_in.x_init	= x_speed;
 			image_in.y_init	= y_speed;
@@ -114,6 +115,7 @@ int main(int argc, char **argv){
 			compass_end		= compass_init+compass_point;
 			
 			while(receive_mission=="speed.step_1"){
+				//cout<<"1"<<endl;
 				ros::spinOnce();
 				
 				pid_in.x 		= state_x;

@@ -12,7 +12,7 @@
 
 #include "sensor_msgs/NavSatFix.h"
 
-#include "kocheng/override_motor.h"
+#include "kocheng/override_value.h"
 #include "kocheng/rc_number.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
@@ -72,7 +72,7 @@ int LowV=5;		//49   242
 int HighV=5;		//230  255
 int Noise=15;
 
-void override_rc_cb		(const kocheng::override_motor& rc);
+void override_rc_cb		(const kocheng::override_value& rc);
 void rc_number_cb 		(const kocheng::rc_number& state);
 void override_motor_cb 	(const mavros_msgs::OverrideRCIn& motor);
 void rc_in_cb 			(const mavros_msgs::RCIn& input);
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "debug_makara");
 	ros::NodeHandle nh;
 	
-	ros::Subscriber sub_override_rc 	= nh.subscribe("/auvsi/override/motor", 8, override_rc_cb);
+	ros::Subscriber sub_override_rc 	= nh.subscribe("/auvsi/rc/value", 8, override_rc_cb);
 	ros::Subscriber sub_rc_number 		= nh.subscribe("/auvsi/rc/number", 8, rc_number_cb);
 	ros::Subscriber sub_mission_rc 		= nh.subscribe("/auvsi/rc/mission", 8, rc_mission_cb);
 	ros::Subscriber sub_debug_rc 		= nh.subscribe("/auvsi/debug/rc", 8, rc_debug_cb);
@@ -239,7 +239,7 @@ void rc_number_cb (const kocheng::rc_number& number){
 	else{override_status = "false";}
 }
 
-void override_rc_cb	(const kocheng::override_motor& rc){
+void override_rc_cb	(const kocheng::override_value& rc){
 	steering	= rc.steering;
 	throttle 	= rc.throttle;
 }

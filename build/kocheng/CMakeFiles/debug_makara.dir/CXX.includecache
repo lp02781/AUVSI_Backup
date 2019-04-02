@@ -118,7 +118,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h
+/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_value.h
 string
 -
 vector
@@ -469,8 +469,8 @@ mavros_msgs/GlobalPositionTarget.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/mavros_msgs/GlobalPositionTarget.h
 sensor_msgs/NavSatFix.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/sensor_msgs/NavSatFix.h
-kocheng/override_motor.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/override_motor.h
+kocheng/override_value.h
+/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/override_value.h
 kocheng/rc_number.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
 kocheng/mission_status.h

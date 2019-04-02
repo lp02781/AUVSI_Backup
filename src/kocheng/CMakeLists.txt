@@ -56,7 +56,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_message_files(
 	FILES
 	rc_number.msg
-	override_motor.msg
+	override_value.msg
 	debug_mission.msg
 	mission_status.msg
 	decode_status.msg
@@ -169,6 +169,7 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+
 add_executable(run_course src/communication/run_course.cpp )
 target_link_libraries(run_course
 ${catkin_LIBRARIES}
@@ -264,6 +265,7 @@ target_link_libraries(docking_drone
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
+
 #############
 ## Install ##
 #############

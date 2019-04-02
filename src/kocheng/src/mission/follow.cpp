@@ -7,7 +7,7 @@
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
 
-#include "kocheng/override_motor.h"
+#include "kocheng/override_value.h"
 #include "kocheng/mission_status.h"
 #include "kocheng/debug_mission.h"
 #include "kocheng/image_in.h"
@@ -32,7 +32,7 @@ pid::pid_const_msg pid_const_x;
 pid::plant_msg  pid_in_y;
 pid::pid_const_msg pid_const_y;
 
-kocheng::override_motor controller;
+kocheng::override_value controller;
 kocheng::mission_status	mission;
 kocheng::debug_mission	debug;
 kocheng::image_in image_in;
@@ -61,7 +61,7 @@ int main(int argc, char **argv){
 	ROS_WARN("NC : folow.cpp active");
 	
 	ros::Publisher pub_debug_rc 	= nh.advertise<kocheng::debug_mission>("/auvsi/debug/rc", 10);
-	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_motor>("/auvsi/override/motor", 10);
+	ros::Publisher pub_override_rc 	= nh.advertise<kocheng::override_value>("/auvsi/rc/value", 10);
 	ros::Publisher pub_mission_rc 	= nh.advertise<kocheng::mission_status>("/auvsi/rc/mission", 1);
 	
 	ros::Publisher pub_pid_in_x 	= nh.advertise<pid::plant_msg>("/auvsi/pid/inX", 1);

@@ -56,28 +56,6 @@ CMAKE_BINARY_DIR = /home/mfikih15/Documents/AUVSI/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -99,6 +77,28 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -132,28 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mfikih15/Documents/AUVSI/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-
-.PHONY : package_source/fast
-
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mfikih15/Documents/AUVSI/build && /usr/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-
-.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -608,6 +586,21 @@ mavros_msgs_generate_messages_lisp/fast:
 .PHONY : mavros_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/rule:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/rule
+.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/rule
+
+# Convenience name for target.
+_kocheng_generate_messages_check_deps_override_value: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/rule
+
+.PHONY : _kocheng_generate_messages_check_deps_override_value
+
+# fast build rule for target.
+_kocheng_generate_messages_check_deps_override_value/fast:
+	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_value.dir/build
+.PHONY : _kocheng_generate_messages_check_deps_override_value/fast
+
+# Convenience name for target.
 kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : kocheng/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -966,21 +959,6 @@ kocheng_generate_messages_cpp: kocheng/CMakeFiles/kocheng_generate_messages_cpp.
 kocheng_generate_messages_cpp/fast:
 	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build.make kocheng/CMakeFiles/kocheng_generate_messages_cpp.dir/build
 .PHONY : kocheng_generate_messages_cpp/fast
-
-# Convenience name for target.
-kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f CMakeFiles/Makefile2 kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule
-.PHONY : kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule
-
-# Convenience name for target.
-_kocheng_generate_messages_check_deps_override_motor: kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/rule
-
-.PHONY : _kocheng_generate_messages_check_deps_override_motor
-
-# fast build rule for target.
-_kocheng_generate_messages_check_deps_override_motor/fast:
-	cd /home/mfikih15/Documents/AUVSI/build && $(MAKE) -f kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/build.make kocheng/CMakeFiles/_kocheng_generate_messages_check_deps_override_motor.dir/build
-.PHONY : _kocheng_generate_messages_check_deps_override_motor/fast
 
 # Convenience name for target.
 kocheng/CMakeFiles/path.dir/rule:
@@ -1639,10 +1617,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... processing_drone"
 	@echo "... navigation"
@@ -1660,7 +1638,6 @@ help:
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... test"
-	@echo "... package_source"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... follow"
@@ -1675,11 +1652,11 @@ help:
 	@echo "... kocheng_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_lisp"
+	@echo "... _kocheng_generate_messages_check_deps_override_value"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_cpp"
 	@echo "... _kocheng_generate_messages_check_deps_rc_number"
 	@echo "... geographic_msgs_generate_messages_py"
-	@echo "... package"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... _kocheng_generate_messages_check_deps_com_auvsi"
 	@echo "... geographic_msgs_generate_messages_lisp"
@@ -1700,7 +1677,6 @@ help:
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... kocheng_generate_messages"
 	@echo "... kocheng_generate_messages_cpp"
-	@echo "... _kocheng_generate_messages_check_deps_override_motor"
 	@echo "... path"
 	@echo "... _kocheng_generate_messages_check_deps_image_out"
 	@echo "... _kocheng_generate_messages_check_deps_drone_kocheng"

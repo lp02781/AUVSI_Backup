@@ -55,9 +55,9 @@ include kocheng/CMakeFiles/kocheng_generate_messages_nodejs.dir/progress.make
 
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_in.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/rc_number.js
+kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_value.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/com_auvsi.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js
-kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js
 kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/drone_kocheng.js
@@ -75,20 +75,20 @@ kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AU
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from kocheng/rc_number.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg
 
+/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_value.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_value.js: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from kocheng/override_value.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg
+
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/com_auvsi.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/com_auvsi.js: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from kocheng/com_auvsi.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from kocheng/com_auvsi.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from kocheng/mission_status.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from kocheng/mission_status.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg
-
-/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from kocheng/override_motor.msg"
-	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg
@@ -118,9 +118,9 @@ kocheng/CMakeFiles/kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AU
 kocheng_generate_messages_nodejs: kocheng/CMakeFiles/kocheng_generate_messages_nodejs
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_in.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/rc_number.js
+kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_value.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/com_auvsi.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/mission_status.js
-kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/override_motor.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/image_out.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/decode_status.js
 kocheng_generate_messages_nodejs: /home/mfikih15/Documents/AUVSI/devel/share/gennodejs/ros/kocheng/msg/drone_kocheng.js

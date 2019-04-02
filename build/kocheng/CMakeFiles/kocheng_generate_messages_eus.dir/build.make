@@ -55,9 +55,9 @@ include kocheng/CMakeFiles/kocheng_generate_messages_eus.dir/progress.make
 
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_in.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/rc_number.l
+kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_value.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/com_auvsi.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l
-kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/decode_status.l
 kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/drone_kocheng.l
@@ -76,20 +76,20 @@ kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from kocheng/rc_number.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg
 
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_value.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_value.l: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from kocheng/override_value.msg"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg
+
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/com_auvsi.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/com_auvsi.l: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from kocheng/com_auvsi.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from kocheng/com_auvsi.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from kocheng/mission_status.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from kocheng/mission_status.msg"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg
-
-/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from kocheng/override_motor.msg"
-	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg
@@ -123,9 +123,9 @@ kocheng/CMakeFiles/kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI
 kocheng_generate_messages_eus: kocheng/CMakeFiles/kocheng_generate_messages_eus
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_in.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/rc_number.l
+kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_value.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/com_auvsi.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/mission_status.l
-kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/override_motor.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/image_out.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/decode_status.l
 kocheng_generate_messages_eus: /home/mfikih15/Documents/AUVSI/devel/share/roseus/ros/kocheng/msg/drone_kocheng.l

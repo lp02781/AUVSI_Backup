@@ -55,9 +55,9 @@ include kocheng/CMakeFiles/kocheng_generate_messages_py.dir/progress.make
 
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_in.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
+kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_value.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py
-kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py
 kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_drone_kocheng.py
@@ -76,20 +76,20 @@ kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG kocheng/rc_number"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/rc_number.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
 
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_value.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_value.py: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG kocheng/override_value"
+	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_value.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
+
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG kocheng/com_auvsi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG kocheng/com_auvsi"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/com_auvsi.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG kocheng/mission_status"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG kocheng/mission_status"
 	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/mission_status.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
-
-/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AUVSI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG kocheng/override_motor"
-	cd /home/mfikih15/Documents/AUVSI/build/kocheng && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AUVSI/src/kocheng/msg/override_motor.msg -Ikocheng:/home/mfikih15/Documents/AUVSI/src/kocheng/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p kocheng -o /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg
 
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py: /home/mfikih15/Documents/AUVSI/src/kocheng/msg/image_out.msg
@@ -119,9 +119,9 @@ kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_in.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
+/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_value.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py
-/home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py
 /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/__init__.py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_drone_kocheng.py
@@ -133,9 +133,9 @@ kocheng/CMakeFiles/kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/
 kocheng_generate_messages_py: kocheng/CMakeFiles/kocheng_generate_messages_py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_in.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_rc_number.py
+kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_value.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_com_auvsi.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_mission_status.py
-kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_override_motor.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_image_out.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_decode_status.py
 kocheng_generate_messages_py: /home/mfikih15/Documents/AUVSI/devel/lib/python2.7/dist-packages/kocheng/msg/_drone_kocheng.py

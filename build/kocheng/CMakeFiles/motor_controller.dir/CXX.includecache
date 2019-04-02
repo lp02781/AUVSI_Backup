@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_motor.h
+/home/mfikih15/Documents/AUVSI/devel/include/kocheng/override_value.h
 string
 -
 vector
@@ -293,8 +293,8 @@ ros/ros.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/ros/ros.h
 mavros_msgs/OverrideRCIn.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/mavros_msgs/OverrideRCIn.h
-kocheng/override_motor.h
-/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/override_motor.h
+kocheng/override_value.h
+/home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/override_value.h
 kocheng/rc_number.h
 /home/mfikih15/Documents/AUVSI/src/kocheng/src/main/kocheng/rc_number.h
 iostream
