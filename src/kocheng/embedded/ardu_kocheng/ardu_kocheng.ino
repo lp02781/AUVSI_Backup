@@ -130,8 +130,8 @@ void loop()
     digitalWrite(led_yellow, LOW);
     digitalWrite(led_green, LOW);      
   }
-  else if(pwm_remote<middle_pwm){
-    digitalWrite(led_red, HIGH);
+  else {
+    digitalWrite(led_red, LOW);
     digitalWrite(led_yellow, LOW);
     digitalWrite(led_green, LOW); 
   }
