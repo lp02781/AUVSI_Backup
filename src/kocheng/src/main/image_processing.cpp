@@ -20,8 +20,8 @@ Mat receive_image;
 
 int x_init=5;
 int y_init=5;
-int width=5; //width 400 for simple
-int height=5;
+int width=200; //width 400 for simple
+int height=200;
 int LowH=5; 		//0  
 int HighH=5;		//184 
 int LowS=5;      //130  65
