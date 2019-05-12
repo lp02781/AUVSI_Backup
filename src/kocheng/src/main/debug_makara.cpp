@@ -166,8 +166,6 @@ int main(int argc, char **argv)
 		ROS_WARN("NC: drone data");
 		ROS_INFO("drone: %s", drone_status.c_str());
 		
-		
-		
 		/*
 		ROS_INFO("run_course:%s", run_course_payload.c_str());
 		ROS_INFO("heartbeat:%s", heartbeat_payload.c_str());
@@ -301,4 +299,3 @@ void ardu_srf_cb	(const std_msgs::Int32MultiArray& data){
 void drone_status_cb	(const kocheng::drone_kocheng& data){
 	drone_status=data.drone_status;
 }
-

@@ -30,7 +30,7 @@ string	course_type 		= "courseUI"; //courseA courseB courseC courseUI
 #define STEERING 0
 #define THROTTLE 2
 #define SIMPLE_PIN 3
-#define CAMERA_SERVO 4
+#define CAMERA_SERVO 1
 
 #define MAX_THROTTLE 1900//1750
 #define MIN_THROTTLE 1100
