@@ -24,6 +24,7 @@ void rc_number_cb			(const kocheng::rc_number& number);
 void rc_mission_cb			(const kocheng::mission_status& data);
 void waypoint_running		(string waypoint);
 void mission_running		(string mission_name);
+void mission_waypoint_running(string waypoint);
 bool changeFlightMode		(const char* flight_mode);
 bool changeFlightModeDebug	(string fm);
 
@@ -67,11 +68,11 @@ int main(int argc, char **argv)
 			//waypoint_running("follow_gate");
 			//mission_running("follow");
 			
-			waypoint_running("push_gate");
-			mission_running("push");
-			
 			waypoint_running("docking_gate");
 			mission_running("docking");
+			
+			waypoint_running("push_gate");
+			mission_running("push");
 			
 			waypoint_running("return");
 						
@@ -90,22 +91,22 @@ int main(int argc, char **argv)
 			pub_mission_rc.publish(mission);
 			
 			waypoint_running("navigation_gate");
-			waypoint_running("navigation");
+			mission_waypoint_running("navigation");
 			
 			waypoint_running("speed_gate");
-			waypoint_running("speed");
+			mission_waypoint_running("speed");
 			
 			waypoint_running("path_gate");
-			waypoint_running("path");
+			mission_waypoint_running("path");
 			
 			//waypoint_running("follow_gate");
 			//mission_running("follow");
 			
+			waypoint_running("docking_gate");
+			mission_waypoint_running("docking");
+			
 			waypoint_running("push_gate");
 			mission_running("push");
-			
-			waypoint_running("docking_gate");
-			mission_running("docking");
 			
 			waypoint_running("return");
 						
@@ -127,8 +128,34 @@ int main(int argc, char **argv)
 	}
 }
 
+void mission_waypoint_running(string waypoint){
+	if(receive_mission != mission_idle){
+		com.mission_makara = waypoint;
+		pub_com_rc.publish(com);
+		
+		changeFlightModeDebug("HOLD");
+		
+		string waypoint_start = waypoint+".start";
+		mission.mission_makara = waypoint_start;
+		pub_mission_rc.publish(mission);
+		
+		system("rosrun mavros mavwp clear"); //clear wp
+		string command = "rosrun mavros mavwp load ~/"+waypoint+"_"+course_type+".waypoints";
+		system(command.c_str());
+		
+		changeFlightModeDebug("AUTO");
+		changeFlightModeDebug("HOLD");
+		
+		string waypoint_end		= waypoint+course_type+"_gate.end";
+		mission.mission_makara	= waypoint_end;
+		pub_mission_rc.publish(mission);
+	}
+}
+	
+	
 void waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
+		
 		changeFlightModeDebug("HOLD");
 		
 		string waypoint_start = waypoint+".start";
