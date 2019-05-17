@@ -25,7 +25,7 @@ string	challenge_status	= "idle";
 string 	server_ip			= "10.0.2.2";
 int 	server_port			= 80;
 string 	team_code			= "AMVUI";
-string	course_type 		= "courseUI"; //courseA courseB courseC courseUI
+string	course_type 		= "kolam"; //courseA courseB courseC courseUI kolam
 
 #define STEERING 0
 #define THROTTLE 2

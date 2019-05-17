@@ -50,6 +50,48 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		sleep(0.2);
 		if(rc_flag_in == first_simple ){
+			
+			ROS_ERROR("2");
+			mode.data=2;
+			pub_mode_rc.publish(mode);
+			
+			mission.mission_makara = "start_run";
+			pub_mission_rc.publish(mission);
+			
+			waypoint_running("navigation_gate");
+			//mission_waypoint_running("navigation");
+			
+			//waypoint_running("speed_gate");
+			//mission_waypoint_running("speed");
+			
+			//waypoint_running("path_gate");
+			//mission_waypoint_running("path");
+			
+			
+			
+			
+			
+			
+			//waypoint_running("follow_gate");
+			//mission_running("follow");
+			
+			/*
+			waypoint_running("docking_gate");
+			mission_waypoint_running("docking");
+			
+			waypoint_running("push_gate");
+			mission_running("push");
+			*/
+			
+			//waypoint_running("return");
+						
+			mission.mission_makara = "end_run";
+			pub_mission_rc.publish(mission);
+			
+			ros::spinOnce();
+			
+			/*
+			ROS_ERROR("1");
 			mode.data=1;
 			pub_mode_rc.publish(mode);
 			
@@ -78,12 +120,11 @@ int main(int argc, char **argv)
 						
 			mission.mission_makara = "end_run";
 			pub_mission_rc.publish(mission);
+			*/
 		}
 		
 		else if(rc_flag_in == second_simple){
-			mode.data=0;
-			pub_mode_rc.publish(mode);
-			
+			ROS_ERROR("2");
 			mode.data=2;
 			pub_mode_rc.publish(mode);
 			
@@ -102,12 +143,13 @@ int main(int argc, char **argv)
 			//waypoint_running("follow_gate");
 			//mission_running("follow");
 			
+			/*
 			waypoint_running("docking_gate");
 			mission_waypoint_running("docking");
 			
 			waypoint_running("push_gate");
 			mission_running("push");
-			
+			*/
 			waypoint_running("return");
 						
 			mission.mission_makara = "end_run";
@@ -130,23 +172,26 @@ int main(int argc, char **argv)
 
 void mission_waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
+		sleep(1);
 		com.mission_makara = waypoint;
 		pub_com_rc.publish(com);
 		
+		sleep(1);
 		changeFlightModeDebug("HOLD");
-		
+		sleep(1);
 		string waypoint_start = waypoint+".start";
 		mission.mission_makara = waypoint_start;
 		pub_mission_rc.publish(mission);
-		
+		sleep(1);
 		system("rosrun mavros mavwp clear"); //clear wp
-		string command = "rosrun mavros mavwp load ~/"+waypoint+"_"+course_type+".waypoints";
+		string command = "rosrun mavros mavwp load ~/waypoints/"+course_type+"_"+waypoint+".waypoints";
 		system(command.c_str());
-		
+		sleep(1);
 		changeFlightModeDebug("AUTO");
+		sleep(1);
 		changeFlightModeDebug("HOLD");
 		
-		string waypoint_end		= waypoint+course_type+"_gate.end";
+		string waypoint_end		= waypoint+course_type+".end";
 		mission.mission_makara	= waypoint_end;
 		pub_mission_rc.publish(mission);
 	}
@@ -155,37 +200,41 @@ void mission_waypoint_running(string waypoint){
 	
 void waypoint_running(string waypoint){
 	if(receive_mission != mission_idle){
-		
+		sleep(1);
 		changeFlightModeDebug("HOLD");
-		
+		sleep(1);
 		string waypoint_start = waypoint+".start";
 		mission.mission_makara = waypoint_start;
 		pub_mission_rc.publish(mission);
-		
+		sleep(1);
 		system("rosrun mavros mavwp clear"); //clear wp
-		string command = "rosrun mavros mavwp load ~/"+waypoint+"_"+course_type+".waypoints";
+		string command = "rosrun mavros mavwp load ~/waypoints/"+course_type+"_"+waypoint+".waypoints";
 		system(command.c_str());
-		
+		sleep(1);
 		changeFlightModeDebug("AUTO");
+		sleep(1);
 		changeFlightModeDebug("HOLD");
+		sleep(1);
 		
 		string waypoint_end		= waypoint+course_type+"_gate.end";
 		mission.mission_makara	= waypoint_end;
 		pub_mission_rc.publish(mission);
 	}
+	sleep(1);
 }
 	
 void mission_running(string mission_name){
 	if(receive_mission != mission_idle){
+		sleep(1);
 		com.mission_makara = mission_name;
 		pub_com_rc.publish(com);
-		
+		sleep(1);
 		changeFlightModeDebug("MANUAL");
-		
+		sleep(1);
 		string mission_start = mission_name+".start";
 		mission.mission_makara = mission_start;
 		pub_mission_rc.publish(mission);
-		
+		sleep(1);
 		string mission_end = mission_name+".end";
 
 		while(ros::ok() && receive_mission != mission_end ) ros::spinOnce();
