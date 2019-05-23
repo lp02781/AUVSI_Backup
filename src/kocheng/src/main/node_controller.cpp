@@ -187,8 +187,9 @@ void mission_waypoint_running(string waypoint){
 		string command = "rosrun mavros mavwp load ~/waypoints/"+course_type+"_"+waypoint+".waypoints";
 		system(command.c_str());
 		sleep(1);
-		changeFlightModeDebug("AUTO");
-		sleep(1);
+		//changeFlightModeDebug("AUTO");
+		system("rosrun mavros mavsys mode -c AUTO");
+		sleep(10);
 		changeFlightModeDebug("HOLD");
 		
 		string waypoint_end		= waypoint+course_type+".end";
@@ -211,8 +212,9 @@ void waypoint_running(string waypoint){
 		string command = "rosrun mavros mavwp load ~/waypoints/"+course_type+"_"+waypoint+".waypoints";
 		system(command.c_str());
 		sleep(1);
-		changeFlightModeDebug("AUTO");
-		sleep(1);
+		//changeFlightModeDebug("AUTO");
+		system("rosrun mavros mavsys mode -c AUTO");
+		sleep(10);
 		changeFlightModeDebug("HOLD");
 		sleep(1);
 		
