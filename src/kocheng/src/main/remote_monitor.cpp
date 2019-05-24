@@ -44,6 +44,7 @@ int main(int argc, char **argv){
 	
 	while (ros::ok()) {
 		ros::spinOnce();
+		//cout<<rc_in_data_channel[SIMPLE_PIN]<<endl;
 	}
 	
 }
@@ -55,28 +56,28 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
 	}
 	
 	if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
+		//ROS_ERROR("2");
 		mode.data = 2;
-		pub_led_rc.publish(mode);
 		override_flag = true;
 		number_flight = first_simple;
 	}
 	else if(rc_in_data_channel[SIMPLE_PIN] > PWM_UP){
+		//ROS_ERROR("2");
 		mode.data = 2;
-		pub_led_rc.publish(mode);
 		override_flag = true;
 		number_flight = second_simple;
 	}
 	else{
+		//ROS_ERROR("2");
 		mode.data = 1;
-		pub_led_rc.publish(mode);
 		override_flag 			= false;
 		mission.mission_makara	= mission_idle;
 		pub_mission_rc.publish(mission);
 	}
-		
 	rc_action.override_status = override_flag;
 	rc_action.rc_number = number_flight;
 	pub_rc_flag.publish(rc_action);
+	pub_led_rc.publish(mode);
 }
 
 

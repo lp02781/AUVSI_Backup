@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 		sleep(0.2);
 		if(rc_flag_in == first_simple ){
 			
-			ROS_ERROR("2");
+			//ROS_ERROR("2");
 			mode.data=2;
 			pub_mode_rc.publish(mode);
 			
@@ -59,36 +59,31 @@ int main(int argc, char **argv)
 			pub_mission_rc.publish(mission);
 			
 			waypoint_running("navigation_gate");
-			//mission_waypoint_running("navigation");
+			mission_waypoint_running("navigation");
 			
-			//waypoint_running("speed_gate");
-			//mission_waypoint_running("speed");
+			waypoint_running("speed_gate");
+			mission_waypoint_running("speed");
 			
-			//waypoint_running("path_gate");
-			//mission_waypoint_running("path");
-			
-			
-			
-			
-			
-			
-			//waypoint_running("follow_gate");
-			//mission_running("follow");
+			waypoint_running("path_gate");
+			mission_waypoint_running("path");
 			
 			/*
 			waypoint_running("docking_gate");
-			mission_waypoint_running("docking");
+			mission_running("docking");
+			waypoint_running("docking_end");
 			
 			waypoint_running("push_gate");
 			mission_running("push");
 			*/
-			
-			//waypoint_running("return");
+			waypoint_running("return");
 						
 			mission.mission_makara = "end_run";
 			pub_mission_rc.publish(mission);
 			
 			ros::spinOnce();
+			
+			//waypoint_running("follow_gate");
+			//mission_running("follow");
 			
 			/*
 			ROS_ERROR("1");
@@ -122,7 +117,7 @@ int main(int argc, char **argv)
 			pub_mission_rc.publish(mission);
 			*/
 		}
-		
+		/*
 		else if(rc_flag_in == second_simple){
 			ROS_ERROR("2");
 			mode.data=2;
@@ -143,13 +138,12 @@ int main(int argc, char **argv)
 			//waypoint_running("follow_gate");
 			//mission_running("follow");
 			
-			/*
 			waypoint_running("docking_gate");
 			mission_waypoint_running("docking");
 			
 			waypoint_running("push_gate");
 			mission_running("push");
-			*/
+			
 			waypoint_running("return");
 						
 			mission.mission_makara = "end_run";
@@ -157,6 +151,7 @@ int main(int argc, char **argv)
 			
 			ros::spinOnce();
 		}
+		*/
 		
 		else if(rc_flag_in == zero_flag){
 			mode.data=0;

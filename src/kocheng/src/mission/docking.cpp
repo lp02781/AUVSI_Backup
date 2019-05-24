@@ -89,21 +89,29 @@ int main(int argc, char **argv){
 			
 			if(docking_number=="1"){
 				system(docking_1.c_str());
-				changeFlightModeDebug("AUTO");
+				system("rosrun mavros mavsys mode -c AUTO");
+				sleep(5);
 			}
 			else if(docking_number=="2"){
 				system(docking_2.c_str());
-				changeFlightModeDebug("AUTO");
+				system("rosrun mavros mavsys mode -c AUTO");
+				sleep(5);
 			}
 			else if(docking_number=="3"){
 				system(docking_3.c_str());
-				changeFlightModeDebug("AUTO");
+				system("rosrun mavros mavsys mode -c AUTO");
+				sleep(5);
 			}
 			else{
 				system(docking_1.c_str());
-				changeFlightModeDebug("AUTO");
+				system("rosrun mavros mavsys mode -c AUTO");
+				sleep(5);
 			}
+			
+			mission.mission_makara="docking.end";
+			pub_mission_rc.publish(mission);
 		
+		/*
 			changeFlightModeDebug("HOLD");
 			ros::spinOnce();
 			drone.drone_status="docking_drone";
@@ -165,6 +173,7 @@ int main(int argc, char **argv){
 				mission.mission_makara="docking.end";
 				pub_mission_rc.publish(mission);
 			}
+			*/
 		}
 	}
 }

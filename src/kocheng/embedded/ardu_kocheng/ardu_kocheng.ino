@@ -17,7 +17,7 @@ const int trigPin_5 = 11;
 const int echoPin_5 = 12;
 
 int pwm_remote;
-int middle_pwm = 1600;
+int middle_pwm = 120;
 int remote_pin = A3;
 
 int led_red     = A0;
@@ -73,7 +73,7 @@ void loop()
 {  
   nh.spinOnce();
 
-  pwm_remote = pulseIn(remote_pin, HIGH);
+  pwm_remote = analogRead(remote_pin);
   
   digitalWrite(trigPin_1, LOW);
   digitalWrite(trigPin_2, LOW);
@@ -115,17 +115,17 @@ void loop()
   
   chatter.publish( &srf_msg );
   
-  if(kocheng_status==1){//manual
+  if(kocheng_status==1 && pwm_remote<middle_pwm){//manual
     digitalWrite(led_red, LOW);
     digitalWrite(led_yellow, HIGH);
     digitalWrite(led_green, LOW);    
   }
-  else if(kocheng_status==2){//auto
+  else if(kocheng_status==2 && pwm_remote<middle_pwm){//auto
     digitalWrite(led_red, LOW);
     digitalWrite(led_yellow, LOW);
     digitalWrite(led_green, HIGH);
   }
-  else if(pwm_remote>middle_pwm){//motor
+  else if(pwm_remote>middle_pwm && kocheng_status!=2 &&kocheng_status!=1){//motor
     digitalWrite(led_red, HIGH);
     digitalWrite(led_yellow, LOW);
     digitalWrite(led_green, LOW);      
